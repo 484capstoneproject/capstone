@@ -81,10 +81,10 @@ img.nextstepgo-logo-nav {
 .login-panel {
   padding: 30px;
   border: 1px solid white;
-  background-color: rgba(255, 255, 255, 0.1); }
+  background-color: white; }
 
 .login-panel-bottom {
-  background-color: #fafafa;
+  background-color: white;
   padding: 50px; }
 
 .login-row {
@@ -93,7 +93,7 @@ img.nextstepgo-logo-nav {
 .loginheader {
   text-align: center;
   margin-bottom: 40px;
-  color: white; }
+  color: black; }
 
 .passwordhelp {
   color: #767676; }
@@ -112,7 +112,7 @@ img.nextstepgo-logo-nav {
     box-shadow: none; }
 
 .loginlabel {
-  color: white;
+  color: black;
   font-weight: 500; }
 
 .submitbutton {

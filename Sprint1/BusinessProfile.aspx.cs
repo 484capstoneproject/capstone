@@ -1,4 +1,8 @@
-﻿using System;
+﻿/// NextStepGo System (Business/Employer Focus) - Sprint1
+/// File Constructed By: Austin Choi, Igor Goryachev, Nathan Lam, Brian Petersen, Austin Volpi, Addison Wittkamp
+/// Submitted: 3/19/19
+ 
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -44,8 +48,26 @@ public partial class BusinessProfile : System.Web.UI.Page
                     txtInputZip.Text = reader["Zip"].ToString();
                 }
             }
-
             reader.Close();
+            con.Close();
+
+            con.Open();
+
+            cmd = new SqlCommand("select BusinessName from Business where BusinessEntityID=@BusinessEntityID", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
+            cmd.ExecuteNonQuery();
+
+            SqlDataReader rd = cmd.ExecuteReader();
+
+            if (rd.HasRows)
+            {
+                while (rd.Read())
+                {
+                    BusinessName.InnerText = rd["BusinessName"].ToString();
+                }
+            }
+            rd.Close();
             con.Close();
         }
     }

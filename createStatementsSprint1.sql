@@ -1,4 +1,8 @@
-CREATE TABLE [dbo].[Business](
+-- NextStepGo System <> Sprint1 <> Table Creation Statements
+
+-- Please create a Database named "Sprint1" prior to executing the create table commands below. Thank you.
+
+Use Sprint1 CREATE TABLE [dbo].[Business](
 	[BusinessEntityID] [int] IDENTITY(1,1) NOT NULL,
 	[BusinessName] [varchar](25) NOT NULL,
 	[FirstName] [varchar](20) NULL,
@@ -14,7 +18,7 @@ CREATE TABLE [dbo].[Business](
 	[Zip] [varchar](25) NULL,
 )
 
-CREATE TABLE [dbo].[Password](
+Use Sprint1 CREATE TABLE [dbo].[Password](
 	[BusinessEntityID] [int] NULL,
 	[username] [varchar](20) NULL,
 	[firstname] [varchar](20) NULL,

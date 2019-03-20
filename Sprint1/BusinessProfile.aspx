@@ -48,7 +48,7 @@
   <ul class="navbar-nav px-3">
 
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="#">Sign out</a>
+      <a class="nav-link" href="Default.aspx">Sign out</a>
     </li>
   </ul>
 </nav>
@@ -59,13 +59,13 @@
       <div class="sidebar-sticky">
       <div class="profile-section text-center">
       <p class="welcome-business px-3 mt-4 mb-1 text-left">Welcome Back,</p>
-       <h2 class="d-flex px-3 mt2 mb-1 text-left">Blueridge Bank</h2>
+       <h2 class="d-flex px-3 mt2 mb-1 text-left" id="BusinessName" runat="server">Blueridge Bank</h2>
        <img class="img-thumbnail profile-img mt-3" src="images/avatar.png">
-       <p class="text-muted mt-2"><a href="profileedit.html">Edit your profile <span class="editpost d-inline ml-2" data-feather="edit"></span></a></p>
+       <p class="text-muted mt-2"><a href="BusinessProfile.aspx">Edit your profile <span class="editpost d-inline ml-2" data-feather="edit"></span></a></p>
        </div>
         <ul class="nav flex-column bg-grey mt-4 pt-2 pb-2">
           <li class="nav-item">
-            <a class="nav-link active-blue dash-wt-link" href="#">
+            <a class="nav-link active-blue dash-wt-link" href="BusinessPortal.aspx">
               <span data-feather="home"></span>
               Dashboard 
             </a>
