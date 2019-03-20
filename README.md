@@ -1,3 +1,1 @@
-test Igor
-3
-1
+test Igor 5
