@@ -1,5 +1,3 @@
-
-
 # Create local branch
 **Make sure you are in the right directory (i.e desktop)**
 
@@ -22,4 +20,8 @@
 
 # Check what branch you are on
     git branch 
+
+# Overwrite	local files with remote files<br> **!Last Resort!**
+    git fetch -all
+    git reset --hard origin/master
 
