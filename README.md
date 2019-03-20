@@ -36,15 +36,10 @@ https://github.com/git-for-windows/git/releases/download/v2.21.0.windows.1/Git-2
 # View all branches
     git branch -a
 
-# Rename your local branch
-    git branch -m <newname>
-
 # Deleting branches
-To delete a local branch
+To delete a local/remote branch
     
     git branch -d the_local_branch
-
-To remove a remote branch
     git push origin --delete the_remote_branch
 
 # Overwrite	local files with remote files<br> **!Last Resort!**
