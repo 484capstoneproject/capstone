@@ -29,6 +29,17 @@
 # Check what branch you are on
     git branch 
 
+# Rename your local branch
+    git branch -m <newname>
+
+# Deleting branches
+To delete a local branch
+    
+    git branch -d the_local_branch
+
+To remove a remote branch
+    git push origin --delete the_remote_branch
+
 # Overwrite	local files with remote files<br> **!Last Resort!**
     git fetch -all
     git reset --hard origin/master
