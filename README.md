@@ -1,5 +1,5 @@
 # Create local branch
-**Make sure you are in the right directory (i.e desktop)**
+**Make sure you are in the right directory (i.e cd desktop)**
 
     cd *drag your directory here/show path*
     git clone *link from GitHub*
@@ -18,7 +18,7 @@
     git add .
     git commit -m “your message”
 
-# Bring master to date with your branch up
+# Bring master up to date with your branch
     git checkout master 
     git pull origin “name of your branch”
 
