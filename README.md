@@ -1,15 +1,16 @@
 # Dowload git
 https://github.com/git-for-windows/git/releases/download/v2.21.0.windows.1/Git-2.21.0-64-bit.exe
    
-# Create local branch
+# Set up
 **Make sure you are in the right directory (i.e cd desktop)**
 
     cd *drag your directory here/show path*
     git clone *link from GitHub*
-    git checkout -b “your full name
+    cd capstone
+    git checkout "name of your branch"
 
 # Commit/Push changes
-    git checkout "name of your branch"
+    git checkout "name of the branch that you are trying to push"
     git add .
     git commit -m “your message”
     git push
@@ -25,12 +26,15 @@ https://github.com/git-for-windows/git/releases/download/v2.21.0.windows.1/Git-2
     git checkout master 
     git pull origin “name of your branch”
 
-# Bring your branch up to date with master
+# Bring branch up to date with master
     git checkout “name of your branch”
     git pull origin master
 
 # Check what branch you are on
     git branch 
+    
+# View all branches
+    git branch -a
 
 # Rename your local branch
     git branch -m <newname>
