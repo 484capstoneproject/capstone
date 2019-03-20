@@ -18,11 +18,11 @@
     git add .
     git commit -m “your message”
 
-# Update master
+# Bring master to date with your branch up
     git checkout master 
     git pull origin “name of your branch”
 
-# Update your branch with master
+# Bring your branch up to date with master
     git checkout “name of your branch”
     git pull origin master
 
