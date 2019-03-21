@@ -1,7 +1,7 @@
 -- NextStepGo System <> Sprint1 <> Table Creation Statements
 
 -- Please create a Database named "Sprint1" prior to executing the create table commands below. Thank you.
--- This is a test from Nathan Lam
+
 Use Sprint1 CREATE TABLE [dbo].[Business](
 	[BusinessEntityID] [int] IDENTITY(1,1) NOT NULL,
 	[BusinessName] [varchar](25) NOT NULL,
@@ -18,9 +18,17 @@ Use Sprint1 CREATE TABLE [dbo].[Business](
 	[Zip] [varchar](25) NULL,
 )
 
-Use Sprint1 CREATE TABLE [dbo].[Password](
+CREATE TABLE [dbo].[Password](
 	[BusinessEntityID] [int] NULL,
 	[username] [varchar](20) NULL,
 	[firstname] [varchar](20) NULL,
 	[password] [varchar](100) NULL
+) 
+
+CREATE TABLE [dbo].[JobPostings](
+	[JobTitle] [varchar](20) NULL,
+	[CareerCluster] [varchar](30) NULL,
+	[JobExplanation] [varchar](60) NULL,
+	[Requirements] [varchar](60) NULL,
+	[DatePosted] [date] NULL
 ) 

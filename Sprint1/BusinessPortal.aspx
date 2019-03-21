@@ -75,6 +75,12 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link dash-wt-link" href="JobPostings.aspx">
+              <span data-feather="file"></span>
+              Job Postings
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link dash-wt-link" href="#">
               <span data-feather="shopping-cart"></span>
               Messages

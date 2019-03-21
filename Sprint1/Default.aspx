@@ -61,7 +61,7 @@
   				<div class="form-group">
   				  <label for="exampleInputPassword1" class="loginlabel">Password</label>
   				  <asp:Textbox type="password" class="form-control min-imput" id="txtPassword" placeholder="" runat="server" TextMode="Password"></asp:Textbox>
-  				   <a href="#"><small id="passwordHelp" class="form-text passwordhelp" runat="server">Forgot Password?</small></a>
+  				   <a href="ForgotPassword.aspx"><small id="passwordHelp" class="form-text passwordhelp" runat="server">Forgot Password?</small></a>
   				</div>
   				<asp:Button id="Login" type="submit" class="btn btn-maingreen submitbutton" runat="server" ValidationGroup="login" Text="Submit" OnClick="Login_Click"></asp:Button>
 			</form>
