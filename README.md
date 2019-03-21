@@ -42,7 +42,7 @@ To delete a local/remote branch
     git branch -d the_local_branch
     git push origin --delete the_remote_branch
 
-# Overwrite	local files with remote files<br> **!Last Resort!**
+# Overwrite	local files with remote files <br> **!Last Resort!**
     git fetch -all
     git reset --hard origin/master
 
