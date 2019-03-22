@@ -34,5 +34,6 @@ public partial class JobPostings : System.Web.UI.Page
         cmd.ExecuteNonQuery();
 
         con.Close();
+
     }
 }

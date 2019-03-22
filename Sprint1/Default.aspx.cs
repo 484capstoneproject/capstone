@@ -1,7 +1,6 @@
 ﻿/// NextStepGo System (Business/Employer Focus) - Sprint1
 /// File Constructed By: Austin Choi, Igor Goryachev, Nathan Lam, Brian Petersen, Austin Volpi, Addison Wittkamp
 /// Submitted: 3/19/19
-/// This is a test, completed. 
 
 using System;
 using System.Collections.Generic;

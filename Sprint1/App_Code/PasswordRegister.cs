@@ -11,6 +11,7 @@ public class PasswordRegister
     private string username;
     private string firstName;
     private string password;
+    private string email;
 
     public string GetUsername()
     {
@@ -38,14 +39,28 @@ public class PasswordRegister
     {
         this.firstName = firstName;
     }
-    public PasswordRegister(string username, string firstName, string password)
+
+    public string GetEmail()
+    {
+        return this.email;
+    }
+    public void SetEmail(string email)
+    {
+        this.email = email;
+    }
+    public PasswordRegister(string username, string firstName, string password, string email)
     {
         SetUsername(username);
         SetFirstName(firstName);
         SetPassword(password);
+        SetEmail(email);
     }
     public PasswordRegister(string firstName)
     {
         SetFirstName(firstName);
+    }
+    public PasswordRegister(string password, string email)
+    {
+        SetPassword(password);
     }
 }

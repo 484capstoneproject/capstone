@@ -41,14 +41,15 @@ public partial class Register : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@jobtitle", commitRegister.GetJobTitle());
             cmd.ExecuteNonQuery();
 
-            PasswordRegister commitPassword = new PasswordRegister(TxtUserName.Text, TxtFirstName.Text, TxtPassword.Text);
+            PasswordRegister commitPassword = new PasswordRegister(TxtUserName.Text, TxtFirstName.Text, TxtPassword.Text, TxtEmailAddress.Text);
 
-            SqlCommand pass = new SqlCommand("insert into Password values((select max(BusinessEntityID) from Business), @username, @firstname, @password);");
+            SqlCommand pass = new SqlCommand("insert into Password values((select max(BusinessEntityID) from Business), @username, @firstname, @password, @email);");
             pass.CommandType = System.Data.CommandType.Text;
             pass.Connection = con;
             pass.Parameters.Add(new SqlParameter("@username", commitPassword.GetUsername()));
             pass.Parameters.AddWithValue("@firstname", commitPassword.GetFirstName());
             pass.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(commitPassword.GetPassword())));
+            pass.Parameters.AddWithValue("@email", commitPassword.GetEmail());
             pass.ExecuteNonQuery();
             con.Close();
             Response.Redirect("Default.aspx");
