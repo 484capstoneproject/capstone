@@ -17,32 +17,48 @@ using System.Diagnostics;
 
 public partial class ForgotPassword : System.Web.UI.Page
 {
+
+    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon"].ConnectionString);
+
     protected void Page_Load(object sender, EventArgs e)
     {
 
     }
     protected void btn_send_Click(object sender, EventArgs e)
     {
-        Session.Add("Email", txt_email.Text);
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Select * from Password where Email=@email", con);
+        cmd.CommandType = CommandType.Text;
+        cmd.Parameters.AddWithValue("email", TxtEmail.Text);
+        SqlDataReader entityReader = cmd.ExecuteReader();
 
-        MailMessage mail = new MailMessage();
-        mail.To.Add(txt_email.Text);
-        mail.From = new MailAddress("cuedinnextstepgo@gmail.com");
-        mail.Subject = "Password Recovery";
+        if (entityReader.HasRows)
+        {
+            Session.Add("Email", TxtEmail.Text);
 
-        string Body = "Please click the link to <a href=\"http://localhost:53131/ResetPassword.aspx\">Reset Password</a>";
-        mail.Body = Body;
+            MailMessage mail = new MailMessage();
+            mail.To.Add(TxtEmail.Text); //adding the email to send to
+            mail.From = new MailAddress("cuedinnextstepgo@gmail.com");
+            mail.Subject = "Password Recovery"; //subject of the meeting
 
-        mail.IsBodyHtml = true;
-        SmtpClient smtp = new SmtpClient();
-        smtp.Host = "smtp.gmail.com"; //Or Your SMTP Server Address
-        smtp.Credentials = new System.Net.NetworkCredential
-             ("cuedinnextstepgo@gmail.com", "08NextStepGo!");
-        //Or your Smtp Email ID and Password
-        smtp.EnableSsl = true;
-        smtp.Send(mail);
+            string Body = "Please click the link to <a href=\"http://localhost:53131/ResetPassword.aspx\">Reset Password</a>";
+            mail.Body = Body; //adding content to the body of the message
 
-        lbl_msg.Text = "Link to reset password sent to email. Please follow instructions to reset your password";
+            mail.IsBodyHtml = true;
+            SmtpClient smtp = new SmtpClient(); //establishing the simple mail transfer protocol
+            smtp.Host = "smtp.gmail.com"; //Whatever SMTP address, set to gmail but might need to change it to multiple like aol etc
+            smtp.Credentials = new System.Net.NetworkCredential
+                    ("cuedinnextstepgo@gmail.com", "08NextStepGo!");
+            //Or your Smtp Email ID and Password
+            smtp.EnableSsl = true;
+            smtp.Send(mail);
 
+            lbl_msg.Text = "Link to reset password sent to email. Please follow instructions to reset your password";
+        }
+        else
+        {
+            lbl_msg.Text = "Email is incorrect. Please enter a valid email address";
+        }
     }
+
 }
