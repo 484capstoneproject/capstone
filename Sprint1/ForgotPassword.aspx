@@ -11,7 +11,7 @@
         <br />
         <br />
         <asp:Label ID="LblEmail" runat="server" Text="Email"></asp:Label>
-        <asp:TextBox ID="TxtEmail" runat="server"></asp:TextBox>
+        <asp:TextBox TextMode="Email" ID="TxtEmail" runat="server"></asp:TextBox>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label ID="Label3" runat="server" Text="OR"></asp:Label>
