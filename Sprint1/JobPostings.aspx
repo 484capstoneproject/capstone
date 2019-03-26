@@ -1,13 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+
+
         <div>
         </div>
         <asp:Label ID="LblJobPostings" runat="server" Text="Job Postings"></asp:Label>
@@ -33,6 +31,7 @@
         <p>
             <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Create" />
         </p>
-    </form>
-</body>
-</html>
+   
+
+
+</asp:Content>
