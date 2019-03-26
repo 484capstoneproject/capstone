@@ -36,4 +36,9 @@ public partial class JobPostings : System.Web.UI.Page
         con.Close();
 
     }
+
+    protected void Back_Button_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("BusinessPortal.aspx");
+    }
 }
