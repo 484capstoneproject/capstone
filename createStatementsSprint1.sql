@@ -15,12 +15,21 @@ Use Sprint1 CREATE TABLE [dbo].[Business](
 	[Address2] [varchar](25) NULL,
 	[City] [varchar](25) NULL,
 	[State] [varchar](25) NULL,
-	[Zip] [varchar](25) NULL,
+	[Zip] [varchar](25) NULL
 )
 
-Use Sprint1 CREATE TABLE [dbo].[Password](
+CREATE TABLE [dbo].[Password](
 	[BusinessEntityID] [int] NULL,
 	[username] [varchar](20) NULL,
 	[firstname] [varchar](20) NULL,
-	[password] [varchar](100) NULL
+	[password] [varchar](100) NULL,
+	[Email] [varchar](30) NULL
+) 
+
+CREATE TABLE [dbo].[JobPostings](
+	[JobTitle] [varchar](20) NULL,
+	[CareerCluster] [varchar](30) NULL,
+	[JobExplanation] [varchar](60) NULL,
+	[Requirements] [varchar](60) NULL,
+	[DatePosted] [date] NULL
 ) 

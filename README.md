@@ -4,7 +4,6 @@ https://github.com/git-for-windows/git/releases/download/v2.21.0.windows.1/Git-2
 # Set up
 **Make sure you are in the right directory (i.e cd desktop)**
 
-    cd *drag your directory here/show path*
     git clone *link from GitHub*
     cd capstone
     git checkout "name of your branch"
@@ -42,7 +41,7 @@ To delete a local/remote branch
     git branch -d the_local_branch
     git push origin --delete the_remote_branch
 
-# Overwrite	local files with remote files<br> **!Last Resort!**
-    git fetch -all
+# Overwrite	local files with remote files <br> **!Last Resort!**
+    git fetch --all
     git reset --hard origin/master
 

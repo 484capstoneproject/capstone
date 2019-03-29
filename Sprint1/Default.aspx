@@ -23,7 +23,9 @@
  <nav class="navbar mb-5 navbar-expand-md navbar-light bg-light">
 
 <!-- NAV BRAND -->
- 
+ <%--<a href="@Url.Action("ExportToExcel","Default")">Export Excel</a>--%>
+    <%-- <asp:LinkButton id="myid" runat="server" OnClick="ExportToExcel" />--%>
+     <a href="#" runat="server" onServerClick="ExportToExcel">Export Excel</a>
   <div>
        <img class="cued-logo-nav ml-0" src="images/cuedin-logo.svg">
        <img class="nextstepgo-logo-nav ml-0" src="images/nextstepgo.svg" href="#">
@@ -61,7 +63,7 @@
   				<div class="form-group">
   				  <label for="exampleInputPassword1" class="loginlabel">Password</label>
   				  <asp:Textbox type="password" class="form-control min-imput" id="txtPassword" placeholder="" runat="server" TextMode="Password"></asp:Textbox>
-  				   <a href="#"><small id="passwordHelp" class="form-text passwordhelp" runat="server">Forgot Password?</small></a>
+  				   <a href="ForgotPassword.aspx"><small id="passwordHelp" class="form-text passwordhelp" runat="server">Forgot Password?</small></a>
   				</div>
   				<asp:Button id="Login" type="submit" class="btn btn-maingreen submitbutton" runat="server" ValidationGroup="login" Text="Submit" OnClick="Login_Click"></asp:Button>
 			</form>
