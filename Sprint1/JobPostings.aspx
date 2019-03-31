@@ -1,6 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
 
-
 <!doctype html>
 <html lang="en">
   <head>

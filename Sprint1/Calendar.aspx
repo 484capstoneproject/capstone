@@ -44,9 +44,9 @@
 		var dateDiv = document.getElementById('todayDate');
 		var children = dateDiv.childNodes;
 		for(var i = 0; i < children.length; i++)
-    	someDiv.removeChild(children[i]);
-	  	dateDiv.appendChild(document.createTextNode(info.startStr));
-},
+    	    someDiv.removeChild(children[i]);
+	  	    dateDiv.appendChild(document.createTextNode(info.startStr));
+        },
       eventLimit: true, // allow "more" link when too many events
       events: [
         {
@@ -175,7 +175,7 @@
             <ul class="nav flex-column sidebar-links">
            
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="BusinessPortal.aspx">
+                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
@@ -199,7 +199,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Calendar.aspx">
+                <a class="nav-link nav-link-side sidebar-active" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>
@@ -246,30 +246,31 @@
 						        </button>
 						      </div>
 						      <div class="modal-body">
-						        <form>
+						        <form runat="server">
   									<div class="form-group row">
   									  <label for="inputEmail3" class="col-sm-3 col-form-label">Event Name</label>
   									  <div class="col-sm-9">
-  									    <input type="email" class="form-control" id="inputEmail3">
+  									    <asp:TextBox type="text" class="form-control" id="txtEventName" runat="server"></asp:TextBox>
+                                        
   									  </div>
   									</div>
   									<div class="form-group row">
   									  <label  class="col-sm-3 col-form-label">Description</label>
   									  <div class="col-9">
-  									    <textarea style="width: 100%;"></textarea>
+  									    <textarea style="width: 100%;" runat="server" id="txtDescription"></textarea>
   									</div>
 									</div>
   									<div class="form-group row">
   									  <label class="col-sm-3 col-form-label">Time</label>
   									  <div class="col-sm-9">
-  									    <input type="time" id="appt" name="appt" min="9:00" max="18:00" required>
+  									    <asp:TextBox type="time" id="txtTime" name="appt" min="9:00" max="18:00" runat="server"></asp:TextBox>
   									  </div>
   									</div>
-								</form>
-						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn btn-primary">Save changes</button>
+						        <asp:Button type="button" class="btn btn-primary" Text="Save Changes" runat="server" OnClick="SaveChanges_Click"></asp:Button>
+						      </div>
+                              </form>
 						      </div>
 						    </div>
 						  </div>

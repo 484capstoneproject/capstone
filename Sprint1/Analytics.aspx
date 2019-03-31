@@ -87,7 +87,7 @@
             <ul class="nav flex-column sidebar-links">
            
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="BusinessPortal.aspx">
+                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
@@ -105,7 +105,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Analytics.aspx">
+                <a class="nav-link nav-link-side sidebar-active" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>
                 </a>
