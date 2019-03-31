@@ -1,4 +1,7 @@
-﻿<!doctype html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
+
+
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -102,7 +105,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="applications.html">
+                <a class="nav-link nav-link-side" href="#">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
@@ -126,7 +129,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="messages.html">
+                <a class="nav-link nav-link-side" href="#">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
                 </a>

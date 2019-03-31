@@ -85,7 +85,7 @@
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
   				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
-  				  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
+  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>

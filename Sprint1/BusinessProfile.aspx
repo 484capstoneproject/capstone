@@ -83,15 +83,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="#">
+            <a class="nav-link dash-wt-link" href="Calendar.aspx">
               <span data-feather="calendar"></span>
               Calendar
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="#">
+            <a class="nav-link dash-wt-link" href="Analytics.aspx">
               <span data-feather="bar-chart-2"></span>
-              Reports
+              Analytics
             </a>
           </li>          
            <li class="nav-item">
