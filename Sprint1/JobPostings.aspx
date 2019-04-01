@@ -1711,7 +1711,7 @@
 								  
 							  <div class="btn-group btn-group-toggle" data-toggle="buttons">
 							    <label class="btn btn-secondary active">
-							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off" runat="server"> Job Opportunity
+							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off" checked runat="server"> Job Opportunity
 							    </label>
 							    <label class="btn btn-secondary">
 							      <input type="radio" name="options" id="radioLearning" value="learnOpp" autocomplete="off" runat="server"> Learning Opportunity
@@ -1806,46 +1806,46 @@
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
 													<select class="form-control" id="dayDropDown" runat="server">
-													    <option id="1">1</option>       
-   														<option id="2">2</option>       
-   														<option id="3">3</option>       
-   														<option id="4">4</option>       
-   														<option id="5">5</option>       
-   														<option id="6">6</option>       
-   														<option id="7">7</option>       
-   														<option id="8">8</option>       
-   														<option id="9">9</option>       
-   														<option id="10">10</option>       
-   														<option id="11">11</option>       
-   														<option id="12">12</option>       
-   														<option id="13">13</option>       
-   														<option id="14">14</option>       
-   														<option id="15">15</option>       
-   														<option id="16">16</option>       
-   														<option id="17">17</option>       
-   														<option id="18">18</option>       
-   														<option id="19">19</option>       
-   														<option id="20">20</option>       
-   														<option id="21">21</option>       
-   														<option id="22">22</option>       
-   														<option id="23">23</option>       
-   														<option id="24">24</option>       
-   														<option id="25">25</option>       
-   														<option id="26">26</option>       
-   														<option id="27">27</option>       
-   														<option id="28">28</option>       
-   														<option id="29">29</option>       
-   														<option id="30">30</option>       
-   														<option id="31">31</option>
+													    <option id="day1">1</option>       
+   														<option id="day2">2</option>       
+   														<option id="day3">3</option>       
+   														<option id="day4">4</option>       
+   														<option id="day5">5</option>       
+   														<option id="day6">6</option>       
+   														<option id="day7">7</option>       
+   														<option id="day8">8</option>       
+   														<option id="day9">9</option>       
+   														<option id="day10">10</option>       
+   														<option id="day11">11</option>       
+   														<option id="day12">12</option>       
+   														<option id="day13">13</option>       
+   														<option id="day14">14</option>       
+   														<option id="day15">15</option>       
+   														<option id="day16">16</option>       
+   														<option id="day17">17</option>       
+   														<option id="day18">18</option>       
+   														<option id="day19">19</option>       
+   														<option id="day20">20</option>       
+   														<option id="day21">21</option>       
+   														<option id="day22">22</option>       
+   														<option id="day23">23</option>       
+   														<option id="day24">24</option>       
+   														<option id="day25">25</option>       
+   														<option id="day26">26</option>       
+   														<option id="day27">27</option>       
+   														<option id="day28">28</option>       
+   														<option id="day29">29</option>       
+   														<option id="day30">30</option>       
+   														<option id="day31">31</option>
 													</select>
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
 													<select class="form-control" id="YearDropDown" runat="server">
-													    <option id="2019">2019</option>       
-   														<option id="2020">2020</option>       
-   														<option id="2021">2021</option>       
-   														<option id="2022">2022</option>       
+													    <option id="yr2019">2019</option>       
+   														<option id="yr2020">2020</option>       
+   														<option id="yr2021">2021</option>       
+   														<option id="yr2022">2022</option>       
 													</select>
 											</div>
 									  		</div>
@@ -2061,7 +2061,7 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <asp:Button type="button" class="btn bg-green" runat="server" id="BtnSaveChanges" OnClick="BtnSaveChanges_Click"></asp:Button>
+						        <button type="button" class="btn bg-green" runat="server" id="BtnSaveChanges" OnClick="BtnSaveChanges_Click">Save Changes</button>
 						      </div>
 						    </div>
 						  </div>
