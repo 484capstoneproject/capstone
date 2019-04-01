@@ -26,14 +26,15 @@
     <asp:TextBox ID="TxtDuration" runat="server"></asp:TextBox>
     <br />
     <br />
-    <asp:Label ID="LblApplyDate" runat="server" Text="Apply Date"></asp:Label>
-    <asp:TextBox ID="TxtApplyDate" runat="server"></asp:TextBox>
+    <asp:Label ID="LblApplyBefore" runat="server" Text="Apply Before"></asp:Label>
+    <asp:TextBox ID="TxtApplyBefore" runat="server"></asp:TextBox>
     <br />
     <br />
     <asp:Label ID="LblLearningType" runat="server" Text="Learning Type"></asp:Label>
     <asp:TextBox ID="TxtLearningType" runat="server"></asp:TextBox>
     <br />
-    <asp:Button ID="addLearning" runat="server" OnClick="Button1_Click" Text="Add" />
+    <asp:Button ID="AddLearning" runat="server" OnClick="ADD_Click" Text="Add Learning" />
+    <asp:Button ID="EditLearning" runat="server" OnClick="EDIT_Click" Text="Edit Learning" />
 
 
     <p>

@@ -21,6 +21,19 @@ public class UpdateClass
     private string State;
     private string Zip;
 
+
+    private string LearningTitle;
+    private string CareerCluster;
+    private string Description;
+    private string ApplyBefore;
+    private string LearningType;
+
+
+    private string PaymentType;
+    private string JobType;
+    private string Age;
+
+
     public string GetBusinessName()
     {
         return this.BusinessName;
@@ -80,9 +93,9 @@ public class UpdateClass
         return this.JobTitle;
 
     }
-    public void SetJobTitle(string job)
+    public void SetJobTitle(string JobTitle)
     {
-        this.JobTitle = job;
+        this.JobTitle = JobTitle;
     }
     public string GetAddress()
     {
@@ -151,4 +164,16 @@ public class UpdateClass
         SetState(State);
         SetZip(Zip);
     }
+
+
+
+
+
+
+
+
+    
+
+
+
 }

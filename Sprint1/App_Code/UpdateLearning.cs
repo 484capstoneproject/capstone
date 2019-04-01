@@ -4,18 +4,18 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for LearningOpportunity
+/// Summary description for UpdateLearning
 /// </summary>
-public class LearningOpportunity
+public class UpdateLearning
 {
     private string LearningTitle;
     private string CareerCluster;
     private string Description;
     private string ApplyBefore;
     private string LearningType;
- 
 
-    public LearningOpportunity(String LearningTitle, String CareerCLuster, 
+
+    public UpdateLearning(String LearningTitle, String CareerCLuster,
        String Description, String LearningType, String ApplyBefore)
     {
         setLearningTitle(LearningTitle);
@@ -31,7 +31,7 @@ public class LearningOpportunity
     {
         this.LearningTitle = LearningTitle;
     }
-    
+
     public String getLearningTitle()
     {
         return this.LearningTitle;
@@ -73,7 +73,4 @@ public class LearningOpportunity
     {
         return this.ApplyBefore;
     }
-
-
-
 }
