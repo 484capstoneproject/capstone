@@ -13,9 +13,10 @@ public class JobPostingsClass
     private string CareerCluster;
     private string PaymentType;
     private string Description;
-    private int month;
-    private int Day;
-    private int year;
+    private string month;
+    private string Day;
+    private string year;
+    private int BusinessEntityID;
 
     public string GetJobTitle()
     {
@@ -62,34 +63,43 @@ public class JobPostingsClass
         this.Description = describe;
     }
 
-    public int GetMonth()
+    public string GetMonth()
     {
         return this.month;
     }
-    public void SetMonth(int month)
+    public void SetMonth(string month)
     {
         this.month = month;
     }
 
-    public int GetDay()
+    public string GetDay()
     {
         return this.Day;
     }
-    public void SetDay(int day)
+    public void SetDay(string day)
     {
         this.Day = day;
     }
     
-    public int GetYear()
+    public string GetYear()
     {
         return this.year;
     }
-    public void SetYear(int year)
+    public void SetYear(string year)
     {
         this.year = year;
     }
 
-    public JobPostingsClass(string JobTitle, string JobType, string CareerCluster, string Description, int month, int day, int year)
+    public int GetBusinessID()
+    {
+        return this.BusinessEntityID;
+    }
+    public void SetBusinessEntityID(int ID)
+    {
+        this.BusinessEntityID = ID;
+    }
+
+    public JobPostingsClass(string JobTitle, string JobType, string CareerCluster, string Description, string month, string day, string year, int ID)
     {
         SetJobTitle(JobTitle);
         SetJobType(JobType);
@@ -99,5 +109,6 @@ public class JobPostingsClass
         SetMonth(month);
         SetDay(day);
         SetYear(year);
+        SetBusinessEntityID(ID);
     }
 }

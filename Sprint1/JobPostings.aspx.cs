@@ -36,34 +36,27 @@ public partial class JobPostings : System.Web.UI.Page
             }
         }
     }
-
-    protected void BtnSaveChanges_Click(object sender, EventArgs e)
+ 
+    protected void BtnSaveChanges_Click1(object sender, EventArgs e)
     {
-        if (radioJob.Checked==true)
-        {
-            JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, JobTypeDropDown.Value, CareerClusterDropDown.Value, txtareaDescription.Value, Convert.ToInt32(monthDropDown.Value), Convert.ToInt32(dayDropDown.Value), Convert.ToInt32(YearDropDown.Value));
 
-            con.Open();
-            SqlCommand cmd = new SqlCommand("Insert into JobPostings values(@JobTitle, @JobType, @CareerCluster, @Description, @Month, @Day, @Year);");
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.Connection = con;
-            cmd.Parameters.AddWithValue("@JobTitle", newPost.GetJobTitle());
-            cmd.Parameters.AddWithValue("@JobType", newPost.GetJobType());
-            cmd.Parameters.AddWithValue("@CareerCluster", newPost.GetCareerCluster());
-            cmd.Parameters.AddWithValue("@Description", newPost.GetDescription());
-            cmd.Parameters.AddWithValue("@Month", newPost.GetMonth());
-            cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
-            cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
-            cmd.ExecuteNonQuery();
+        int LoginEntityID = (int)Session["EntityID"];
 
-        }
-        else if (radioLearning.Checked==true)
-        {
+        System.Diagnostics.Debug.WriteLine("Radio Job has been checked");
+        JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value, dropCareerCluster.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
 
-        }
-        else if(radioScholarship.Checked==true)
-        {
-
-        }
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Insert into JobPostings values(@JobTitle, @JobType, @CareerCluster, @Description, @Month, @Day, @Year, @BusinessEntityID);");
+        cmd.CommandType = System.Data.CommandType.Text;
+        cmd.Connection = con;
+        cmd.Parameters.AddWithValue("@JobTitle", newPost.GetJobTitle());
+        cmd.Parameters.AddWithValue("@JobType", newPost.GetJobType());
+        cmd.Parameters.AddWithValue("@CareerCluster", newPost.GetCareerCluster());
+        cmd.Parameters.AddWithValue("@Description", newPost.GetDescription());
+        cmd.Parameters.AddWithValue("@Month", newPost.GetMonth());
+        cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
+        cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
+        cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
+        cmd.ExecuteNonQuery();
     }
 }
