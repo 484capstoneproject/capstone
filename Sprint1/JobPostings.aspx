@@ -1711,7 +1711,7 @@
 								  
 							  <div class="btn-group btn-group-toggle" data-toggle="buttons">
 							    <label class="btn btn-secondary active">
-							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off" checked runat="server"> Job Opportunity
+							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off" runat="server"> Job Opportunity
 							    </label>
 							    <label class="btn btn-secondary">
 							      <input type="radio" name="options" id="radioLearning" value="learnOpp" autocomplete="off" runat="server"> Learning Opportunity
@@ -1726,125 +1726,126 @@
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" class="form-control" id="JobTitle" aria-describedby="JobTitle" placeholder="Enter">
+										<input type="jobtitle" class="form-control" id="txtJobTitle" aria-describedby="JobTitle" placeholder="Enter" runat="server">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseJobType">Job Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseJobType">
-											  <option>Part-Time</option>
-											  <option>Full Time</option>
-											  <option>Internship</option>
+								  		 <select class="form-control w-75 mb-3" id="JobTypeDropDown" runat="server">
+											  <option id="partTimeDrop">Part-Time</option>
+											  <option id="fullTimeDrop">Full Time</option>
+											  <option id="internshipDrop">Internship</option>
 								  		 </select>
 								    </div>
 								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerCluster">Career Cluster</label>
-											<select class="form-control w-75" id="CareerCluster">
-											  <option>Select</option>
-											  <option>Agriculture, Food and Natural Resources</option>
-											  <option>Architecture and Construction</option>
-											  <option>Business Management and Administration</option>
-											  <option>Education and Training</option>
-											  <option>Finance</option>
-											  <option>Government and Public Administration</option>
-											  <option>Health Science</option>
-											  <option>Hospitality & Tourism</option>
-											  <option>Human Services</option>
-											  <option>Information Technology</option>
-											  <option>Law, Public Safety, Corrections and Security</option>
-											  <option>Manufacturing</option>
-											  <option>Marketing</option>
-											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
+											<select class="form-control w-75" id="CareerClusterDropDown" runat="server">
+											  <option id="none">Select</option>
+											  <option id="Agriculture">Agriculture, Food and Natural Resources</option>
+											  <option id="Architecture">Architecture and Construction</option>
+											  <option id="Business">Business Management and Administration</option>
+											  <option id="Education">Education and Training</option>
+											  <option id="Finance">Finance</option>
+											  <option id="Government">Government and Public Administration</option>
+											  <option id="Health">Health Science</option>
+											  <option id="Hospital">Hospitality & Tourism</option>
+											  <option id="Human">Human Services</option>
+											  <option id="IT">Information Technology</option>
+											  <option id="Law">Law, Public Safety, Corrections and Security</option>
+											  <option id="Manufacturing">Manufacturing</option>
+											  <option id="Marketing">Marketing</option>
+											  <option id="STEM">Science, Technology, Engineering and Mathematics</option>
+                                              <option id="transportation">Transportation, Distribution and Logistics</option>
 											</select>
 										  </div>
 									</div>
 									</div>  
 										<div class="form-group pt-1">
 											<label for="paymentType" class="mr-3 ">Payment Type: </label>
-									    	<div class="pt-2 d-inline">
-										    <div class="form-check form-check-inline" id="paymentType">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+									    	<div class="pt-2 d-inline" id="paymentTypeRadios" runat="server">
+										    <div class="form-check form-check-inline">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SalaryRadio" value="option1">
 										      <label class="form-check-label" for="inlineRadio1">Salaried</label>
 										    </div>
 										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="HourlyRadio" value="option2">
 										      <label class="form-check-label" for="inlineRadio2">Hourly</label>
 										    </div>
 										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="UnpaidRadio" value="option3" >
 										      <label class="form-check-label" for="inlineRadio3">Unpaid</label>
 										    </div>
 											</div>
 									   </div>  									 
 									  	<div class="form-group">
  										   <label for="exampleFormControlTextarea1">Description</label>
- 										   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <textarea class="form-control" id="txtareaDescription" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can." runat="server"></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
+													<select class="form-control" id="monthDropDown" runat="server">
+													  <option id="Jan">January</option>       
+   													  <option id="Feb">February</option>       
+   													  <option id="Mar">March</option>       
+   													  <option id="Apr">April</option>       
+   													  <option id="May">May</option>       
+   													  <option id="June">June</option>       
+   													  <option id="July">July</option>       
+   													  <option id="Aug">August</option>       
+   													  <option id="Sep">September</option>       
+   													  <option id="Oct">October</option>       
+   													  <option id="Nov">November</option>       
+   													  <option id="Dec">December</option> 
 													</select>
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
+													<select class="form-control" id="dayDropDown" runat="server">
+													    <option id="1">1</option>       
+   														<option id="2">2</option>       
+   														<option id="3">3</option>       
+   														<option id="4">4</option>       
+   														<option id="5">5</option>       
+   														<option id="6">6</option>       
+   														<option id="7">7</option>       
+   														<option id="8">8</option>       
+   														<option id="9">9</option>       
+   														<option id="10">10</option>       
+   														<option id="11">11</option>       
+   														<option id="12">12</option>       
+   														<option id="13">13</option>       
+   														<option id="14">14</option>       
+   														<option id="15">15</option>       
+   														<option id="16">16</option>       
+   														<option id="17">17</option>       
+   														<option id="18">18</option>       
+   														<option id="19">19</option>       
+   														<option id="20">20</option>       
+   														<option id="21">21</option>       
+   														<option id="22">22</option>       
+   														<option id="23">23</option>       
+   														<option id="24">24</option>       
+   														<option id="25">25</option>       
+   														<option id="26">26</option>       
+   														<option id="27">27</option>       
+   														<option id="28">28</option>       
+   														<option id="29">29</option>       
+   														<option id="30">30</option>       
+   														<option id="31">31</option>
 													</select>
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
+													<select class="form-control" id="YearDropDown" runat="server">
+													    <option id="2019">2019</option>       
+   														<option id="2020">2020</option>       
+   														<option id="2021">2021</option>       
+   														<option id="2022">2022</option>       
 													</select>
 											</div>
 									  		</div>

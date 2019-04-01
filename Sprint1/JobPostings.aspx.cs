@@ -39,6 +39,19 @@ public partial class JobPostings : System.Web.UI.Page
 
     protected void BtnSaveChanges_Click(object sender, EventArgs e)
     {
+        if (radioJob.Checked==true)
+        {
 
+            JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, JobTypeDropDown.Value, CareerClusterDropDown.Value, txtareaDescription.Value, Convert.ToInt32(monthDropDown.Value), Convert.ToInt32(dayDropDown.Value), Convert.ToInt32(YearDropDown.Value));
+
+        }
+        else if (radioLearning.Checked==true)
+        {
+
+        }
+        else if(radioScholarship.Checked==true)
+        {
+
+        }
     }
 }
