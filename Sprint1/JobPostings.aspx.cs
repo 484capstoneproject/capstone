@@ -30,9 +30,15 @@ public partial class JobPostings : System.Web.UI.Page
             {
                 while (reader.Read())
                 {
-                    BusinessName.InnerText = reader["BusinessName"].ToString();
+                    BusinessName.InnerText = "Welcome Back, ";
+                    BusinessName.InnerText += reader["BusinessName"].ToString();
                 }
             }
         }
+    }
+
+    protected void BtnSaveChanges_Click(object sender, EventArgs e)
+    {
+
     }
 }
