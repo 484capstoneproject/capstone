@@ -27,9 +27,13 @@ CREATE TABLE [dbo].[Password](
 ) 
 
 CREATE TABLE [dbo].[JobPostings](
-	[JobTitle] [varchar](20) NULL,
-	[CareerCluster] [varchar](30) NULL,
-	[JobExplanation] [varchar](60) NULL,
-	[Requirements] [varchar](60) NULL,
-	[DatePosted] [date] NULL
-) 
+	[JobTitle] [varchar](30) NULL,
+	[JobType] [varchar](30) NULL,
+	[CareerCluster] [varchar](300) NULL,
+	[Description] [varchar](30) NULL,
+	[Month] [varchar](30) NULL,
+	[Day] [varchar](30) NULL,
+	[Year] [varchar](30) NULL,
+	[BusinessEntityID] [int] NULL
+) ON [PRIMARY]
+GO
