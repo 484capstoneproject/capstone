@@ -38,12 +38,6 @@ public partial class JobPostings : System.Web.UI.Page
         }
 
     }
-<<<<<<< HEAD
-}
-
-
-
-=======
  
     protected void BtnSaveChanges_Click1(object sender, EventArgs e)
     {
@@ -68,4 +62,3 @@ public partial class JobPostings : System.Web.UI.Page
         cmd.ExecuteNonQuery();
     }
 }
->>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
