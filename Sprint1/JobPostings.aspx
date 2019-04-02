@@ -1252,7 +1252,7 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <asp:Button type="button" Text="Save Changes" class="btn bg-green addPost" data-dismiss="modal" id="BtnSaveChanges_Click" OnClick="BtnSaveChanges_Click1" runat="server"></asp:Button>
+						        <asp:Button type="button" Text="Save Changes" class="btn bg-green addPost" data-dismiss="modal" id="btnSaveChanges" OnClick="BtnSaveChanges_Click1" runat="server" ></asp:Button>
 						      </div>
 						    </div>
 						  </div>
