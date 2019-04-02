@@ -15,16 +15,20 @@ public class LearningPostings
     private string month;
     private string day;
     private string year;
+    private int BusinessEntityID;
 
 
     public LearningPostings(String LearningTitle, String CareerCLuster,
-       String Description, String LearningType, String monnt, String day, String year)
+       String Description, String LearningType, String month, String day, String year, int ID)
     {
         setLearningTitle(LearningTitle);
         setCareerCluster(CareerCLuster);
         setDescription(Description);
-
         setLearningType(LearningType);
+        setMonth(month);
+        setDay(day);
+        setYear(year);
+        SetBusinessEntityID(ID);
 
 
     }
@@ -94,6 +98,14 @@ public class LearningPostings
         return this.year;
     }
 
+    public int GetBusinessID()
+    {
+        return this.BusinessEntityID;
+    }
+    public void SetBusinessEntityID(int ID)
+    {
+        this.BusinessEntityID = ID;
+    }
 
 
 }

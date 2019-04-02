@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-=======
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
-
->>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 <!doctype html>
 <html lang="en">
   <head>
@@ -94,10 +89,7 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
-  				  <h2 class="bus-name-header">Martin's Electronics</h2>
-
   				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
-
   				  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
   				  </td> 
 				 </tr>  				
@@ -797,9 +789,13 @@
 										 
 									
   						   			   </div>
+			
+		  
+		  
+		  
+		  											 
 													 
-				<!---- Type---->
-
+										 				<!---- Type---->
  					<div class="accordion" id="accordionType">
   						<div class="card">
 							
@@ -878,7 +874,7 @@
 							
 							
 					
-		  
+		  <!--ADD A NEW POST-->
 		   <button type="button" data-toggle="modal" class="p-0 new-event-btn mt-3" data-target="#newPostModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
   					  
   					  <!-- Modal -->
@@ -905,41 +901,30 @@
 							    </label>
 							    <label class="btn btn-secondary">
 							      <input type="radio" name="options" id="option3" value="scholarship" autocomplete="off"> Scholarship
-							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off" checked runat="server"> Job Opportunity
-							    </label>
-							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="radioLearning" value="learnOpp" autocomplete="off" runat="server"> Learning Opportunity
-							    </label>
-							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="radioScholarship" value="scholarship" autocomplete="off" runat="server"> Scholarship
 							    </label>
 							</div>
 								 
 								  <!-- JOB FORM CONTENT -->
-								  <form id="postingFormJob">
+                                  <asp:Panel ID="PanelJobForm" runat="server">
+<%--								  <form id="postingFormJob">--%>
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" class="form-control" id="txtJobTitle" aria-describedby="JobTitle" placeholder="Enter" runat="server">
+										<input type="jobtitle" class="form-control" id="txtJobTitle" runat="server" aria-describedby="JobTitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseJobType">Job Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseJobType">
+								  		 <select class="form-control w-75 mb-3" id="dropJobType" runat="server">
 											  <option>Part-Time</option>
 											  <option>Full Time</option>
 											  <option>Internship</option>
-								  		 <select class="form-control w-75 mb-3" id="dropJobType" runat="server">
-											  <option id="dropPart">Part-Time</option>
-											  <option id="dropFull">Full Time</option>
-											  <option id="dropIntern">Internship</option>
 								  		 </select>
 								    </div>
 								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerCluster">Career Cluster</label>
-											<select class="form-control w-75" id="CareerCluster">
 											<select class="form-control w-75" id="dropCareerCluster" runat="server">
 											  <option>Select</option>
 											  <option>Agriculture, Food and Natural Resources</option>
@@ -979,7 +964,6 @@
 									   </div>  									 
 									  	<div class="form-group">
  										   <label for="exampleFormControlTextarea1">Description</label>
- 										   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
  										   <textarea class="form-control" id="txtareaDescription" runat="server" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
@@ -987,7 +971,6 @@
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
 													<select class="form-control" id="dropMonth" runat="server">
 													  <option>January</option>       
    													  <option>February</option>       
@@ -1005,7 +988,6 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
 													<select class="form-control" id="dropDay" runat="server">
 													    <option>1</option>       
    														<option>2</option>       
@@ -1042,7 +1024,6 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
 													<select class="form-control" id="dropYear" runat="server">
 													    <option>2019</option>       
    														<option>2020</option>       
@@ -1054,7 +1035,8 @@
 									  
 									  </div> 
 									
-							       </form>
+<%--							       </form>--%>
+                                      </asp:Panel>
 							       
 							   <!-- LEARNING FORM CONTENT -->
 								  <form id="postingFormLearn" style="display: none;">
@@ -1183,11 +1165,6 @@
 										<label for="scholamount">Amount</label>
 										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
 									  </div>
-									  </div>
-									  <div class="form-group">
-										<label for="scholamount">Amount</label>
-										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
-									  </div>
 								  
 														 
 									  	<div class="form-group">
@@ -1268,8 +1245,7 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green addPost" data-dismiss="modal">Save changes</button>
-						        <asp:Button type="button" class="btn bg-green addPost" runat="server" onclick="BtnSaveChanges_Click1" Text="Save Changes"></asp:Button>
+						        <asp:Button type="button" Text="Save Changes" class="btn bg-green addPost" data-dismiss="modal" id="BtnSaveChanges_Click" runat="server"></asp:Button>
 						      </div>
 						    </div>
 						  </div>

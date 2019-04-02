@@ -11,19 +11,25 @@ public class UpdateLearning
     private string LearningTitle;
     private string CareerCluster;
     private string Description;
-    private string ApplyBefore;
     private string LearningType;
+    private string month;
+    private string day;
+    private string year;
+    private int BusinessEntityID;
 
 
     public UpdateLearning(String LearningTitle, String CareerCLuster,
-       String Description, String LearningType, String ApplyBefore)
+       String Description, String LearningType, string month, string day, string year, int ID)
     {
         setLearningTitle(LearningTitle);
         setCareerCluster(CareerCLuster);
         setDescription(Description);
-
         setLearningType(LearningType);
-        setApplyBefore(ApplyBefore);
+        setMonth(month);
+        setDay(day);
+        setYear(year);
+        setBusinessEntityID(ID);
+
 
     }
 
@@ -65,12 +71,40 @@ public class UpdateLearning
         return this.LearningType;
     }
 
-    public void setApplyBefore(String ApplyBefore)
+
+    public string GetMonth()
     {
-        this.ApplyBefore = ApplyBefore;
+        return this.month;
     }
-    public String getApplyBefore()
+    public void setMonth(string month)
     {
-        return this.ApplyBefore;
+        this.month = month;
+    }
+
+    public string GetDay()
+    {
+        return this.day;
+    }
+    public void setDay(string day)
+    {
+        this.day = day;
+    }
+
+    public string GetYear()
+    {
+        return this.year;
+    }
+    public void setYear(string year)
+    {
+        this.year = year;
+    }
+
+    public int GetBusinessID()
+    {
+        return this.BusinessEntityID;
+    }
+    public void setBusinessEntityID(int ID)
+    {
+        this.BusinessEntityID = ID;
     }
 }

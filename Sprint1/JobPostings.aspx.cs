@@ -14,7 +14,6 @@ public partial class JobPostings : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
         int LoginEntityID = (int)Session["EntityID"];
 
         if (!IsPostBack)
@@ -36,9 +35,8 @@ public partial class JobPostings : System.Web.UI.Page
                 }
             }
         }
-
     }
- 
+
     protected void BtnSaveChanges_Click1(object sender, EventArgs e)
     {
 

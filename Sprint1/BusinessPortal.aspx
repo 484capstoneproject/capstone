@@ -54,6 +54,7 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#"><i data-feather="bell" class="mr-2"></i></a>
+          <a href="LearningOpportunity.aspx"><div class="nav-item btn btn-maingreen-outline action-btn">Learning</div></a>
       </li>
       <li class="nav-item">
         	<div class="dropdown">
