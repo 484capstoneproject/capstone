@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -34,5 +35,12 @@ public partial class Analytics : System.Web.UI.Page
                 }
             }
         }
+    }
+    protected void SignOut_Click(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Session.Abandon();
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
     }
 }
