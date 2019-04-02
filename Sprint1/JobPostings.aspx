@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
+
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 <!doctype html>
 <html lang="en">
   <head>
@@ -89,7 +94,11 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
+<<<<<<< HEAD
   				  <h2 class="bus-name-header">Martin's Electronics</h2>
+=======
+  				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
   				  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
   				  </td> 
 				 </tr>  				
@@ -789,6 +798,7 @@
 										 
 									
   						   			   </div>
+<<<<<<< HEAD
 			
 		  
 		  
@@ -796,6 +806,11 @@
 		  											 
 													 
 										 				<!---- Type---->
+=======
+							 
+													 
+				<!---- Type---->
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
  					<div class="accordion" id="accordionType">
   						<div class="card">
 							
@@ -878,6 +893,10 @@
 		   <button type="button" data-toggle="modal" class="p-0 new-event-btn mt-3" data-target="#newPostModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
   					  
   					  <!-- Modal -->
+<<<<<<< HEAD
+=======
+                    <form runat="server">
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 						<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
@@ -893,6 +912,7 @@
 								  
 							  <div class="btn-group btn-group-toggle" data-toggle="buttons">
 							    <label class="btn btn-secondary active">
+<<<<<<< HEAD
 							      <input type="radio" name="options" id="option1" value="jobOpp" autocomplete="off" checked> Job Opportunity
 							    </label>
 							    <label class="btn btn-secondary">
@@ -900,6 +920,15 @@
 							    </label>
 							    <label class="btn btn-secondary">
 							      <input type="radio" name="options" id="option3" value="scholarship" autocomplete="off"> Scholarship
+=======
+							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off" checked runat="server"> Job Opportunity
+							    </label>
+							    <label class="btn btn-secondary">
+							      <input type="radio" name="options" id="radioLearning" value="learnOpp" autocomplete="off" runat="server"> Learning Opportunity
+							    </label>
+							    <label class="btn btn-secondary">
+							      <input type="radio" name="options" id="radioScholarship" value="scholarship" autocomplete="off" runat="server"> Scholarship
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 							    </label>
 							</div>
 								 
@@ -908,22 +937,33 @@
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" class="form-control" id="JobTitle" aria-describedby="JobTitle" placeholder="Enter">
+										<input type="jobtitle" class="form-control" id="txtJobTitle" aria-describedby="JobTitle" placeholder="Enter" runat="server">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseJobType">Job Type</label>
+<<<<<<< HEAD
 								  		 <select class="form-control w-75 mb-3" id="chooseJobType">
 											  <option>Part-Time</option>
 											  <option>Full Time</option>
 											  <option>Internship</option>
+=======
+								  		 <select class="form-control w-75 mb-3" id="dropJobType" runat="server">
+											  <option id="dropPart">Part-Time</option>
+											  <option id="dropFull">Full Time</option>
+											  <option id="dropIntern">Internship</option>
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 								  		 </select>
 								    </div>
 								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerCluster">Career Cluster</label>
+<<<<<<< HEAD
 											<select class="form-control w-75" id="CareerCluster">
+=======
+											<select class="form-control w-75" id="dropCareerCluster" runat="server">
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 											  <option>Select</option>
 											  <option>Agriculture, Food and Natural Resources</option>
 											  <option>Architecture and Construction</option>
@@ -962,14 +1002,22 @@
 									   </div>  									 
 									  	<div class="form-group">
  										   <label for="exampleFormControlTextarea1">Description</label>
+<<<<<<< HEAD
  										   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+=======
+ 										   <textarea class="form-control" id="txtareaDescription" runat="server" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
+<<<<<<< HEAD
 													<select class="form-control" id="selectMonth">
+=======
+													<select class="form-control" id="dropMonth" runat="server">
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -986,7 +1034,11 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
+<<<<<<< HEAD
 													<select class="form-control" id="selectDay">
+=======
+													<select class="form-control" id="dropDay" runat="server">
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -1022,7 +1074,11 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
+<<<<<<< HEAD
 													<select class="form-control" id="selectYear">
+=======
+													<select class="form-control" id="dropYear" runat="server">
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -1157,11 +1213,19 @@
 									  <div class="form-group">
 										<label for="scholtitle">Scholarship Name</label>
 										<input type="scholtitle" class="form-control" id="scholtitle" aria-describedby="scholtitle" >
+<<<<<<< HEAD
 									  </div>
 									  <div class="form-group">
 										<label for="scholamount">Amount</label>
 										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
 									  </div>
+=======
+									  </div>
+									  <div class="form-group">
+										<label for="scholamount">Amount</label>
+										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
+									  </div>
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 								  
 														 
 									  	<div class="form-group">
@@ -1242,11 +1306,19 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<<<<<<< HEAD
 						        <button type="button" class="btn bg-green addPost" data-dismiss="modal">Save changes</button>
+=======
+						        <asp:Button type="button" class="btn bg-green addPost" runat="server" onclick="BtnSaveChanges_Click1" Text="Save Changes"></asp:Button>
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 						      </div>
 						    </div>
 						  </div>
 						</div>
+<<<<<<< HEAD
+=======
+                    </form>
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
 							
 							
 							

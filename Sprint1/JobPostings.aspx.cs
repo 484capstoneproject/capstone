@@ -31,13 +31,41 @@ public partial class JobPostings : System.Web.UI.Page
             {
                 while (reader.Read())
                 {
-                    BusinessName.InnerText = reader["BusinessName"].ToString();
+                    BusinessName.InnerText = "Welcome Back, ";
+                    BusinessName.InnerText += reader["BusinessName"].ToString();
                 }
             }
         }
 
     }
+<<<<<<< HEAD
 }
 
 
 
+=======
+ 
+    protected void BtnSaveChanges_Click1(object sender, EventArgs e)
+    {
+
+        int LoginEntityID = (int)Session["EntityID"];
+
+        System.Diagnostics.Debug.WriteLine("Radio Job has been checked");
+        JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value, dropCareerCluster.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Insert into JobPostings values(@JobTitle, @JobType, @CareerCluster, @Description, @Month, @Day, @Year, @BusinessEntityID);");
+        cmd.CommandType = System.Data.CommandType.Text;
+        cmd.Connection = con;
+        cmd.Parameters.AddWithValue("@JobTitle", newPost.GetJobTitle());
+        cmd.Parameters.AddWithValue("@JobType", newPost.GetJobType());
+        cmd.Parameters.AddWithValue("@CareerCluster", newPost.GetCareerCluster());
+        cmd.Parameters.AddWithValue("@Description", newPost.GetDescription());
+        cmd.Parameters.AddWithValue("@Month", newPost.GetMonth());
+        cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
+        cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
+        cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
+        cmd.ExecuteNonQuery();
+    }
+}
+>>>>>>> 92d06726c8a2176efeab75b67b11b30d5136a7aa
