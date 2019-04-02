@@ -40,17 +40,18 @@
     
   </head>
   <body>
+  <form class="needs-validation" novalidate runat="server">
     <nav class="navbar navbar-light fixed-top bg-light flex-md-nowrap p-1 pl-3 shadow">
    <div>
    		<img class="cued-logo-nav ml-0" src="images/cuedin-logo.svg">
   		<img class="nextstepgo-logo-nav ml-0" src="images/nextstepgo.svg" href="#">
   </div>
-  <ul class="navbar-nav px-3">
-
+  <ul class="navbar-nav px-3"> 
     <li class="nav-item text-nowrap">
-      <a class="nav-link" href="Default.aspx">Sign out</a>
+      <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
     </li>
   </ul>
+
 </nav>
 
 <div class="container-fluid">
@@ -109,7 +110,7 @@
   <div class="container-fluid mt-5 mb-5">
    <h2 class="text-maingreen">Edit Profile</h2>
     <div class="col-md-8 order-md-1">
-      <form class="needs-validation" novalidate runat="server">
+      <%--<form class="needs-validation" novalidate runat="server">--%>
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">First name</label>
@@ -197,6 +198,7 @@
        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
        <script src="dashboard.js"></script>
-        </body>
+
+      </body>
 </html>
 

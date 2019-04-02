@@ -9,6 +9,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -119,5 +120,12 @@ public partial class BusinessProfile : System.Web.UI.Page
         con.Close();
 
         //LblChangesSaved.Visible = true;
+    }
+    protected void SignOut_Click(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Session.Abandon();
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
     }
 }
