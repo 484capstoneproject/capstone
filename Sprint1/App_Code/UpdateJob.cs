@@ -10,92 +10,107 @@ public class UpdateJob
 {
 
     private string JobTitle;
+    private string JobType;
     private string CareerCluster;
     private string PaymentType;
     private string Description;
-    private string JobType;
-    private string Age;
-    private string ApplyBefore;
+    private string month;
+    private string Day;
+    private string year;
+    private int BusinessEntityID;
 
-    public UpdateJob(String JobTitle, String CareerCluster, String PaymentType, String Description, String JobType,
-        String Age, String ApplyBefore)
+    public string GetJobTitle()
     {
-        setJobTitle(JobTitle);
-        setCareerCluster(CareerCluster);
-        setPaymentType(PaymentType);
-        setDescription(Description);
-        setJobType(JobType);
-        setAge(Age);
-        setApplyBefore(ApplyBefore);
+        return this.JobTitle;
     }
-
-    public void setJobTitle(String JobTitle)
+    public void SetJobTitle(string JobTitle)
     {
         this.JobTitle = JobTitle;
     }
 
-    public String getJobTitle()
+    public string GetJobType()
     {
-        return this.JobTitle;
+        return this.JobType;
     }
-
-    public void setCareerCluster(String CareerCluster)
-    {
-        this.CareerCluster = CareerCluster;
-    }
-
-    public String getCareerCluster()
-    {
-        return this.CareerCluster;
-    }
-
-    public void setPaymentType(String PaymentType)
-    {
-        this.PaymentType = PaymentType;
-    }
-
-    public String getPaymentType()
-    {
-        return this.PaymentType;
-    }
-
-    public void setDescription(String Description)
-    {
-        this.Description = Description;
-    }
-    public String getDescription()
-    {
-        return this.Description;
-    }
-
-    public void setJobType(String JobType)
+    public void SetJobType(string JobType)
     {
         this.JobType = JobType;
     }
 
-    public String getJobType()
+    public string GetCareerCluster()
     {
-        return this.JobType;
+        return this.CareerCluster;
+    }
+    public void SetCareerCluster(string CareerCluster)
+    {
+        this.CareerCluster = CareerCluster;
     }
 
-    public void setAge(String Age)
+    public string GetPaymentType()
     {
-        this.Age = Age;
+        return this.PaymentType;
+    }
+    public void SetPaymentType(string payment)
+    {
+        this.PaymentType = payment;
     }
 
-    public String getAge()
+    public string GetDescription()
     {
-        return this.Age;
+        return this.Description;
+    }
+    public void SetDescription(string describe)
+    {
+        this.Description = describe;
     }
 
-    public void setApplyBefore(String ApplyBefore)
+    public string GetMonth()
     {
-        this.ApplyBefore = ApplyBefore;
+        return this.month;
+    }
+    public void SetMonth(string month)
+    {
+        this.month = month;
     }
 
-    public String getApplyBefore()
+    public string GetDay()
     {
-        return this.ApplyBefore;
+        return this.Day;
+    }
+    public void SetDay(string day)
+    {
+        this.Day = day;
+    }
+
+    public string GetYear()
+    {
+        return this.year;
+    }
+    public void SetYear(string year)
+    {
+        this.year = year;
+    }
+
+    public int GetBusinessID()
+    {
+        return this.BusinessEntityID;
+    }
+    public void SetBusinessEntityID(int ID)
+    {
+        this.BusinessEntityID = ID;
+    }
+
+    public UpdateJob(string JobTitle, string JobType, string CareerCluster, string Description, string month, string day, string year, int ID)
+    {
+        SetJobTitle(JobTitle);
+        SetJobType(JobType);
+        SetCareerCluster(CareerCluster);
+        //SetPaymentType(Payment);
+        SetDescription(Description);
+        SetMonth(month);
+        SetDay(day);
+        SetYear(year);
+        SetBusinessEntityID(ID);
     }
 
 

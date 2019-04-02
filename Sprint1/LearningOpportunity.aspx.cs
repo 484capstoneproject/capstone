@@ -18,15 +18,15 @@ public partial class LearningOpportunity : System.Web.UI.Page
 
     }
 
-    protected void ADD_Click(object sender, EventArgs e)
+    protected void BtnSaveChanges_Click1(object sender, EventArgs e)
     {
         int LoginEntityID = (int)Session["EntityID"];
         con.Open();
         System.Data.SqlClient.SqlCommand insert = new System.Data.SqlClient.SqlCommand();
         insert.Connection = con;
 
-        LearningPostings newLearningOpportunity = new LearningPostings(TxtLearningTitle.Text, TxtCareerCluster.Text, TxtDescription.Text,
-             TxtLearningType.Text, TxtMonth.Text, TxtDay.Text, TxtYear.Text, LoginEntityID);
+        LearningPostings newLearningOpportunity = new LearningPostings(learningTitle.Value, careerClusterLearn.Value, description.Value,
+             learingType.Value, monthDrop.Value, dayDrop.Value, yearDrop.Value, LoginEntityID);
 
         String sqlString = "";
 
@@ -55,8 +55,38 @@ public partial class LearningOpportunity : System.Web.UI.Page
         int LoginEntityID = (int)Session["EntityID"];
 
 
-        UpdateLearning updateUser = new UpdateLearning(TxtLearningTitle.Text, TxtCareerCluster.Text, TxtDescription.Text,
-             TxtLearningType.Text, TxtMonth.Text, TxtDay.Text, TxtYear.Text, LoginEntityID);
+        UpdateLearning updateUser = new UpdateLearning(learningTitle.Value, careerClusterLearn.Value, description.Value,
+             learingType.Value, monthDrop.Value, dayDrop.Value, yearDrop.Value, LoginEntityID);
+
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Update [dbo].[LearningPosting] Set LearningTitle=@LearningTitle, CareerCluster=@CareerCluster, " +
+            "Description=@Description, LearningType=@LearningType, month=@month, day=@day, year=@year Where LearningID=1", con);
+        cmd.CommandType = CommandType.Text;
+
+        cmd.Parameters.AddWithValue("@LearningTitle", updateUser.getLearningTitle() ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@CareerCluster", updateUser.getCareerCluster() ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@Description", updateUser.getDescription() ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@LearningType", updateUser.getLearningType() ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@month", updateUser.GetMonth() ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@day", updateUser.GetDay() ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@year", updateUser.GetYear() ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@BusinessEntityID", updateUser.GetBusinessID());
+        cmd.ExecuteNonQuery();
+
+        con.Close();
+
+
+    }
+
+    protected void Delete_Click(object sender, EventArgs e)
+    {
+
+        int LoginEntityID = (int)Session["EntityID"];
+
+
+        UpdateLearning updateUser = new UpdateLearning(learningTitle.Value, careerClusterLearn.Value, description.Value,
+             learingType.Value, monthDrop.Value, dayDrop.Value, yearDrop.Value, LoginEntityID);
 
 
         con.Open();
