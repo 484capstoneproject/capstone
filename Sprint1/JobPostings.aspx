@@ -894,21 +894,21 @@
 						      <h5><label for="choosePostType">Post Type</label></h5>
 						  
 								  
-							  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+							  <div class="btn-group btn-group-toggle" data-toggle="buttons" id="radioOptions" runat="server">
 							    <label class="btn btn-secondary active">
-							      <input type="radio" name="options" id="option1" value="jobOpp" autocomplete="off" checked> Job Opportunity
+							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off"> Job Opportunity
 							    </label>
 							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="option2" value="learnOpp" autocomplete="off"> Learning Opportunity
+							      <input type="radio" name="options" id="radioLearning" value="learnOpp" autocomplete="off"> Learning Opportunity
 							    </label>
 							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="option3" value="scholarship" autocomplete="off"> Scholarship
+							      <input type="radio" name="options" id="radioScholarship" value="scholarship" autocomplete="off"> Scholarship
 							    </label>
 							</div>
 								 
 								  <!-- JOB FORM CONTENT -->
-                                  <asp:Panel ID="PanelJobForm" runat="server">
-<%--								  <form id="postingFormJob">--%>
+                               <asp:Panel ID="PanelJobForm" runat="server">
+								  <form id="postingFormJob">
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
@@ -1037,10 +1037,11 @@
 									  
 									  </div> 
 									
-<%--							       </form>--%>
+							       </form>
                                       </asp:Panel>
 							       
 							   <!-- LEARNING FORM CONTENT -->
+                                <asp:Panel ID="PanelLearning" runat="server">
 								  <form id="postingFormLearn" style="display: none;">
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
@@ -1154,9 +1155,11 @@
 									  </div> 
 									
 							       </form>
+                            </asp:Panel>
 							       
 							   							       
 							   <!-- SCHOLARSHIP FORM CONTENT -->
+                               <asp:Panel ID="panelScholarship" runat="server">
 								  <form id="postingFormScholar" style="display: none;">
 									<h5 class="pt-4">Scholarship Details</h5>
 									  <div class="form-group">
@@ -1243,6 +1246,7 @@
 									  </div> 
 									
 							       </form>
+                            </asp:Panel>
 								  
 						      </div>
 						      <div class="modal-footer">
@@ -1253,13 +1257,7 @@
 						  </div>
 						</div>
                     </form>
-							
-							
-							
-							
-							
-							
-							
+			
 							
   						    </div> <!---- Filter Row end div tag  ---->
 						</div> <!---- Filter Col end div tag  ---->
