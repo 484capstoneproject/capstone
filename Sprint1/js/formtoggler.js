@@ -8,7 +8,7 @@ $(document).ready(function(){
 	  		//$("#postingForm").empty();
 			//alert("Hello! You clicked me!");
 	 // });
-	
+
 	$('input:radio[name=options]').change(function() {
         if (this.value === 'jobOpp') {
 			$("#postingFormJob").css("display", "block");

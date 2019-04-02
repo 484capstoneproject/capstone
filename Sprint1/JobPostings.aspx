@@ -218,16 +218,16 @@
 										<div class="form-group pt-1">
 											<label for="paymentType" class="mr-3 ">Payment Type: </label>
 									    	<div class="pt-2 d-inline">
-										    <div class="form-check form-check-inline" id="paymentType">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+										    <div class="form-check form-check-inline" id="radioPaymentType">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioSalary" value="option1">
 										      <label class="form-check-label" for="inlineRadio1">Salaried</label>
 										    </div>
 										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioHourly" value="option2">
 										      <label class="form-check-label" for="inlineRadio2">Hourly</label>
 										    </div>
 										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioUnpaid" value="option3" >
 										      <label class="form-check-label" for="inlineRadio3">Unpaid</label>
 										    </div>
 											</div>
@@ -241,7 +241,7 @@
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="MonthDropDown">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -258,7 +258,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="DayDropDown">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -294,7 +294,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="YearDropDown">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -312,13 +312,13 @@
 									<h5 class="pt-4">Edit Post Details</h5>
 									  <div class="form-group">
 										<label for="learntitle">Learning Opportunity Title</label>
-										<input type="learntitle" class="form-control" id="learntitle" aria-describedby="learntitle" placeholder="Enter">
+										<input type="learntitle" class="form-control" id="LearningOpportunity" aria-describedby="learntitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseOppType">Opportunity Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseOppType">
+								  		 <select class="form-control w-75 mb-3" id="OpportunityTypeDrop">
 											  <option>Shadowing</option>
 											  <option>Career Event</option>
 											  <option>Other</option>
@@ -327,7 +327,7 @@
 								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerClusterLearn">Career Cluster</label>
-											<select class="form-control w-75" id="CareerClusterLearn">
+											<select class="form-control w-75" id="LearningCareerCluster">
 											  <option>Select</option>
 											  <option>Agriculture, Food and Natural Resources</option>
 											  <option>Architecture and Construction</option>
@@ -349,14 +349,14 @@
 									</div>    									 
 									  	<div class="form-group">
  										   <label for="descLearn">Description</label>
- 										   <textarea class="form-control" id="descLearn1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <textarea class="form-control" id="describeLearning" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="MonthSelect">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -373,7 +373,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="DaySelect">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -409,7 +409,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="YearSelect">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -428,24 +428,24 @@
 									<h5 class="pt-4">Edit Scholarship Details</h5>
 									  <div class="form-group">
 										<label for="scholtitle">Scholarship Name</label>
-										<input type="scholtitle" class="form-control" id="scholtitle" aria-describedby="scholtitle" >
+										<input type="scholtitle" class="form-control" id="scholarshipName" aria-describedby="scholtitle" >
 									  </div>
 									  <div class="form-group">
 										<label for="scholamount">Amount</label>
-										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
+										<input type="scholamount" class="form-control" id="txtScholarshipAmt" aria-describedby="scholamount" >
 									  </div>
 								  
 														 
 									  	<div class="form-group">
  										   <label for="descSchol">Description</label>
- 										   <textarea class="form-control" id="descSchol" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <textarea class="form-control" id="describeScolar" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="monthSelect">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -462,7 +462,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="daySelect">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -498,7 +498,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="yearSelect">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -610,7 +610,7 @@
  						    </div> 					
 					  </div>
 					
-					<div class="card-body" id="posting1body">
+					<div class="card-body" id="postBody">
 						<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
 						<tr>
    									   <td scope="row align-middle">
@@ -895,20 +895,21 @@
 						  
 								  
 							  <div class="btn-group btn-group-toggle" data-toggle="buttons" id="radioOptions" runat="server">
-							    <label class="btn btn-secondary active">
-							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off"> Job Opportunity
+							    <label class="btn btn-secondary ">
+							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off" checked> Job Opportunity
 							    </label>
-							    <label class="btn btn-secondary">
+							    <asp:Label class="btn btn-secondary"  runat="server">
 							      <input type="radio" name="options" id="radioLearning" value="learnOpp" autocomplete="off"> Learning Opportunity
-							    </label>
+							    </asp:Label>
 							    <label class="btn btn-secondary">
 							      <input type="radio" name="options" id="radioScholarship" value="scholarship" autocomplete="off"> Scholarship
 							    </label>
+                       
 							</div>
 								 
 								  <!-- JOB FORM CONTENT -->               
-                               <asp:Panel ID="PanelJobForm" runat="server">
-								  <form id="JobPanelForm" style="display:none;">
+                               <asp:Panel ID="postingFormJob" runat="server" style="display:block">
+								  <form id="form1">
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
@@ -1041,8 +1042,8 @@
                                       </asp:Panel>
 							       
 							   <!-- LEARNING FORM CONTENT -->
-                                <asp:Panel ID="PanelLearning" runat="server">
-								  <form id="postingFormLearn" style="display: none;">
+                                <asp:Panel ID="postingFormLearn" runat="server" style="display:none">
+								  <form id="Form2">
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="learntitle">Learning Opportunity Title</label>
@@ -1090,7 +1091,7 @@
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="monthDrop">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -1107,7 +1108,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="dayDrop">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -1143,7 +1144,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="yearDrop">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -1159,8 +1160,8 @@
 							       
 							   							       
 							   <!-- SCHOLARSHIP FORM CONTENT -->
-                               <asp:Panel ID="panelScholarship" runat="server">
-								  <form id="postingFormScholar" style="display: none;">
+                               <asp:Panel ID="postingFormScholar" runat="server" style="display:none">
+								  <form id="Form3" >
 									<h5 class="pt-4">Scholarship Details</h5>
 									  <div class="form-group">
 										<label for="scholtitle">Scholarship Name</label>
@@ -1181,7 +1182,7 @@
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="monthDropDown">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -1198,7 +1199,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="dayDropDown">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -1234,7 +1235,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="yearDropDown">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -1251,7 +1252,7 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <asp:Button type="button" Text="Save Changes" class="btn bg-green addPost" data-dismiss="modal" id="BtnSaveChanges_Click" runat="server"></asp:Button>
+						        <asp:Button type="button" Text="Save Changes" class="btn bg-green addPost" data-dismiss="modal" id="BtnSaveChanges_Click" OnClick="BtnSaveChanges_Click1" runat="server"></asp:Button>
 						      </div>
 						    </div>
 						  </div>

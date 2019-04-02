@@ -60,24 +60,4 @@ public partial class JobPostings : System.Web.UI.Page
         cmd.ExecuteNonQuery();
     }
 
-    protected void BtnJobOpportunity_Click(object sender, EventArgs e)
-    {
-        PanelJobForm.Visible = true;
-        PanelLearning.Visible = false;
-        panelScholarship.Visible = false;
-    }
-
-    protected void BtnLearning_Click(object sender, EventArgs e)
-    {
-        PanelJobForm.Visible = false;
-        PanelLearning.Visible = true;
-        panelScholarship.Visible = false;
-    }
-
-    protected void BtnScholarship_Click(object sender, EventArgs e)
-    {
-        PanelJobForm.Visible = false;
-        PanelLearning.Visible = false;
-        panelScholarship.Visible = true;
-    }
 }
