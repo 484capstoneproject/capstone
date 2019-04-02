@@ -906,9 +906,9 @@
 							    </label>
 							</div>
 								 
-								  <!-- JOB FORM CONTENT -->
+								  <!-- JOB FORM CONTENT -->               
                                <asp:Panel ID="PanelJobForm" runat="server">
-								  <form id="postingFormJob">
+								  <form id="JobPanelForm" style="display:none;">
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
