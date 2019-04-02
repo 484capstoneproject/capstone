@@ -4,26 +4,28 @@ using System.Linq;
 using System.Web;
 
 /// <summary>
-/// Summary description for LearningOpportunity
+/// Summary description for LearningPostings
 /// </summary>
-public class LearningOpportunity
+public class LearningPostings
 {
     private string LearningTitle;
     private string CareerCluster;
     private string Description;
-    private string ApplyBefore;
     private string LearningType;
- 
+    private string month;
+    private string day;
+    private string year;
 
-    public LearningOpportunity(String LearningTitle, String CareerCLuster, 
-       String Description, String LearningType, String ApplyBefore)
+
+    public LearningPostings(String LearningTitle, String CareerCLuster,
+       String Description, String LearningType, String monnt, String day, String year)
     {
         setLearningTitle(LearningTitle);
         setCareerCluster(CareerCLuster);
         setDescription(Description);
 
         setLearningType(LearningType);
-        setApplyBefore(ApplyBefore);
+
 
     }
 
@@ -31,7 +33,7 @@ public class LearningOpportunity
     {
         this.LearningTitle = LearningTitle;
     }
-    
+
     public String getLearningTitle()
     {
         return this.LearningTitle;
@@ -65,13 +67,31 @@ public class LearningOpportunity
         return this.LearningType;
     }
 
-    public void setApplyBefore(String ApplyBefore)
+    public void setMonth(String month)
     {
-        this.ApplyBefore = ApplyBefore;
+        this.month = month;
     }
-    public String getApplyBefore()
+    public String getMonth()
     {
-        return this.ApplyBefore;
+        return this.month;
+    }
+
+    public void setDay(String day)
+    {
+        this.day = day;
+    }
+    public String getDay()
+    {
+        return this.day;
+    }
+
+    public void setYear(String year)
+    {
+        this.year = year;
+    }
+    public String getYear()
+    {
+        return this.year;
     }
 
 
