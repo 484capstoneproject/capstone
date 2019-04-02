@@ -896,13 +896,13 @@
 								  
 							  <div class="btn-group btn-group-toggle" data-toggle="buttons" id="radioOptions" runat="server">
 							    <label class="btn btn-secondary ">
-							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off" checked> Job Opportunity
+							      <input type="radio" name="options" id="radioJob" value="jobOpp" runat="server" autocomplete="off" checked> Job Opportunity
 							    </label>
 							    <asp:Label class="btn btn-secondary"  runat="server">
-							      <input type="radio" name="options" id="radioLearning" value="learnOpp" autocomplete="off"> Learning Opportunity
+							      <input type="radio" name="options" id="radioLearning" value="learnOpp" runat="server" autocomplete="off"> Learning Opportunity
 							    </asp:Label>
 							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="radioScholarship" value="scholarship" autocomplete="off"> Scholarship
+							      <input type="radio" name="options" id="radioScholarship" value="scholarship" runat="server" autocomplete="off"> Scholarship
 							    </label>
                        
 							</div>
