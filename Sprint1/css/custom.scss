@@ -242,6 +242,8 @@ img.nextstepgo-logo-nav{
 .edit-btn{
 	font-size: 10px;
 	padding-top: 15px;
+	background-color: transparent!important;
+	border: none;
 }
 
 .btn-sign-out{
@@ -726,8 +728,45 @@ footer{
 	display: none;
 }
 
+.btnanalytics {
+	margin-left: 500px;
+	padding: 10px 20px;
+	font-size: 12px;
+}
+
+.tenpx {
+	height: 10px;
+}
+
 /*************************** Postings *********************************/
 
+
+.badge-ltblue{
+	background-color: $ltblue;
+}
+
+.badge-maingreen{
+	background-color: $maingreen;
+}
+
+.due-date{
+	background-color: lighten($ltgrey, 10%);
+	
+}
+
+.unpublished{
+	background-color: $ltgrey!important;
+	color: black;
+	.due-date, .card-header{
+		background-color: darken($ltgrey, 10%)!important;
+	}
+}
+
+.deleteBtn{
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+}
 
 .d-none{
 	display: none;

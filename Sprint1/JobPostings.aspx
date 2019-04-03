@@ -126,7 +126,7 @@
                 </a>
               </li>
                 <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="LearningOpportunities.aspx">
+                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
 					<span class="nav-txt">Learning Opportunities Posts</span>
                 </a>
@@ -326,7 +326,7 @@
                                runat="server" DataKeyNames="JobPostingID">
                 
                                  <Columns>
-                                     <asp:CommandField ShowSelectButton="True" SelectText="Update"/>
+                                     <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
                                      <asp:BoundField DataField="JobPostingID" 
                                          HeaderText="JobPostingID" 
                                          InsertVisible="False" ReadOnly="True" 

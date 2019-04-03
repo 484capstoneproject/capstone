@@ -37,7 +37,7 @@ public partial class ForgotPassword : System.Web.UI.Page
         }
         else
         {
-            //lbl_msg.Text = "Please enter either an Email Address or Username";
+            lbl_msg.Text = "Please enter either an Email Address or Username";
         }
     }
 

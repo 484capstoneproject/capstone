@@ -296,11 +296,11 @@
 		
 							
 							 <br />
-		                     <asp:Label ID="LblSearch" runat="server" Text="Search Job Postings (By JobTitle): " Font-Bold="true" Font-Underline="true"></asp:Label>
+		                     <asp:Label ID="LblSearch" runat="server" Text="Search Learning Opportunity Posts (By LearningTitle): " Font-Bold="true" Font-Underline="true"></asp:Label>
 
                             <br />
 
-                            <asp:TextBox ID="TextSearch" runat="server" placeholder="Job Title"></asp:TextBox>
+                            <asp:TextBox ID="TextSearch" runat="server" placeholder="Learning Title"></asp:TextBox>
                             <br />
                             <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
                             <br />
@@ -318,7 +318,7 @@
                                runat="server" DataKeyNames="LearningPostingID">
                 
                                  <Columns>
-                                     <asp:CommandField ShowSelectButton="True" SelectText="Update"/>
+                                     <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
                                      <asp:BoundField DataField="LearningPostingID" 
                                          HeaderText="LearningPostingID" 
                                          InsertVisible="False" ReadOnly="True" 
