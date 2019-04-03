@@ -100,7 +100,8 @@
 				 </tr>  				
 			</table>
 
-           <a href="Default.aspx" <span id="SignOut" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span></a>
+           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+
 
    
 

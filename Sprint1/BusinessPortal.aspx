@@ -114,7 +114,7 @@
                 <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Opportunites Posts</span>
+					<span class="nav-txt">Learning Opportunities</span>
                 </a>
               </li>
               <li class="nav-item-side">

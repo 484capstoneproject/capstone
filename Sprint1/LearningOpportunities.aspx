@@ -37,7 +37,7 @@
 <!------------------- BODY ----------------------->
  
  <body>
-	
+	<form id="postingFormJob" runat="server">
 	 
  <!-- NAVIGAION --> 
  <nav class="navbar navbar-expand-md navbar-light bg-light nav-dashboard">
@@ -71,7 +71,8 @@
     				<button class="dropdown-item" type="button">Profile</button>
     				<button class="dropdown-item" type="button">Help</button>
     				<button class="dropdown-item" type="button">Account Settings</button>
-    				<button class="dropdown-item" type="button">Logout</button>
+    				<asp:Button class="dropdown-item" type="button" runat="server" Text="Log Out" OnClick="SignOut_Click"></asp:Button>
+
   				</div>
 			</div>
       </li>
@@ -96,7 +97,8 @@
   				  </td> 
 				 </tr>  				
 			</table>
-           <span id="signout-btn" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span>
+           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+
            </div>
             <ul class="nav flex-column sidebar-links">
            
@@ -156,7 +158,7 @@
   		<div class="col-8 ml-3 mt-4 pb-4" id="postings">
 
 				  <!-- JOB FORM CONTENT -->
-					  <form id="postingFormJob" runat="server">
+					  
 						  <div class="card card-body border-secondary">
 							  <h3 class="text-maingreen">Learning Opportunites</h3>
 									<h5 class="pt-4">Post Details</h5>
