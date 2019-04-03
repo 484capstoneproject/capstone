@@ -23,9 +23,7 @@
  <nav class="navbar mb-5 navbar-expand-md navbar-light bg-light">
 
 <!-- NAV BRAND -->
- <%--<a href="@Url.Action("ExportToExcel","Default")">Export Excel</a>--%>
-    <%-- <asp:LinkButton id="myid" runat="server" OnClick="ExportToExcel" />--%>
-     <a href="#" runat="server" onServerClick="ExportToExcel">Export Excel</a>
+
   <div>
        <img class="cued-logo-nav ml-0" src="images/cuedin-logo.svg">
        <img class="nextstepgo-logo-nav ml-0" src="images/nextstepgo.svg" href="#">

@@ -70,13 +70,12 @@ public partial class ForgotPassword : System.Web.UI.Page
             smtp.EnableSsl = true;
             smtp.Send(mail);
 
-            //lbl_msg.Visible = true;
-            //lbl_msg.Text = "Link to reset password sent to email. Please follow instructions to reset your password";
+            lbl_msg.Text = "Link to reset password sent to email. Please follow instructions to reset your password";
         }
         else
         {
-            //lbl_msg.Visible = true;
-            //lbl_msg.Text = "Email is incorrect. Please enter a valid email address";
+            lbl_msg.Visible = true;
+            lbl_msg.Text = "Email is incorrect. Please enter a valid email address";
         }
     }
 
@@ -113,12 +112,12 @@ public partial class ForgotPassword : System.Web.UI.Page
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
 
-                //lbl_msg.Text = "Link to reset password sent to username's email. Please follow instructions to reset your password";
+                lbl_msg.Text = "Link to reset password sent to username's email. Please follow instructions to reset your password";
             }
         }
         else
         {
-            //lbl_msg.Text = "Username is incorrect. Please enter a valid username";
+            lbl_msg.Text = "Username is incorrect. Please enter a valid username";
         }
     }
 
