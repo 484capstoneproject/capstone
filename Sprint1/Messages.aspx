@@ -136,7 +136,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="#">
+                <a class="nav-link nav-link-side sidebar-active " href="Messages.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
                 </a>

@@ -108,13 +108,13 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Job Postings</span>
+					<span class="nav-txt">Job Posts</span>
                 </a>
               </li>
                 <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Postings</span>
+					<span class="nav-txt">Learning Posts</span>
                 </a>
               </li>
                  <li class="nav-item-side">
