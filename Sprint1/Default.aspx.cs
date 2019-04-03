@@ -99,45 +99,45 @@ public partial class Default : System.Web.UI.Page
     public void ExportToExcel(object sender, EventArgs e)
     {
 
-        con.Open();
-        SqlCommand cmd = new SqlCommand("select * from Business", con);
-        cmd.CommandType = CommandType.Text;
-        //cmd.Parameters.AddWithValue("@EntityID", LoginEntityID);
-        //cmd.ExecuteNonQuery();
+        //con.Open();
+        //SqlCommand cmd = new SqlCommand("select * from Business", con);
+        //cmd.CommandType = CommandType.Text;
+        ////cmd.Parameters.AddWithValue("@EntityID", LoginEntityID);
+        ////cmd.ExecuteNonQuery();
 
-        SqlDataReader reader = cmd.ExecuteReader();
-        String FirstName = "";
+        //SqlDataReader reader = cmd.ExecuteReader();
+        //String FirstName = "";
 
-        if (reader.HasRows)
-        {
-            while (reader.Read())
-            {
+        //if (reader.HasRows)
+        //{
+        //    while (reader.Read())
+        //    {
 
-                FirstName = reader["FirstName"].ToString();
-            }
-        }
-        reader.Close();
-        con.Close();
+        //        FirstName = reader["FirstName"].ToString();
+        //    }
+        //}
+        //reader.Close();
+        //con.Close();
 
 
-        ExcelPackage pck = new ExcelPackage();
-        ExcelWorksheet ws = pck.Workbook.Worksheets.Add("Report");
+        //ExcelPackage pck = new ExcelPackage();
+        //ExcelWorksheet ws = pck.Workbook.Worksheets.Add("Report");
 
-        //ws.Cells["A1"].Value = "Communication";
-        //ws.Cells["B1"].Value = "Com1";
+        ////ws.Cells["A1"].Value = "Communication";
+        ////ws.Cells["B1"].Value = "Com1";
 
-        ws.Cells["A2"].Value = "Report";
-        ws.Cells["B2"].Value = "Report1";
+        //ws.Cells["A2"].Value = "Report";
+        //ws.Cells["B2"].Value = "Report1";
 
-        ws.Cells["A3"].Value = "Date";
-        ws.Cells["B3"].Value = string.Format("{0:dd MMMM yyyy} at {0:H: mm tt}", DateTimeOffset.Now);
+        //ws.Cells["A3"].Value = "Date";
+        //ws.Cells["B3"].Value = string.Format("{0:dd MMMM yyyy} at {0:H: mm tt}", DateTimeOffset.Now);
 
-        ws.Cells["A6"].Value = "[BusinessEntityID]";
-        ws.Cells["B6"].Value = "[BusinessName]";
-        ws.Cells["C6"].Value = "[EmailAddress]";
-        ws.Cells["D6"].Value = "[PhoneNumber]";
-        ws.Cells["E6"].Value = "[FirstName]";
-        ws.Cells["E7"].Value = FirstName;
+        //ws.Cells["A6"].Value = "[BusinessEntityID]";
+        //ws.Cells["B6"].Value = "[BusinessName]";
+        //ws.Cells["C6"].Value = "[EmailAddress]";
+        //ws.Cells["D6"].Value = "[PhoneNumber]";
+        //ws.Cells["E6"].Value = "[FirstName]";
+        //ws.Cells["E7"].Value = FirstName;
 
         //int rowStart = 7;
         //foreach (var item in emplist)
@@ -157,11 +157,17 @@ public partial class Default : System.Web.UI.Page
         //    rowStart++;
         //}
 
-        ws.Cells["A:AZ"].AutoFitColumns();
+        //ws.Cells["A:AZ"].AutoFitColumns();
+        //Response.Clear();
+        //Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
+        //Response.AddHeader("content-disposition", "attachment; filename=ExcelReport.xlsx");
+        //Response.BinaryWrite(pck.GetAsByteArray());
+        //Response.End();
+
         Response.Clear();
-        Response.ContentType = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
-        Response.AddHeader("content-disposition", "attachment; filename=ExcelReport.xlsx");
-        Response.BinaryWrite(pck.GetAsByteArray());
+        Response.ContentType = "application/octet-stream";
+        Response.AddHeader("Content-Disposition", "attachment; filename=ExcelReport.xlsx");
+        Response.WriteFile(Server.MapPath("~/Excel/ExcelReport.xlsx"));
         Response.End();
 
     }
