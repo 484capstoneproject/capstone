@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LearningOpportunities.aspx.cs" Inherits="LearningOpportunites" %>
 
 
 <!doctype html>
@@ -96,7 +96,7 @@
   				  </td> 
 				 </tr>  				
 			</table>
-           <a href="Default.aspx" <span id="SignOut" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span></a>
+           <span id="signout-btn" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span>
            </div>
             <ul class="nav flex-column sidebar-links">
            
@@ -116,12 +116,6 @@
                 <a class="nav-link nav-link-side sidebar-active" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
 					<span class="nav-txt">Postings</span>
-                </a>
-              </li>
-                <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="LearningOpportunities.aspx">
-                  <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Opportunities Posts</span>
                 </a>
               </li>
               <li class="nav-item-side">
@@ -158,20 +152,20 @@
 				  <!-- JOB FORM CONTENT -->
 					  <form id="postingFormJob" runat="server">
 						  <div class="card card-body border-secondary">
-							  <h3 class="text-maingreen">Job Posting</h3>
+							  <h3 class="text-maingreen">Learning Opportunites</h3>
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
-										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" runat="server" class="form-control" id="txtJobTitle" aria-describedby="JobTitle" placeholder="Enter">
+										<label for="LearningTitle">Learning Opportunity Title</label>
+										<input type="LearningTitle" runat="server" class="form-control" id="txtLearningTitle" aria-describedby="LearningTitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
-								 		 <label for="chooseJobType">Job Type</label>
-								  		 <select class="form-control w-75 mb-3" id="dropJobType" runat="server">
-											  <option>Part-Time</option>
-											  <option>Full Time</option>
-											  <option>Internship</option>
+								 		 <label for="chooseOpportunityType">Opportunity Type</label>
+								  		 <select class="form-control w-75 mb-3" id="dropOpportunityType" runat="server">
+											  <option>Shadowing</option>
+											  <option>Career Event</option>
+											  <option>Other</option>
 								  		 </select>
 								    </div>
 								    <div class="col">
@@ -296,7 +290,7 @@
 		
 							
 							 <br />
-		                    <asp:Label ID="LblSearch" runat="server" Text="Search Job Titles: " Font-Bold="true" Font-Underline="true"></asp:Label>
+		                    <asp:Label ID="LblSearch" runat="server" Text="Search Learning Opportunity Titles: " Font-Bold="true" Font-Underline="true"></asp:Label>
                             <asp:TextBox ID="TextSearch" runat="server"></asp:TextBox>
                             <asp:Button ID="BtnSearch" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
                             <asp:Button ID="BtnReset" runat="server" Text="Reset" OnClick="BtnReset_Click" />
@@ -309,20 +303,20 @@
                                autogeneratecolumns="False"
                                autogenerateselectbutton="false"
                                onselectedindexchanged="GridView1_SelectedIndexChanged"
-                               runat="server" DataKeyNames="JobPostingID">
+                               runat="server" DataKeyNames="LearningPostingID">
                 
                                  <Columns>
                                      <asp:CommandField ShowSelectButton="True" SelectText="Update"/>
-                                     <asp:BoundField DataField="JobPostingID" 
-                                         HeaderText="JobPostingID" 
+                                     <asp:BoundField DataField="LearningPostingID" 
+                                         HeaderText="LearningPostingID" 
                                          InsertVisible="False" ReadOnly="True" 
-                                         SortExpression="JobPostingID" />
-                                     <asp:BoundField DataField="JobTitle" 
-                                         HeaderText="JobTitle" 
-                                         SortExpression="JobTitle" />
-                                     <asp:BoundField DataField="JobType" 
-                                         HeaderText="JobType" 
-                                         SortExpression="JobType" />
+                                         SortExpression="LearningPostingID" />
+                                     <asp:BoundField DataField="LearningTitle" 
+                                         HeaderText="LearningTitle" 
+                                         SortExpression="LearningTitle" />
+                                     <asp:BoundField DataField="LearningType" 
+                                         HeaderText="LearningType" 
+                                         SortExpression="LearningType" />
                                      <asp:BoundField DataField="CareerCluster" 
                                          HeaderText="CareerCluster" 
                                          SortExpression="CareerCluster" />
@@ -397,4 +391,5 @@
 
 
       
+
 
