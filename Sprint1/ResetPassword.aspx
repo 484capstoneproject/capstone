@@ -1,21 +1,94 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="ResetPassword.aspx.cs" Inherits="ResetPassword" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ResetPassword.aspx.cs" Inherits="ResetPassword" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="Reset Password"></asp:Label>
-            <br />
-        </div>
-        <asp:Label ID="LblNewPassword" runat="server" Text="New Password"></asp:Label>
-&nbsp;<asp:TextBox ID="TxtNewPassword" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Label ID="LblConfirmPassword" runat="server" Text="Confirm Password"></asp:Label>
-&nbsp;<asp:TextBox ID="TxtConfirmPassword" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        <asp:Button ID="BtnSaveChanges" runat="server" Text="Save Changes" OnClick="BtnSaveChanges_Click" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Forgot Password</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <!-- Custom Styles -->
+	<link rel="stylesheet" href="css/custom.css">
 
-</asp:Content>
+    <title>Login</title>
+  </head>
+  <body>
+  <div class="login-screen">
 
+ <!-- NAVIGAION --> 
+ <nav class="navbar mb-5 navbar-expand-md navbar-light bg-light">
+
+<!-- NAV BRAND -->
+ 
+  <div>
+       <img class="cued-logo-nav ml-0" src="images/cuedin-logo.svg">
+       <img class="nextstepgo-logo-nav ml-0" src="images/nextstepgo.svg" href="#">
+	 </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+  
+<!-- NAV LINKS -->
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link mr-2" href="#">ABOUT US<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">SUPPORT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+  <!-- END OF NAV -->
+  
+<!-- CARD BODY -->
+  <!----------- LOGIN CARD ------------->
+<div class="welcome-card card" id="card">
+    <div class="col-12">
+      <div class="card-body login-card-body">
+        <h1 class="loginheader">Reset Your Password</h1>
+        <p class="desc-text mb-5">Set your new password. Must include 8 characters, 1 number, and 1 special character.</p>
+    		<form class="login-form" runat="server">
+  				<div class="form-group">
+  				  <label for="exampleInputEmail1" class="loginlabel">New Password</label>
+  				  <input type="password" class="form-control min-imput" id="txtPassword" runat="server" aria-describedby="emailHelp" placeholder="">
+  				</div>
+  				<div class="form-group">
+  				  <label for="exampleInputPassword1" class="loginlabel">Confirm Password</label>
+  				  <input type="password" class="form-control min-imput" id="txtConfirmPassword" runat="server" placeholder="">
+  				</div>
+             <asp:Button type="submit" id="resetPasswordID" class="btn btn-maingreen submitbutton w-25" runat="server" Text="Save Changes" OnClick="BtnSaveChanges_Click"></asp:Button>
+         </form>
+
+      </div>
+    </div>
+	</div>
+  
+ </div>
+  
+   
+<!-- FOOTER -->
+  <footer class="loginfooter">
+    <span class= "d-inline mr-2 text-white-50 poweredby">Powered By </span>
+    	<img class="footerimgsm" src="images/cuedin-logo.svg">    
+</footer>
+	 
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <!--Jquery flip -->
+	<script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+   
+   <!-- custom -->
+   <script src="js/custom.js"></script>
+   <script src="js/reset.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

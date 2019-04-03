@@ -72,75 +72,35 @@
           </li>
           <li class="nav-item">
             <a class="nav-link dash-wt-link" href="#">
-              <span data-feather="file"></span>
+              <span data-feather="check-circle"></span>
               Applications
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="#">
-              <span data-feather="shopping-cart"></span>
-              Messages
+            <a class="nav-link dash-wt-link" href="JobPostings.aspx">
+              <span data-feather="clipboard"></span>
+              Postings
+            </a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link dash-wt-link" href="Analytics.aspx">
+              <span data-feather="bar-chart-2"></span>
+              Analytics
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="#">
+            <a class="nav-link dash-wt-link" href="Calendar.aspx">
               <span data-feather="calendar"></span>
               Calendar
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="#">
-              <span data-feather="bar-chart-2"></span>
-              Reports
             </a>
           </li>          
            <li class="nav-item">
             <a class="nav-link dash-wt-link" href="#">
-              <span data-feather="users"></span>
-              Profile
+              <span data-feather="inbox"></span>
+              Messages
             </a>
           </li>
         </ul>
-
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Active Postings</span>
-          <a class="d-flex align-items-center text-muted" href="#">
-            <span data-feather="plus-circle"></span>
-          </a>
-        </h6>
-        <ul class="nav flex-column mb-2">
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Summer Intern
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              PR Shadowing
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Part-time Designer
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Network Admin.
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="file-text"></span>
-              Summer Intern
-            </a>
-          </li>
-        </ul>
-      </div>
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
