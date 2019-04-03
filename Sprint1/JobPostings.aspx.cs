@@ -141,6 +141,7 @@ public partial class JobPostings : System.Web.UI.Page
         Response.Redirect("JobPostings.aspx");
     }
 
+
     //protected void BtnSearch_Click(object sender, EventArgs e)
     //{
     //    con.Open();

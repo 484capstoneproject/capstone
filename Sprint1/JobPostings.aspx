@@ -92,46 +92,46 @@
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
   				  <h2 class="bus-name-header">Martin's Electronics</h2>
-  				  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
+  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>
-           <span id="signout-btn" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span>
+   
            </div>
             <ul class="nav flex-column sidebar-links">
            
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="dashboard.html">
+                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="applications.html">
+                <a class="nav-link nav-link-side" href="#">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="postings.html">
+                <a class="nav-link nav-link-side sidebar-active" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
 					<span class="nav-txt">Postings</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="analytics.html">
+                <a class="nav-link nav-link-side" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="calendar.html">
+                <a class="nav-link nav-link-side" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="messages.html">
+                <a class="nav-link nav-link-side" href="#">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
                 </a>
