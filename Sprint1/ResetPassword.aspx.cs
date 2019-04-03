@@ -20,7 +20,7 @@ public partial class ResetPassword : System.Web.UI.Page
     {
         string email = (string)Session["Email"];
 
-        PasswordRegister resetPassword = new PasswordRegister(TxtConfirmPassword.Text, email);
+        PasswordRegister resetPassword = new PasswordRegister(txtConfirmPassword.Value, email);
 
 
         con.Open();
