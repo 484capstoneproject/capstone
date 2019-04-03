@@ -37,7 +37,7 @@
 <!------------------- BODY ----------------------->
  
  <body>
-	
+	<form id="postingFormJob" runat="server">
 	 
  <!-- NAVIGAION --> 
  <nav class="navbar navbar-expand-md navbar-light bg-light nav-dashboard">
@@ -71,7 +71,8 @@
     				<button class="dropdown-item" type="button">Profile</button>
     				<button class="dropdown-item" type="button">Help</button>
     				<button class="dropdown-item" type="button">Account Settings</button>
-    				<button class="dropdown-item" type="button">Logout</button>
+    				<asp:Button class="dropdown-item" type="button" runat="server" Text="Log Out" OnClick="SignOut_Click"></asp:Button>
+
   				</div>
 			</div>
       </li>
@@ -150,7 +151,7 @@
   		<div class="col-8 ml-3 mt-4 pb-4" id="postings">
 
 				  <!-- JOB FORM CONTENT -->
-					  <form id="postingFormJob" runat="server">
+					  <%--<form id="postingFormJob" runat="server">--%>
 						  <div class="card card-body border-secondary">
 							  <h3 class="text-maingreen">Job Posting</h3>
 									<h5 class="pt-4">Post Details</h5>
@@ -290,15 +291,19 @@
 		
 							
 							 <br />
-		                    <asp:Label ID="LblSearch" runat="server" Text="Search Activities: " Font-Bold="true" Font-Underline="true"></asp:Label>
+		                    <asp:Label ID="LblSearch" runat="server" Text="Search Job Postings (By Job Title): " Font-Bold="true" Font-Underline="true"></asp:Label>
+                            <br />
                             <asp:TextBox ID="TextSearch" runat="server"></asp:TextBox>
-                            <asp:Button ID="BtnSearch" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
-                            <asp:Button ID="BtnReset" runat="server" Text="Reset" OnClick="BtnReset_Click" />
+                            <br />
+                            <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
+                            <br />
+                            <asp:Button ID="BtnReset" class="btn btn-maingreen w-25" runat="server" Text="Reset" OnClick="BtnReset_Click" />
                             <asp:label id="MessageLabel"
                              forecolor="Red"
                              runat="server"/>
                             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
-							
+							<br />
+
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
                                autogenerateselectbutton="false"
