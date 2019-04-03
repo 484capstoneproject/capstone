@@ -108,13 +108,19 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Postings</span>
+					<span class="nav-txt">Job Postings</span>
                 </a>
               </li>
                 <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Opportunities</span>
+					<span class="nav-txt">Learning Postings</span>
+                </a>
+              </li>
+                 <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="ScholarshipPostings.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Scholarship Posts</span>
                 </a>
               </li>
               <li class="nav-item-side">
@@ -420,4 +426,3 @@
 </body>
   
 </html>
-

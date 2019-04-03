@@ -86,8 +86,8 @@
            </div>
             <ul class="nav flex-column sidebar-links">
            
-              <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
+               <li class="nav-item-side">
+                <a class="nav-link nav-link-side sidebar-active" href="BusinessPortal.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
@@ -101,19 +101,25 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Postings</span>
+					<span class="nav-txt">Job Postings</span>
                 </a>
               </li>
-              <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="Analytics.aspx">
-                  <i data-feather="pie-chart"></i>
-					<span class="nav-txt">Analytics</span>
-                </a>
-              </li>
-              <li class="nav-item-side">
+                <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Opportunities Posts</span>
+					<span class="nav-txt">Learning Postings</span>
+                </a>
+              </li>
+                 <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="ScholarshipPostings.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Scholarship Posts</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Analytics.aspx">
+                  <i data-feather="pie-chart"></i>
+					<span class="nav-txt">Analytics</span>
                 </a>
               </li>
               <li class="nav-item-side">
@@ -128,7 +134,6 @@
 					<span class="nav-txt">Messages</span>
                 </a>
               </li>
-            </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
         </nav>
         <div class="gradient-bar col"></div>

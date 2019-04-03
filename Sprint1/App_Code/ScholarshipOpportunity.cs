@@ -11,15 +11,20 @@ public class ScholarshipOpportunity
     private string ScholarshipName;
     private string Description;
     private string Amount;
-    private string ApplyBefore;
+    private string month;
+    private string day;
+    private string year;
+    private int BusinessEntityID;
 
-
-    public ScholarshipOpportunity(string ScholarshipName, string Description, string Amount, string ApplyBefore)
+    public ScholarshipOpportunity(string ScholarshipName, string Description, string Amount, String month, String day, String year, int ID)
     {
         setScholarshipName(ScholarshipName);
         setDescription(Description);
         setAmount(Amount);
-        setApplyBefore(ApplyBefore);
+        setMonth(month);
+        setDay(day);
+        setYear(year);
+        SetBusinessEntityID(ID);
     }
 
     public void setScholarshipName(string ScholarshipName)
@@ -55,14 +60,40 @@ public class ScholarshipOpportunity
         return this.Amount;
     }
 
-    public void setApplyBefore(string ApplyBefore)
+    public void setMonth(String month)
     {
-        this.ApplyBefore = ApplyBefore;
-
+        this.month = month;
+    }
+    public String getMonth()
+    {
+        return this.month;
     }
 
-    public string getApplyBefore()
+    public void setDay(String day)
     {
-        return this.ApplyBefore;
+        this.day = day;
     }
+    public String getDay()
+    {
+        return this.day;
+    }
+
+    public void setYear(String year)
+    {
+        this.year = year;
+    }
+    public String getYear()
+    {
+        return this.year;
+    }
+
+    public int GetBusinessID()
+    {
+        return this.BusinessEntityID;
+    }
+    public void SetBusinessEntityID(int ID)
+    {
+        this.BusinessEntityID = ID;
+    }
+
 }
