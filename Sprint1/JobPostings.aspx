@@ -358,8 +358,8 @@
                                          SortExpression="BusinessEntityID" 
                                          readOnly="true"/>
                                  </Columns> 
-                                    <selectedrowstyle backcolor="LightCyan"
-                                    forecolor="DarkBlue"
+                                    <selectedrowstyle
+                                    forecolor="#0066ff"
                                      font-bold="true"/> 
                 
                              </asp:Gridview>              
