@@ -148,7 +148,7 @@
 		 <!---- Postings ---->
 		
   		<div class="col-6 ml-3 mt-4" id="postings">
-
+        <form runat="server">
 		    <!-- Edit Modal -->
 					<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
@@ -180,13 +180,13 @@
 									<h5 class="pt-4">Edit Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" class="form-control" id="JobTitle" aria-describedby="JobTitle" placeholder="Enter">
+										<input type="jobtitle" class="form-control" id="txtJobTitleEdit" runat="server" aria-describedby="JobTitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseJobType">Job Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseJobType">
+								  		 <select class="form-control w-75 mb-3" id="dropJobTypeEdit" runat="server">
 											  <option>Part-Time</option>
 											  <option>Full Time</option>
 											  <option>Internship</option>
@@ -195,7 +195,7 @@
 								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerCluster">Career Cluster</label>
-											<select class="form-control w-75" id="CareerCluster">
+											<select class="form-control w-75" id="dropCareerClusterEdit" runat="server">
 											  <option>Select</option>
 											  <option>Agriculture, Food and Natural Resources</option>
 											  <option>Architecture and Construction</option>
@@ -234,14 +234,14 @@
 									   </div>  									 
 									  	<div class="form-group">
  										   <label for="exampleFormControlTextarea1">Edit Description</label>
- 										   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <textarea class="form-control" id="txtareaDescriptionEdit" rows="3" runat="server" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="MonthDropDown">
+													<select class="form-control" id="dropMonthEdit" runat="server">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -258,7 +258,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="DayDropDown">
+													<select class="form-control" id="dropDayEdit" runat="server">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -294,7 +294,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="YearDropDown">
+													<select class="form-control" id="dropYearEdit" runat="server">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -514,7 +514,8 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green" data-dismiss="modal">Save changes</button>
+						        <%--<button type="button" class="btn bg-green" data-dismiss="modal">Save changes</button>--%>
+                                <asp:Button type="button" Text="Save Changes" class="btn bg-green" id="Button2" OnClick="BtnEditChanges_Click1" runat="server" ></asp:Button>
 						      </div>
 						    </div>
 						  </div>
@@ -535,7 +536,11 @@
 									      </div>
 									      <div class="modal-footer">
 									        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-									        <button type="button" class="btn btn-primary confirmDelete">Delete Post</button>
+									      <%--  <button type="button" class="btn btn-primary confirmDelete">Delete Post</button>--%>
+
+                                            <asp:Button type="button" Text="Delete Post" class="btn btn-primary confirmDelete" id="Button3" OnClick="BtnDeleteChanges_Click1" runat="server" ></asp:Button>
+
+
 									      </div>
 									    </div>
 									  </div>
@@ -561,7 +566,8 @@
 								
 							  <!-- EDIT POST MODAL BTN -->
 								<button type="button" data-toggle="modal" class="p-0 new-event-btn" data-target="#editModal"><li class="list-group-item"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></li></button>
- 					  
+ 					          
+                                 
   							    							  
   							  <!--DELETE POST MODAL BTN -->
  						      <button type="button" data-toggle="modal" class="btn deleteBtn" data-target="#deleteModal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
@@ -880,7 +886,7 @@
 		   <button type="button" data-toggle="modal" class="p-0 new-event-btn mt-3" data-target="#newPostModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
   					  
   					  <!-- Modal -->
-                    <form runat="server">
+                 <%--   <form runat="server">--%>
 						<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
@@ -1256,8 +1262,10 @@
 						      </div>
 						    </div>
 						  </div>
+                             
 						</div>
-                    </form>
+                   </form>
+                            </div>
 			
 							
   						    </div> <!---- Filter Row end div tag  ---->
@@ -1302,4 +1310,3 @@
      </div>
 </body>
 </html>
-
