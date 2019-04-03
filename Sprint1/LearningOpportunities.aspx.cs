@@ -148,9 +148,12 @@ public partial class LearningOpportunites : System.Web.UI.Page
 
     protected void BtnSearch_Click(object sender, EventArgs e)
     {
+        int LoginEntityID = (int)Session["EntityID"];
+
         con.Open();
-        SqlCommand cmd = new SqlCommand("SELECT * from LearningPosting where(LearningTitle like '%' + @Learn + '%')", con);
+        SqlCommand cmd = new SqlCommand("SELECT * from LearningPosting where(LearningTitle like '%' + @Learn + '%') AND BusinessEntityID=@BusinessEntityID", con);
         cmd.Parameters.Add("@Learn", SqlDbType.NVarChar).Value = TextSearch.Text;
+        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
         SqlDataReader reader = cmd.ExecuteReader();
 
         if (reader.HasRows)

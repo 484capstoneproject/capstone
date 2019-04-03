@@ -113,9 +113,15 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="JobPostings.aspx">
+                <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
 					<span class="nav-txt">Postings</span>
+                </a>
+              </li>
+                 <li class="nav-item-side">
+                <a class="nav-link nav-link-side sidebar-active" href="LearningOpportunities.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Learning Opportunities Posts</span>
                 </a>
               </li>
               <li class="nav-item-side">
@@ -290,14 +296,20 @@
 		
 							
 							 <br />
-		                    <asp:Label ID="LblSearch" runat="server" Text="Search Learning Opportunity Titles: " Font-Bold="true" Font-Underline="true"></asp:Label>
-                            <asp:TextBox ID="TextSearch" runat="server"></asp:TextBox>
-                            <asp:Button ID="BtnSearch" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
-                            <asp:Button ID="BtnReset" runat="server" Text="Reset" OnClick="BtnReset_Click" />
+		                     <asp:Label ID="LblSearch" runat="server" Text="Search Job Postings (By JobTitle): " Font-Bold="true" Font-Underline="true"></asp:Label>
+
+                            <br />
+
+                            <asp:TextBox ID="TextSearch" runat="server" placeholder="Job Title"></asp:TextBox>
+                            <br />
+                            <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
+                            <br />
+                            <asp:Button ID="BtnReset" class="btn btn-maingreen w-25" runat="server" Text="Reset" OnClick="BtnReset_Click" />
                             <asp:label id="MessageLabel"
                              forecolor="Red"
                              runat="server"/>
                             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
+							<br />   
 							
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"

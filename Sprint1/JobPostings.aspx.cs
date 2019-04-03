@@ -143,9 +143,12 @@ public partial class JobPostings : System.Web.UI.Page
 
     protected void BtnSearch_Click(object sender, EventArgs e)
     {
+        int LoginEntityID = (int)Session["EntityID"];
+
         con.Open();
-        SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where(JobTitle like '%' + @Job + '%')", con);
+        SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where(JobTitle like '%' + @Job + '%') AND BusinessEntityID=@BusinessEntityID", con);
         cmd.Parameters.Add("@Job", SqlDbType.NVarChar).Value = TextSearch.Text;
+        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
         SqlDataReader reader = cmd.ExecuteReader();
 
         if (reader.HasRows)
