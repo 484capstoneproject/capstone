@@ -112,7 +112,7 @@
     
 </head>
 <body>
- 
+ <form id="form1" runat="server">
  <!-- NAVIGAION --> 
  <nav class="navbar navbar-expand-md navbar-light bg-light nav-dashboard">
 
@@ -145,7 +145,7 @@
     				<button class="dropdown-item" type="button">Profile</button>
     				<button class="dropdown-item" type="button">Help</button>
     				<button class="dropdown-item" type="button">Account Settings</button>
-    				<button class="dropdown-item" type="button">Logout</button>
+    				<asp:Button class="dropdown-item" type="button" runat="server" Text="Log Out" OnClick="SignOut_Click"></asp:Button>
   				</div>
 			</div>
       </li>
@@ -170,7 +170,7 @@
   				  </td> 
 				 </tr>  				
 			</table>
-           <a href="Default.aspx" <span id="signout-btn" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span></a>
+           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
            </div>
             <ul class="nav flex-column sidebar-links">
            
@@ -193,7 +193,13 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="analytics.html">
+                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Learning Opportunities Posts</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>
                 </a>
@@ -246,7 +252,7 @@
 						        </button>
 						      </div>
 						      <div class="modal-body">
-						        <form runat="server">
+						     
   									<div class="form-group row">
   									  <label for="inputEmail3" class="col-sm-3 col-form-label">Event Name</label>
   									  <div class="col-sm-9">
@@ -270,7 +276,7 @@
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						        <asp:Button type="button" class="btn btn-primary" Text="Save Changes" runat="server" OnClick="SaveChanges_Click"></asp:Button>
 						      </div>
-                              </form>
+                              
 						      </div>
 						    </div>
 						  </div>
@@ -315,7 +321,7 @@
     <script>
       feather.replace()
     </script>
-    
+    </form>
     
   
  

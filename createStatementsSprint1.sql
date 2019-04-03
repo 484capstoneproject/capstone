@@ -26,10 +26,41 @@ CREATE TABLE [dbo].[Password](
 	[Email] [varchar](30) NULL
 ) 
 
-CREATE TABLE [dbo].[JobPostings](
-	[JobTitle] [varchar](20) NULL,
-	[CareerCluster] [varchar](30) NULL,
-	[JobExplanation] [varchar](60) NULL,
-	[Requirements] [varchar](60) NULL,
-	[DatePosted] [date] NULL
+CREATE TABLE [dbo].[JobPosting](
+	[JobPostingID] [int] IDENTITY(1,1) NOT NULL,
+	[JobTitle] [nvarchar](max) NOT NULL,
+	[JobType] [nvarchar](max) NOT NULL,
+	[CareerCluster] [nvarchar](max) NOT NULL,
+	[Description] [nvarchar](max) NOT NULL,
+	[Month] [nvarchar](max) NOT NULL,
+	[Day] [nvarchar](max) NOT NULL,
+	[Year] [nvarchar](max) NOT NULL,
+	[BusinessEntityID] [int] NOT NULL
+	CONSTRAINT PK_JobPosting PRIMARY KEY NONCLUSTERED ([JobPostingID], [BusinessEntityID])
 ) 
+
+CREATE TABLE [dbo].[LearningPosting](
+	[LearningPostingID] [int] IDENTITY(1,1) NOT NULL,
+	[LearningTitle] [nvarchar](max) NOT NULL,
+	[LearningType] [nvarchar](max) NOT NULL,
+	[CareerCluster] [nvarchar](max) NOT NULL,
+	[Description] [nvarchar](max) NOT NULL,
+	[Month] [nvarchar](max) NOT NULL,
+	[Day] [nvarchar](max) NOT NULL,
+	[Year] [nvarchar](max) NOT NULL,
+	[BusinessEntityID] [int] NOT NULL,
+	CONSTRAINT PK_LearningPosting PRIMARY KEY NONCLUSTERED ([LearningPostingID], [BusinessEntityID])
+)
+
+CREATE TABLE [dbo].[ScholarshipPosting](
+	[ScholarshipPostingID] [int] IDENTITY(1,1) NOT NULL,
+	[ScholarshipName] [nvarchar](max) NOT NULL,
+	[Amount] [nvarchar](max) NOT NULL,
+	[Description] [nvarchar](max) NOT NULL,
+	[Month] [nvarchar](max) NOT NULL,
+	[Day] [nvarchar](max) NOT NULL,
+	[Year] [nvarchar](max) NOT NULL,
+	CONSTRAINT PK_ScholarshipPosting PRIMARY KEY NONCLUSTERED ([ScholarshipPostingID], [BusinessEntityID])
+)
+
+GO

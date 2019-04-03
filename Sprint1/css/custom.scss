@@ -7,6 +7,7 @@
 $greengraphic: "../images/loginbg.jpg";
 $successgraphic: "../images/success.jpg";
 $registergraphic: "../images/register.jpg";
+$forgetimg: "../images/forget.jpg";
 
 
 /* Body Setup */
@@ -241,6 +242,8 @@ img.nextstepgo-logo-nav{
 .edit-btn{
 	font-size: 10px;
 	padding-top: 15px;
+	background-color: transparent!important;
+	border: none;
 }
 
 .btn-sign-out{
@@ -414,6 +417,20 @@ img.nextstepgo-logo-nav{
 
 .poweredby{
 	font-size: 12px;
+}
+
+
+/*************************** Password Reset *********************************/
+
+.forget-img{
+	background-image: url($forgetimg);
+	background-position: center;
+	background-size: cover;
+	min-height: 100%;
+}
+
+.login-link{
+	color: $maingreen;
 }
 
 
@@ -641,9 +658,14 @@ footer{
 	padding: 30px;
 }
 
+#exportBtn{
+	float: left;
+}
+
 .large-analytic-row{
 	margin-bottom: 20px;
-	height: 65%;
+	height: 100%;
+	overflow: scroll;
 }
 
 .sm-analytic-row{
@@ -706,18 +728,50 @@ footer{
 	display: none;
 }
 
+.btnanalytics {
+	margin-left: 500px;
+	padding: 10px 20px;
+	font-size: 12px;
+}
+
+.tenpx {
+	height: 10px;
+}
+
 /*************************** Postings *********************************/
 
+
+.badge-ltblue{
+	background-color: $ltblue;
+}
+
+.badge-maingreen{
+	background-color: $maingreen;
+}
+
+.due-date{
+	background-color: lighten($ltgrey, 10%);
+	
+}
+
+.unpublished{
+	background-color: $ltgrey!important;
+	color: black;
+	.due-date, .card-header{
+		background-color: darken($ltgrey, 10%)!important;
+	}
+}
+
+.deleteBtn{
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+}
 
 .d-none{
 	display: none;
 }
 
-.posting-screen{
-	height: 100%;
-	background-image: url($greengraphic);
-	background-size: 110% 120%;
-}
 
 .md-white{
 	background-color: #fff;
@@ -787,9 +841,10 @@ footer{
 
 
 .posting-screen{
-	height: 100%;
+	height: 100%; 
 	background-image: url($greengraphic);
-	background-size: 110% 120%;
+	background-attachment: scroll;
+	background-repeat: no-repeat;
 }
 
 .input-mysize { 
@@ -875,8 +930,7 @@ input:checked + .slider:before {
 }
 
 .filter-row {
-	
-	
+	max-height: 100%;
 }
 
 /********************************** CALENDAR ********************************/

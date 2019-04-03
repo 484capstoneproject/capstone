@@ -26,11 +26,11 @@ public partial class ForgotPassword : System.Web.UI.Page
     }
     protected void btn_send_Click(object sender, EventArgs e)
     {
-        if (!String.IsNullOrEmpty(TxtEmail.Text))
+        if (!String.IsNullOrEmpty(txtEmail.Value))
         {
             SendEmail();
         }
-        else if (!String.IsNullOrEmpty(TxtUsername.Text))
+        else if (!String.IsNullOrEmpty(txtUsername.Value))
 
         {
             SendUsername();
@@ -46,15 +46,15 @@ public partial class ForgotPassword : System.Web.UI.Page
         con.Open();
         SqlCommand cmd = new SqlCommand("Select * from Password where Email=@email", con);
         cmd.CommandType = CommandType.Text;
-        cmd.Parameters.AddWithValue("@email", TxtEmail.Text);
+        cmd.Parameters.AddWithValue("@email", txtEmail.Value);
         SqlDataReader entityReader = cmd.ExecuteReader();
 
         if (entityReader.HasRows)
         {
-            Session.Add("Email", TxtEmail.Text);
+            Session.Add("Email", txtEmail.Value);
 
             MailMessage mail = new MailMessage();
-            mail.To.Add(TxtEmail.Text); //adding the email to send to
+            mail.To.Add(txtEmail.Value); //adding the email to send to
             mail.From = new MailAddress("cuedinnextstepgo@gmail.com");
             mail.Subject = "Password Recovery"; //subject of the meeting
 
@@ -74,6 +74,7 @@ public partial class ForgotPassword : System.Web.UI.Page
         }
         else
         {
+            lbl_msg.Visible = true;
             lbl_msg.Text = "Email is incorrect. Please enter a valid email address";
         }
     }
@@ -83,7 +84,7 @@ public partial class ForgotPassword : System.Web.UI.Page
         con.Open();
         SqlCommand cmd = new SqlCommand("Select Email from Password where username=@username", con);
         cmd.CommandType = CommandType.Text;
-        cmd.Parameters.AddWithValue("@username", TxtUsername.Text);
+        cmd.Parameters.AddWithValue("@username", txtUsername.Value);
         SqlDataReader entityReader = cmd.ExecuteReader();
 
         if (entityReader.HasRows)
