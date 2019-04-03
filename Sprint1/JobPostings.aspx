@@ -334,9 +334,13 @@
                                  <AlternatingRowStyle BackColor="White" />
                 
                                  <Columns>
-                                     <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true">
-<ControlStyle Font-Bold="True"></ControlStyle>
-                                     </asp:CommandField>
+                                      <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
+                                     <asp:BoundField DataField="JobPostingID" 
+                                         HeaderText="JobPostingID" 
+                                         InsertVisible="False" ReadOnly="True" 
+                                         SortExpression="JobPostingID" />
+                                 
+                                   
                                      <asp:BoundField DataField="JobTitle" 
                                          HeaderText="Title" 
                                          SortExpression="JobTitle" >
@@ -361,6 +365,10 @@
                                      <asp:BoundField DataField="Year" 
                                          HeaderText="Year" 
                                          SortExpression="Year" />
+                                     <asp:BoundField DataField="BusinessEntityID" 
+                                         HeaderText="BusinessEntityID" 
+                                         SortExpression="BusinessEntityID" 
+                                         readOnly="true"/>
                                  </Columns> 
                                     <EditRowStyle BackColor="#7C6F57" />
                                  <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
