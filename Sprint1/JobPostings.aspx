@@ -37,7 +37,7 @@
 <!------------------- BODY ----------------------->
  
  <body>
-	
+	<form id="postingFormJob" runat="server">
 	 
  <!-- NAVIGAION --> 
  <nav class="navbar navbar-expand-md navbar-light bg-light nav-dashboard">
@@ -71,7 +71,8 @@
     				<button class="dropdown-item" type="button">Profile</button>
     				<button class="dropdown-item" type="button">Help</button>
     				<button class="dropdown-item" type="button">Account Settings</button>
-    				<button class="dropdown-item" type="button">Logout</button>
+    				<asp:Button class="dropdown-item" type="button" runat="server" Text="Log Out" OnClick="SignOut_Click"></asp:Button>
+
   				</div>
 			</div>
       </li>
@@ -91,12 +92,20 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
+<<<<<<< HEAD
   				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
+=======
+  				  <h2 class="bus-name-header">Martin's Electronics</h2>
+>>>>>>> 4dcc8214b9d86c136c910644c5f4ff52f395cd4f
   				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>
+<<<<<<< HEAD
            <a href="Default.aspx" <span id="SignOut" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span></a>
+=======
+   
+>>>>>>> 4dcc8214b9d86c136c910644c5f4ff52f395cd4f
            </div>
             <ul class="nav flex-column sidebar-links">
            
@@ -156,7 +165,7 @@
   		<div class="col-8 ml-3 mt-4 pb-4" id="postings">
 
 				  <!-- JOB FORM CONTENT -->
-					  <form id="postingFormJob" runat="server">
+					  <%--<form id="postingFormJob" runat="server">--%>
 						  <div class="card card-body border-secondary">
 							  <h3 class="text-maingreen">Job Posting</h3>
 									<h5 class="pt-4">Post Details</h5>
@@ -296,15 +305,23 @@
 		
 							
 							 <br />
+<<<<<<< HEAD
 		                    <asp:Label ID="LblSearch" runat="server" Text="Search Job Titles: " Font-Bold="true" Font-Underline="true"></asp:Label>
+=======
+		                    <asp:Label ID="LblSearch" runat="server" Text="Search Job Postings (By Job Title): " Font-Bold="true" Font-Underline="true"></asp:Label>
+                            <br />
+>>>>>>> 4dcc8214b9d86c136c910644c5f4ff52f395cd4f
                             <asp:TextBox ID="TextSearch" runat="server"></asp:TextBox>
-                            <asp:Button ID="BtnSearch" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
-                            <asp:Button ID="BtnReset" runat="server" Text="Reset" OnClick="BtnReset_Click" />
+                            <br />
+                            <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
+                            <br />
+                            <asp:Button ID="BtnReset" class="btn btn-maingreen w-25" runat="server" Text="Reset" OnClick="BtnReset_Click" />
                             <asp:label id="MessageLabel"
                              forecolor="Red"
                              runat="server"/>
                             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
-							
+							<br />
+
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
                                autogenerateselectbutton="false"
