@@ -152,7 +152,7 @@
 							  <li class="list-group-item">Usless Table</li>
 							</ul>
 							<div class="text-center">
-							<button type="button" class="m-3 btn btn-secondary btn-md mt-5 align-bottom w-75" id="exportBtn">Export to Excel</button>
+							<button type="button" class="m-3 btn btn-secondary btn-md mt-5 align-bottom w-75" id="exportBtn"><a href="#" runat="server" onServerClick="ExportToExcel">Export Excel</a></button>
 							</div>
   					</div>
  				</div>
