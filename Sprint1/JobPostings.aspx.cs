@@ -141,27 +141,31 @@ public partial class JobPostings : System.Web.UI.Page
         Response.Redirect("JobPostings.aspx");
     }
 
+    protected void BtnSearch_Click(object sender, EventArgs e)
+    {
+        con.Open();
+        SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where(JobTitle like '%' + @Job + '%')", con);
+        cmd.Parameters.Add("@Job", SqlDbType.NVarChar).Value = TextSearch.Text;
+        SqlDataReader reader = cmd.ExecuteReader();
 
-    //protected void BtnSearch_Click(object sender, EventArgs e)
-    //{
-    //    con.Open();
-    //    SqlCommand cmd = new SqlCommand("SELECT * from JobPostings where(JobTitle like '%' + @JobTitle + '%')", con);
-    //    cmd.Parameters.Add("@JobTitle", SqlDbType.NVarChar).Value = TextSearch.Text;
-    //    SqlDataReader reader = cmd.ExecuteReader();
+        if (reader.HasRows)
+        {
+            GridView1.DataSource = reader;
+            GridView1.DataBind();
+        }
+        else
+        {
+            LblNoDbOptions.Visible = true; //alert if no activities inserted into database yet
+            TextSearch.Text = "";
+            GridView1.DataSource = null; //Bring the gridview to zero
+            GridView1.DataBind();
+        }
 
-    //    if (reader.HasRows)
-    //    {
-    //        GridView1.DataSource = reader;
-    //        GridView1.DataBind();
-    //    }
-    //    else
-    //    {
-    //        LblNoDbOptions.Visible = true; //alert if no activities inserted into database yet
-    //        TextSearch.Text = "";
-    //        GridView1.DataSource = null; //Bring the gridview to zero
-    //        GridView1.DataBind();
-    //    }
+        con.Close();
+    }
 
-    //    con.Close();
-    //}
+    protected void BtnReset_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("JobPostings.aspx");
+    }
 }
