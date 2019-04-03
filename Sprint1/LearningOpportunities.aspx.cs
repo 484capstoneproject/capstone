@@ -63,6 +63,8 @@ public partial class LearningOpportunites : System.Web.UI.Page
 
             btnUpdatePost.Enabled = false;
         }
+        GridView1.Columns[1].Visible = false;
+        GridView1.Columns[9].Visible = false;
     }
 
 

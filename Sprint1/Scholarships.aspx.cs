@@ -58,6 +58,8 @@ public partial class Scholarships : System.Web.UI.Page
 
             btnUpdatePost.Enabled = false;
         }
+        GridView1.Columns[1].Visible = false;
+        GridView1.Columns[8].Visible = false;
     }
 
 

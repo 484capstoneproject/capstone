@@ -293,6 +293,10 @@
                                      <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true">
                                         <ControlStyle Font-Bold="True"></ControlStyle>
                                      </asp:CommandField>
+                                     <asp:BoundField DataField="ScholarshipPostingID" 
+                                         HeaderText="ScholarshipPostingID" 
+                                         InsertVisible="False" ReadOnly="True" 
+                                         SortExpression="ScholarshipPostingID" />
                                      <asp:BoundField DataField="ScholarshipName" 
                                          HeaderText="Scholarship Name" 
                                          SortExpression="Scholarship Name" >
@@ -314,6 +318,10 @@
                                      <asp:BoundField DataField="Year" 
                                          HeaderText="Year" 
                                          SortExpression="Year" />
+                                      <asp:BoundField DataField="BusinessEntityID" 
+                                         HeaderText="BusinessEntityID" 
+                                         SortExpression="BusinessEntityID" 
+                                         readOnly="true"/>
                                  </Columns> 
                                     <EditRowStyle BackColor="#7C6F57" />
                                  <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

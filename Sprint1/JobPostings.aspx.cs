@@ -58,6 +58,9 @@ public partial class JobPostings : System.Web.UI.Page
 
             btnUpdatePost.Enabled = false;
         }
+
+        GridView1.Columns[1].Visible = false;
+        GridView1.Columns[9].Visible = false;
     }
 
 
@@ -113,7 +116,7 @@ public partial class JobPostings : System.Web.UI.Page
     {
         int LoginEntityID = (int)Session["EntityID"];
         var JobPostingID = GridView1.SelectedRow.Cells[1].Text;
-
+        
         con.Open();
 
         SqlCommand cmd = new SqlCommand("UPDATE JobPosting SET JobTitle=@JobTitle, JobType=@JobType, CareerCluster=@CareerCluster, Description=@Description, Month=@Month, Day=@Day, Year=@Year where JobPostingID=@JobPostingID", con);
