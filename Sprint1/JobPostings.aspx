@@ -1,4 +1,8 @@
-<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
+<%@ Page Language="C#"  AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
+
+
+
+
 
 <!doctype html>
 <html lang="en">
@@ -36,7 +40,8 @@
 <!------------------- BODY ----------------------->
  
  <body>
-	 
+
+	
 	 <div class="posting-screen" style="height: 200vh;"> 
 	 
  <!-- NAVIGAION --> 
@@ -148,7 +153,10 @@
 		 <!---- Postings ---->
 		
   		<div class="col-6 ml-3 mt-4" id="postings">
+
 <%--        <form runat="server">--%>
+
+
 		    <!-- Edit Modal -->
 					<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
@@ -515,7 +523,12 @@
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						        <%--<button type="button" class="btn bg-green" data-dismiss="modal">Save changes</button>--%>
-                                <asp:Button type="button" Text="Save Changes" class="btn bg-green" id="Button2" OnClick="BtnEditChanges_Click1" runat="server" ></asp:Button>
+
+
+                               <%-- <asp:Button type="button" Text="Save Changes" class="btn bg-green" id="Button2" OnClick="BtnEditChanges_Click1" runat="server" ></asp:Button>--%>
+
+
+
 						      </div>
 						    </div>
 						  </div>
@@ -538,7 +551,7 @@
 									        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 									      <%--  <button type="button" class="btn btn-primary confirmDelete">Delete Post</button>--%>
 
-                                            <asp:Button type="button" Text="Delete Post" class="btn btn-primary confirmDelete" id="Button3" OnClick="BtnDeleteChanges_Click1" runat="server" ></asp:Button>
+                                         <%--   <asp:Button type="button" Text="Delete Post" class="btn btn-primary confirmDelete" id="Button3" OnClick="BtnDeleteChanges_Click1" runat="server" ></asp:Button>--%>
 
 
 									      </div>
@@ -886,7 +899,10 @@
 		   <button type="button" data-toggle="modal" class="p-0 new-event-btn mt-3" data-target="#newPostModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
   					  
   					  <!-- Modal -->
-                    <form runat="server">
+                    <%--<form runat="server">--%>
+
+
+
 						<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
@@ -1263,7 +1279,7 @@
 						    </div>
 						  </div>
 						</div>
-                    </form>
+                
 			
 							
   						    </div> <!---- Filter Row end div tag  ---->
@@ -1308,3 +1324,10 @@
      </div>
 </body>
 </html>
+
+
+
+
+
+    
+

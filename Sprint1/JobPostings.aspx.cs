@@ -88,7 +88,7 @@ public partial class JobPostings : System.Web.UI.Page
 
         con.Open();
         SqlCommand cmd = new SqlCommand("Update [dbo].[JobPosting] Set JobTitle=@JobTitle, JobType=@JobType, " +
-            "CareerCluster=@CareerCluster, Description=@Description, Month=@Month, Day=@Day, Year=@Year Where JobPostingID=1", con);
+            "CareerCluster=@CareerCluster, Description=@Description, Month=@Month, Day=@Day, Year=@Year Where JobPostingID=2", con);
         cmd.CommandType = CommandType.Text;
 
         cmd.Parameters.AddWithValue("@JobTitle", updatePost.GetJobTitle() ?? (object)DBNull.Value);
@@ -108,7 +108,6 @@ public partial class JobPostings : System.Web.UI.Page
 
     protected void BtnDeleteChanges_Click1(object sender, EventArgs e)
     {
-
 
 
         con.Open();

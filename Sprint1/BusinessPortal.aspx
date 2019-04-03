@@ -54,7 +54,6 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#"><i data-feather="bell" class="mr-2"></i></a>
-          <a href="LearningOpportunity.aspx"><div class="nav-item btn btn-maingreen-outline action-btn">Learning</div></a>
       </li>
       <li class="nav-item">
         	<div class="dropdown">
@@ -75,7 +74,7 @@
  
   <!-- END OF NAV -->
 
-    <div class="container-fluid vh-100">
+ <div class="container-fluid vh-100">
       <div class="row vh-100">
        
       <!---------------- SIDEBAR BEGINS --------------->
@@ -106,12 +105,13 @@
 					<span class="nav-txt">Applications</span>
                 </a>
               </li>
-              <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="JobPostings.aspx">
-                  <i data-feather="clipboard"></i>
-					<span class="nav-txt">Postings</span>
-                </a>
-              </li>
+              <li class="nav-item nav-item-side dropright">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i data-feather="clipboard" class="mr-2"></i>Postings</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="JobOpportunity.aspx">Job Opportunity</a>
+      <a class="dropdown-item" href="LearningOpportunity.aspx">Learning Opportunity</a>
+    </div>
+  </li>
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
