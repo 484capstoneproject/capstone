@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,6 +15,11 @@ public partial class JobPostings : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["EntityID"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
         int LoginEntityID = (int)Session["EntityID"];
 
         if (!IsPostBack)
@@ -36,15 +42,18 @@ public partial class JobPostings : System.Web.UI.Page
             }
         }
     }
-
-    protected void BtnSaveChanges_Click(object sender, EventArgs e)
+ 
+    protected void BtnSaveChanges_Click1(object sender, EventArgs e)
     {
-        if (radioJob.Checked==true)
+
+        int LoginEntityID = (int)Session["EntityID"];
+
+        if(radioJob.Checked)
         {
-            JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, JobTypeDropDown.Value, CareerClusterDropDown.Value, txtareaDescription.Value, Convert.ToInt32(monthDropDown.Value), Convert.ToInt32(dayDropDown.Value), Convert.ToInt32(YearDropDown.Value));
+            JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value, dropCareerCluster.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("Insert into JobPostings values(@JobTitle, @JobType, @CareerCluster, @Description, @Month, @Day, @Year);");
+            SqlCommand cmd = new SqlCommand("Insert into JobPosting values(@JobTitle, @JobType, @CareerCluster, @Description, @Month, @Day, @Year, @BusinessEntityID);");
             cmd.CommandType = System.Data.CommandType.Text;
             cmd.Connection = con;
             cmd.Parameters.AddWithValue("@JobTitle", newPost.GetJobTitle());
@@ -54,16 +63,26 @@ public partial class JobPostings : System.Web.UI.Page
             cmd.Parameters.AddWithValue("@Month", newPost.GetMonth());
             cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
             cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
+            cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
             cmd.ExecuteNonQuery();
-
         }
-        else if (radioLearning.Checked==true)
+        else if(radioLearning.Checked)
         {
-
+            //learning opportunity inserts
         }
-        else if(radioScholarship.Checked==true)
+        else
         {
-
+            //scholarship inserts
         }
+       
+    }
+
+
+    protected void SignOut_Click(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Session.Abandon();
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
     }
 }

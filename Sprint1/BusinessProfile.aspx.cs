@@ -19,6 +19,11 @@ public partial class BusinessProfile : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["EntityID"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
         int LoginEntityID = (int)Session["EntityID"];
 
         if (!IsPostBack)

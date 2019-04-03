@@ -31,8 +31,7 @@
 <!------------------- BODY ----------------------->
  
 <body>
-<form runat="server">
- 
+ <form id="form1" runat="server">
  <!-- NAVIGAION --> 
  <nav class="navbar navbar-expand-md navbar-light bg-light nav-dashboard">
 
@@ -411,7 +410,7 @@
     <script>
       feather.replace()
     </script>
- </form>
+    </form>
 </body>
   
 </html>

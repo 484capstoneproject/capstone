@@ -19,6 +19,11 @@ public partial class BusinessPortal : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["EntityID"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
         int LoginEntityID = (int)Session["EntityID"];
 
         if (!IsPostBack)
@@ -41,7 +46,6 @@ public partial class BusinessPortal : System.Web.UI.Page
         }
 
     }
-
     protected void SignOut_Click(object sender, EventArgs e)
     {
         Session.Clear();
@@ -49,5 +53,4 @@ public partial class BusinessPortal : System.Web.UI.Page
         FormsAuthentication.SignOut();
         FormsAuthentication.RedirectToLoginPage();
     }
-
 }

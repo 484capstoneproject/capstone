@@ -92,7 +92,7 @@
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
   				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
-  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>>
+  				  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
   				  </td> 
 				 </tr>  				
 			</table>
@@ -148,34 +148,13 @@
 		 <!---- Postings ---->
 		
   		<div class="col-6 ml-3 mt-4" id="postings">
-			<div class="posting-row">
-				
-				
-		<!---- Posting 1 ---->
- 		 	<div class="card bg-white p-0" style="height: 40vh;" id="posting1">
- 					
-					<div class="card-header data d-flex justify-content-between">
-  						 <span><h4 class="mt-2">Assistant Manager</h4></span> 
-	
-							 <div class="d-inline">
-								 <div class="d-inline mt-3 mr-2"><label class="switch">
-						 		 <input type="checkbox">
-						 		 <span class="slider round"></span>
-								</label></div>
-								
-								
-								<!-- EDIT POST MODAL -->
-								
-		   <button type="button" data-toggle="modal" class="p-0 new-event-btn" data-target="#exampleModal"><li class="list-group-item"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></li></button>
- 					  
 
-  					  
-  					  <!-- Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		    <!-- Edit Modal -->
+					<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
 						      <div class="modal-header">
-						        <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
+						        <h5 class="modal-title" id="editModalLabel">Edit Post</h5>
 						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						          <span aria-hidden="true">&times;</span>
 						        </button>
@@ -197,7 +176,7 @@
 							</div>
 								 
 								  <!-- JOB FORM CONTENT -->
-								  <form id="postingFormJob">
+								  <form id="postingFormJobEdit">
 									<h5 class="pt-4">Edit Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
@@ -239,16 +218,16 @@
 										<div class="form-group pt-1">
 											<label for="paymentType" class="mr-3 ">Payment Type: </label>
 									    	<div class="pt-2 d-inline">
-										    <div class="form-check form-check-inline" id="paymentType">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+										    <div class="form-check form-check-inline" id="radioPaymentType">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioSalary" value="option1">
 										      <label class="form-check-label" for="inlineRadio1">Salaried</label>
 										    </div>
 										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioHourly" value="option2">
 										      <label class="form-check-label" for="inlineRadio2">Hourly</label>
 										    </div>
 										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="radioUnpaid" value="option3" >
 										      <label class="form-check-label" for="inlineRadio3">Unpaid</label>
 										    </div>
 											</div>
@@ -262,7 +241,7 @@
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="MonthDropDown">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -279,7 +258,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="DayDropDown">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -315,7 +294,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="YearDropDown">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -329,17 +308,17 @@
 							       </form>
 							       
 							   <!-- LEARNING FORM CONTENT -->
-								  <form id="postingFormLearn" style="display: none;">
+								  <form id="postingFormLearnEdit" style="display: none;">
 									<h5 class="pt-4">Edit Post Details</h5>
 									  <div class="form-group">
 										<label for="learntitle">Learning Opportunity Title</label>
-										<input type="learntitle" class="form-control" id="learntitle" aria-describedby="learntitle" placeholder="Enter">
+										<input type="learntitle" class="form-control" id="LearningOpportunity" aria-describedby="learntitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseOppType">Opportunity Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseOppType">
+								  		 <select class="form-control w-75 mb-3" id="OpportunityTypeDrop">
 											  <option>Shadowing</option>
 											  <option>Career Event</option>
 											  <option>Other</option>
@@ -348,7 +327,7 @@
 								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerClusterLearn">Career Cluster</label>
-											<select class="form-control w-75" id="CareerClusterLearn">
+											<select class="form-control w-75" id="LearningCareerCluster">
 											  <option>Select</option>
 											  <option>Agriculture, Food and Natural Resources</option>
 											  <option>Architecture and Construction</option>
@@ -370,14 +349,14 @@
 									</div>    									 
 									  	<div class="form-group">
  										   <label for="descLearn">Description</label>
- 										   <textarea class="form-control" id="descLearn1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <textarea class="form-control" id="describeLearning" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="MonthSelect">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -394,7 +373,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="DaySelect">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -430,7 +409,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="YearSelect">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -445,28 +424,28 @@
 							       
 							   							       
 							   <!-- SCHOLARSHIP FORM CONTENT -->
-								  <form id="postingFormScholar" style="display: none;">
+								  <form id="postingFormScholarEdit" style="display: none;">
 									<h5 class="pt-4">Edit Scholarship Details</h5>
 									  <div class="form-group">
 										<label for="scholtitle">Scholarship Name</label>
-										<input type="scholtitle" class="form-control" id="scholtitle" aria-describedby="scholtitle" >
+										<input type="scholtitle" class="form-control" id="scholarshipName" aria-describedby="scholtitle" >
 									  </div>
 									  <div class="form-group">
 										<label for="scholamount">Amount</label>
-										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
+										<input type="scholamount" class="form-control" id="txtScholarshipAmt" aria-describedby="scholamount" >
 									  </div>
 								  
 														 
 									  	<div class="form-group">
  										   <label for="descSchol">Description</label>
- 										   <textarea class="form-control" id="descSchol" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <textarea class="form-control" id="describeScolar" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="monthSelect">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -483,7 +462,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="daySelect">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -519,7 +498,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="yearSelect">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -535,19 +514,14 @@
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green">Save changes</button>
+						        <button type="button" class="btn bg-green" data-dismiss="modal">Save changes</button>
 						      </div>
 						    </div>
 						  </div>
 						</div>
 					
-  							  
-  							  
-  							  <!--DELETE POST MODAL -->
-   								
- 						      <button type="button" class="btn" data-toggle="modal" data-target=".closemodal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
- 						      	<!-- Modal -->
-									<div class="modal fade closemodal" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<!-- Delete Modal -->
+					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 									  <div class="modal-dialog modal-dialog-centered" role="document">
 									    <div class="modal-content">
 									      <div class="modal-header">
@@ -561,11 +535,39 @@
 									      </div>
 									      <div class="modal-footer">
 									        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-									        <button type="button" class="btn btn-primary">Delete Post</button>
+									        <button type="button" class="btn btn-primary confirmDelete">Delete Post</button>
 									      </div>
 									    </div>
 									  </div>
 									</div>
+		
+			<div class="posting-row">
+				
+				
+		<!---- Posting ---->
+ 		 	<div class="card bg-white p-0 mt-3 jobCardTemplate" style="height: 40vh; display: none;">
+ 					
+					<div class="card-header data d-flex justify-content-between">
+  						 <div>
+  						 <span><h4 class="mt-2">EXAMPLE 1</h4></span> 
+  						 <span class="text-muted mr-1">Part Time</span><span>|</span><span class="ml-1 mr-1">Career Cluster</span><span>|</span><span class="ml-1 text-danger">Hourly Pay</span>
+						 </div>
+							 <div class="d-inline">
+								 <div class="d-inline mt-3 mr-2"><label class="switch">
+						 		 <input type="checkbox">
+						 		 <span class="slider round"></span>
+								</label></div>
+								
+								
+							  <!-- EDIT POST MODAL BTN -->
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn" data-target="#editModal"><li class="list-group-item"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></li></button>
+ 					  
+  							    							  
+  							  <!--DELETE POST MODAL BTN -->
+ 						      <button type="button" data-toggle="modal" class="btn deleteBtn" data-target="#deleteModal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
+ 						      
+ 					
+ 						      
  						    </div> 					
 					  </div>
 					
@@ -577,869 +579,52 @@
 										   <span><p class="submitted-text ml-4">Published 3/4/19 1:30 p.m.</p></span>
    									   </td>
 						</tr>
-  						<p>Assistant Manager responsibilities include monitoring inventory and ordering merchandise based on demand. You will also research competitive products and analyze consumer behavior to ensure our store meets and exceeds client expectations. Our ideal candidate will have retail…</p>
+  						<p class="mt-2">Assistant Manager responsibilities include monitoring inventory and ordering merchandise based on demand. You will also research competitive products and analyze consumer behavior to ensure our store meets and exceeds client expectations. Our ideal candidate will have retail…</p>
 						
-						<p><b>Insert Tags</b></p>
+						<p><b>Application Due: May 1, 2019</b></p>
 					</div>	
   			   </div>
 				
 		<!---- Posting 2 ---->
-		 	<div class="card bg-white p-0 mt-5 mb-5" style="height: 40vh;" id="posting2">
+	 		 	<div class="card bg-white p-0 mt-3" style="height: 40vh;">
  					
 					<div class="card-header data d-flex justify-content-between">
-  						 <span><h4 class="mt-2">Social Media Intern</h4></span> 
-	
+  						 <div>
+  						 <span><h4 class="mt-2">Assistant Manager</h4></span> 
+  						 <span class="text-muted mr-1">Part Time</span><span>|</span><span class="ml-1 mr-1">Career Cluster</span><span>|</span><span class="ml-1 text-danger">Hourly Pay</span>
+						 </div>
 							 <div class="d-inline">
 								 <div class="d-inline mt-3 mr-2"><label class="switch">
 						 		 <input type="checkbox">
-								 <span class="slider round"></span><br>
-								 </label></div>
-									    
-								<!-- EDIT POST MODAL -->
+						 		 <span class="slider round"></span>
+								</label></div>
 								
-		   <button type="button" data-toggle="modal" class="p-0 new-event-btn" data-target="#exampleModal"><li class="list-group-item"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></li></button>
+									
+							  <!-- EDIT POST MODAL BTN -->
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn" data-target="#editModal"><li class="list-group-item"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></li></button>
  					  
-
-  					  
-  					  <!-- Modal -->
-						<div class="modal fade"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						  <div class="modal-dialog modal-lg" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <h5 class="modal-title">Edit Post</h5>
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						          <span aria-hidden="true">&times;</span>
-						        </button>
-						      </div>
-						      <div class="modal-body">
-						      <h5><label for="choosePostType">Post Type</label></h5>
-						  
-								  
-							  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-							    <label class="btn btn-secondary active">
-							      <input type="radio" name="options" id="option1" value="jobOpp" autocomplete="off" checked> Job Opportunity
-							    </label>
-							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="option2" value="learnOpp" autocomplete="off"> Learning Opportunity
-							    </label>
-							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="option3" value="scholarship" autocomplete="off"> Scholarship
-							    </label>
-							</div>
-								 
-								  <!-- JOB FORM CONTENT -->
-								  <form id="postingFormJob">
-									<h5 class="pt-4">Edit Post Details</h5>
-									  <div class="form-group">
-										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" class="form-control" id="JobTitle" aria-describedby="JobTitle" placeholder="Enter">
-									  </div>
-								  
-								  <div class="row pt-2 pb-3">
-								  	<div class="col">
-								 		 <label for="chooseJobType">Job Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseJobType">
-											  <option>Part-Time</option>
-											  <option>Full Time</option>
-											  <option>Internship</option>
-								  		 </select>
-								    </div>
-								    <div class="col">
-									   <div class="form-group">
-											<label for="CareerCluster">Career Cluster</label>
-											<select class="form-control w-75" id="CareerCluster">
-											  <option>Select</option>
-											  <option>Agriculture, Food and Natural Resources</option>
-											  <option>Architecture and Construction</option>
-											  <option>Business Management and Administration</option>
-											  <option>Education and Training</option>
-											  <option>Finance</option>
-											  <option>Government and Public Administration</option>
-											  <option>Health Science</option>
-											  <option>Hospitality & Tourism</option>
-											  <option>Human Services</option>
-											  <option>Information Technology</option>
-											  <option>Law, Public Safety, Corrections and Security</option>
-											  <option>Manufacturing</option>
-											  <option>Marketing</option>
-											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
-											</select>
-										  </div>
-									</div>
-									</div>  
-										<div class="form-group pt-1">
-											<label for="paymentType" class="mr-3 ">Payment Type: </label>
-									    	<div class="pt-2 d-inline">
-										    <div class="form-check form-check-inline" id="paymentType">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-										      <label class="form-check-label" for="inlineRadio1">Salaried</label>
-										    </div>
-										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-										      <label class="form-check-label" for="inlineRadio2">Hourly</label>
-										    </div>
-										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
-										      <label class="form-check-label" for="inlineRadio3">Unpaid</label>
-										    </div>
-											</div>
-									   </div>  									 
-									  	<div class="form-group">
- 										   <label for="exampleFormControlTextarea1">Description</label>
- 										   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
-									  </div> 
-									  <div class="form-group">
-											  <h5 class="pt-4">Edit Application Deadline</h5>
-										      <div class="row w-75">
-										      	<div class="col">
-											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
-													</select>
-										      	</div>
-										      	<div class="col">
-											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
-													</select>
-										      </div>
-										      <div class="col">
-											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
-													</select>
-											</div>
-									  		</div>
-									  
-									  </div> 
-									
-							       </form>
-							       
-							   <!-- LEARNING FORM CONTENT -->
-								  <form id="postingFormLearn" style="display: none;">
-									<h5 class="pt-4">Edit Post Details</h5>
-									  <div class="form-group">
-										<label for="learntitle">Learning Opportunity Title</label>
-										<input type="learntitle" class="form-control" id="learntitle" aria-describedby="learntitle" placeholder="Enter">
-									  </div>
-								  
-								  <div class="row pt-2 pb-3">
-								  	<div class="col">
-								 		 <label for="chooseOppType">Opportunity Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseOppType">
-											  <option>Shadowing</option>
-											  <option>Career Event</option>
-											  <option>Other</option>
-								  		 </select>
-								    </div>
-								    <div class="col">
-									   <div class="form-group">
-											<label for="CareerClusterLearn">Career Cluster</label>
-											<select class="form-control w-75" id="CareerClusterLearn">
-											  <option>Select</option>
-											  <option>Agriculture, Food and Natural Resources</option>
-											  <option>Architecture and Construction</option>
-											  <option>Business Management and Administration</option>
-											  <option>Education and Training</option>
-											  <option>Finance</option>
-											  <option>Government and Public Administration</option>
-											  <option>Health Science</option>
-											  <option>Hospitality & Tourism</option>
-											  <option>Human Services</option>
-											  <option>Information Technology</option>
-											  <option>Law, Public Safety, Corrections and Security</option>
-											  <option>Manufacturing</option>
-											  <option>Marketing</option>
-											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
-											</select>
-										  </div>
-									</div>
-									</div>    									 
-									  	<div class="form-group">
- 										   <label for="descLearn">Description</label>
- 										   <textarea class="form-control" id="descLearn1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
-									  </div> 
-									  <div class="form-group">
-											  <h5 class="pt-4">Edit Application Deadline</h5>
-										      <div class="row w-75">
-										      	<div class="col">
-											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
-													</select>
-										      	</div>
-										      	<div class="col">
-											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
-													</select>
-										      </div>
-										      <div class="col">
-											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
-													</select>
-											</div>
-									  		</div>
-									  
-									  </div> 
-									
-							       </form>
-							       
-							   							       
-							   <!-- SCHOLARSHIP FORM CONTENT -->
-								  <form id="postingFormScholar" style="display: none;">
-									<h5 class="pt-4">Edit Scholarship Details</h5>
-									  <div class="form-group">
-										<label for="scholtitle">Scholarship Name</label>
-										<input type="scholtitle" class="form-control" id="scholtitle" aria-describedby="scholtitle" >
-									  </div>
-									  <div class="form-group">
-										<label for="scholamount">Amount</label>
-										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
-									  </div>
-								  
-														 
-									  	<div class="form-group">
- 										   <label for="descSchol">Description</label>
- 										   <textarea class="form-control" id="descSchol" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
-									  </div> 
-									  <div class="form-group">
-											  <h5 class="pt-4">Edit Application Deadline</h5>
-										      <div class="row w-75">
-										      	<div class="col">
-											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
-													</select>
-										      	</div>
-										      	<div class="col">
-											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
-													</select>
-										      </div>
-										      <div class="col">
-											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
-													</select>
-											</div>
-									  		</div>
-									  
-									  </div> 
-									
-							       </form>
-								  
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green">Save changes</button>
-						      </div>
-						    </div>
-						  </div>
-						</div>
-								 <!--DELETE POST MODAL -->
- 						      <button type="button" class="btn" data-toggle="modal" data-target=".closemodal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
- 						      	<!-- Modal -->
-									<div class="modal fade closemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-									  <div class="modal-dialog modal-dialog-centered" role="document">
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <h5 class="modal-title">Delete Post</h5>
-									        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									          <span aria-hidden="true">&times;</span>
-									        </button>
-									      </div>
-									      <div class="modal-body">
-									        Are you sure you want to delete your post? This cannot be undone.
-									      </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-									        <button type="button" class="btn btn-primary">Delete Post</button>
-									      </div>
-									    </div>
-									  </div>
-									</div>
- 						      	
- 						   	 </div> 					
-				
-						</div>
+  							    							  
+  							  <!--DELETE POST MODAL BTN -->
+ 						      <button type="button" data-toggle="modal" class="btn deleteBtn" data-target="#deleteModal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
+						    
+ 						    </div> 					
+					  </div>
 					
-						<div class="card-body" id="posting2body">
-							<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
-										<tr>
+					<div class="card-body" id="postBody">
+						<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
+						<tr>
    									   <td scope="row align-middle">
-   									   <h6 class="d-inline pt-2">Harrisonburg, Virginia </h6>
-										   <span><p class="submitted-text ml-4">Published 3/3/19 1:30 p.m.</p></span>
+   									   <h6 class="d-inline pt-2">Staunton, Virginia </h6>
+										   <span><p class="submitted-text ml-4">Published 3/4/19 1:30 p.m.</p></span>
    									   </td>
-										</tr>
-  								<p>We are seeking a social media manager to maintain and grow our company’s social networks in order to educate veterans about the DAV as well as about the benefits they are provided through various sources of advocacy and programs…</p>
+						</tr>
+  						<p class="mt-2">Assistant Manager responsibilities include monitoring inventory and ordering merchandise based on demand. You will also research competitive products and analyze consumer behavior to ensure our store meets and exceeds client expectations. Our ideal candidate will have retail…</p>
 						
-								<p><b>Insert tags</b></p>
-  					     </div>
-  			    </div>
+						<p><b>Application Due: May 1, 2019</b></p>
+					</div>	
+  			   </div> 
  		
-	
-		   <!---- Posting 3 ---->
- 				<div class="card bg-white p-0" style="height: 40vh;" id="posting3">
- 				
-					  <div class="card-header data d-flex justify-content-between">
-  						 <span><h4 class="mt-2">Virtual Assistant</h4></span> 
-						
-							 <div class="d-inline">
-								 
-								 <div class="d-inline mt-3 mr-2"><label class="switch">
-						 		 <input type="checkbox">
-								 <span class="slider round"></span><br>
-								 </label></div>
-								<!-- EDIT POST MODAL -->
-								
-		   <button type="button" data-toggle="modal" class="p-0 new-event-btn" data-target="#exampleModal"><li class="list-group-item"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></li></button>
- 					  
 
-  					  
-  					  <!-- Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						  <div class="modal-dialog modal-lg" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <h5 class="modal-title" id="exampleModalLabel">Edit Post</h5>
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						          <span aria-hidden="true">&times;</span>
-						        </button>
-						      </div>
-						      <div class="modal-body">
-						      <h5><label for="choosePostType">Post Type</label></h5>
-						  
-								  
-							  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-							    <label class="btn btn-secondary active">
-							      <input type="radio" name="options" id="option1" value="jobOpp" autocomplete="off" checked> Job Opportunity
-							    </label>
-							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="option2" value="learnOpp" autocomplete="off"> Learning Opportunity
-							    </label>
-							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="option3" value="scholarship" autocomplete="off"> Scholarship
-							    </label>
-							</div>
-								 
-								  <!-- JOB FORM CONTENT -->
-								  <form id="postingFormJob">
-									<h5 class="pt-4">Edit Post Details</h5>
-									  <div class="form-group">
-										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" class="form-control" id="JobTitle" aria-describedby="JobTitle" placeholder="Enter">
-									  </div>
-								  
-								  <div class="row pt-2 pb-3">
-								  	<div class="col">
-								 		 <label for="chooseJobType">Job Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseJobType">
-											  <option>Part-Time</option>
-											  <option>Full Time</option>
-											  <option>Internship</option>
-								  		 </select>
-								    </div>
-								    <div class="col">
-									   <div class="form-group">
-											<label for="CareerCluster">Career Cluster</label>
-											<select class="form-control w-75" id="CareerCluster">
-											  <option>Select</option>
-											  <option>Agriculture, Food and Natural Resources</option>
-											  <option>Architecture and Construction</option>
-											  <option>Business Management and Administration</option>
-											  <option>Education and Training</option>
-											  <option>Finance</option>
-											  <option>Government and Public Administration</option>
-											  <option>Health Science</option>
-											  <option>Hospitality & Tourism</option>
-											  <option>Human Services</option>
-											  <option>Information Technology</option>
-											  <option>Law, Public Safety, Corrections and Security</option>
-											  <option>Manufacturing</option>
-											  <option>Marketing</option>
-											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
-											</select>
-										  </div>
-									</div>
-									</div>  
-										<div class="form-group pt-1">
-											<label for="paymentType" class="mr-3 ">Payment Type: </label>
-									    	<div class="pt-2 d-inline">
-										    <div class="form-check form-check-inline" id="paymentType">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-										      <label class="form-check-label" for="inlineRadio1">Salaried</label>
-										    </div>
-										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-										      <label class="form-check-label" for="inlineRadio2">Hourly</label>
-										    </div>
-										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
-										      <label class="form-check-label" for="inlineRadio3">Unpaid</label>
-										    </div>
-											</div>
-									   </div>  									 
-									  	<div class="form-group">
- 										   <label for="exampleFormControlTextarea1">Description</label>
- 										   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
-									  </div> 
-									  <div class="form-group">
-											  <h5 class="pt-4">Edit Application Deadline</h5>
-										      <div class="row w-75">
-										      	<div class="col">
-											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
-													</select>
-										      	</div>
-										      	<div class="col">
-											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
-													</select>
-										      </div>
-										      <div class="col">
-											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
-													</select>
-											</div>
-									  		</div>
-									  
-									  </div> 
-									
-							       </form>
-							       
-							   <!-- LEARNING FORM CONTENT -->
-								  <form id="postingFormLearn" style="display: none;">
-									<h5 class="pt-4">Edit Post Details</h5>
-									  <div class="form-group">
-										<label for="learntitle">Learning Opportunity Title</label>
-										<input type="learntitle" class="form-control" id="learntitle" aria-describedby="learntitle" placeholder="Enter">
-									  </div>
-								  
-								  <div class="row pt-2 pb-3">
-								  	<div class="col">
-								 		 <label for="chooseOppType">Opportunity Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseOppType">
-											  <option>Shadowing</option>
-											  <option>Career Event</option>
-											  <option>Other</option>
-								  		 </select>
-								    </div>
-								    <div class="col">
-									   <div class="form-group">
-											<label for="CareerClusterLearn">Career Cluster</label>
-											<select class="form-control w-75" id="CareerClusterLearn">
-											  <option>Select</option>
-											  <option>Agriculture, Food and Natural Resources</option>
-											  <option>Architecture and Construction</option>
-											  <option>Business Management and Administration</option>
-											  <option>Education and Training</option>
-											  <option>Finance</option>
-											  <option>Government and Public Administration</option>
-											  <option>Health Science</option>
-											  <option>Hospitality & Tourism</option>
-											  <option>Human Services</option>
-											  <option>Information Technology</option>
-											  <option>Law, Public Safety, Corrections and Security</option>
-											  <option>Manufacturing</option>
-											  <option>Marketing</option>
-											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
-											</select>
-										  </div>
-									</div>
-									</div>    									 
-									  	<div class="form-group">
- 										   <label for="descLearn">Description</label>
- 										   <textarea class="form-control" id="descLearn1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
-									  </div> 
-									  <div class="form-group">
-											  <h5 class="pt-4">Edit Application Deadline</h5>
-										      <div class="row w-75">
-										      	<div class="col">
-											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
-													</select>
-										      	</div>
-										      	<div class="col">
-											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
-													</select>
-										      </div>
-										      <div class="col">
-											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
-													</select>
-											</div>
-									  		</div>
-									  
-									  </div> 
-									
-							       </form>
-							       
-							   							       
-							   <!-- SCHOLARSHIP FORM CONTENT -->
-								  <form id="postingFormScholar" style="display: none;">
-									<h5 class="pt-4">Edit Scholarship Details</h5>
-									  <div class="form-group">
-										<label for="scholtitle">Scholarship Name</label>
-										<input type="scholtitle" class="form-control" id="scholtitle" aria-describedby="scholtitle" >
-									  </div>
-									  <div class="form-group">
-										<label for="scholamount">Amount</label>
-										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
-									  </div>
-								  
-														 
-									  	<div class="form-group">
- 										   <label for="descSchol">Description</label>
- 										   <textarea class="form-control" id="descSchol" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
-									  </div> 
-									  <div class="form-group">
-											  <h5 class="pt-4">Edit Application Deadline</h5>
-										      <div class="row w-75">
-										      	<div class="col">
-											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
-													</select>
-										      	</div>
-										      	<div class="col">
-											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
-													</select>
-										      </div>
-										      <div class="col">
-											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
-													</select>
-											</div>
-									  		</div>
-									  
-									  </div> 
-									
-							       </form>
-								  
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green">Save changes</button>
-						      </div>
-						    </div>
-						  </div>
-						</div>	
-					<!--DELETE POST MODAL -->
- 						      <button type="button" class="btn" data-toggle="modal" data-target=".closemodal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
- 						      	<!-- Modal -->
-									<div class="modal fade closemodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-									  <div class="modal-dialog modal-dialog-centered" role="document">
-									    <div class="modal-content">
-									      <div class="modal-header">
-									        <h5 class="modal-title">Delete Post</h5>
-									        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									          <span aria-hidden="true">&times;</span>
-									        </button>
-									      </div>
-									      <div class="modal-body">
-									        Are you sure you want to delete your post? This cannot be undone.
-									      </div>
-									      <div class="modal-footer">
-									        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-									        <button type="button" class="btn btn-primary">Delete Post</button>
-									      </div>
-									    </div>
-									  </div>
-									</div> 						      	
- 						      </div> 
-							
-					    </div>
-					
-						<div class="card-body" id="posting3body">
-								<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
-								<tr>
-   									   <td scope="row align-middle">
-   									   <h6 class="d-inline pt-2">Leesburg, Virginia </h6>
-										   <span><p class="submitted-text ml-4">Published 3/2/19 1:30 p.m.</p></span>
-   									   </td>
-								</tr>
-  								<p>We are looking for a Virtual Assistant to provide administrative support to our team while working remotely. As a Virtual Assistant, you will perform various administrative tasks, including answering emails, scheduling meetings and making travel arrangements. For this role, a strong Internet connection is required…</p>
-						
-								<p><b>Insert tags</b></p>
-  						</div>
-					</div> 	<!---- Posting 3 end div tag  ---->
 				
  		</div> 	<!---- Posting Row end div tag  ---->
 	</div>  <!---- Posting Col end div tag  ---->
@@ -1448,7 +633,7 @@
 	
 			   <!---- Filter Card---->
 				
-					<div class="col-3 card bg-white ml-3 mt-5" style="height: 70vh;">
+					<div class="col-3 card bg-white ml-3 mt-5">
 						<div class="filter-row">
   						
 							<form class="search-form">
@@ -1474,10 +659,10 @@
 								  </div>
 								
 								<!---- Career Clusters check boxes---->
-  						 			 <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+  						 			 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
   						   
 							  
-							 		 <div class="col card-body">
+							 		 <div class="col card-body cluster-list">
 										
 														<div class="form-check">
 														  <input class="form-check-input" type="checkbox" value="" id="CareerCheck1">
@@ -1691,17 +876,17 @@
 							
 							
 					
-		  <!--ADDING A NEW POST-->
-		   <button type="button" data-toggle="modal" class="p-0 new-event-btn" data-target="#exampleModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
+		  <!--ADD A NEW POST-->
+		   <button type="button" data-toggle="modal" class="p-0 new-event-btn mt-3" data-target="#newPostModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
   					  
   					  <!-- Modal -->
-                      <form runat="server">
-						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <form runat="server">
+						<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
 						      <div class="modal-header">
-						        <h5 class="modal-title" id="exampleModalLabel">New Post</h5>
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close" runat="server" id="BtnNewPost">
+						        <h5 class="modal-title" id="newPostModalLabel">New Post</h5>
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						          <span aria-hidden="true">&times;</span>
 						        </button>
 						      </div>
@@ -1709,143 +894,144 @@
 						      <h5><label for="choosePostType">Post Type</label></h5>
 						  
 								  
-							  <div class="btn-group btn-group-toggle" data-toggle="buttons">
-							    <label class="btn btn-secondary active">
-							      <input type="radio" name="options" id="radioJob" value="jobOpp" autocomplete="off" checked runat="server"> Job Opportunity
+							  <div class="btn-group btn-group-toggle" data-toggle="buttons" id="radioOptions" runat="server">
+							    <label class="btn btn-secondary ">
+							      <input type="radio" name="options" id="radioJob" value="jobOpp" runat="server" autocomplete="off" checked> Job Opportunity
 							    </label>
+							    <asp:Label class="btn btn-secondary"  runat="server">
+							      <input type="radio" name="options" id="radioLearning" value="learnOpp" runat="server" autocomplete="off"> Learning Opportunity
+							    </asp:Label>
 							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="radioLearning" value="learnOpp" autocomplete="off" runat="server"> Learning Opportunity
+							      <input type="radio" name="options" id="radioScholarship" value="scholarship" runat="server" autocomplete="off"> Scholarship
 							    </label>
-							    <label class="btn btn-secondary">
-							      <input type="radio" name="options" id="radioScholarship" value="scholarship" autocomplete="off" runat="server"> Scholarship
-							    </label>
+                       
 							</div>
 								 
-								  <!-- JOB FORM CONTENT -->
-								  <form id="postingFormJob">
+								  <!-- JOB FORM CONTENT -->               
+                               <asp:Panel ID="postingFormJob" runat="server" style="display:block">
+								  <form id="form1">
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" class="form-control" id="txtJobTitle" aria-describedby="JobTitle" placeholder="Enter" runat="server">
+										<input type="jobtitle" class="form-control" id="txtJobTitle" runat="server" aria-describedby="JobTitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseJobType">Job Type</label>
-								  		 <select class="form-control w-75 mb-3" id="JobTypeDropDown" runat="server">
-											  <option id="partTimeDrop">Part-Time</option>
-											  <option id="fullTimeDrop">Full Time</option>
-											  <option id="internshipDrop">Internship</option>
+								  		 <select class="form-control w-75 mb-3" id="dropJobType" runat="server">
+											  <option>Part-Time</option>
+											  <option>Full Time</option>
+											  <option>Internship</option>
 								  		 </select>
 								    </div>
 								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerCluster">Career Cluster</label>
-											<select class="form-control w-75" id="CareerClusterDropDown" runat="server">
-											  <option id="none">Select</option>
-											  <option id="Agriculture">Agriculture, Food and Natural Resources</option>
-											  <option id="Architecture">Architecture and Construction</option>
-											  <option id="Business">Business Management and Administration</option>
-											  <option id="Education">Education and Training</option>
-											  <option id="Finance">Finance</option>
-											  <option id="Government">Government and Public Administration</option>
-											  <option id="Health">Health Science</option>
-											  <option id="Hospital">Hospitality & Tourism</option>
-											  <option id="Human">Human Services</option>
-											  <option id="IT">Information Technology</option>
-											  <option id="Law">Law, Public Safety, Corrections and Security</option>
-											  <option id="Manufacturing">Manufacturing</option>
-											  <option id="Marketing">Marketing</option>
-											  <option id="STEM">Science, Technology, Engineering and Mathematics</option>
-                                              <option id="transportation">Transportation, Distribution and Logistics</option>
+											<select class="form-control w-75" id="dropCareerCluster" runat="server">
+											  <option>Select</option>
+											  <option>Agriculture, Food and Natural Resources</option>
+											  <option>Architecture and Construction</option>
+											  <option>Business Management and Administration</option>
+											  <option>Education and Training</option>
+											  <option>Finance</option>
+											  <option>Government and Public Administration</option>
+											  <option>Health Science</option>
+											  <option>Hospitality & Tourism</option>
+											  <option>Human Services</option>
+											  <option>Information Technology</option>
+											  <option>Law, Public Safety, Corrections and Security</option>
+											  <option>Manufacturing</option>
+											  <option>Marketing</option>
+											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
 											</select>
 										  </div>
 									</div>
 									</div>  
 										<div class="form-group pt-1">
 											<label for="paymentType" class="mr-3 ">Payment Type: </label>
-									    	<div class="pt-2 d-inline" id="paymentTypeRadios" runat="server">
-										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="SalaryRadio" value="option1">
+									    	<div class="pt-2 d-inline">
+										    <div class="form-check form-check-inline" id="paymentType">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
 										      <label class="form-check-label" for="inlineRadio1">Salaried</label>
 										    </div>
 										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="HourlyRadio" value="option2">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
 										      <label class="form-check-label" for="inlineRadio2">Hourly</label>
 										    </div>
 										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="UnpaidRadio" value="option3" >
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
 										      <label class="form-check-label" for="inlineRadio3">Unpaid</label>
 										    </div>
 											</div>
 									   </div>  									 
 									  	<div class="form-group">
  										   <label for="exampleFormControlTextarea1">Description</label>
- 										   <textarea class="form-control" id="txtareaDescription" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can." runat="server"></textarea>
+ 										   <textarea class="form-control" id="txtareaDescription" runat="server" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="monthDropDown" runat="server">
-													  <option id="Jan">January</option>       
-   													  <option id="Feb">February</option>       
-   													  <option id="Mar">March</option>       
-   													  <option id="Apr">April</option>       
-   													  <option id="May">May</option>       
-   													  <option id="June">June</option>       
-   													  <option id="July">July</option>       
-   													  <option id="Aug">August</option>       
-   													  <option id="Sep">September</option>       
-   													  <option id="Oct">October</option>       
-   													  <option id="Nov">November</option>       
-   													  <option id="Dec">December</option> 
+													<select class="form-control" id="dropMonth" runat="server">
+													  <option>January</option>       
+   													  <option>February</option>       
+   													  <option>March</option>       
+   													  <option>April</option>       
+   													  <option>May</option>       
+   													  <option>June</option>       
+   													  <option>July</option>       
+   													  <option>August</option>       
+   													  <option>September</option>       
+   													  <option>October</option>       
+   													  <option>November</option>       
+   													  <option>December</option> 
 													</select>
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="dayDropDown" runat="server">
-													    <option id="day1">1</option>       
-   														<option id="day2">2</option>       
-   														<option id="day3">3</option>       
-   														<option id="day4">4</option>       
-   														<option id="day5">5</option>       
-   														<option id="day6">6</option>       
-   														<option id="day7">7</option>       
-   														<option id="day8">8</option>       
-   														<option id="day9">9</option>       
-   														<option id="day10">10</option>       
-   														<option id="day11">11</option>       
-   														<option id="day12">12</option>       
-   														<option id="day13">13</option>       
-   														<option id="day14">14</option>       
-   														<option id="day15">15</option>       
-   														<option id="day16">16</option>       
-   														<option id="day17">17</option>       
-   														<option id="day18">18</option>       
-   														<option id="day19">19</option>       
-   														<option id="day20">20</option>       
-   														<option id="day21">21</option>       
-   														<option id="day22">22</option>       
-   														<option id="day23">23</option>       
-   														<option id="day24">24</option>       
-   														<option id="day25">25</option>       
-   														<option id="day26">26</option>       
-   														<option id="day27">27</option>       
-   														<option id="day28">28</option>       
-   														<option id="day29">29</option>       
-   														<option id="day30">30</option>       
-   														<option id="day31">31</option>
+													<select class="form-control" id="dropDay" runat="server">
+													    <option>1</option>       
+   														<option>2</option>       
+   														<option>3</option>       
+   														<option>4</option>       
+   														<option>5</option>       
+   														<option>6</option>       
+   														<option>7</option>       
+   														<option>8</option>       
+   														<option>9</option>       
+   														<option>10</option>       
+   														<option>11</option>       
+   														<option>12</option>       
+   														<option>13</option>       
+   														<option>14</option>       
+   														<option>15</option>       
+   														<option>16</option>       
+   														<option>17</option>       
+   														<option>18</option>       
+   														<option>19</option>       
+   														<option>20</option>       
+   														<option>21</option>       
+   														<option>22</option>       
+   														<option>23</option>       
+   														<option>24</option>       
+   														<option>25</option>       
+   														<option>26</option>       
+   														<option>27</option>       
+   														<option>28</option>       
+   														<option>29</option>       
+   														<option>30</option>       
+   														<option>31</option>
 													</select>
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="YearDropDown" runat="server">
-													    <option id="yr2019">2019</option>       
-   														<option id="yr2020">2020</option>       
-   														<option id="yr2021">2021</option>       
-   														<option id="yr2022">2022</option>       
+													<select class="form-control" id="dropYear" runat="server">
+													    <option>2019</option>       
+   														<option>2020</option>       
+   														<option>2021</option>       
+   														<option>2022</option>       
 													</select>
 											</div>
 									  		</div>
@@ -1853,22 +1039,24 @@
 									  </div> 
 									
 							       </form>
+                                      </asp:Panel>
 							       
 							   <!-- LEARNING FORM CONTENT -->
-								  <form id="learningForm" style="display: none;">
+                                <asp:Panel ID="postingFormLearn" runat="server" style="display:none">
+								  <form id="Form2">
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="learntitle">Learning Opportunity Title</label>
-										<input type="learntitle" class="form-control" id="txtLearningOpportunity" aria-describedby="learntitle" placeholder="Enter">
+										<input type="learntitle" class="form-control" id="learntitle" aria-describedby="learntitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseOppType">Opportunity Type</label>
-								  		 <select class="form-control w-75 mb-3" id="dropOpportunityType">
-											  <option id="ShadowingOption">Shadowing</option>
-											  <option id="CareerEventOption">Career Event</option>
-											  <option id="OtherOption">Other</option>
+								  		 <select class="form-control w-75 mb-3" id="chooseOppType">
+											  <option>Shadowing</option>
+											  <option>Career Event</option>
+											  <option>Other</option>
 								  		 </select>
 								    </div>
 								    <div class="col">
@@ -1903,7 +1091,7 @@
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="monthDrop">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -1920,7 +1108,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="dayDrop">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -1956,7 +1144,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="yearDrop">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -1968,18 +1156,20 @@
 									  </div> 
 									
 							       </form>
+                            </asp:Panel>
 							       
 							   							       
 							   <!-- SCHOLARSHIP FORM CONTENT -->
-								  <form id="scholarshipForm" style="display: none;">
+                               <asp:Panel ID="postingFormScholar" runat="server" style="display:none">
+								  <form id="Form3" >
 									<h5 class="pt-4">Scholarship Details</h5>
 									  <div class="form-group">
 										<label for="scholtitle">Scholarship Name</label>
-										<input type="scholtitle" class="form-control" id="txtScholarshipName" aria-describedby="scholtitle" >
+										<input type="scholtitle" class="form-control" id="scholtitle" aria-describedby="scholtitle" >
 									  </div>
 									  <div class="form-group">
 										<label for="scholamount">Amount</label>
-										<input type="scholamount" class="form-control" id="txtScholarshipAmount" aria-describedby="scholamount" >
+										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
 									  </div>
 								  
 														 
@@ -1992,7 +1182,7 @@
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control" id="monthDropDown">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -2009,7 +1199,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control" id="dayDropDown">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -2045,7 +1235,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control" id="yearDropDown">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -2057,23 +1247,18 @@
 									  </div> 
 									
 							       </form>
+                            </asp:Panel>
 								  
 						      </div>
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green" runat="server" id="BtnSaveChanges" OnClick="BtnSaveChanges_Click">Save Changes</button>
+						        <asp:Button type="button" Text="Save Changes" class="btn bg-green addPost" data-dismiss="modal" id="btnSaveChanges" OnClick="BtnSaveChanges_Click1" runat="server" ></asp:Button>
 						      </div>
 						    </div>
 						  </div>
 						</div>
-							
-					</form>
-                    <!--END OF RUNAT FORM TAG-->
-							
-							
-							
-							
-							
+                    </form>
+			
 							
   						    </div> <!---- Filter Row end div tag  ---->
 						</div> <!---- Filter Col end div tag  ---->
@@ -2117,3 +1302,4 @@
      </div>
 </body>
 </html>
+
