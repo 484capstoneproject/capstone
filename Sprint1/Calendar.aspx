@@ -193,6 +193,12 @@
                 </a>
               </li>
               <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Learning Opportunities Posts</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>

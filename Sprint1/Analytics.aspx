@@ -111,6 +111,12 @@
                 </a>
               </li>
               <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Learning Opportunities Posts</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
