@@ -290,7 +290,14 @@
 		
 							
 							 <br />
-		
+		                    <asp:Label ID="LblSearch" runat="server" Text="Search Activities: " Font-Bold="true" Font-Underline="true"></asp:Label>
+                            <asp:TextBox ID="TextSearch" runat="server"></asp:TextBox>
+                            <asp:Button ID="BtnSearch" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
+                            <asp:Button ID="BtnReset" runat="server" Text="Reset" OnClick="BtnReset_Click" />
+                            <asp:label id="MessageLabel"
+                             forecolor="Red"
+                             runat="server"/>
+                            <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
 							
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
