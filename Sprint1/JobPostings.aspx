@@ -1,4 +1,4 @@
-<%@ Page Language="C#"AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
+﻿<%@ Page Language="C#"AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
 
 
 <!doctype html>
@@ -130,6 +130,12 @@
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
 					<span class="nav-txt">Learning Opportunities Posts</span>
+                </a>
+              </li>
+                   <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Scholarships.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Scholarship Posts</span>
                 </a>
               </li>
               <li class="nav-item-side">
@@ -319,7 +325,7 @@
                              runat="server"/>
                             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
 							<br />
-
+                            <%--Gridview start--%>
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
                                onselectedindexchanged="GridView1_SelectedIndexChanged"
@@ -328,12 +334,18 @@
                                  <AlternatingRowStyle BackColor="White" />
                 
                                  <Columns>
-                                     <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true">
-<ControlStyle Font-Bold="True"></ControlStyle>
-                                     </asp:CommandField>
+                                      <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
+                                     <asp:BoundField DataField="JobPostingID" 
+                                         HeaderText="JobPostingID" 
+                                         InsertVisible="False" ReadOnly="True" 
+                                         SortExpression="JobPostingID" />
+                                 
+                                   
                                      <asp:BoundField DataField="JobTitle" 
-                                         HeaderText="JobTitle" 
-                                         SortExpression="JobTitle" />
+                                         HeaderText="Title" 
+                                         SortExpression="JobTitle" >
+                                     <ControlStyle BackColor="#000066" />
+                                     </asp:BoundField>
                                      <asp:BoundField DataField="JobType" 
                                          HeaderText="JobType" 
                                          SortExpression="JobType" />
@@ -353,6 +365,10 @@
                                      <asp:BoundField DataField="Year" 
                                          HeaderText="Year" 
                                          SortExpression="Year" />
+                                     <asp:BoundField DataField="BusinessEntityID" 
+                                         HeaderText="BusinessEntityID" 
+                                         SortExpression="BusinessEntityID" 
+                                         readOnly="true"/>
                                  </Columns> 
                                     <EditRowStyle BackColor="#7C6F57" />
                                  <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -368,7 +384,9 @@
                                  <SortedDescendingCellStyle BackColor="#D4DFE1" />
                                  <SortedDescendingHeaderStyle BackColor="#15524A" />
                 
-                             </asp:Gridview>              
+                             </asp:Gridview>   
+                            
+                            <%--GridView End--%>
                         
 							
 						</div>

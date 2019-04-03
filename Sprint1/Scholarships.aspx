@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LearningOpportunities.aspx.cs" Inherits="LearningOpportunites" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Scholarships.aspx.cs" Inherits="Scholarships" %>
 
 
 <!doctype html>
@@ -92,12 +92,18 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
+
   				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
+
   				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>
+
            <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+
+
+   
 
            </div>
             <ul class="nav flex-column sidebar-links">
@@ -120,14 +126,14 @@
 					<span class="nav-txt">Postings</span>
                 </a>
               </li>
-                 <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="LearningOpportunities.aspx">
+                <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
 					<span class="nav-txt">Learning Opportunities Posts</span>
                 </a>
               </li>
-              <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Scholarships.aspx">
+                 <li class="nav-item-side">
+                <a class="nav-link nav-link-side sidebar-active" href="Scholarships.aspx">
                   <i data-feather="clipboard"></i>
 					<span class="nav-txt">Scholarship Posts</span>
                 </a>
@@ -164,70 +170,25 @@
   		<div class="col-8 ml-3 mt-4 pb-4" id="postings">
 
 				  <!-- JOB FORM CONTENT -->
-					  
-						  <div class="card card-body border-secondary">
-							  <h3 class="text-maingreen">Learning Opportunites</h3>
-									<h5 class="pt-4">Post Details</h5>
+					  <%--<form id="postingFormJob" runat="server">--%>
+                    <div class="card card-body border-secondary">
+                         <h5 class="pt-4">Edit Scholarship Details</h5>
 									  <div class="form-group">
-										<label for="LearningTitle">Learning Opportunity Title</label>
-										<input type="LearningTitle" runat="server" class="form-control" id="txtLearningTitle" aria-describedby="LearningTitle" placeholder="Enter">
+										<label for="scholtitle">Scholarship Name</label>
+										<input type="scholtitle" class="form-control" id="txtScholarshipName" runat="server" aria-describedby="scholtitle" >
+									  </div>
+									  <div class="form-group">
+										<label for="scholamount">Amount</label>
+										<input type="scholamount" class="form-control" id="txtAmountName" runat="server" aria-describedby="scholamount" >
 									  </div>
 								  
-								  <div class="row pt-2 pb-3">
-								  	<div class="col">
-								 		 <label for="chooseOpportunityType">Opportunity Type</label>
-								  		 <select class="form-control w-75 mb-3" id="dropOpportunityType" runat="server">
-											  <option>Shadowing</option>
-											  <option>Career Event</option>
-											  <option>Other</option>
-								  		 </select>
-								    </div>
-								    <div class="col">
-									   <div class="form-group">
-											<label for="CareerCluster">Career Cluster</label>
-											<select class="form-control w-75" id="dropCareerCluster" runat="server">
-											  <option>Select</option>
-											  <option>Agriculture, Food and Natural Resources</option>
-											  <option>Architecture and Construction</option>
-											  <option>Business Management and Administration</option>
-											  <option>Education and Training</option>
-											  <option>Finance</option>
-											  <option>Government and Public Administration</option>
-											  <option>Health Science</option>
-											  <option>Hospitality & Tourism</option>
-											  <option>Human Services</option>
-											  <option>Information Technology</option>
-											  <option>Law, Public Safety, Corrections and Security</option>
-											  <option>Manufacturing</option>
-											  <option>Marketing</option>
-											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
-											</select>
-										  </div>
-									</div>
-									</div>  
-                              <%--<div class="form-group pt-1">
-											<label for="paymentType" class="mr-3 ">Payment Type: </label>
-									    	<div class="pt-2 d-inline">
-										    <div class="form-check form-check-inline" id="paymentType">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-										      <label class="form-check-label" for="inlineRadio1">Salaried</label>
-										    </div>
-										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-										      <label class="form-check-label" for="inlineRadio2">Hourly</label>
-										    </div>
-										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
-										      <label class="form-check-label" for="inlineRadio3">Unpaid</label>
-										    </div>
-											</div>
-									   </div>--%>  									 
+														 
 									  	<div class="form-group">
- 										   <label for="exampleFormControlTextarea1">Description</label>
- 										   <textarea class="form-control" runat="server" id="txtareaDescription" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <label for="descSchol">Description</label>
+ 										   <textarea class="form-control" id="txtareaDescription" runat="server" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
-											  <h5 class="pt-4">Application Deadline</h5>
+											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
@@ -293,22 +254,24 @@
 											</div>
 									  		</div>
 									  
-									  </div>
-									  <div class="form-group">
+									  </div> 
+                                        <div class="form-group">
 											<asp:Button class="btn btn-maingreen w-25" id="btnAddPost" runat="server" Text="Add Post" OnClick="BtnAdd_Click"></asp:Button>   
                                             <asp:Button CssClass="btn btn-maingreen w-25" ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"></asp:Button>
-						       				<asp:Button class="btn btn-primary w-25" id="btnUpdatePost" runat="server" Text="Update Changes" OnClick="BtnUpdate_Click"></asp:Button> 
-						       		 </div>  
-							       </div><!-- ENDS ADD JOB CARD -->
+						       		   		<asp:Button class="btn btn-primary w-25" id="btnUpdatePost" runat="server" Text="Update Changes" OnClick="BtnUpdate_Click"></asp:Button> 
+						       		     </div>  
+                                   </div>
+						 
 						<div class="mt-5 mb-5 card card-body border-secondary">
 		
 							
 							 <br />
-		                     <asp:Label ID="LblSearch" runat="server" Text="Search Learning Opportunity Posts (By LearningTitle): " Font-Bold="true" Font-Underline="true"></asp:Label>
+
+		                    <asp:Label ID="LblSearch" runat="server" Text="Search Scholarships (By Scholarship Name): " Font-Bold="true" Font-Underline="true"></asp:Label>
 
                             <br />
 
-                            <asp:TextBox ID="TextSearch" runat="server" placeholder="Learning Title"></asp:TextBox>
+                            <asp:TextBox ID="TextSearch" runat="server" placeholder="Job Title"></asp:TextBox>
                             <br />
                             <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
                             <br />
@@ -317,29 +280,31 @@
                              forecolor="Red"
                              runat="server"/>
                             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
-							<br />   
-							
+							<br />
+                            <%--Gridview start--%>
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
-                               autogenerateselectbutton="false"
                                onselectedindexchanged="GridView1_SelectedIndexChanged"
-                               runat="server" DataKeyNames="LearningPostingID">
+                               runat="server" DataKeyNames="ScholarshipPostingID" CellPadding="4" ForeColor="#333333" GridLines="None">
+                
+                                 <AlternatingRowStyle BackColor="White" />
                 
                                  <Columns>
-                                     <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
-                                     <asp:BoundField DataField="LearningPostingID" 
-                                         HeaderText="LearningPostingID" 
+                                     <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true">
+                                        <ControlStyle Font-Bold="True"></ControlStyle>
+                                     </asp:CommandField>
+                                     <asp:BoundField DataField="ScholarshipPostingID" 
+                                         HeaderText="ScholarshipPostingID" 
                                          InsertVisible="False" ReadOnly="True" 
-                                         SortExpression="LearningPostingID" />
-                                     <asp:BoundField DataField="LearningTitle" 
-                                         HeaderText="LearningTitle" 
-                                         SortExpression="LearningTitle" />
-                                     <asp:BoundField DataField="LearningType" 
-                                         HeaderText="LearningType" 
-                                         SortExpression="LearningType" />
-                                     <asp:BoundField DataField="CareerCluster" 
-                                         HeaderText="CareerCluster" 
-                                         SortExpression="CareerCluster" />
+                                         SortExpression="ScholarshipPostingID" />
+                                     <asp:BoundField DataField="ScholarshipName" 
+                                         HeaderText="Scholarship Name" 
+                                         SortExpression="Scholarship Name" >
+                                     <ControlStyle BackColor="#000066" />
+                                     </asp:BoundField>
+                                     <asp:BoundField DataField="Amount" 
+                                         HeaderText="Scholarship Amount" 
+                                         SortExpression="Scholarship Amount" />
                                      <asp:BoundField DataField="Description" 
                                          HeaderText="Description" 
                                          SortExpression="Description" />
@@ -353,16 +318,28 @@
                                      <asp:BoundField DataField="Year" 
                                          HeaderText="Year" 
                                          SortExpression="Year" />
-                                     <asp:BoundField DataField="BusinessEntityID" 
+                                      <asp:BoundField DataField="BusinessEntityID" 
                                          HeaderText="BusinessEntityID" 
                                          SortExpression="BusinessEntityID" 
                                          readOnly="true"/>
                                  </Columns> 
+                                    <EditRowStyle BackColor="#7C6F57" />
+                                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                 <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                 <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                 <RowStyle BackColor="#E3EAEB" />
                                     <selectedrowstyle
-                                    forecolor="#0066ff"
-                                     font-bold="true"/> 
+                                    forecolor="#333333"
+                                     font-bold="true" BackColor="#C5BBAF"/> 
                 
-                             </asp:Gridview>              
+                                 <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                                 <SortedAscendingHeaderStyle BackColor="#246B61" />
+                                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                                 <SortedDescendingHeaderStyle BackColor="#15524A" />
+                
+                             </asp:Gridview>   
+                            
+                            <%--GridView End--%>
                         
 							
 						</div>
