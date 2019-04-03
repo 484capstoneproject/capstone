@@ -68,13 +68,13 @@ public partial class JobPostings : System.Web.UI.Page
     {
         GridViewRow row = GridView1.SelectedRow;
         //MessageLabel.Text = "You Selected " + row.Cells[1].Text;
-        txtJobTitle.Value = row.Cells[1].Text;
-        dropJobType.Value = row.Cells[2].Text;
-        dropCareerCluster.Value = row.Cells[3].Text;
-        txtareaDescription.Value = row.Cells[4].Text;
-        dropMonth.Value = row.Cells[5].Text;
-        dropDay.Value = row.Cells[6].Text;
-        dropYear.Value = row.Cells[7].Text;
+        txtJobTitle.Value = row.Cells[2].Text;
+        dropJobType.Value = row.Cells[3].Text;
+        dropCareerCluster.Value = row.Cells[4].Text;
+        txtareaDescription.Value = row.Cells[5].Text;
+        dropMonth.Value = row.Cells[6].Text;
+        dropDay.Value = row.Cells[7].Text;
+        dropYear.Value = row.Cells[8].Text;
 
         btnAddPost.Enabled = false;
         btnUpdatePost.Enabled = true;
