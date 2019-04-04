@@ -321,15 +321,12 @@
 							
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
+                               autogenerateselectbutton="false"
                                onselectedindexchanged="GridView1_SelectedIndexChanged"
-                               runat="server" DataKeyNames="LearningPostingID" CellPadding="4" ForeColor="#333333" GridLines="None">
-                
-                                 <AlternatingRowStyle BackColor="White" />
+                               runat="server" DataKeyNames="LearningPostingID">
                 
                                  <Columns>
-                                     <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true">
-<ControlStyle Font-Bold="True"></ControlStyle>
-                                     </asp:CommandField>
+                                     <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
                                      <asp:BoundField DataField="LearningPostingID" 
                                          HeaderText="LearningPostingID" 
                                          InsertVisible="False" ReadOnly="True" 
@@ -361,19 +358,9 @@
                                          SortExpression="BusinessEntityID" 
                                          readOnly="true"/>
                                  </Columns> 
-                                    <EditRowStyle BackColor="#7C6F57" />
-                                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                                 <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                                 <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                                 <RowStyle BackColor="#E3EAEB" />
                                     <selectedrowstyle
-                                    forecolor="#333333"
-                                     font-bold="true" BackColor="#C5BBAF"/> 
-                
-                                 <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                                 <SortedAscendingHeaderStyle BackColor="#246B61" />
-                                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                                 <SortedDescendingHeaderStyle BackColor="#15524A" />
+                                    forecolor="#0066ff"
+                                     font-bold="true"/> 
                 
                              </asp:Gridview>              
                         
