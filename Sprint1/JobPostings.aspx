@@ -334,7 +334,9 @@
                                  <AlternatingRowStyle BackColor="White" />
                 
                                  <Columns>
+
                                       <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
+
                                      <asp:BoundField DataField="JobPostingID" 
                                          HeaderText="JobPostingID" 
                                          InsertVisible="False" ReadOnly="True" 

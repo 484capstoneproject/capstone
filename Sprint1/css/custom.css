@@ -3,7 +3,7 @@
 /*IMAGES*/
 /* Body Setup */
 body, html {
-  height: 100%; }
+  height: 119%; }
 
 /* COLORS */
 /* Buttons */
@@ -344,7 +344,7 @@ footer {
 
 /****************************** Dashboard ******************************/
 .posting-block {
-  height: 100%;
+  height: 152%;
   max-height: 100%;
   overflow-y: scroll; }
 
@@ -593,7 +593,10 @@ footer {
   font-size: 12px; }
 
 .bg-white {
-  background-color: white; }
+  background-color: white;
+    top: 0px;
+    left: 0px;
+}
 
 .editicon {
   color: #35858e; }
