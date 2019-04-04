@@ -20,29 +20,27 @@ public partial class Scholarships : System.Web.UI.Page
             Response.Redirect("Default.aspx");
         }
 
-        //int LoginEntityID = (int)Session["EntityID"];
-
-        //if (!IsPostBack)
-        //{
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand("select BusinessName from Business where BusinessEntityID=@BusinessEntityID", con);
-        //    cmd.CommandType = CommandType.Text;
-        //    cmd.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
-        //    cmd.ExecuteNonQuery();
-
-        //    SqlDataReader reader = cmd.ExecuteReader();
-
-        //    if (reader.HasRows)
-        //    {
-        //        while (reader.Read())
-        //        {
-        //            BusinessName.InnerText = "Welcome Back, ";
-        //            BusinessName.InnerText += reader["BusinessName"].ToString();
-        //        }
-        //    }
-        //}
-
         int LoginEntityID = (int)Session["EntityID"];
+
+        if (!IsPostBack)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select BusinessName from Business where BusinessEntityID=@BusinessEntityID", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
+            cmd.ExecuteNonQuery();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    BusinessName.InnerText = "Welcome Back, ";
+                    BusinessName.InnerText += reader["BusinessName"].ToString();
+                }
+            }
+        }
 
 
         if (!IsPostBack)

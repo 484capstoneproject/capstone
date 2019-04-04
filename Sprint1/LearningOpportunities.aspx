@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#"AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LearningOpportunities.aspx.cs" Inherits="LearningOpportunities" %>
 
 <!doctype html>
 <html lang="en">
@@ -175,17 +174,17 @@
 							  <h3 class="text-maingreen">Learning Posting</h3>
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
-										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" runat="server" class="form-control" id="txtJobTitle" aria-describedby="JobTitle" placeholder="Enter">
+										<label for="LearningTitle">Learning Title</label>
+										<input type="learningtitle" runat="server" class="form-control" id="txtLearningTitle" aria-describedby="LearningTitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
-								 		 <label for="chooseJobType">Job Type</label>
-								  		 <select class="form-control w-75 mb-3" id="dropJobType" runat="server">
-											  <option>Part-Time</option>
-											  <option>Full Time</option>
-											  <option>Internship</option>
+								 		 <label for="chooseJobType">Learning Type</label>
+								  		 <select class="form-control w-75 mb-3" id="dropLearningType" runat="server">
+											  <option>Shadowing</option>
+											  <option>Career Event</option>
+											  <option>Other</option>
 								  		 </select>
 								    </div>
 								    <div class="col">
@@ -329,7 +328,7 @@
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
                                onselectedindexchanged="GridView1_SelectedIndexChanged"
-                               runat="server" DataKeyNames="JobPostingID" CellPadding="4" ForeColor="#333333" GridLines="None">
+                               runat="server" DataKeyNames="LearningPostingID" CellPadding="4" ForeColor="#333333" GridLines="None">
                 
                                  <AlternatingRowStyle BackColor="White" />
                 
@@ -337,22 +336,22 @@
 
                                       <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
 
-                                     <asp:BoundField DataField="JobPostingID" 
-                                         HeaderText="JobPostingID" 
+                                     <asp:BoundField DataField="LearningPostingID" 
+                                         HeaderText="LearningPostingID" 
                                          InsertVisible="False" ReadOnly="True" 
-                                         SortExpression="JobPostingID" />
+                                         SortExpression="LearningPostingID" />
                                  
                                    
-                                     <asp:BoundField DataField="JobTitle" 
-                                         HeaderText="Title" 
-                                         SortExpression="JobTitle" >
+                                     <asp:BoundField DataField="LearningTitle" 
+                                         HeaderText="Learning Title" 
+                                         SortExpression="LearningTitle" >
                                      <ControlStyle BackColor="#000066" />
                                      </asp:BoundField>
-                                     <asp:BoundField DataField="JobType" 
-                                         HeaderText="JobType" 
-                                         SortExpression="JobType" />
+                                     <asp:BoundField DataField="LearningType" 
+                                         HeaderText="Learning Type" 
+                                         SortExpression="LearningType" />
                                      <asp:BoundField DataField="CareerCluster" 
-                                         HeaderText="CareerCluster" 
+                                         HeaderText="Career Cluster" 
                                          SortExpression="CareerCluster" />
                                      <asp:BoundField DataField="Description" 
                                          HeaderText="Description" 
@@ -433,7 +432,3 @@
 
 </body>
 </html>
-
-
-
-      

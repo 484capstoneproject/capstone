@@ -1,6 +1,6 @@
--- NextStepGo System <> Sprint1 <> Table Creation Statements
+-- NextStepGo System <> Sprint2 <> Table Creation Statements
 
--- Please create a Database named "Sprint1" prior to executing the create table commands below. Thank you.
+-- Please create a Database named "Sprint2" prior to executing the create table commands below. Thank you.
 
 Use Sprint1 CREATE TABLE [dbo].[Business](
 	[BusinessEntityID] [int] IDENTITY(1,1) NOT NULL,

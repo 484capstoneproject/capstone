@@ -58,7 +58,7 @@ public partial class ForgotPassword : System.Web.UI.Page
             mail.From = new MailAddress("cuedinnextstepgo@gmail.com");
             mail.Subject = "Password Recovery"; //subject of the meeting
 
-            string Body = "Please click the link to <a href=\"http://localhost:53131/ResetPassword.aspx\">Reset Password</a>";
+            string Body = "Please click the link to <a href=\"http://nextstepgo-dev.us-east-1.elasticbeanstalk.com/ResetPassword.aspx\">Reset Password</a>";
             mail.Body = Body; //adding content to the body of the message
 
             mail.IsBodyHtml = true;
@@ -100,7 +100,7 @@ public partial class ForgotPassword : System.Web.UI.Page
                 mail.From = new MailAddress("cuedinnextstepgo@gmail.com");
                 mail.Subject = "Password Recovery"; //subject of the meeting
 
-                string Body = "Please click the link to <a href=\"http://localhost:53131/ResetPassword.aspx\">Reset Password</a>";
+                string Body = "Please click the link to <a href=\"http://nextstepgo-dev.us-east-1.elasticbeanstalk.com/ResetPassword.aspx\">Reset Password</a>";
                 mail.Body = Body; //adding content to the body of the message
 
                 mail.IsBodyHtml = true;
