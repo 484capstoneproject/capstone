@@ -175,7 +175,7 @@
             <ul class="nav flex-column sidebar-links">
            
              <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="BusinessPortal.aspx">
+                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
@@ -189,19 +189,13 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Job Postings</span>
+					<span class="nav-txt">Job Posts</span>
                 </a>
               </li>
                 <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Postings</span>
-                </a>
-              </li>
-                 <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="ScholarshipPostings.aspx">
-                  <i data-feather="clipboard"></i>
-					<span class="nav-txt">Scholarship Posts</span>
+					<span class="nav-txt">Learning Posts</span>
                 </a>
               </li>
               <li class="nav-item-side">
@@ -217,7 +211,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Calendar.aspx">
+                <a class="nav-link nav-link-side sidebar-active" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>

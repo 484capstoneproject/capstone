@@ -123,13 +123,13 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side sidebar-active" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Postings</span>
+					<span class="nav-txt">Job Posts</span>
                 </a>
               </li>
                 <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Opportunities Posts</span>
+					<span class="nav-txt">Learning Posts</span>
                 </a>
               </li>
                    <li class="nav-item-side">
