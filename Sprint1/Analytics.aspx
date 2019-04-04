@@ -1,5 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Analytics.aspx.cs" Inherits="Analytics" %>
 
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -18,13 +19,13 @@
 	<link rel="stylesheet" href="css/custom.css">
   <style>
 	  body{
-		  overflow: hidden;
+		  overflow: scroll;
 	  }
   </style>
   
 </head>
 <body>
- <form id="form1" runat="server">
+ 
  <!-- NAVIGAION --> 
  <nav class="navbar navbar-expand-md navbar-light bg-light nav-dashboard">
 
@@ -51,13 +52,13 @@
       <li class="nav-item">
         	<div class="dropdown">
   				<button class="dropdown-toggle nav-dropdown" type="button" id="navSettingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/avatar.png"></a>
+   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/PBMares.png"></a>
   				</button>
   				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navSettingMenu">
     				<button class="dropdown-item" type="button">Profile</button>
     				<button class="dropdown-item" type="button">Help</button>
     				<button class="dropdown-item" type="button">Account Settings</button>
-    				<asp:Button class="dropdown-item" type="button" runat="server" Text="Log Out" OnClick="SignOut_Click"></asp:Button>
+    				<button class="dropdown-item" type="button">Logout</button>
   				</div>
 			</div>
       </li>
@@ -73,16 +74,19 @@
       <!---------------- SIDEBAR BEGINS --------------->
         <nav class="col-2 p-0 d-none d-md-block sidebar sidebar-expanded" id="collapse-it">
              <div class="profile-bar text-center">
-             <table class="profile-table text-left">
+            <table class="profile-table text-left">
   				<tr>
-  				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
+  				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
-  				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
-  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
+  				  <h2 class="bus-name-header mt-3" id="BusinessName" runat="server">PB Mares</h2>
+  				  
+					 <button id="editprofile" class="btn btn-link btn-edit-profile">
+					  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
+					  </button>
   				  </td> 
 				 </tr>  				
 			</table>
-           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+           <span id="signout-btn" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span>
            </div>
             <ul class="nav flex-column sidebar-links">
            
@@ -101,16 +105,16 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Postings</span>
+					<span class="nav-txt">Job Posts</span>
                 </a>
-              </li>          
+              </li>
                  <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Opportunities Posts</span>
+					<span class="nav-txt">Learning Posts</span>
                 </a>
               </li>
-                       <li class="nav-item-side">
+                 <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="Scholarships.aspx">
                   <i data-feather="clipboard"></i>
 					<span class="nav-txt">Scholarship Posts</span>
@@ -118,10 +122,10 @@
               </li>
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side sidebar-active" href="Analytics.aspx">
-                  <i data-feather="pie-chart"></i>
-					<span class="nav-txt">Analytics</span>
+                  <span class="white-icon"><i data-feather="pie-chart"></i></span>
+					<span class="nav-txt sidebartext-active">Analytics</span>
                 </a>
-              </li>         
+              </li>
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
@@ -140,67 +144,23 @@
         <div class="gradient-bar col"></div>
 	<!-------------------- SIDEBAR ENDS -------------------->
     <!-------------------- BODY STARTS --------------------->  
- 		<div class="col-10 bg-lt-grey" id="mainbody">
- 			<div class="row large-analytic-row card-deck">
- 				<div class="col-9 card bg-light p-0">
- 					<div class="card-header data d-flex justify-content-between">
-  						 <span>Profile Interactions</span> 
-  					</div>
-  					<div class="card-body" id="datalg">
-  						<!-- THIS IS WHERE GRAPH CONTENT GOES -->
-  						<p>test content a</p>
-  					</div>
- 				</div>
- 				<div class="col-3 mr-0 card p-0 bg-dk-grey">
- 					<div class="card-header data d-flex justify-content-between bg-dark">
-  						 <span>Settings</span> 
-  					</div>
-  					<div class="card-body p-0">
- 							<p class="m-3">Get a larger view of a chart or graph by clicking on the buttons below.</p>
-  							<ul class="list-group dark-list">
-							  <li class="list-group-item">Heat Map</li>
-							  <li class="list-group-item">Data Chart</li>
-							  <li class="list-group-item">Cool Graph</li>
-							  <li class="list-group-item">Usless Table</li>
-							</ul>
-							<div class="text-center">
-							<button type="button" class="m-3 btn btn-secondary btn-md mt-5 align-bottom w-75" id="exportBtn"><a href="#" runat="server" onServerClick="ExportToExcel">Export Excel</a></button>
-							</div>
-  					</div>
+ 			
+			
+		  <div class="col-10 bg-white">
+			  
+			  <div class=" ml-2 mt-2 row d-flex justify-content-between">
+				  
+				  <h1 class="invisible">Analytics</h1>
+				  <button type="button" class="mr-3 mt-1 mb-2 btn btn-secondary btn-md align-bottom" id="exportBtn">Export to Excel</button>
+			  </div>
+	
+			<div class='tableauPlaceholder' id='viz1554263138005' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_15541665870790&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Dashboard_15541665870790&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_15541665870790&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1554263138005');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='950px';vizElement.style.height='587px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+	
  				</div>
  			</div>
- 			<div class="row sm-analytic-row card-deck">
- 				<div class="col card bg-light sm-data" >
-						<div class="card-header data">
-  						  Heat Map
-  						</div>
-  						<div class="card-body" id="data1">
-  						  <!-- THIS IS WHERE GRAPH CONTENT GOES -->
-  						  <p>test content b</p>
-  						</div> 				
-  				</div>
- 				<div class="col card bg-light sm-data">
- 					<div class="card-header data">
-  						  Data Chart
-  						</div>
-  						<div class="card-body" id="data2">
-  						  <!-- THIS IS WHERE GRAPH CONTENT GOES -->
-  						  <p>test content c</p>
-  						</div>
- 				</div>
- 				<div class="col card bg-light sm-data mr-0 ">
-  						<div class="card-header data">
-  						  Cool Graph
-  						</div>
-  						<div class="card-body" id="data3">
-  						  <!-- THIS IS WHERE GRAPH CONTENT GOES -->
-  						  <p>test content d</p>
-  						</div>
- 				</div>
- 			</div>
+ 	
  		</div>
 		</div>
-	</div>
 
    <!-- jQuery first--> 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -232,6 +192,6 @@
     <script>
       feather.replace()
     </script>
-    </form>
+ 
 </body>
 </html>
