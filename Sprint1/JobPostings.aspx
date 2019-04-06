@@ -303,7 +303,7 @@
 									  <div class="form-group">
 											<asp:Button class="btn btn-maingreen w-25" id="btnAddPost" runat="server" Text="Add Post" OnClick="BtnAdd_Click"></asp:Button>   
                                             <asp:Button CssClass="btn btn-maingreen w-25" ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"></asp:Button>
-						       				<asp:Button class="btn btn-primary w-25" id="btnUpdatePost" runat="server" Text="Update Changes" OnClick="BtnUpdate_Click"></asp:Button> 
+						       				<%--<asp:Button class="btn btn-primary w-25" id="btnUpdatePost" runat="server" Text="Update Changes" OnClick="BtnUpdate_Click"></asp:Button>--%> 
 						       		 </div>  
 							       </div><!-- ENDS ADD JOB CARD -->
 						<div class="mt-5 mb-5 card card-body border-secondary">
@@ -316,6 +316,10 @@
                             <br />
 
                             <asp:TextBox ID="TextSearch" runat="server" placeholder="Job Title"></asp:TextBox>
+
+                             <asp:CheckBox ID="fullTime" Text="Full-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true" />
+                            <asp:CheckBox ID="partTime" Text="Part-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
+                            <asp:CheckBox ID="internship" Text="Internship" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
                             <br />
                             <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
                             <br />
@@ -324,8 +328,10 @@
                              forecolor="Red"
                              runat="server"/>
                             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
+							 <br />
+                             <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
 							<br />
-                            <%--Gridview start--%>
+                            <%--Gridview start
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
                                onselectedindexchanged="GridView1_SelectedIndexChanged"
@@ -387,13 +393,13 @@
                                  <SortedDescendingHeaderStyle BackColor="#15524A" />
                 
                              </asp:Gridview>   
-                            
+                            --%>
                             <%--GridView End--%>
                         
 							
 						</div>
 							       
-				</form>
+				
 						
 	
 	        </div> <!-- CLOAING CONTENT COLUMN -->
@@ -430,7 +436,7 @@
       feather.replace()
     </script>
           
-
+     </form>
 </body>
 </html>
 

@@ -45,41 +45,41 @@ public partial class JobPostings : System.Web.UI.Page
         int LoginEntityID = (int)Session["EntityID"];
 
 
-        if (!IsPostBack)
-        {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlCon"].ConnectionString);
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where BusinessEntityID=@BusinessEntityID order by JobPostingID", con);
-            cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
-            SqlDataReader reader = cmd.ExecuteReader();
-            GridView1.DataSource = reader;
-            GridView1.DataBind();
-            con.Close();
+    //    if (!IsPostBack)
+    //    {
+    //        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlCon"].ConnectionString);
+    //        con.Open();
+    //        SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where BusinessEntityID=@BusinessEntityID order by JobPostingID", con);
+    //        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+    //        SqlDataReader reader = cmd.ExecuteReader();
+    //        GridView1.DataSource = reader;
+    //        GridView1.DataBind();
+    //        con.Close();
 
-            btnUpdatePost.Enabled = false;
-        }
+    //        btnUpdatePost.Enabled = false;
+    //    }
 
-        GridView1.Columns[1].Visible = false;
-        GridView1.Columns[9].Visible = false;
+    //    GridView1.Columns[1].Visible = false;
+    //    GridView1.Columns[9].Visible = false;
     }
 
 
-    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        GridViewRow row = GridView1.SelectedRow;
-        //MessageLabel.Text = "You Selected " + row.Cells[1].Text;
-        txtJobTitle.Value = row.Cells[2].Text;
-        dropJobType.Value = row.Cells[3].Text;
-        dropCareerCluster.Value = row.Cells[4].Text;
-        txtareaDescription.Value = row.Cells[5].Text;
-        dropMonth.Value = row.Cells[6].Text;
-        dropDay.Value = row.Cells[7].Text;
-        dropYear.Value = row.Cells[8].Text;
+    //protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    //{
+    //    GridViewRow row = GridView1.SelectedRow;
+    //    //MessageLabel.Text = "You Selected " + row.Cells[1].Text;
+    //    txtJobTitle.Value = row.Cells[2].Text;
+    //    dropJobType.Value = row.Cells[3].Text;
+    //    dropCareerCluster.Value = row.Cells[4].Text;
+    //    txtareaDescription.Value = row.Cells[5].Text;
+    //    dropMonth.Value = row.Cells[6].Text;
+    //    dropDay.Value = row.Cells[7].Text;
+    //    dropYear.Value = row.Cells[8].Text;
 
-        btnAddPost.Enabled = false;
-        btnUpdatePost.Enabled = true;
+    //    btnAddPost.Enabled = false;
+    //    btnUpdatePost.Enabled = true;
    
-    }
+    //}
 
     protected void SignOut_Click(object sender, EventArgs e)
     {
@@ -112,31 +112,31 @@ public partial class JobPostings : System.Web.UI.Page
         Response.Redirect("JobPostings.aspx");
     }
 
-    protected void BtnUpdate_Click(object sender, EventArgs e)
-    {
-        int LoginEntityID = (int)Session["EntityID"];
-        var JobPostingID = GridView1.SelectedRow.Cells[1].Text;
+    //protected void BtnUpdate_Click(object sender, EventArgs e)
+    //{
+    //    int LoginEntityID = (int)Session["EntityID"];
+    //    var JobPostingID = GridView1.SelectedRow.Cells[1].Text;
         
-        con.Open();
+    //    con.Open();
 
-        SqlCommand cmd = new SqlCommand("UPDATE JobPosting SET JobTitle=@JobTitle, JobType=@JobType, CareerCluster=@CareerCluster, Description=@Description, Month=@Month, Day=@Day, Year=@Year where JobPostingID=@JobPostingID", con);
-        cmd.CommandType = System.Data.CommandType.Text;
-        cmd.Connection = con;
+    //    SqlCommand cmd = new SqlCommand("UPDATE JobPosting SET JobTitle=@JobTitle, JobType=@JobType, CareerCluster=@CareerCluster, Description=@Description, Month=@Month, Day=@Day, Year=@Year where JobPostingID=@JobPostingID", con);
+    //    cmd.CommandType = System.Data.CommandType.Text;
+    //    cmd.Connection = con;
 
-        cmd.Parameters.AddWithValue("@JobTitle", txtJobTitle.Value);
-        cmd.Parameters.AddWithValue("@JobType", dropJobType.Value);
-        cmd.Parameters.AddWithValue("@CareerCluster", dropCareerCluster.Value);
-        cmd.Parameters.AddWithValue("@Description", txtareaDescription.Value);
-        cmd.Parameters.AddWithValue("@Month", dropMonth.Value);
-        cmd.Parameters.AddWithValue("@Day", dropDay.Value);
-        cmd.Parameters.AddWithValue("@Year", dropYear.Value);
-        cmd.Parameters.AddWithValue("@JobPostingID", JobPostingID);
-        cmd.ExecuteNonQuery();
+    //    cmd.Parameters.AddWithValue("@JobTitle", txtJobTitle.Value);
+    //    cmd.Parameters.AddWithValue("@JobType", dropJobType.Value);
+    //    cmd.Parameters.AddWithValue("@CareerCluster", dropCareerCluster.Value);
+    //    cmd.Parameters.AddWithValue("@Description", txtareaDescription.Value);
+    //    cmd.Parameters.AddWithValue("@Month", dropMonth.Value);
+    //    cmd.Parameters.AddWithValue("@Day", dropDay.Value);
+    //    cmd.Parameters.AddWithValue("@Year", dropYear.Value);
+    //    cmd.Parameters.AddWithValue("@JobPostingID", JobPostingID);
+    //    cmd.ExecuteNonQuery();
 
-        con.Close();
+    //    con.Close();
 
-        Response.Redirect("JobPostings.aspx");
-    }
+    //    Response.Redirect("JobPostings.aspx");
+    //}
 
 
     protected void btnClear_Click(object sender, EventArgs e)
@@ -146,29 +146,104 @@ public partial class JobPostings : System.Web.UI.Page
 
     protected void BtnSearch_Click(object sender, EventArgs e)
     {
+
         int LoginEntityID = (int)Session["EntityID"];
 
         con.Open();
         SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where(JobTitle like '%' + @Job + '%') AND BusinessEntityID=@BusinessEntityID", con);
         cmd.Parameters.Add("@Job", SqlDbType.NVarChar).Value = TextSearch.Text;
         cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
-        SqlDataReader reader = cmd.ExecuteReader();
+        SqlDataReader rdr = cmd.ExecuteReader();
 
-        if (reader.HasRows)
+
+
+
+        // Fill the list box with the values retrieved
+        ListBox1.Items.Clear();
+        while (rdr.Read())
         {
-            GridView1.DataSource = reader;
-            GridView1.DataBind();
-        }
-        else
-        {
-            LblNoDbOptions.Visible = true; //alert if no activities inserted into database yet
-            TextSearch.Text = "";
-            GridView1.DataSource = null; //Bring the gridview to zero
-            GridView1.DataBind();
+            ListBox1.Items.Add(rdr["JobTitle"].ToString());
+
+
         }
 
-        con.Close();
+        // Close data reader object and database connection
+        if (rdr != null)
+            rdr.Close();
+
+        if (con.State == ConnectionState.Open)
+            con.Close();
     }
+
+
+    protected void typeCheckBoxChanged(object sender, EventArgs e)
+    {
+        int LoginEntityID = (int)Session["EntityID"];
+
+        string part = "";
+        string full = "";
+        string intern = "";
+
+        if (fullTime.Checked)
+        {
+            full = "Full Time";
+        }
+        if (partTime.Checked)
+        {
+            part = "Part-Time";
+        }
+        if (internship.Checked)
+        {
+            intern = "Internship";
+        }
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Select * from JobPosting where (JobType like @full OR JobType like @part OR JobType like @intern) AND BusinessEntityID=@BusinessEntityID", con);
+        cmd.Parameters.Add("@full", SqlDbType.NVarChar).Value = full;
+        cmd.Parameters.Add("@part", SqlDbType.NVarChar).Value = part;
+        cmd.Parameters.Add("@intern", SqlDbType.NVarChar).Value = intern;
+        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+        SqlDataReader rdr = cmd.ExecuteReader();
+
+
+        ListBox1.Items.Clear();
+        while (rdr.Read())
+        {
+            ListBox1.Items.Add(rdr["JobTitle"].ToString());
+           
+        }
+
+        // Close data reader object and database connection
+        if (rdr != null)
+            rdr.Close();
+
+        if (con.State == ConnectionState.Open)
+            con.Close();
+    }
+
+
+
+
+
+
+
+
+
+    //if (reader.HasRows)
+    //{
+    //    GridView1.DataSource = reader;
+    //    GridView1.DataBind();
+    //}
+    //else
+    //{
+    //    LblNoDbOptions.Visible = true; //alert if no activities inserted into database yet
+    //    TextSearch.Text = "";
+    //    GridView1.DataSource = null; //Bring the gridview to zero
+    //    GridView1.DataBind();
+    //}
+
+    //con.Close();
+
 
     protected void BtnReset_Click(object sender, EventArgs e)
     {
