@@ -157,8 +157,8 @@
         <br /><br />
         <div>
             <h2>Add Event:</h2>
-            <asp:Label ID="lblAddEventName" Text="Event Name: " runat="server"></asp:Label><asp:TextBox ID="txtAddEventName" runat="server" placeholder="Event Name"></asp:TextBox>
-            <asp:Label ID="lblEventDescription" Text="Event Description: " runat="server"></asp:Label><asp:TextBox ID="txtEventDescription" runat="server" placeholder="Event Description" TextMode="MultiLine"></asp:TextBox>
+            <asp:Label ID="lblAddEventName" Text="Event Name: " runat="server"></asp:Label><asp:TextBox ID="txtAddEventName" runat="server" placeholder="Event Name" required="true"></asp:TextBox>
+            <asp:Label ID="lblEventDescription" Text="Event Description: " runat="server"></asp:Label><asp:TextBox ID="txtEventDescription" required="true" runat="server" placeholder="Event Description" TextMode="MultiLine"></asp:TextBox>
         </div>
         <br />
         <div>
