@@ -27,6 +27,11 @@
 	  body{
 		  overflow: visible;
 	  }
+
+
+      table {
+        border: 1px solid black;
+            }
 	 
   </style>
 
@@ -304,8 +309,13 @@
 											<asp:Button class="btn btn-maingreen w-25" id="btnAddPost" runat="server" Text="Add Post" OnClick="BtnAdd_Click"></asp:Button>   
                                             <asp:Button CssClass="btn btn-maingreen w-25" ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"></asp:Button>
 						       				<%--<asp:Button class="btn btn-primary w-25" id="btnUpdatePost" runat="server" Text="Update Changes" OnClick="BtnUpdate_Click"></asp:Button>--%> 
+											<asp:Button class="btn btn-maingreen w-25" id="btnAddPost0" runat="server" Text="Delete Post" OnClick="BtnDelete_Click"></asp:Button> 
+                                          
 						       		 </div>  
 							       </div><!-- ENDS ADD JOB CARD -->
+               <asp:Panel runat="server" CssClass="sxpnl" ID="pnlUserdata">
+                    </asp:Panel>
+              <div id="Div1" runat="server" />
 						<div class="mt-5 mb-5 card card-body border-secondary">
 		
 							

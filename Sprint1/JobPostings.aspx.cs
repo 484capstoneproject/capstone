@@ -211,7 +211,24 @@ public partial class JobPostings : System.Web.UI.Page
         {
             ListBox1.Items.Add(rdr["JobTitle"].ToString());
            
+
         }
+
+
+
+
+        string[] yourHTMLstring = { "<table style=" + "width:100%, " + "> <tr> <th>" + full + "</th> <th>Lastname</th> <th>Age</th> </tr> <tr> <td>Jill</td> <td>Smith</td> <td>50</td> </tr> <tr> <td>Eve</td> <td>Jackson</td> <td>94</td> </tr> </table>" };
+        pnlUserdata.Controls.Add(new LiteralControl(yourHTMLstring[0]));
+        var target = "table";
+
+        //string results = Array.Find(myArr,
+        //               element => element.StartsWith("S",
+        //               StringComparison.Ordinal));
+
+
+
+
+        //Div1.InnerText = results;
 
         // Close data reader object and database connection
         if (rdr != null)
@@ -224,7 +241,17 @@ public partial class JobPostings : System.Web.UI.Page
 
 
 
+    protected void BtnDelete_Click(object sender, EventArgs e)
+    {
 
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Delete from [dbo].[JobPosting] Where JobPostingID=1", con);
+
+        cmd.ExecuteNonQuery();
+
+        con.Close();
+
+    }
 
 
 
