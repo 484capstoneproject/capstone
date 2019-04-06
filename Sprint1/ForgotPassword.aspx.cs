@@ -37,7 +37,7 @@ public partial class ForgotPassword : System.Web.UI.Page
         }
         else
         {
-            //lbl_msg.Text = "Please enter either an Email Address or Username";
+            lbl_msg.Text = "Please enter either an Email Address or Username";
         }
     }
 
@@ -58,7 +58,7 @@ public partial class ForgotPassword : System.Web.UI.Page
             mail.From = new MailAddress("cuedinnextstepgo@gmail.com");
             mail.Subject = "Password Recovery"; //subject of the meeting
 
-            string Body = "Please click the link to <a href=\"http://localhost:53131/ResetPassword.aspx\">Reset Password</a>";
+            string Body = "Please click the link to <a href=\"http://nextstepgo-dev.us-east-1.elasticbeanstalk.com/ResetPassword.aspx\">Reset Password</a>";
             mail.Body = Body; //adding content to the body of the message
 
             mail.IsBodyHtml = true;
@@ -70,13 +70,12 @@ public partial class ForgotPassword : System.Web.UI.Page
             smtp.EnableSsl = true;
             smtp.Send(mail);
 
-            //lbl_msg.Visible = true;
-            //lbl_msg.Text = "Link to reset password sent to email. Please follow instructions to reset your password";
+            lbl_msg.Text = "Link to reset password sent to email. Please follow instructions to reset your password";
         }
         else
         {
-            //lbl_msg.Visible = true;
-            //lbl_msg.Text = "Email is incorrect. Please enter a valid email address";
+            lbl_msg.Visible = true;
+            lbl_msg.Text = "Email is incorrect. Please enter a valid email address";
         }
     }
 
@@ -101,7 +100,7 @@ public partial class ForgotPassword : System.Web.UI.Page
                 mail.From = new MailAddress("cuedinnextstepgo@gmail.com");
                 mail.Subject = "Password Recovery"; //subject of the meeting
 
-                string Body = "Please click the link to <a href=\"http://localhost:53131/ResetPassword.aspx\">Reset Password</a>";
+                string Body = "Please click the link to <a href=\"http://nextstepgo-dev.us-east-1.elasticbeanstalk.com/ResetPassword.aspx\">Reset Password</a>";
                 mail.Body = Body; //adding content to the body of the message
 
                 mail.IsBodyHtml = true;
@@ -113,12 +112,12 @@ public partial class ForgotPassword : System.Web.UI.Page
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
 
-                //lbl_msg.Text = "Link to reset password sent to username's email. Please follow instructions to reset your password";
+                lbl_msg.Text = "Link to reset password sent to username's email. Please follow instructions to reset your password";
             }
         }
         else
         {
-            //lbl_msg.Text = "Username is incorrect. Please enter a valid username";
+            lbl_msg.Text = "Username is incorrect. Please enter a valid username";
         }
     }
 

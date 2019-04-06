@@ -22,13 +22,12 @@ public partial class ResetPassword : System.Web.UI.Page
 
         PasswordRegister resetPassword = new PasswordRegister(txtConfirmPassword.Value, email);
 
-
         con.Open();
 
-        SqlCommand cmd = new SqlCommand("Update Password set password=@Password Where Email = @email", con);
+        SqlCommand cmd = new SqlCommand("Update Password set password=@password Where Email = @Email", con);
         cmd.CommandType = System.Data.CommandType.Text;
-        cmd.Parameters.AddWithValue("@Password", PasswordHash.HashPassword(resetPassword.GetPassword()));
-        cmd.Parameters.AddWithValue("@email", email);
+        cmd.Parameters.AddWithValue("@password", PasswordHash.HashPassword(resetPassword.GetPassword()));
+        cmd.Parameters.AddWithValue("@Email", email);
         cmd.ExecuteNonQuery();
         con.Close();
 

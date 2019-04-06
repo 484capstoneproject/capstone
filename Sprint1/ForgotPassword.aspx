@@ -66,6 +66,7 @@
   				  <label for="exampleInputPassword1" class="loginlabel">Username</label>
   				  <input type="password" class="form-control min-imput" id="txtUsername" runat="server" placeholder="">
   				</div>
+                <asp:Label ID="lbl_msg" runat="server" Text="Please enter correct information"></asp:Label><br />
      <asp:Button type="submit" id="reset" class="btn btn-maingreen submitbutton" runat="server" onclick="btn_send_Click" Text="Reset Password"></asp:Button>
     </form>
 

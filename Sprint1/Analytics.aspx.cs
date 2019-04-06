@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 
 public partial class Analytics : System.Web.UI.Page
 {
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon"].ConnectionString);
+   SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon"].ConnectionString);
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -124,4 +124,7 @@ public partial class Analytics : System.Web.UI.Page
         Response.End();
 
     }
+
+
+
 }

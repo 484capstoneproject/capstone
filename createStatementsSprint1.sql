@@ -1,8 +1,9 @@
--- NextStepGo System <> Sprint1 <> Table Creation Statements
+-- NextStepGo System <> Sprint2 <> Table Creation Statements
 
--- Please create a Database named "Sprint1" prior to executing the create table commands below. Thank you.
+-- Please create a Database named "Sprint2" prior to executing the create table commands below. Thank you.
 
-Use Sprint1 CREATE TABLE [dbo].[Business](
+
+Use Sprint3 CREATE TABLE [dbo].[Business](
 	[BusinessEntityID] [int] IDENTITY(1,1) NOT NULL,
 	[BusinessName] [varchar](25) NOT NULL,
 	[FirstName] [varchar](20) NULL,
@@ -60,7 +61,15 @@ CREATE TABLE [dbo].[ScholarshipPosting](
 	[Month] [nvarchar](max) NOT NULL,
 	[Day] [nvarchar](max) NOT NULL,
 	[Year] [nvarchar](max) NOT NULL,
+	[BusinessEntityID] [int] NOT NULL,
 	CONSTRAINT PK_ScholarshipPosting PRIMARY KEY NONCLUSTERED ([ScholarshipPostingID], [BusinessEntityID])
 )
+
+create table [dbo].[calendar](
+	[EventId] [int] IDENTITY(1,1) NOT NULL,
+	[Event_Title] [varchar](50) NULL,
+	[Event_Description] [varchar](200) NULL,
+	[Event_Date] [datetime] NULL,
+	[Event_Type] [int] NULL)
 
 GO

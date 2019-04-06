@@ -80,7 +80,7 @@ public class JobPostingsClass
     {
         this.Day = day;
     }
-    
+
     public string GetYear()
     {
         return this.year;
