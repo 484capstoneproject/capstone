@@ -70,6 +70,7 @@ create table [dbo].[calendar](
 	[Event_Title] [varchar](50) NULL,
 	[Event_Description] [varchar](200) NULL,
 	[Event_Date] [datetime] NULL,
-	[Event_Type] [int] NULL)
+	[Event_Type] [int] NULL,
+	[BusinessEntityID] [int] NOT NULL)
 
 GO

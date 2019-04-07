@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Analytics</title>
+  <title>Calendar</title>
   <style>
   </style>
   
@@ -145,7 +145,7 @@
 			<div style="height: 487px; width: 913px">
         <strong><font face="verdana">Event Calendar</font></strong>:<br />
         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="400px"
-            NextPrevFormat="FullMonth" Width="857px" OnDayRender="Calendar1_DayRender" BorderWidth="1px">
+            NextPrevFormat="FullMonth" Width="857px" OnDayRender="Calendar1_DayRender" BorderWidth="1px" >
             <SelectedDayStyle BackColor="#333399" ForeColor="White" />
             <TodayDayStyle BackColor="#CCCCCC" />
             <OtherMonthDayStyle ForeColor="#999999" />

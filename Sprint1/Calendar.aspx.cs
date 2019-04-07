@@ -61,7 +61,10 @@ public partial class Calendar : System.Web.UI.Page
     }
     public ArrayList Get_Event()
     {
-        SqlCommand cmd = new SqlCommand("SELECT * FROM calendar", con);
+        int LoginEntityID = (int)Session["EntityID"];
+
+        SqlCommand cmd = new SqlCommand("SELECT * FROM calendar where BusinessEntityID = @BusinessEntityID", con);
+        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
         SqlDataReader myDataReader;
         try
         {
@@ -152,14 +155,17 @@ public partial class Calendar : System.Web.UI.Page
 
     protected void btnAddEvent_Click(object sender, EventArgs e)
     {
+        int LoginEntityID = (int)Session["EntityID"];
+
         con.Open();
-        SqlCommand cmd = new SqlCommand("Insert into Calendar values(@Event_Title, @Event_Description, @Event_Date, @Event_Type);", con);
+        SqlCommand cmd = new SqlCommand("Insert into Calendar values(@Event_Title, @Event_Description, @Event_Date, @Event_Type, @BusinessEntityID);", con);
         cmd.CommandType = System.Data.CommandType.Text;
         cmd.Parameters.AddWithValue("@Event_Title", txtAddEventName.Text);
         cmd.Parameters.AddWithValue("@Event_Description", txtEventDescription.Text);
         DateTime calendarDate = Convert.ToDateTime(DropYear.Text + "/" + dropDay.Text + "/" + DropMonth.Text);
         cmd.Parameters.AddWithValue("@Event_Date", calendarDate);
         cmd.Parameters.AddWithValue("@Event_Type", 2);
+        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
         cmd.ExecuteNonQuery();
         con.Close();
 
@@ -172,5 +178,5 @@ public partial class Calendar : System.Web.UI.Page
         Session.Abandon();
         FormsAuthentication.SignOut();
         FormsAuthentication.RedirectToLoginPage();
-    }
+    }   
 }
