@@ -25,7 +25,7 @@ public partial class BusinessPortal : System.Web.UI.Page
         }
 
         int LoginEntityID = (int)Session["EntityID"];
-
+        int total = 0;
         if (!IsPostBack)
         {
             con.Open();
@@ -43,6 +43,39 @@ public partial class BusinessPortal : System.Web.UI.Page
                     BusinessName.InnerText = reader["BusinessName"].ToString();
                 }
             }
+            reader.Close();
+
+            //Counting Jobs 
+
+            SqlCommand job = new SqlCommand("select count(*) from JobPosting where BusinessEntityID=@BusinessEntityID", con);
+            job.CommandType = CommandType.Text;
+            job.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
+            int jobCount = Convert.ToInt32(job.ExecuteScalar());
+            lblJob.Text = jobCount.ToString();
+
+
+            //Counting Scholarships 
+           
+            SqlCommand scholarship = new SqlCommand("select count(*) from ScholarshipPosting where BusinessEntityID=@BusinessEntityID", con);
+            scholarship.CommandType = CommandType.Text;
+            scholarship.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
+            int scholarshipCount = Convert.ToInt32(scholarship.ExecuteScalar());
+            lblScolarship.Text = scholarshipCount.ToString();
+
+            //Counting Learning 
+         
+            SqlCommand learning = new SqlCommand("select count(*) from LearningPosting where BusinessEntityID=@BusinessEntityID", con);
+            learning.CommandType = CommandType.Text;
+            learning.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
+            int learningCount = Convert.ToInt32(learning.ExecuteScalar());
+
+            lblLearning.Text = learningCount.ToString();
+
+            total = jobCount + learningCount + scholarshipCount;
+            lblTotal.Text = total.ToString();
+
+            con.Close();
+
         }
 
     }

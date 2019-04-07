@@ -19,10 +19,18 @@
 	<link rel="stylesheet" href="css/custom.css">
   
   <style>
+
+      .number-dashboard{
+          font-size: 60px;
+          text-align: center;
+      }
 	  
 	  body{
 		  overflow: hidden;
 	  }
+      .number-label{
+          font-size: 16px;
+      }
 	 
   </style>
 
@@ -108,14 +116,26 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Postings</span>
+					<span class="nav-txt">Job Posts</span>
+                </a>
+              </li>
+                <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Learning Posts</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Scholarships.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Scholarship Posts</span>
                 </a>
               </li>
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>
-                </a>
+                  </a>
               </li>
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="Calendar.aspx">
@@ -124,7 +144,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="#">
+                <a class="nav-link nav-link-side" href="Messages.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
                 </a>
@@ -345,7 +365,36 @@
  				</div>
  				<div class="col-4 h-90">
  					<div class="col-12 bg-white h-60">
- 						<h2 class= "pt-4">Analytics</h2>
+                         <div class="justify-content-between pt-3 mb-3">
+ 						<h2 class= "pt-4 mr-4 d-inline">Analytics</h2>
+                         <a href="Analytics.aspx" class="btn btn-secondary d-inline align-top ml-3">View All Analytics</a>
+                         </div>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td class="bg-secondary text-center text-white">
+                                    <p class="font-weight-bold number-label">Job Opportunity</p>
+                                 <asp:Label ID="lblJob" runat="server" Text="Label" class="number-dashboard font-weight-bolder"></asp:Label>
+                                </td>
+                                <td class="bg-green text-white number-label text-center">
+                                    <p class="font-weight-bold">Scholarships</p>
+                                    <asp:Label ID="lblScolarship" runat="server" Text="Label" class="number-dashboard font-weight-bolder"></asp:Label>
+                                </td>
+                            </tr>
+                             <tr>
+                                <td class="bg-blue text-white number-label text-center">
+                                    <p class="font-weight-bold">Learning Opportunity</p>
+                                     <asp:Label ID="lblLearning" runat="server" Text="Label" class="number-dashboard font-weight-bolder"></asp:Label>
+                                </td>
+                                <td class="bg-light number-label text-black text-center">
+                                    <p class="font-weight-bold">Total Opportunities</p>
+                                     <asp:Label ID="lblTotal" runat="server" Text="Label" class="number-dashboard font-weight-bolder"></asp:Label>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
  					</div>
  					<div class="col-12 mt-3 bg-white cal-box h-48">
  						<div class="card sm-cal h-100" style="max-width: 540px;">

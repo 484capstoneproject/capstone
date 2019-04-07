@@ -82,6 +82,18 @@
               Postings
             </a>
           </li>
+             <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Learning Opportunities Posts</span>
+                </a>
+              </li>
+                <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Scholarships.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Scholarship Posts</span>
+                </a>
+              </li>
             <li class="nav-item">
             <a class="nav-link dash-wt-link" href="Analytics.aspx">
               <span data-feather="bar-chart-2"></span>

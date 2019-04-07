@@ -1,41 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
+<%@ Page Language="C#"AutoEventWireup="true" CodeFile="JobPostings.aspx.cs" Inherits="JobPostings" %>
 
-<%--<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-
-
-
-        <div>
-        </div>
-        <asp:Label ID="LblJobPostings" runat="server" Text="Job Postings"></asp:Label>
-        <br />
-        <br />
-        <asp:Label ID="LblJobTitle" runat="server" Text="Job Title "></asp:Label>
-        <asp:TextBox ID="TxtJobTitle" runat="server"></asp:TextBox>
-        <br />
-        <asp:Label ID="LblCareerCluster" runat="server" Text="Career Cluster "></asp:Label>
-        <asp:TextBox ID="TxtCareerCluster" runat="server"></asp:TextBox>
-        <p>
-            <asp:Label ID="LblJobExplain" runat="server" Text="Job Explanation"></asp:Label>
-&nbsp;<textarea id="TxtJobExplain" cols="20" name="S1" rows="2" runat="server"></textarea></p>
-        <p>
-            <asp:Label ID="LblRequirements" runat="server" Text="Requirements"></asp:Label>
-&nbsp;<textarea id="TxtRequirements" cols="20" name="S2" rows="2" runat="server"></textarea></p>
-        <p>
-            <asp:Label ID="LblDatePosted" runat="server" Text="Date Posted"></asp:Label>
-&nbsp;<asp:TextBox ID="TxtDatePosted" runat="server"></asp:TextBox>
-        </p>
-        <p>
-            &nbsp;</p>
-        <p>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Create" />
-            <asp:Button ID="Back_Button" runat="server" OnClick="Back_Button_Click" Text="Back" />
-        </p>
-   
-
-
-</asp:Content>--%>
 
 <!doctype html>
 <html lang="en">
@@ -54,6 +18,9 @@
     
     <!-- Custom Styles -->
 	<link rel="stylesheet" href="css/custom.css">
+	  
+	<!-- Toggle Plugin -->
+	 <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
   
   <style>
 	  
@@ -70,8 +37,7 @@
 <!------------------- BODY ----------------------->
  
  <body>
-	 
-	 <div class="posting-screen" style="height: 200vh;"> 
+	<form id="postingFormJob" runat="server">
 	 
  <!-- NAVIGAION --> 
  <nav class="navbar navbar-expand-md navbar-light bg-light nav-dashboard">
@@ -105,7 +71,8 @@
     				<button class="dropdown-item" type="button">Profile</button>
     				<button class="dropdown-item" type="button">Help</button>
     				<button class="dropdown-item" type="button">Account Settings</button>
-    				<button class="dropdown-item" type="button">Logout</button>
+    				<asp:Button class="dropdown-item" type="button" runat="server" Text="Log Out" OnClick="SignOut_Click"></asp:Button>
+
   				</div>
 			</div>
       </li>
@@ -125,47 +92,66 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
-  				  <h2 class="bus-name-header">Martin's Electronics</h2>
-  				  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
+
+  				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
+
+  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>
-           <span id="signout-btn" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span>
+
+           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+
+
+   
+
            </div>
             <ul class="nav flex-column sidebar-links">
            
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="dashboard.html">
+                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="applications.html">
+                <a class="nav-link nav-link-side" href="#">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="postings.html">
+                <a class="nav-link nav-link-side sidebar-active" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Postings</span>
+					<span class="nav-txt">Job Posts</span>
+                </a>
+              </li>
+                <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Learning Posts</span>
+                </a>
+              </li>
+                   <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Scholarships.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Scholarship Posts</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="analytics.html">
+                <a class="nav-link nav-link-side" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="calendar.html">
+                <a class="nav-link nav-link-side" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="messages.html">
+                <a class="nav-link nav-link-side" href="#">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
                 </a>
@@ -178,319 +164,241 @@
 		  
 		  
 	<!-------------------- BODY STARTS --------------------->  
-		
 		  
-		  <!---- Posting 1 ---->
-		 
-  		<div class="col-10" id="posting1">
-			<div class="row med-data-row mt-4 ml-1">
- 				<div class="col-8 card bg-white p-0" style="height: 40vh;">
- 					<div class="card-header data d-flex justify-content-between">
-  						 <span><h4 class="mt-2">Assistant Manager</h4></span> 
-						
-						<div><p class="mt-3 submitted-text bg-ltgrey">Posted: March 5 at 9:50 a.m.</p></div>
-	
-							 <div class="d-inline">
-								 
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="editPosting" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   							 <span class="edit-icon editicon"> <i data-feather="edit"></i></span>
-									
- 						        	<span class="x-icon xicon"> <i data-feather="x"></i></span>
- 						      	</button>
- 						    </div> 					
-				
-					</div>
-					
-  					<div class="card-body" id="posting1body">
-						<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
-						<tr>
-   									   <td scope="row align-middle">
-   									   <h6 class="d-inline pt-2">Staunton, Virginia </h6>
-										   <span><p class="submitted-text ml-4">Published 3/4/19 1:30 p.m.</p></span>
-   									   </td>
-						</tr>
-  						<p>Assistant Manager responsibilities include monitoring inventory and ordering merchandise based on demand. You will also research competitive products and analyze consumer behavior to ensure our store meets and exceeds client expectations. Our ideal candidate will have retail…</p>
-						
-						<p><b>Insert tags here - I found a possible plugin for it</b></p>
-  					</div>
- 				</div>
-				
-				
-				
-				
-				<!---- Filter Card---->
-				
-					<div class="col-3 card bg-white p-0 ml-3">
-					
-  						<form class="search-form">
-  							<div class="form-group mt-3 ml-3 mr-3">
-  				 			 <span class="x-search xicon"> <i data-feather="search"></i></span><input type="search" class="form-control min-imput" id="examplesearch" aria-describedby="search" placeholder="Title or Keywords" >
-  							</div>
-							</form>
-							
-					
-					<!---- Career Clusters---->
- 					<div class="accordion mt-3" id="accordionExample">
-  						<div class="card">
-							
-  						  	  <div class="card-header d-flex justify-content-between header-collapse" id="headingOne">
- 						    <div class= "d-inline">
-								 <div class="d-inline">
- 						      			<button class="btn btn-link collapsed collapse-icon" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
- 						        	<i data-feather="chevron-down"></i>
- 						      	</button>
- 						    </div> 						  
- 						    	<h6 class="text-right mb-0 job-title d-inline">Career Clusters</h6>
-								  </div>
- 						  </div>
-							
-						<!---- Career Clusters check boxes---->
-  						  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-  						    <div class="card-body">
-								
-								<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="CareerCheck1">
-									  <label class="form-check-label" for="CareerCheck1">
-										Marketing/Sales
-									  </label>
-									</div>
-								
-									<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="CareerCheck2">
-									  <label class="form-check-label" for="CareerCheck2">
-										Public Relations
-									  </label>
-									</div>
-								
-								<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="CareerCheck3">
-									  <label class="form-check-label" for="CareerCheck3">
-										IT
-									  </label>
-									</div>
-									
-  						    </div>
-  						  </div>
-  						</div>
-  					
-						<!---- Type---->
- 					<div class="accordion" id="accordionType">
-  						<div class="card">
-							
-  						  	  <div class="card-header d-flex justify-content-between header-collapse" id="headingTwo">
- 						    <div class= "d-inline">
-								 <div class="d-inline">
- 						      			<button class="btn btn-link collapsed collapse-icon" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
- 						        	<i data-feather="chevron-down"></i>
- 						      	</button>
- 						    </div> 						  
- 						    	<h6 class="text-right mb-0 job-title d-inline">Type</h6>
-	
-								  </div>
- 						  </div>
-							
-							
-							
-						<!---- Type check boxes---->
-  						  <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-  						    <div class="card-body">
-								
-						<!---- Select a Type---->
-						<div class="dropdown mr-4 d-inline btn-group">
-  							<button class="btn btn-secondary btn-sm dropdown-toggle bg-blue" type="button" id="btnType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   							 </i> Select a Type</span>
-  							</button>
-							
-  							<div class="dropdown-menu dropdown-menu-left" aria-labelledby="dataSettingMenu">
-    							<button class="dropdown-item" type="button" id="jobbtn">Job</button>
-    							<button class="dropdown-item" type="button" id="learningbtn">Learning</button>
-    							<button class="dropdown-item" type="button" id="scholarshipbtn">Scholarship</button>
-  							</div>
-						</div>
-								<!---- Now Type Check boxes---->
-								<div class="form-check mt-3">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck1">
-									  <label class="form-check-label" for="TypeCheck1">
-										Full Time
-									  </label>
-									</div>
-								
-									<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck2">
-									  <label class="form-check-label" for="TypeCheck2">
-										Part Time
-									  </label>
-									</div>
-								
-								<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck3">
-									  <label class="form-check-label" for="TypeCheck3">
-										Internship
-									  </label>
-									</div>
-								
-								<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck4">
-									  <label class="form-check-label" for="TypeCheck4">
-										Shadowing Opportunity
-									  </label>
-									</div>
-								
-								<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck5">
-									  <label class="form-check-label" for="TypeCheck5">
-										Scholarship
-									  </label>
-									</div>
-									
-  						    </div>
-  						  </div>
-						</div>
-						
-							</div>
-						
- 								</div>
-						
-						 <button type="button" data-toggle="modal" class="p-0 new-event-btn" data-target="#exampleModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add a Career Type</li></button>
-  					  
-  					  <!-- Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						  <div class="modal-dialog" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <h5 class="modal-title" id="exampleModalLabel">Job Title and Department Details</h5>
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						          <span aria-hidden="true">&times;</span>
-						        </button>
-						      </div>
-						      <div class="modal-body">
-								  
-								  <form>
-									  <h5>Description</h5>
+		 <!---- Postings ---->
+		
+  		<div class="col-8 ml-3 mt-4 pb-4" id="postings">
+
+				  <!-- JOB FORM CONTENT -->
+					  <%--<form id="postingFormJob" runat="server">--%>
+						  <div class="card card-body border-secondary">
+							  <h3 class="text-maingreen">Job Posting</h3>
+									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
 										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" class="form-control" id="JobTitle" aria-describedby="JobTitle" placeholder="Enter">
+										<input type="jobtitle" runat="server" class="form-control" id="txtJobTitle" aria-describedby="JobTitle" placeholder="Enter">
 									  </div>
+								  
+								  <div class="row pt-2 pb-3">
+								  	<div class="col">
+								 		 <label for="chooseJobType">Job Type</label>
+								  		 <select class="form-control w-75 mb-3" id="dropJobType" runat="server">
+											  <option>Part-Time</option>
+											  <option>Full Time</option>
+											  <option>Internship</option>
+								  		 </select>
+								    </div>
+								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerCluster">Career Cluster</label>
-											<select class="form-control w-50" id="CareerCluster">
+											<select class="form-control w-75" id="dropCareerCluster" runat="server">
 											  <option>Select</option>
+											  <option>Agriculture, Food and Natural Resources</option>
+											  <option>Architecture and Construction</option>
+											  <option>Business Management and Administration</option>
+											  <option>Education and Training</option>
+											  <option>Finance</option>
+											  <option>Government and Public Administration</option>
+											  <option>Health Science</option>
+											  <option>Hospitality & Tourism</option>
+											  <option>Human Services</option>
+											  <option>Information Technology</option>
+											  <option>Law, Public Safety, Corrections and Security</option>
+											  <option>Manufacturing</option>
 											  <option>Marketing</option>
-											  <option>Public Relations</option>
-											  <option>It</option>
+											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
 											</select>
 										  </div>
-									  <div class="form-group">
-										<label for="type">Internal Code</label>
-										<input type="internalcode" class="form-control w-50" id="internalcode" placeholder="internal code">
-									  </div>
-									  
-									  <h5>Location</h5>
-									 
-									  <div class="form-group">
-										<input type="location" class="form-control" id="Location" aria-describedby="Location" placeholder="Region, City, or Zip">
-									  </div>
-								  
-								  <h5>Description</h5>
-								   <div class="form-group">
-										<input type="description" class="form-control input-mysize" id="Description" aria-describedby="Description" placeholder="Enter the job description here; include key areas.">
-									  </div>
-							       </form>
-								  
-						      </div>
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green">Save changes</button>
-						      </div>
-						    </div>
-						  </div>
-						</div>
-	
 									</div>
-				<!---- End of Filter Card----->
-				
-					  <!---- Posting 2 ---->
-		 
-  		<div class="col-12" id="posting2">
-			<div class="row med-data-row mt-4">
- 				<div class="col-8 card bg-white p-0" style="height: 40vh;">
- 					<div class="card-header data d-flex justify-content-between">
-  						 <span><h4 class="mt-2">Social Media Intern</h4></span> 
-						
-						<div><p class="mt-3 submitted-text bg-ltgrey">Posted: March 3 at 10:50 a.m.</p></div>
-	
-							 <div class="d-inline">
-								 
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="editPosting2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   							 <span class="edit-icon editicon"> <i data-feather="edit"></i></span>
-									
- 						        	<span class="x-icon xicon"> <i data-feather="x"></i></span>
- 						      	</button>
- 						    </div> 					
-				
-					</div>
-					
-  					<div class="card-body" id="posting2body">
-						<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
-						<tr>
-   									   <td scope="row align-middle">
-   									   <h6 class="d-inline pt-2">Harrisonburg, Virginia </h6>
-										   <span><p class="submitted-text ml-4">Published 3/3/19 1:30 p.m.</p></span>
-   									   </td>
-						</tr>
-  						<p>We are seeking a social media manager to maintain and grow our company’s social networks in order to educate veterans about the DAV as well as about the benefits they are provided through various sources of advocacy and programs…</p>
-						
-						<p><b>Insert tags here - I found a possible plugin for it</b></p>
-  					</div>
- 				</div>
- 								
-			
-			 <!---Sidenote: This published/unpublished thing is gonna have to be done another way---->
-			
-			
-							</div>
- 								</div> <!---don't mess with these divs--->
-			
-	
-		  <div class="col-12" id="posting3">
-			<div class="row med-data-row mt-4">
- 				<div class="col-8 card bg-white p-0" style="height: 40vh;">
- 					<div class="card-header data d-flex justify-content-between">
-  						 <span><h4 class="mt-2">Virtual Assistant</h4></span> 
-						
-						<div><p class="mt-3 submitted-text bg-ltgrey">Posted: March 2 at 1:30 p.m.</p></div>
-	
-							 <div class="d-inline">
-								 
-								<button class="btn btn-secondary dropdown-toggle" type="button" id="editPosting3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   							 <span class="edit-icon editicon"> <i data-feather="edit"></i></span>
-									
- 						        	<span class="x-icon xicon"> <i data-feather="x"></i></span>
- 						      	</button>
- 						    </div> 					
-				
-					</div>
-					
-  					<div class="card-body" id="posting3body">
-						<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
-						<tr>
-   									   <td scope="row align-middle">
-   									   <h6 class="d-inline pt-2">Leesburg, Virginia </h6>
-										   <span><p class="submitted-text ml-4">Published 3/2/19 1:30 p.m.</p></span>
-   									   </td>
-						</tr>
-  						<p>We are looking for a Virtual Assistant to provide administrative support to our team while working remotely. As a Virtual Assistant, you will perform various administrative tasks, including answering emails, scheduling meetings and making travel arrangements. For this role, a strong Internet connection is required…</p>
-						
-						<p><b>Insert tags here - I found a possible plugin for it</b></p>
-  					</div>
- 				</div>
-		  
-		  
- 			</div> <!---row---->
-		 </div>  <!---column---->
+									</div>  
+                              <%--<div class="form-group pt-1">
+											<label for="paymentType" class="mr-3 ">Payment Type: </label>
+									    	<div class="pt-2 d-inline">
+										    <div class="form-check form-check-inline" id="paymentType">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+										      <label class="form-check-label" for="inlineRadio1">Salaried</label>
+										    </div>
+										    <div class="form-check form-check-inline">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+										      <label class="form-check-label" for="inlineRadio2">Hourly</label>
+										    </div>
+										    <div class="form-check form-check-inline">
+										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" >
+										      <label class="form-check-label" for="inlineRadio3">Unpaid</label>
+										    </div>
+											</div>
+									   </div>--%>  									 
+									  	<div class="form-group">
+ 										   <label for="exampleFormControlTextarea1">Description</label>
+ 										   <textarea class="form-control" runat="server" id="txtareaDescription" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+									  </div> 
+									  <div class="form-group">
+											  <h5 class="pt-4">Application Deadline</h5>
+										      <div class="row w-75">
+										      	<div class="col">
+											      <label for="selectMonth">Month</label>
+													<select class="form-control" id="dropMonth" runat="server">
+													  <option>January</option>       
+   													  <option>February</option>       
+   													  <option>March</option>       
+   													  <option>April</option>       
+   													  <option>May</option>       
+   													  <option>June</option>       
+   													  <option>July</option>       
+   													  <option>August</option>       
+   													  <option>September</option>       
+   													  <option>October</option>       
+   													  <option>November</option>       
+   													  <option>December</option> 
+													</select>
+										      	</div>
+										      	<div class="col">
+											      <label for="selectDay">Day</label>
+													<select class="form-control" id="dropDay" runat="server">
+													    <option>1</option>       
+   														<option>2</option>       
+   														<option>3</option>       
+   														<option>4</option>       
+   														<option>5</option>       
+   														<option>6</option>       
+   														<option>7</option>       
+   														<option>8</option>       
+   														<option>9</option>       
+   														<option>10</option>       
+   														<option>11</option>       
+   														<option>12</option>       
+   														<option>13</option>       
+   														<option>14</option>       
+   														<option>15</option>       
+   														<option>16</option>       
+   														<option>17</option>       
+   														<option>18</option>       
+   														<option>19</option>       
+   														<option>20</option>       
+   														<option>21</option>       
+   														<option>22</option>       
+   														<option>23</option>       
+   														<option>24</option>       
+   														<option>25</option>       
+   														<option>26</option>       
+   														<option>27</option>       
+   														<option>28</option>       
+   														<option>29</option>       
+   														<option>30</option>       
+   														<option>31</option>
+													</select>
+										      </div>
+										      <div class="col">
+											      <label for="selectYear">Year</label>
+													<select class="form-control" id="dropYear" runat="server">
+													    <option>2019</option>       
+   														<option>2020</option>       
+   														<option>2021</option>       
+   														<option>2022</option>       
+													</select>
+											</div>
+									  		</div>
+									  
+									  </div>
+									  <div class="form-group">
+											<asp:Button class="btn btn-maingreen w-25" id="btnAddPost" runat="server" Text="Add Post" OnClick="BtnAdd_Click"></asp:Button>   
+                                            <asp:Button CssClass="btn btn-maingreen w-25" ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"></asp:Button>
+						       				<asp:Button class="btn btn-primary w-25" id="btnUpdatePost" runat="server" Text="Update Changes" OnClick="BtnUpdate_Click"></asp:Button> 
+						       		 </div>  
+							       </div><!-- ENDS ADD JOB CARD -->
+						<div class="mt-5 mb-5 card card-body border-secondary">
 		
-	 
-	 
+							
+							 <br />
+
+		                    <asp:Label ID="LblSearch" runat="server" Text="Search Job Postings (By JobTitle): " Font-Bold="true" Font-Underline="true"></asp:Label>
+
+                            <br />
+
+                            <asp:TextBox ID="TextSearch" runat="server" placeholder="Job Title"></asp:TextBox>
+                            <br />
+                            <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
+                            <br />
+                            <asp:Button ID="BtnReset" class="btn btn-maingreen w-25" runat="server" Text="Reset" OnClick="BtnReset_Click" />
+                            <asp:label id="MessageLabel"
+                             forecolor="Red"
+                             runat="server"/>
+                            <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
+							<br />
+                            <%--Gridview start--%>
+							 <asp:Gridview id="GridView1" 
+                               autogeneratecolumns="False"
+                               onselectedindexchanged="GridView1_SelectedIndexChanged"
+                               runat="server" DataKeyNames="JobPostingID" CellPadding="4" ForeColor="#333333" GridLines="None">
+                
+                                 <AlternatingRowStyle BackColor="White" />
+                
+                                 <Columns>
+
+                                      <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
+
+                                     <asp:BoundField DataField="JobPostingID" 
+                                         HeaderText="JobPostingID" 
+                                         InsertVisible="False" ReadOnly="True" 
+                                         SortExpression="JobPostingID" />
+                                 
+                                   
+                                     <asp:BoundField DataField="JobTitle" 
+                                         HeaderText="Title" 
+                                         SortExpression="JobTitle" >
+                                     <ControlStyle BackColor="#000066" />
+                                     </asp:BoundField>
+                                     <asp:BoundField DataField="JobType" 
+                                         HeaderText="JobType" 
+                                         SortExpression="JobType" />
+                                     <asp:BoundField DataField="CareerCluster" 
+                                         HeaderText="CareerCluster" 
+                                         SortExpression="CareerCluster" />
+                                     <asp:BoundField DataField="Description" 
+                                         HeaderText="Description" 
+                                         SortExpression="Description" />
+                                     <asp:BoundField DataField="Month" 
+                                         HeaderText="Month" 
+                                         InsertVisible="False" ReadOnly="True" 
+                                         SortExpression="Month" />
+                                     <asp:BoundField DataField="Day" 
+                                         HeaderText="Day" 
+                                         SortExpression="Day" />
+                                     <asp:BoundField DataField="Year" 
+                                         HeaderText="Year" 
+                                         SortExpression="Year" />
+                                     <asp:BoundField DataField="BusinessEntityID" 
+                                         HeaderText="BusinessEntityID" 
+                                         SortExpression="BusinessEntityID" 
+                                         readOnly="true"/>
+                                 </Columns> 
+                                    <EditRowStyle BackColor="#7C6F57" />
+                                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                 <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+                                 <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+                                 <RowStyle BackColor="#E3EAEB" />
+                                    <selectedrowstyle
+                                    forecolor="#333333"
+                                     font-bold="true" BackColor="#C5BBAF"/> 
+                
+                                 <SortedAscendingCellStyle BackColor="#F8FAFA" />
+                                 <SortedAscendingHeaderStyle BackColor="#246B61" />
+                                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
+                                 <SortedDescendingHeaderStyle BackColor="#15524A" />
+                
+                             </asp:Gridview>   
+                            
+                            <%--GridView End--%>
+                        
+							
+						</div>
+							       
+				</form>
+						
+	
+	        </div> <!-- CLOAING CONTENT COLUMN -->
+         </div><!-- CLOSING ROW -->
+   </div><!-- CLOSING LARGE CONTAINER -->
 	 
     <!-- jQuery first--> 
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
@@ -510,12 +418,11 @@
     <!--Jquery rotate -->
 	<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
   
-  	<!-- Muuri -->
-  	<script src="https://unpkg.com/muuri@0.7.1/dist/muuri.min.js"></script>
+  	<!-- Muuri <script src="https://unpkg.com/muuri@0.7.1/dist/muuri.min.js"></script> -->
    
    <!-- custom JS -->
    <script src="js/custom.js"></script>
-   
+    <script src="js/formtoggler.js"></script>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
@@ -523,8 +430,10 @@
       feather.replace()
     </script>
           
-        </div>
-         </div>
-     </div>
+
 </body>
 </html>
+
+
+
+      
