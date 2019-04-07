@@ -17,6 +17,8 @@
     
     <!-- Custom Styles -->
 	<link rel="stylesheet" href="css/custom.css">
+
+    <link rel="stylesheet" href="css/dashboard-testing.css">
   
   <style>
 
@@ -66,7 +68,7 @@
       <li class="nav-item">
         	<div class="dropdown">
   				<button class="dropdown-toggle nav-dropdown" type="button" id="navSettingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/avatar.png"></a>
+   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/PBMares.png"></a>
   				</button>
   				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navSettingMenu">
     				<button class="dropdown-item" type="button">Profile</button>
@@ -90,7 +92,7 @@
              <div class="profile-bar text-center">
              <table class="profile-table text-left">
   				<tr>
-  				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
+  				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
   				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
   				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
@@ -103,8 +105,8 @@
            
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side sidebar-active" href="BusinessPortal.aspx">
-                  <i data-feather="home"></i>
-                  <span class="nav-txt">Dashboard</span>
+                  <span class="white-icon"></span><i data-feather="home"></i></span>
+                  <span class="nav-txt sidetext-active">Dashboard</span>
                 </a>
               </li>
               <li class="nav-item-side">
