@@ -81,6 +81,8 @@ public partial class Calendar : System.Web.UI.Page
                 temp.Cal_Type = myDataReader.GetValue(4).ToString();
                 MyColllection.Add(temp);
             }
+            myDataReader.Close();
+
         }
         catch
         { }
@@ -90,10 +92,13 @@ public partial class Calendar : System.Web.UI.Page
             con.Close();
         }
         return MyColllection;
+       
     }
 
     public void Calendar1_DayRender(object o, DayRenderEventArgs e)
     {
+        int LoginEntityID = (int)Session["EntityID"];
+
         string FontColor;
         string compDate = "01/01/1900"; // Date to compare initially
         DateTime DayVal = Convert.ToDateTime(compDate);

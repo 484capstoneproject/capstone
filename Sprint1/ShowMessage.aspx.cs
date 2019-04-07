@@ -37,7 +37,7 @@ public partial class ShowMessage : System.Web.UI.Page
     }
     protected void btnSendEmail_Click(object sender, EventArgs e)
     {
-        string email = (string)Session["Email"];
+        string email = (string)Session["EmailMessage"];
         string password = (string)Session["Password"];
 
         MailMessage mail = new MailMessage();
@@ -56,8 +56,6 @@ public partial class ShowMessage : System.Web.UI.Page
 
         smtp.Send(mail);
         lblSuccessfulSent.Visible = true;
-
-
 
     }
 }

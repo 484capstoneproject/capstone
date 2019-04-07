@@ -35,16 +35,17 @@ public partial class Messages : System.Web.UI.Page
             while (reader.Read())
             {
                 string emailAddress = reader["EmailAddress"].ToString();
-                Session.Add("Email", emailAddress);
+                Session.Add("EmailMessage", emailAddress);
             }
         }
         reader.Close();
 
-        try
-        {
-            string emailID = (string)Session["email"];
+        //try
+        //{
+            string emailID = (string)Session["EmailMessage"];
 
             Pop3Client pop3Client;
+            Session["Pop3Client"] = null;
             if (Session["Pop3Client"] == null)
             {
 
@@ -82,11 +83,11 @@ public partial class Messages : System.Web.UI.Page
             }
             gvEmails.DataSource = dtMessages;
             gvEmails.DataBind();
-        }
-        catch
-        {
-            lblincorrectPwd.Visible = true;
-        }
+        //}
+        //catch
+        //{
+        //    lblincorrectPwd.Visible = true;
+        //}
     }
 
 
