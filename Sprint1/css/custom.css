@@ -25,10 +25,69 @@ body, html {
   border: 1px solid #0c293d !important;
   color: #0c293d; }
 
+.signout-button {
+  display: inline-block;
+  border-radius: 5px;
+  padding: .4rem .4rem;
+  margin: 0;
+  text-decoration: none;
+  background: #35858e;
+  color: #ffffff;
+  font-family: proxima-nova, sans-serif;
+  font-style: bold;
+  font-size: 11px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,  transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+.signout-button:hover,
+.signout-button:focus {
+  background: #307477; }
+
+.signout-button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px; }
+
+.signout-button:active {
+  transform: scale(0.99); }
+
+.viewapp-button {
+  display: inline-block;
+  border-radius: 5px;
+  padding: .4rem .9rem;
+  margin-top: 1;
+  text-decoration: none;
+  background: #83bf4a;
+  color: #ffffff;
+  font-family: proxima-nova, sans-serif;
+  font-style: bold;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,  transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+.viewapp-button:hover,
+.viewapp-button:focus {
+  background: #6a933f; }
+
+.viewapp-button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px; }
+
+.viewapp-button:active {
+  transform: scale(0.99); }
+
 /**************************** FONTS **************************/
 h1, h2, h3, h4, h5, h6 {
   font-family: forma-djr-text, sans-serif;
   font-weight: 700; }
+
+h2 {
+  color: #0c293d; }
 
 p {
   font-family: proxima-nova, sans-serif;
@@ -59,7 +118,9 @@ nav {
   color: #0c293d;
   font-weight: 400; }
   .nav-link:hover {
-    color: #83bf4a; }
+    color: white;
+    background-color: white, 0.1;
+    border-left: solid thick #83bf4a; }
 
 .nav-dropdown {
   background-color: transparent;
@@ -70,7 +131,7 @@ nav {
 
 .profile-img-nav {
   width: 30px;
-  border: thin solid #0c293d;
+  border: thin solid #35858e;
   border-radius: 20px;
   margin-top: 5px; }
 
@@ -122,7 +183,8 @@ img.nextstepgo-logo-nav {
   /* IE6-9 */
   max-width: 10px;
   padding: 0px;
-  margin-left: -10px; }
+  margin-left: -10px;
+  height: 565px; }
 
 .profile-img {
   border-radius: 100px;
@@ -168,22 +230,38 @@ img.nextstepgo-logo-nav {
     border-bottom: solid thin black; }
 
 .sidebar-links {
-  margin-top: 20px; }
+  margin-top: 3px;
+  margin-bottom: 3px; }
+
+.white-icon {
+  color: white; }
+
+.offwhite-icon {
+  color: #d6d7dd; }
+
+.sidebartext-active {
+  color: #fff; }
 
 .sidebar-active {
   border-left: solid thick #83bf4a;
-  background-color: #596672; }
+  background-color: rgba(255, 255, 255, 0.1); }
   .sidebar-active .nav-link {
     margin-left: -5px; }
 
 .edit-btn {
-  font-size: 10px;
-  padding-top: 15px; }
+  font-size: 7px;
+  padding-top: 15px;
+  background-color: transparent !important;
+  border: none; }
 
 .btn-sign-out {
   height: 30px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 300; }
+
+.btnhover:hover {
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 11px 30px 0 rgba(0, 0, 0, 0.19);
+  color: white; }
 
 .collapsed-sidebar .sidebar-links {
   text-align: center; }
@@ -362,6 +440,11 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background: #6a9e38; }
 
+.btn-edit-profile {
+  color: #434c55; }
+  .btn-edit-profile:hover {
+    color: #35858e; }
+
 .card-body {
   min-height: 300px; }
 
@@ -411,7 +494,8 @@ footer {
 .new-badge {
   margin-top: -5px;
   vertical-align: middle;
-  background-color: #94c8d5; }
+  background-color: #35858e;
+  box-shadow: 1px 1px grey; }
 
 .view-app-btn {
   background-color: #83bf4a;
@@ -420,9 +504,9 @@ footer {
     background-color: #51782b; }
 
 .collapse-icon {
-  color: #83bf4a; }
+  color: #9bce5f; }
   .collapse-icon:hover {
-    color: #51782b; }
+    color: #83bf4a; }
 
 .active-blue {
   color: #4584b5 !important; }
@@ -543,7 +627,73 @@ footer {
 .dropdown-toggle::after {
   display: none; }
 
+.btnanalytics {
+  margin-left: 500px;
+  padding: 10px 20px;
+  font-size: 12px; }
+
+.tenpx {
+  height: 10px; }
+
 /*************************** Postings *********************************/
+.badge-ltblue {
+  background-color: #94c8d5; }
+
+.badge-maingreen {
+  background-color: #83bf4a; }
+
+.due-date {
+  background-color: #f2f2f4; }
+
+.unpublished {
+  background-color: #d6d7dd !important;
+  border: none;
+  color: black; }
+  .unpublished .due-date, .unpublished .card-header {
+    background-color: #c0c1cb !important; }
+  .unpublished .post-card-left {
+    background-color: #bdbdbd !important;
+    color: #d6d7dd !important; }
+  .unpublished .location-text {
+    color: black; }
+
+.post-card-left {
+  background-color: #f2f2f4; }
+
+.post-card-left-learn {
+  background-color: #f0f7f9; }
+
+.location-text {
+  font-weight: 300; }
+
+.deleteBtn {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  margin-top: -2px; }
+
+.bg-mainblue {
+  background-color: #0c293d;
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: 4px; }
+
+.bg-teal {
+  background-color: #35858e;
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: 4px;
+  line-height: 20px; }
+
+.bg-medblue {
+  background-color: #4584b5;
+  color: white;
+  font-weight: 700;
+  border-bottom-left-radius: 4px; }
+
+.job-post-title {
+  color: #0c293d; }
+
 .d-none {
   display: none; }
 
@@ -566,7 +716,7 @@ footer {
   background-color: white; }
 
 .editicon {
-  color: #35858e; }
+  color: grey; }
 
 .xicon {
   color: #434c55; }
@@ -599,8 +749,13 @@ footer {
     background-color: transparent;
     box-shadow: none; }
 
+#postings {
+  float: right;
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: 20%; }
+
 .posting-screen {
-  height: 100%;
   background-image: url("../images/loginbg.jpg");
   background-attachment: scroll;
   background-repeat: no-repeat; }
@@ -634,7 +789,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #434c55;
   -webkit-transition: .4s;
   transition: .4s; }
 
