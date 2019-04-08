@@ -103,7 +103,10 @@
 		  <div class="col-10 bg-white">
 			  
 			  <div class=" ml-2 mt-2 row d-flex justify-content-between">
-				  <h3 class="text-maingreen">Business Messages</h3>
+				  <h3 class="text-maingreen">
+                      Business Messages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <asp:Button ID="btnStudentMessages" runat="server" Height="43px" Text="View Student Inbox" Width="172px" class="btn btn-maingreen" OnClick="btnStudentMessages_Click"/>
+                  </h3>
 				  <h1 class="invisible">Messages</h1>
 			  </div>
            <div class="card card-body border-secondary">
@@ -121,7 +124,8 @@
                <asp:TextBox ID="txtBody" runat="server" Height="83px" TextMode="MultiLine" Width="353px"></asp:TextBox>
                <br />
                <br />
-               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px"/>
+               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>
+               <asp:Label ID="lblMessageSent" runat="server" Text="null" Visible="False"></asp:Label>
               <br />
           </div>
               <div class="mt-5 mb-5 card card-body border-secondary">
@@ -152,9 +156,9 @@
                 
                   
                     <Columns>
-
+                       
                         <asp:CommandField ShowSelectButton="True" SelectText="Reply" ButtonType="Button" ControlStyle-Font-Bold="true"/>
-
+                        
                         <asp:BoundField DataField="StudentMessageID" 
                             HeaderText="StudentMessageID" 
                             InsertVisible="False" ReadOnly="True" 

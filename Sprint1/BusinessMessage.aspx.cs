@@ -53,5 +53,53 @@ public partial class BusinessMessage : System.Web.UI.Page
 
     }
 
-    
+
+
+
+
+    protected void btnSendMessage_Click(object sender, EventArgs e)
+    {
+        int LoginEntityID = (int)Session["EntityID"];
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select BusinessName from Business where BusinessEntityID=@BusinessEntityID", con);
+        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+        cmd.CommandType = CommandType.Text;
+        cmd.ExecuteNonQuery();
+
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        if (reader.HasRows)
+        {
+            while (reader.Read())
+            {
+                string BusinessName = reader["BusinessName"].ToString();
+                Session.Add("BusinessName", BusinessName);
+            }
+        }
+        con.Close();
+        reader.Close();
+
+
+        con.Open();
+        SqlCommand cmd2 = new SqlCommand("Insert into BusinessMessage values(@BusinessName, @StudentRecipient, @BusinessBody, @BusinessDate, @BusinessEntityID);");
+        cmd2.CommandType = System.Data.CommandType.Text;
+        cmd2.Connection = con;
+        cmd2.Parameters.AddWithValue("@BusinessName", Session["BusinessName"]);
+        cmd2.Parameters.AddWithValue("@StudentRecipient", dropSendTo.SelectedValue);
+        cmd2.Parameters.AddWithValue("@BusinessBody", txtBody.Text);
+        cmd2.Parameters.AddWithValue("@BusinessDate", DateTime.Now);
+        cmd2.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+        cmd2.ExecuteNonQuery();
+        con.Close();
+
+        lblMessageSent.Visible = true;
+        lblMessageSent.Text = "Message Sent to " + dropSendTo.SelectedValue;
+
+    }
+
+    protected void btnStudentMessages_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("StudentMessagesPortal.aspx");
+    }
 }

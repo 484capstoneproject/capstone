@@ -103,9 +103,31 @@
 		  <div class="col-10 bg-white">
 			  
 			  <div class=" ml-2 mt-2 row d-flex justify-content-between">
-				  <h3 class="text-maingreen">Student Messages</h3>
+				  <h3 class="text-maingreen">Student Messages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     <asp:Button ID="btnBusinessMessages" runat="server" Height="43px" Text="View Business Inbox" Width="172px" class="btn btn-maingreen" OnClick="btnBusinessMessages_Click"/>
+				  </h3>
 				  <h1 class="invisible">Messages</h1>
 			  </div>
+            <div class="card card-body border-secondary">
+
+              <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Underline="True" Text="New Message: "></asp:Label>
+
+              <br />
+              <asp:Label ID="Label2" runat="server" Text="To: "></asp:Label>
+              <asp:DropDownList ID="dropSendTo" runat="server" Height="33px" Width="278px">
+                  <asp:ListItem Text="--Select Business Name--" Value =""></asp:ListItem>
+              </asp:DropDownList>
+               <br />
+              <br />
+               <asp:Label ID="lblBody" runat="server" Font-Bold="False" Text="Body:"></asp:Label>
+               <asp:TextBox ID="txtBody" runat="server" Height="83px" TextMode="MultiLine" Width="353px"></asp:TextBox>
+               <br />
+               <br />
+               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px"/>
+               <asp:Label ID="lblMessageSent" runat="server" Text="null" Visible="False"></asp:Label>
+              <br />
+            </div>
+        <div class="mt-5 mb-5 card card-body border-secondary">
 
               <asp:Label ID="LblSearch" runat="server" Text="Search Job Postings (By JobTitle): " Font-Bold="true" Font-Underline="true"></asp:Label>
 
@@ -168,7 +190,7 @@
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 
                 </asp:Gridview>   
-                            
+             </div>               
 
 
  		  </div>
