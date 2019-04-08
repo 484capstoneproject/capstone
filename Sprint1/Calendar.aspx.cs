@@ -171,72 +171,7 @@ public partial class Calendar : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Event_Type", 2);
         cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
         cmd.ExecuteNonQuery();
-        con.Close();
-
-
-
-        StringBuilder sbICSFile = new StringBuilder();
-        DateTime dtNow = DateTime.Now;
-
-        sbICSFile.AppendLine("BEGIN:VCALENDAR");
-        sbICSFile.AppendLine("VERSION:2.0");
-        sbICSFile.AppendLine("PRODID:-//AkonaDev/CalendarAppointment");
-        sbICSFile.AppendLine("CALSCALE:GREGORIAN");
-        sbICSFile.AppendLine("BEGIN:VEVENT");
-
-        //Define time zones.
-        //US/Eastern
-        sbICSFile.AppendLine("BEGIN:VTIMEZONE");
-        sbICSFile.AppendLine("TZID:US/Eastern");
-        sbICSFile.AppendLine("BEGIN:STANDARD");
-        sbICSFile.AppendLine("DTSTART:20071104T020000");
-        sbICSFile.AppendLine("RRULE:FREQ=YEARLY;BYDAY=1SU;BYMONTH=11");
-        sbICSFile.AppendLine("TZOFFSETFROM:-0400");
-        sbICSFile.AppendLine("TZOFFSETTO:-0500");
-        sbICSFile.AppendLine("TZNAME:EST");
-        sbICSFile.AppendLine("END:STANDARD");
-        sbICSFile.AppendLine("BEGIN:DAYLIGHT");
-        sbICSFile.AppendLine("DTSTART:20070311T020000");
-        sbICSFile.AppendLine("RRULE:FREQ=YEARLY;BYDAY=2SU;BYMONTH=3");
-        sbICSFile.AppendLine("TZOFFSETFROM:-0500");
-        sbICSFile.AppendLine("TZOFFSETTO:-0400");
-        sbICSFile.AppendLine("TZNAME:EDT");
-        sbICSFile.AppendLine("END:DAYLIGHT");
-        sbICSFile.AppendLine("END:VTIMEZONE");
-
-
-        //Define the event
-        sbICSFile.Append("DTSTART;TZID=" + ddlStartTZ.Text + ":");
-        sbICSFile.Append(calStartDate.SelectedDate.Year.ToString());
-        sbICSFile.Append(FormatDateTimeValue(calStartDate.SelectedDate.Month));
-        sbICSFile.Append(FormatDateTimeValue(calStartDate.SelectedDate.Day) + "T");
-        sbICSFile.AppendLine(ddlStartTime.SelectedValue);
-
-        sbICSFile.Append("DTEND;TZID=" + ddlEndTZ.Text + ":");
-        sbICSFile.Append(calEndDate.SelectedDate.Year);
-        sbICSFile.Append(FormatDateTimeValue(calEndDate.SelectedDate.Month));
-        sbICSFile.Append(FormatDateTimeValue(calEndDate.SelectedDate.Day) + "T");
-        sbICSFile.AppendLine(ddlEndTime.SelectedValue);
-
-        sbICSFile.AppendLine("SUMMARY:" + txtEventSummary.Text);
-        sbICSFile.AppendLine("DESCRIPTION:" + txtEventDescription.Text);
-        sbICSFile.AppendLine("UID:1");
-        sbICSFile.AppendLine("SEQUENCE:0");
-
-        sbICSFile.Append("DTSTAMP:" + dtNow.Year.ToString());
-        sbICSFile.Append(FormatDateTimeValue(dtNow.Month));
-        sbICSFile.Append(FormatDateTimeValue(dtNow.Day) + "T");
-        sbICSFile.Append(FormatDateTimeValue(dtNow.Hour));
-        sbICSFile.AppendLine(FormatDateTimeValue(dtNow.Minute) + "00");
-
-        sbICSFile.AppendLine("END:VEVENT");
-        sbICSFile.AppendLine("END:VCALENDAR");
-
-        Response.ContentType = "text/calendar";
-        Response.AddHeader("content-disposition; attachment; filename=CalendarEvent1.ics");
-        Response.Write(sbICSFile);
-        Response.End();
-
+        con.Close();    
 
         Response.Redirect("Calendar.aspx");
     }
@@ -249,11 +184,4 @@ public partial class Calendar : System.Web.UI.Page
         FormsAuthentication.RedirectToLoginPage();
     }
 
-    private string FormatDateTimeValue(int DateValue)
-    {
-       if (DateValue < 10)
-           return "0" + DateValue.ToString();
-       else
-           return DateValue.ToString();
-    }
 }
