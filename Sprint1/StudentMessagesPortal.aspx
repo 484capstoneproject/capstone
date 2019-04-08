@@ -98,7 +98,6 @@
         <div class="gradient-bar col"></div>
 
     <!-------------------- BODY STARTS --------------------->  
- 			
 			
 		  <div class="col-10 bg-white">
 			  
