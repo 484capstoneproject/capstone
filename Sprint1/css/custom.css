@@ -38,7 +38,7 @@ body, html {
   font-size: 11px;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out,  transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none; }
 
@@ -66,7 +66,7 @@ body, html {
   font-size: 14px;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out,  transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none; }
 
@@ -95,9 +95,9 @@ p {
 
 a {
   text-decoration: none;
-  color: #0c293d; }
+  color: white; }
   a:hover {
-    color: #1d6292;
+    color: white;
     text-decoration: none; }
 
 /************************* Navbar *****************************/
@@ -243,6 +243,7 @@ img.nextstepgo-logo-nav {
   color: #fff; }
 
 .sidebar-active {
+  color: white;
   border-left: solid thick #83bf4a;
   background-color: rgba(255, 255, 255, 0.1); }
   .sidebar-active .nav-link {
@@ -440,6 +441,10 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background: #6a9e38; }
 
+.accordian-dashboard {
+  border-style: solid;
+  border-color: #35858e; }
+
 .btn-edit-profile {
   color: #434c55; }
   .btn-edit-profile:hover {
@@ -552,7 +557,7 @@ footer {
   font-size: 70px; }
 
 .time {
-  color: #94c8d5;
+  color: #35858e;
   text-align: right; }
 
 /* Add media queries for smaller screens */
@@ -656,6 +661,44 @@ footer {
     color: #d6d7dd !important; }
   .unpublished .location-text {
     color: black; }
+
+.form-entry {
+  border-radius: 0px;
+  border: none;
+  border-bottom: solid 1px #83bf4a; }
+  .form-entry:focus {
+    box-shadow: none; }
+
+.form-selector {
+  background-color: none;
+  border: solid 2px #83bf4a;
+  color: #0c293d; }
+
+.form-entry-all-borders {
+  border-radius: 0px;
+  border: solid 1px #83bf4a; }
+  .form-entry-all-borders:focus {
+    box-shadow: none; }
+
+.border-left-plain {
+  background-color: #d6d7dd; }
+  .border-left-plain:hover {
+    border-left-width: 1px; }
+
+.border-left-plain.active {
+  background-color: #f1f1f1 !important;
+  border-bottom: none; }
+
+.nav-border-none:hover {
+  border-left-width: 0px; }
+
+.nav-tabs {
+  border-bottom: 0px; }
+
+.add-form {
+  border: solid thin #d6d7dd;
+  border-top: none;
+  background-color: #f1f1f1; }
 
 .post-card-left {
   background-color: #f2f2f4; }
