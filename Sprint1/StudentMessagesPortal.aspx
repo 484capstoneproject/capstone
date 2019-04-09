@@ -82,7 +82,7 @@
   				  </td> 
 				 </tr>  				
 			</table>
-           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out"></asp:Button>
+           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
            </div>
             <ul class="nav flex-column sidebar-links">
       

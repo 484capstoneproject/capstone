@@ -77,17 +77,63 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
+
   				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
+
   				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>
-           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out"></asp:Button>
+
+           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+
            </div>
             <ul class="nav flex-column sidebar-links">
-      
+           
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="BusinessMessage">
+                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
+                  <i data-feather="home"></i>
+                  <span class="nav-txt">Dashboard</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="#">
+                  <i data-feather="check-circle"></i>
+					<span class="nav-txt">Applications</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="JobPostings.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Job Posts</span>
+                </a>
+              </li>
+                <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Learning Posts</span>
+                </a>
+              </li>
+                   <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Scholarships.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Scholarship Posts</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Analytics.aspx">
+                  <i data-feather="pie-chart"></i>
+					<span class="nav-txt">Analytics</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Calendar.aspx">
+                  <i data-feather="calendar"></i>
+					<span class="nav-txt">Calendar</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side sidebar-active" href="BusinessMessage.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
                 </a>
@@ -150,6 +196,7 @@
 				<asp:Gridview id="GridView1" 
                 autogeneratecolumns="False"
                 onselectedindexchanged="GridView1_SelectedIndexChanged"
+                OnRowDataBound="GridView1_RowDataBound"
                 runat="server" DataKeyNames="StudentMessageID" CellPadding="4" ForeColor="#333333" GridLines="None">
                 
                     <AlternatingRowStyle BackColor="White" />
@@ -161,10 +208,8 @@
                         
                         <asp:BoundField DataField="StudentMessageID" 
                             HeaderText="StudentMessageID" 
-                            InsertVisible="False" ReadOnly="True" 
-                            SortExpression="StudentMessageID" />
-                                 
-                                   
+                            InsertVisible="False"  
+                            SortExpression="StudentMessageID" />                                                              
                         <asp:BoundField DataField="StudentName" 
                             HeaderText="Student Name" 
                             SortExpression="StudentName" >
@@ -180,6 +225,10 @@
                             HeaderText="BusinessEntityID" 
                             SortExpression="BusinessEntityID" 
                             readOnly="true"/>
+                        <asp:BoundField DataField="BusinessRead"
+                            HeaderText="Read/Unread"
+                            SortExpression="BusinessRead" />
+
                     </Columns> 
                     <EditRowStyle BackColor="#7C6F57" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

@@ -50,12 +50,18 @@ public partial class StudentMessagesPortal : System.Web.UI.Page
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
         GridViewRow row = GridView1.SelectedRow;
-        
+
+       
 
     }
 
     protected void btnBusinessMessages_Click(object sender, EventArgs e)
     {
         Response.Redirect("Default.aspx");
+    }
+
+    protected void SignOut_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("StudentLogin.aspx");
     }
 }

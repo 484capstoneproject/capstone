@@ -18,9 +18,6 @@ public partial class BusinessMessage : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            GridView1.Columns[1].Visible = false;
-            GridView1.Columns[5].Visible = false;
-
             con.Open();
             SqlCommand cmd = new SqlCommand("select FirstName, LastName from Student", con);
             cmd.CommandType = CommandType.Text;
@@ -50,7 +47,17 @@ public partial class BusinessMessage : System.Web.UI.Page
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
         GridViewRow row = GridView1.SelectedRow;
+        var StudentMessageID = row.Cells[1].Text;
 
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Update StudentMessage set BusinessRead=0 where StudentMessageID = @StudentMessageID", con);
+        cmd.Parameters.AddWithValue("@StudentMessageID", StudentMessageID);
+        cmd.CommandType = CommandType.Text;
+        cmd.ExecuteNonQuery();
+        con.Close();
+
+        Response.Redirect("BusinessMessage.aspx");
     }
 
 
@@ -101,5 +108,22 @@ public partial class BusinessMessage : System.Web.UI.Page
     protected void btnStudentMessages_Click(object sender, EventArgs e)
     {
         Response.Redirect("StudentMessagesPortal.aspx");
+    }
+
+    protected void SignOut_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Default.aspx");
+    }
+
+    protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        e.Row.Cells[1].Visible = false;
+        e.Row.Cells[5].Visible = false;
+        e.Row.Cells[6].Visible = false;
+
+        if (Convert.ToInt16(DataBinder.Eval(e.Row.DataItem, "BusinessRead")) == 1)
+        {
+            e.Row.BackColor = System.Drawing.Color.Red;
+        }
     }
 }
