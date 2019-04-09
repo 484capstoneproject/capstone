@@ -19,7 +19,7 @@ public partial class BusinessMessage : System.Web.UI.Page
         if (!IsPostBack)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select DISTINCT FirstName, LastName from Student", con);
+            SqlCommand cmd = new SqlCommand("select Name from School", con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
 
@@ -29,7 +29,7 @@ public partial class BusinessMessage : System.Web.UI.Page
             {
                 while (reader.Read())
                 {
-                    dropSendTo.Items.Add(reader["FirstName"].ToString() + " " + reader["LastName"].ToString());
+                    dropSendTo.Items.Add(reader["Name"].ToString());
                 }
             }
             con.Close();
@@ -66,11 +66,24 @@ public partial class BusinessMessage : System.Web.UI.Page
         cmd.ExecuteNonQuery();
         con.Close();
 
-        Response.Redirect("BusinessMessage.aspx");
+
+        lblNewMessage.Text = "Reply: ";
+        txtReplyAddress.Text = row.Cells[2].Text;
+        txtReplyAddress.Visible = true;
+        txtReplyAddress.Enabled = false;
+
+        dropSendTo.Visible = false;
+
+        lblOriginalMessage.Visible = true;
+        txtareaOriginal.Visible = true;
+        txtareaOriginal.Enabled = false;
+        txtareaOriginal.Text = row.Cells[3].Text;
+
+        dropSendTo.Items.Add(txtReplyAddress.Text);
+        dropSendTo.SelectedValue = row.Cells[2].Text;
+
+        //Response.Redirect("BusinessMessage.aspx");
     }
-
-
-
 
 
     protected void btnSendMessage_Click(object sender, EventArgs e)
@@ -136,5 +149,27 @@ public partial class BusinessMessage : System.Web.UI.Page
         {
             e.Row.BackColor = System.Drawing.Color.Red;
         }
+    }
+
+    protected void dropStudentNames_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        dropStudentNames.Visible = true;
+        lblStudentDrop.Visible = true;
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Select student.FirstName, student.LastName, student.grade FROM student INNER JOIN school on student.schoolid = school.schoolid", con);
+        cmd.CommandType = CommandType.Text;
+        cmd.ExecuteNonQuery();
+
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        if (reader.HasRows)
+        {
+            while (reader.Read())
+            {
+                dropSendTo.Items.Add(reader["Name"].ToString());
+            }
+        }
+        con.Close();
+        reader.Close();
     }
 }

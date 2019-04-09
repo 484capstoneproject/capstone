@@ -163,17 +163,24 @@
 			  </div>
            <div class="card card-body border-secondary">
 
-              <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Underline="True" Text="New Message: "></asp:Label>
+              <asp:Label ID="lblNewMessage" runat="server" Font-Bold="True" Font-Underline="True" Text="New Message: "></asp:Label>
 
               <br />
-              <asp:Label ID="Label2" runat="server" Text="To: "></asp:Label>
+              <asp:Label ID="lblTo" runat="server" Text="To: "></asp:Label>
               <asp:DropDownList ID="dropSendTo" runat="server" Height="33px" Width="278px">
-                  <asp:ListItem Text="--Select Student Name--" Value =""></asp:ListItem>
+                  <asp:ListItem Text="--Select School Name--" Value =""></asp:ListItem>
               </asp:DropDownList>
+               <asp:Label ID="lblStudentDrop" runat="server" Text="Student Name: " Visible="False"></asp:Label>
+               <asp:DropDownList ID="dropStudentNames" runat="server" OnSelectedIndexChanged="dropStudentNames_SelectedIndexChanged" Visible="False">
+               </asp:DropDownList>
+              <asp:TextBox ID="txtReplyAddress" runat="server" Visible="false" Width="300px"></asp:TextBox>
                <br />
               <br />
                <asp:Label ID="lblBody" runat="server" Font-Bold="False" Text="Body:"></asp:Label>
                <asp:TextBox ID="txtBody" runat="server" Height="83px" TextMode="MultiLine" Width="353px"></asp:TextBox>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <asp:Label ID="lblOriginalMessage" runat="server" Text="--Original Message--" Visible="false"></asp:Label>
+               <asp:TextBox ID="txtareaOriginal" runat="server" Height="83px" TextMode="MultiLine" Width="353px" Visible="false"></asp:TextBox>
                <br />
                <br />
                <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>
