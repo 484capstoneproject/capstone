@@ -94,12 +94,13 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
-  				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
-  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
+  				  <h2 class="bus-name-header" id="BusinessName" runat="server">PBMares</h2>
+  				  <a href="BusinessProfile.aspx" <p class="btn btn-link btn-edit-profile"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
+
   				  </td> 
 				 </tr>  				
 			</table>
-           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+           <asp:Button id="SignOut" type="submit" class="signout-button mr-2" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
            </div>
             <ul class="nav flex-column sidebar-links">
            
@@ -169,7 +170,7 @@
  						    	<p class="submitted-text">Posted: January 28 at 6:15 p.m.</p>
  						    </div>
 						    <div class="d-inline">
-						      	<i data-feather="edit"></i>
+						      	<i class="offwhite-icon" data-feather="edit"></i>
  						      	<button class="btn btn-link collapsed collapse-icon" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
  						        	<i data-feather="arrow-down-circle"></i>
  						      	</button>
@@ -226,7 +227,7 @@
  						    	<p class="submitted-text">Posted: February 9 at 11:58 a.m.</p>
  						    </div>
 						    <div class="d-inline">
-						      	<i data-feather="edit"></i>
+						      	<i class="offwhite-icon" data-feather="edit"></i>
  						      	<button class="btn btn-link collapsed collapse-icon" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
  						        	<i data-feather="arrow-down-circle"></i>
  						      	</button>
@@ -282,7 +283,7 @@
  						    	<p class="submitted-text">Posted: January 28 at 6:15 p.m.</p>
  						    </div>
 						    <div class="d-inline">
-						      	<i data-feather="edit"></i>
+						      	<i class="offwhite-icon" data-feather="edit"></i>
  						      	<button class="btn btn-link collapsed collapse-icon" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
  						        	<i data-feather="arrow-down-circle"></i>
  						      	</button>
@@ -369,11 +370,11 @@
  					<div class="col-12 bg-white h-60">
                          <div class="justify-content-between pt-3 mb-3">
  						<h2 class= "pt-4 mr-4 d-inline">Analytics</h2>
-                         <a href="Analytics.aspx" class="btn btn-secondary d-inline align-top ml-3">View All Analytics</a>
+                         <a href="Analytics.aspx" class="signout-button signout-button:hover">View All Analytics</a>
                          </div>
-                    <table class="table table-bordered">
-                        <tbody>
-                            <tr>
+                    <table class="table table-bordered ">
+                        <tbody class="tbody">
+                            <tr class="tr">
                                 <td class="bg-secondary text-center text-white">
                                     <p class="font-weight-bold number-label">Job Opportunity</p>
                                  <asp:Label ID="lblJob" runat="server" Text="Label" class="number-dashboard font-weight-bolder"></asp:Label>
@@ -383,7 +384,7 @@
                                     <asp:Label ID="lblScolarship" runat="server" Text="Label" class="number-dashboard font-weight-bolder"></asp:Label>
                                 </td>
                             </tr>
-                             <tr>
+                             <tr class="tr">
                                 <td class="bg-blue text-white number-label text-center">
                                     <p class="font-weight-bold">Learning Opportunity</p>
                                      <asp:Label ID="lblLearning" runat="server" Text="Label" class="number-dashboard font-weight-bolder"></asp:Label>
@@ -395,9 +396,10 @@
                             </tr>
                         </tbody>
                     </table>
-
-
  					</div>
+                     
+
+
  					<div class="col-12 mt-3 bg-white cal-box h-48">
  						<div class="card sm-cal h-100" style="max-width: 540px;">
   						<div class="row no-gutters h-100">

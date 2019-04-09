@@ -95,9 +95,9 @@ p {
 
 a {
   text-decoration: none;
-  color: #0c293d; }
+  color: white; }
   a:hover {
-    color: #1d6292;
+    color: white;
     text-decoration: none; }
 
 /************************* Navbar *****************************/
@@ -243,6 +243,7 @@ img.nextstepgo-logo-nav {
   color: #fff; }
 
 .sidebar-active {
+  color: white;
   border-left: solid thick #83bf4a;
   background-color: rgba(255, 255, 255, 0.1); }
   .sidebar-active .nav-link {
@@ -440,6 +441,10 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background: #6a9e38; }
 
+.accordian-dashboard {
+  border-style: solid;
+  border-color: #35858e; }
+
 .btn-edit-profile {
   color: #434c55; }
   .btn-edit-profile:hover {
@@ -552,7 +557,7 @@ footer {
   font-size: 70px; }
 
 .time {
-  color: #94c8d5;
+  color: #35858e;
   text-align: right; }
 
 /* Add media queries for smaller screens */

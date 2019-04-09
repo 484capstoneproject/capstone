@@ -65,7 +65,7 @@
       <li class="nav-item">
         	<div class="dropdown">
   				<button class="dropdown-toggle nav-dropdown" type="button" id="navSettingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/avatar.png"></a>
+   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/PBMares.png"></a>
   				</button>
   				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navSettingMenu">
     				<button class="dropdown-item" type="button">Profile</button>
@@ -86,25 +86,19 @@
       <div class="row vh-100">
        
       <!---------------- SIDEBAR BEGINS --------------->
-        <nav class="col-2 p-0 d-none d-md-block sidebar sidebar-expanded" id="collapse-it">
+         <nav class="col-2 p-0 d-none d-md-block sidebar sidebar-expanded" id="collapse-it">
              <div class="profile-bar text-center">
              <table class="profile-table text-left">
   				<tr>
-  				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
+  				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
+  				  <h2 class="bus-name-header" id="BusinessName" runat="server">PBMares</h2>
+  				  <a href="BusinessProfile.aspx" <p class="btn btn-link btn-edit-profile"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
 
-  				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
-
-  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>
-
-           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
-
-
-   
-
+           <asp:Button id="SignOut" type="submit" class="signout-button mr-2" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
            </div>
             <ul class="nav flex-column sidebar-links">
            
