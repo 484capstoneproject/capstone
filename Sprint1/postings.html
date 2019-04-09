@@ -72,15 +72,15 @@
   <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link mr-2" href="#"><i data-feather="inbox" class=""></i></a>
+        <a class="nav-link nav-border-none mr-2" href="#"><i data-feather="inbox" class=""></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"><i data-feather="bell" class="mr-2"></i></a>
+        <a class="nav-link nav-border-none" href="#"><i data-feather="bell" class="mr-2"></i></a>
       </li>
       <li class="nav-item">
         	<div class="dropdown">
   				<button class="dropdown-toggle nav-dropdown" type="button" id="navSettingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/PBMares.png"></a>
+   				<a class="nav-link nav-border-none pt-0" href="#"><img class="profile-img-nav" src="images/PBMares.png"></a>
   				</button>
   				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navSettingMenu">
     				<button class="dropdown-item" type="button">Profile</button>
@@ -110,7 +110,7 @@
   				  <td class="bus-name">
   				  <h2 class="bus-name-header mt-3">PB Mares</h2>
   				  
-					 <button id="editprofile" class="btn btn-link btn-edit-profile">
+					 <button id="editprofile" class="btn btn-link btn-edit-profile pl-0">
 					  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
 					  </button>
   				  </td> 
@@ -121,37 +121,37 @@
             <ul class="nav flex-column sidebar-links">
            
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="dashboard.html">
+                <a class="nav-link nav-link-side" href="dashboard.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="applications.html">
+                <a class="nav-link nav-link-side" href="applications.aspx">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="postings.html">
+                <a class="nav-link nav-link-side sidebar-active" href="postings.aspx">
                  <span class="white-icon"><i data-feather="clipboard"></i></span> 
 					<span class="nav-txt sidebartext-active">Postings</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="analytics.html">
+                <a class="nav-link nav-link-side" href="analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="calendar.html">
+                <a class="nav-link nav-link-side" href="calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="messages.html">
+                <a class="nav-link nav-link-side" href="messages.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
                 </a>
@@ -960,12 +960,9 @@
 									
   						   			   </div>
 			
-		  
-		  
-		  
 		  											 
 													 
-										 				<!---- Type---->
+					<!---- Type---->
  					<div class="accordion" id="accordionType">
   						<div class="card">
 							
@@ -1048,43 +1045,42 @@
 						        </button>
 						      </div>
 						      <div class="modal-body p-3">
-						      <h5><label for="choosePostType">Post Type</label></h5>
-												 
-						<ul class="nav nav-tabs" id="myTab" role="tablist">
+								<div class="p-3">			 
+								<ul class="nav nav-tabs" id="myTab" role="tablist">
 						   <li class="nav-item">
-						     <a class="nav-link active border-left-plain" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+						     <a class="nav-link active border-left-plain" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Job Opportunity</a>
 						   </li>
 						   <li class="nav-item">
-						     <a class="nav-link border-left-plain" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+						     <a class="nav-link border-left-plain" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Learning Opportunity</a>
 						   </li>
 						   <li class="nav-item">
-						     <a class="nav-link border-left-plain" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+						     <a class="nav-link border-left-plain" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Scholarship</a>
 						   </li>
 						</ul>
-						 <div class="tab-content border-left-plain" id="myTabContent">
+						 	<div class="tab-content border-left-plain" id="myTabContent">
 						   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 							
 							  <!-- JOB FORM CONTENT -->
-								  <form id="postingFormJob" class="p-5">
-									<h5 class="pt-4">Post Details</h5>
+								  <form id="postingFormJob" class="p-5 add-form">
+									<h3 class="pt-2 pb-2">Post Details</h3>
 									  <div class="form-group">
-										<label for="Job Title">Job Title</label>
-										<input type="jobtitle" class="form-control min-imput" id="JobTitle" aria-describedby="JobTitle" placeholder="Enter">
+										<label for="Job Title" class="font-weight-bold">Job Title</label>
+										<input type="jobtitle" class="form-control form-entry" id="JobTitle" aria-describedby="JobTitle" placeholder="Enter">
 									  </div>
 								  
-								  <div class="row pt-2 pb-3">
+								    <div class="row pt-2 pb-3">
 								  	<div class="col">
-								 		 <label for="chooseJobType">Job Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseJobType">
-											  <option>Part-Time</option>
-											  <option>Full Time</option>
-											  <option>Internship</option>
+								 		 <label for="chooseJobType" class="font-weight-bold">Job Type</label>
+								  		 <select class="form-control w-75 mb-3 form-selector" id="chooseJobType">
+											  <option class="font-sm">Part-Time</option>
+											  <option class="font-sm">Full Time</option>
+											  <option class="font-sm">Internship</option>
 								  		 </select>
 								    </div>
 								    <div class="col">
 									   <div class="form-group">
-											<label for="CareerCluster">Career Cluster</label>
-											<select class="form-control w-75" id="CareerCluster">
+											<label for="CareerCluster" class="font-weight-bold">Career Cluster</label>
+											<select class="form-control w-75 form-selector" id="CareerCluster">
 											  <option>Select</option>
 											  <option>Agriculture, Food and Natural Resources</option>
 											  <option>Architecture and Construction</option>
@@ -1105,7 +1101,7 @@
 									</div>
 									</div>  
 										<div class="form-group pt-1">
-											<label for="paymentType" class="mr-3 ">Payment Type: </label>
+											<label for="paymentType" class="font-weight-bold mr-3 mt-2">Payment Type: </label>
 									    	<div class="pt-2 d-inline">
 										    <div class="form-check form-check-inline" id="paymentType">
 										      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -1123,14 +1119,14 @@
 									   </div>  									 
 									  	<div class="form-group">
  										   <label for="exampleFormControlTextarea1">Description</label>
- 										   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <textarea class="form-control form-entry-all-borders" id="exampleFormControlTextarea1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control form-selector" id="selectMonth">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -1147,7 +1143,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control form-selector" id="selectDay">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -1183,7 +1179,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control form-selector" id="selectYear">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -1201,17 +1197,17 @@
 						   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 							 
 							 <!-- LEARNING FORM CONTENT -->
-								  <form id="postingFormLearn" >
-									<h5 class="pt-4">Post Details</h5>
+								  <form id="postingFormLearn" class="p-5 add-form">
+									<h3 class="pt-2">Post Details</h3>
 									  <div class="form-group">
-										<label for="learntitle">Learning Opportunity Title</label>
-										<input type="learntitle" class="form-control" id="learntitle" aria-describedby="learntitle" placeholder="Enter">
+										<label for="learntitle" class="font-weight-bold">Learning Opportunity Title</label>
+										<input type="learntitle" class="form-control form-entry" id="learntitle" aria-describedby="learntitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
-								 		 <label for="chooseOppType">Opportunity Type</label>
-								  		 <select class="form-control w-75 mb-3" id="chooseOppType">
+								 		 <label for="chooseOppType" class="font-weight-bold">Opportunity Type</label>
+								  		 <select class="form-control w-75 mb-3 form-selector" id="chooseOppType">
 											  <option>Shadowing</option>
 											  <option>Career Event</option>
 											  <option>Other</option>
@@ -1219,8 +1215,8 @@
 								    </div>
 								    <div class="col">
 									   <div class="form-group">
-											<label for="CareerClusterLearn">Career Cluster</label>
-											<select class="form-control w-75" id="CareerClusterLearn">
+											<label for="CareerClusterLearn" class="font-weight-bold">Career Cluster</label>
+											<select class="form-control w-75 form-selector" id="CareerClusterLearn">
 											  <option>Select</option>
 											  <option>Agriculture, Food and Natural Resources</option>
 											  <option>Architecture and Construction</option>
@@ -1241,15 +1237,15 @@
 									</div>
 									</div>    									 
 									  	<div class="form-group">
- 										   <label for="descLearn">Description</label>
- 										   <textarea class="form-control" id="descLearn1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <label for="descLearn" class="font-weight-bold">Description</label>
+ 										   <textarea class="form-control form-entry" id="descLearn1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
-											  <h5 class="pt-4">Edit Application Deadline</h5>
+											  <h5 class="pt-4">Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
-											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+											      <label for="selectMonth" class="font-weight-bold">Month</label>
+													<select class="form-control form-selector" id="selectMonth">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -1265,8 +1261,8 @@
 													</select>
 										      	</div>
 										      	<div class="col">
-											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+											      <label for="selectDay" class="font-weight-bold">Day</label>
+													<select class="form-control form-selector" id="selectDay">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -1301,8 +1297,8 @@
 													</select>
 										      </div>
 										      <div class="col">
-											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+											      <label for="selectYear" class="font-weight-bold">Year</label>
+													<select class="form-control form-selector" id="selectYear">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -1320,28 +1316,28 @@
 							 
 							 	   							       
 							   <!-- SCHOLARSHIP FORM CONTENT -->
-								  <form id="postingFormScholar">
-									<h5 class="pt-4">Scholarship Details</h5>
+								  <form id="postingFormScholar" class="p-5 add-form">
+									<h3 class="pt-2">Scholarship Details</h3>
 									  <div class="form-group">
-										<label for="scholtitle">Scholarship Name</label>
-										<input type="scholtitle" class="form-control" id="scholtitle" aria-describedby="scholtitle" >
+										<label for="scholtitle" class="font-weight-bold">Scholarship Name</label>
+										<input type="scholtitle" class="form-control form-entry" id="scholtitle" aria-describedby="scholtitle" >
 									  </div>
 									  <div class="form-group">
-										<label for="scholamount">Amount</label>
-										<input type="scholamount" class="form-control" id="scholamount" aria-describedby="scholamount" >
+										<label for="scholamount" class="font-weight-bold">Amount</label>
+										<input type="scholamount" class="form-control form-entry" id="scholamount" aria-describedby="scholamount" >
 									  </div>
 								  
 														 
 									  	<div class="form-group">
- 										   <label for="descSchol">Description</label>
- 										   <textarea class="form-control" id="descSchol" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <label for="descSchol" class="font-weight-bold">Description</label>
+ 										   <textarea class="form-control form-entry" id="descSchol" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth">Month</label>
-													<select class="form-control" id="selectMonth">
+													<select class="form-control form-selector" id="selectMonth">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -1358,7 +1354,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay">Day</label>
-													<select class="form-control" id="selectDay">
+													<select class="form-control form-selector" id="selectDay">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -1394,7 +1390,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear">Year</label>
-													<select class="form-control" id="selectYear">
+													<select class="form-control form-selector" id="selectYear">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -1411,6 +1407,7 @@
 				    </div>
 								  
 						      </div>
+						      </div>		
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						        <button type="button" class="btn bg-green addPost" data-dismiss="modal">Save changes</button>
@@ -1454,8 +1451,8 @@
   	<!-- Muuri <script src="https://unpkg.com/muuri@0.7.1/dist/muuri.min.js"></script> -->
    
    <!-- custom JS -->
-   <script src="js/custom.js"></script>
-    <script src="js/formtoggler.js"></script>
+   <script src="../../../../Google Drive/Senior Year/Semester 2/SMAD Capstone/Sprint 2 SMAD/Bootstrap/js/custom.js"></script>
+    <script src="../../../../Google Drive/Senior Year/Semester 2/SMAD Capstone/Sprint 2 SMAD/Bootstrap/js/formtoggler.js"></script>
 
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
