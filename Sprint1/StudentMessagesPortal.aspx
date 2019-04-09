@@ -90,6 +90,7 @@
                 <a class="nav-link nav-link-side" href="#">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
+                    <span class="nav-text" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
             </ul>
@@ -146,6 +147,7 @@
 				<asp:Gridview id="GridView1" 
                 autogeneratecolumns="False"
                 onselectedindexchanged="GridView1_SelectedIndexChanged"
+                OnRowDataBound="GridView1_RowDataBound"
                 runat="server" DataKeyNames="BusinessMessageID" CellPadding="4" ForeColor="#333333" GridLines="None">
                 
                     <AlternatingRowStyle BackColor="White" />
@@ -163,6 +165,9 @@
                             SortExpression="BusinessName" >
                         <ControlStyle BackColor="#000066" />
                         </asp:BoundField>
+                        <asp:BoundField DataField="StudentRecipient"
+                              HeaderText="Student Recipient"
+                              SortExpression="StudentRecipient" />
                         <asp:BoundField DataField="BusinessBody" 
                             HeaderText="Body" 
                             SortExpression="BusinessBody" />
@@ -173,6 +178,10 @@
                             HeaderText="BusinessEntityID" 
                             SortExpression="BusinessEntityID" 
                             readOnly="true"/>
+                        <asp:BoundField DataField="StudentRead"
+                            HeaderText="Read/Unread"
+                            SortExpression="StudentRead" />
+
                     </Columns> 
                     <EditRowStyle BackColor="#7C6F57" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

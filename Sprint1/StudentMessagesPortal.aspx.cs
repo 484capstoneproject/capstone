@@ -29,7 +29,7 @@ public partial class StudentMessagesPortal : System.Web.UI.Page
             con.Close();
 
             con.Open();
-            SqlCommand cmd = new SqlCommand("select BusinessName from BusinessMessage", con);
+            SqlCommand cmd = new SqlCommand("select DISTINCT BusinessName from BusinessMessage", con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
 
@@ -44,15 +44,31 @@ public partial class StudentMessagesPortal : System.Web.UI.Page
             }
             con.Close();
             reader.Close();
+
+
+            con.Open();
+            cmd = new SqlCommand("select count(StudentRead) from BusinessMessage where StudentRead=@StudentRead", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("StudentRead", 1);
+            int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
+            sidebarMessages.InnerText = "       " + inboxCount.ToString();
+            con.Close();    
         }
     }
 
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
     {
         GridViewRow row = GridView1.SelectedRow;
+        var BusinessMessageID = row.Cells[1].Text;
 
-       
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Update BusinessMessage set StudentRead=0 where BusinessMessageID = @BusinessMessageID", con);
+        cmd.Parameters.AddWithValue("@BusinessMessageID", BusinessMessageID);
+        cmd.CommandType = CommandType.Text;
+        cmd.ExecuteNonQuery();
+        con.Close();
 
+        Response.Redirect("StudentMessagesPortal.aspx");
     }
 
     protected void btnBusinessMessages_Click(object sender, EventArgs e)
@@ -63,5 +79,17 @@ public partial class StudentMessagesPortal : System.Web.UI.Page
     protected void SignOut_Click(object sender, EventArgs e)
     {
         Response.Redirect("StudentLogin.aspx");
+    }
+    protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+        e.Row.Cells[1].Visible = false;
+        e.Row.Cells[6].Visible = false;
+        e.Row.Cells[7].Visible = false;
+
+        //ONE MEANS THAT THE MESSAGE IS UNREAD. 0 MEANS SOMEONE READ IT
+        if (Convert.ToInt16(DataBinder.Eval(e.Row.DataItem, "StudentRead")) == 1)
+        {
+            e.Row.BackColor = System.Drawing.Color.Red;
+        }
     }
 }

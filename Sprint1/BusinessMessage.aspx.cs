@@ -19,7 +19,7 @@ public partial class BusinessMessage : System.Web.UI.Page
         if (!IsPostBack)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select FirstName, LastName from Student", con);
+            SqlCommand cmd = new SqlCommand("select DISTINCT FirstName, LastName from Student", con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
 
@@ -98,7 +98,7 @@ public partial class BusinessMessage : System.Web.UI.Page
 
 
         con.Open();
-        SqlCommand cmd2 = new SqlCommand("Insert into BusinessMessage values(@BusinessName, @StudentRecipient, @BusinessBody, @BusinessDate, @BusinessEntityID);");
+        SqlCommand cmd2 = new SqlCommand("Insert into BusinessMessage values(@BusinessName, @StudentRecipient, @BusinessBody, @BusinessDate, @BusinessEntityID, @StudentRead);");
         cmd2.CommandType = System.Data.CommandType.Text;
         cmd2.Connection = con;
         cmd2.Parameters.AddWithValue("@BusinessName", Session["BusinessName"]);
@@ -106,6 +106,7 @@ public partial class BusinessMessage : System.Web.UI.Page
         cmd2.Parameters.AddWithValue("@BusinessBody", txtBody.Text);
         cmd2.Parameters.AddWithValue("@BusinessDate", DateTime.Now);
         cmd2.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+        cmd2.Parameters.AddWithValue("@StudentRead", 1);
         cmd2.ExecuteNonQuery();
         con.Close();
 
