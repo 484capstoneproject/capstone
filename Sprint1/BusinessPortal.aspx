@@ -31,7 +31,9 @@
       .number-label{
           font-size: 16px;
       }
-	 
+	 .color{
+         color: #83bf4a;
+	 }
   </style>
 
   </head>
@@ -147,6 +149,7 @@
                 <a class="nav-link nav-link-side" href="BusinessMessage.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
+                    <span class="nav-txt color" id="sidebarMessages" runat="server"></span>
                 </a>
               </li>
             </ul>

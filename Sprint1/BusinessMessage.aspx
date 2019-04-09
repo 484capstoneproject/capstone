@@ -18,6 +18,11 @@
     <!-- Custom Styles -->
 	<link rel="stylesheet" href="css/custom.css">
   
+      <style type="text/css">
+          .color{
+              color:#83bf4a;
+          }
+      </style>
 
   </head>
 
@@ -135,8 +140,9 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side sidebar-active" href="BusinessMessage.aspx">
                   <i data-feather="inbox"></i>
-					<span class="nav-txt">Messages</span>
-                </a>
+					<span class="nav-txt" runat="server">Messages</span>
+                    <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
+                </a
               </li>
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>

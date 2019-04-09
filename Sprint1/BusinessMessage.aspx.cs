@@ -42,6 +42,15 @@ public partial class BusinessMessage : System.Web.UI.Page
             GridView1.DataSource = readerGrid;
             GridView1.DataBind();
             con.Close();
+
+            con.Open();
+            cmd = new SqlCommand("select count(BusinessRead) from StudentMessage where BusinessRead=@BusinessRead", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessRead", 1);
+            int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
+            sidebarMessages.InnerText = "       " + inboxCount.ToString();
+            con.Close();
+            
         }
     }
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -121,6 +130,7 @@ public partial class BusinessMessage : System.Web.UI.Page
         e.Row.Cells[5].Visible = false;
         e.Row.Cells[6].Visible = false;
 
+        //ONE MEANS THAT THE MESSAGE IS UNREAD. 0 MEANS SOMEONE READ IT
         if (Convert.ToInt16(DataBinder.Eval(e.Row.DataItem, "BusinessRead")) == 1)
         {
             e.Row.BackColor = System.Drawing.Color.Red;
