@@ -1,4 +1,198 @@
+<!-----Buttons---- >
+
+.signout-button {
+    display: inline-block;
+    border-radius: 5px;
+    padding: .4rem .4rem;
+    margin: 0;
+    text-decoration: none;
+    background: $greenblue;
+    color: #ffffff;
+    font-family: proxima-nova, sans-serif;
+    font-style: bold;
+    font-size: 11px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.signout-button:hover,
+.signout-button:focus {
+    background: #307477;
+}
+
+.signout-button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.signout-button:active {
+    transform: scale(0.99);
+}
+
+
+.viewapp-button {
+    display: inline-block;
+    border-radius: 5px;
+    padding: .4rem .9rem;
+    margin-top: 1;
+    text-decoration: none;
+    background: $maingreen;
+    color: #ffffff;
+    font-family: proxima-nova, sans-serif;
+    font-style: bold;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+    .viewapp-button:hover,
+    .viewapp-button:focus {
+        background: #6a933f;
+    }
+
+    .viewapp-button:focus {
+        outline: 1px solid #fff;
+        outline-offset: -4px;
+    }
+
+    .viewapp-button:active {
+        transform: scale(0.99);
+    }
+
+
+.excel-button {
+    display: inline-block;
+    border-radius: 5px;
+    padding: .4rem .4rem;
+    margin: 0;
+    text-decoration: none;
+    background: $greenblue;
+    color: #ffffff;
+    font-family: proxima-nova, sans-serif;
+    font-style: bold;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+    .excel-button:hover,
+    .excel-button:focus {
+        background: #307477;
+    }
+
+    .excel-button:focus {
+        outline: 1px solid #fff;
+        outline-offset: -4px;
+    }
+
+    .excel-button:active {
+        transform: scale(0.99);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sidebar:active {
+    border-left: solid thick #83bf4a;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+    .sidebar:active .nav-link {
+        margin-left: -5px;
+    }
+
+a: hover {
+    color: white;
+    background: #307477;
+    background-color: #434c55;
+}
+
+
+<!-----Navigation---- >
+
+
 
 .nav-link:hover {
     color: white;
+}
+
+
+.nav-link:hover {
+    border-left: solid thick $maingreen;
+    color: white;
+}
+
+.white-icon {
+    color: white;
+}
+
+.offwhite-icon {
+    color: #d6d7dd;
+}
+
+.sidebar-active {
+    color: white;
+    border-left: solid thick #83bf4a;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+sidebar: active {
+    color: white;
+    border-left: solid thick $maingreen;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-edit-profile:hover {
+    color: #4584b5;
+}
+
+<!-----Dashboard Analytics---- >
+
+    .fix-table-height {
+        max-height: 50px;
+    }
+
+    .tbody {
+        display: block;
+        overflow: auto;
+        height: 250px;
+    }
+
+    .tr {
+        height: 50px;
+        width: 50px;
+    }
+
+.time {
+    color: #35858e;
+    text-align: right;
+}
+
+.date {
+    background-color: #307477;
 }

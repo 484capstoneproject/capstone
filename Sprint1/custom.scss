@@ -68,9 +68,9 @@ p {
 
 a {
 	text-decoration: none;
-	color: $mainblue;
+	color: white;
 	&:hover{
-		color: lighten( $mainblue, 20% );
+		color: lighten( white, 20% );
 		text-decoration: none;
 	}
 	
