@@ -18,6 +18,11 @@
     <!-- Custom Styles -->
 	<link rel="stylesheet" href="css/custom.css">
   
+      <style type="text/css">
+          .color{
+              color:#83bf4a;
+          }
+      </style>
 
   </head>
 
@@ -90,7 +95,7 @@
                 <a class="nav-link nav-link-side" href="#">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
-                    <span class="nav-text" runat="server" id="sidebarMessages"></span>
+                    <span class="nav-text color" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
             </ul>

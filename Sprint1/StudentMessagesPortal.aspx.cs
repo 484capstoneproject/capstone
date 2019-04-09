@@ -18,9 +18,6 @@ public partial class StudentMessagesPortal : System.Web.UI.Page
 
         if (!IsPostBack)
         {
-            GridView1.Columns[1].Visible = false;
-            GridView1.Columns[5].Visible = false;
-
             con.Open();
             SqlCommand cmdGrid = new SqlCommand("SELECT * from BusinessMessage order by BusinessMessageID", con);
             SqlDataReader readerGrid = cmdGrid.ExecuteReader();
