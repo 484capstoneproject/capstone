@@ -12,19 +12,19 @@ $forgetimg: "../images/forget.jpg";
 
 /* Body Setup */
 body, html {
-    height: 100%;
+	height: 100%;
 }
 
 
 /* COLORS */
 
-$maingreen: #83bf4a;
-$mainblue: #0c293d;
-$medblue: #4584b5;
-$ltblue: #94c8d5;
-$greenblue: #35858e;
-$ltgrey: #d6d7dd;
-$dkgrey: #434c55;
+  $maingreen: #83bf4a;
+  $mainblue:  #0c293d;
+  $medblue: #4584b5;
+  $ltblue: #94c8d5;
+  $greenblue: #35858e;
+  $ltgrey: #d6d7dd;
+  $dkgrey: #434c55;
 
 
 
@@ -33,28 +33,28 @@ $dkgrey: #434c55;
 
 // Regular
 
-.btn-maingreen {
-    background-color: $maingreen !important;
-    color: white;
+.btn-maingreen{
+	background-color: $maingreen!important;
+	color: white;
 }
 
-.btn-mainblue {
-    background-color: $mainblue !important;
-    color: white;
+.btn-mainblue{
+	background-color: $mainblue!important;
+	color: white;
 }
 
 // Outline
-
+	  
 .btn-maingreen-outline {
-    background-color: white;
-    border: 1px solid $maingreen !important;
-    color: $maingreen;
+	background-color: white;
+	border: 1px solid $maingreen!important;
+	color: $maingreen;
 }
 
 .btn-mainblue-outline {
-    background-color: white;
-    border: 1px solid $mainblue !important;
-    color: $mainblue;
+	background-color: white;
+	border: 1px solid $mainblue!important;
+	color: $mainblue;
 }
 
 
@@ -67,11 +67,12 @@ $dkgrey: #434c55;
     background: $greenblue;
     color: #ffffff;
     font-family: proxima-nova, sans-serif;
-    font-style: bold;
+	font-style: bold;
     font-size: 11px;
     cursor: pointer;
     text-align: center;
-    transition: background 250ms ease-in-out, transform 150ms ease;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -100,11 +101,12 @@ $dkgrey: #434c55;
     background: $maingreen;
     color: #ffffff;
     font-family: proxima-nova, sans-serif;
-    font-style: bold;
+	font-style: bold;
     font-size: 14px;
     cursor: pointer;
     text-align: center;
-    transition: background 250ms ease-in-out, transform 150ms ease;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -126,1096 +128,1124 @@ $dkgrey: #434c55;
 
 /**************************** FONTS **************************/
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: forma-djr-text, sans-serif;
-    font-weight: 700;
+h1, h2, h3, h4, h5, h6{
+	font-family: forma-djr-text, sans-serif;
+	font-weight: 700;
 }
 
 h2 {
-    color: $mainblue;
+	color: $mainblue;
 }
 
 p {
-    font-family: proxima-nova, sans-serif;
-    font-weight: 300;
+	font-family: proxima-nova, sans-serif;
+	font-weight: 300;
 }
 
 a {
-    text-decoration: none;
-    color: $mainblue;
-
-    &:hover {
-        color: lighten( $mainblue, 20% );
-        text-decoration: none;
-    }
+	text-decoration: none;
+	color: $mainblue;
+	&:hover{
+		color: lighten( $mainblue, 20% );
+		text-decoration: none;
+	}
+	
 }
 
 
 /************************* Navbar *****************************/
 .navbar.navlogin.navbar-default {
-    margin-bottom: 0px;
+	margin-bottom: 0px;
+}
+nav{
+	font-family: forma-djr-text, sans-serif;
+		font-weight: 300;
+	-webkit-box-shadow: 7px 9px 16px 1px rgba(0,0,0,0.27);
+	-moz-box-shadow: 7px 9px 16px 1px rgba(0,0,0,0.27);
+	box-shadow: 7px 9px 16px 1px rgba(0,0,0,0.27);
 }
 
-nav {
-    font-family: forma-djr-text, sans-serif;
-    font-weight: 300;
-    -webkit-box-shadow: 7px 9px 16px 1px rgba(0,0,0,0.27);
-    -moz-box-shadow: 7px 9px 16px 1px rgba(0,0,0,0.27);
-    box-shadow: 7px 9px 16px 1px rgba(0,0,0,0.27);
+.navbar{
+	padding-top: 11px;
 }
-
-.navbar {
-    padding-top: 11px;
-}
-
-.nav-link {
-    color: $mainblue;
-    font-weight: 400;
-
-    &:hover {
+.nav-link{
+	color: $mainblue;
+	font-weight: 400;
+	&:hover {
         color: white;
-        background-color: white, 0.1;
-        border-left: solid thick $maingreen;
+		background-color: white, 0.1; 
+		border-left: solid thick $maingreen;
     }
 }
 
-.nav-dropdown {
-    background-color: transparent;
-    border: none;
-
-    &:focus {
+.nav-dropdown{
+	background-color: transparent;
+	border: none;
+	&:focus {
         box-shadow: none;
-        background-color: rgba(227,227,227,1.00);
+		background-color: rgba(227,227,227,1.00);
     }
 }
 
 
-.profile-img-nav {
-    width: 30px;
-    border: thin solid $greenblue;
-    border-radius: 20px;
-    margin-top: 5px;
+.profile-img-nav{
+	width: 30px;
+	border: thin solid $greenblue;
+	border-radius: 20px;
+	margin-top: 5px;
 }
 
 .nav-txt {
-    padding-left: 10px;
+	padding-left: 10px;
 }
 
-.action-btn {
-    padding-top: 8px;
-    padding-bottom: 5px;
+.action-btn{
+	padding-top: 8px;
+	padding-bottom: 5px;
 }
 
-.cued-logo-nav {
-    width: 35px;
-    padding-right: 15px;
+.cued-logo-nav{
+	width: 35px;
+  	padding-right: 15px;
 }
 
-img.nextstepgo-logo-nav {
-    width: 150px;
+img.nextstepgo-logo-nav{
+	width: 150px;
 }
 
-.nav-dashboard {
-    padding: 0px;
-    padding-bottom: 5px;
-    padding-left: 20px;
-    padding-top: 5px;
+.nav-dashboard{
+	padding: 0px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	padding-top: 5px;
 }
 
 /************************ Sidebar ********************************/
 
-#collapse-it {
-    height: 100%;
-    background-color: $dkgrey;
+#collapse-it{
+	height: 100%;
+	background-color: $dkgrey;
 }
 
-#sidebar-btn {
-    background-color: none;
-    color: white;
-    margin-top: 20px;
-    text-align: right;
-    margin-right: 20px;
-    width: 50px;
-    margin-left: 150px;
+#sidebar-btn{
+	background-color: none;
+	color: white;
+	margin-top: 20px;
+	text-align: right;
+	margin-right: 20px;
+	width: 50px;
+	margin-left: 150px;
+	
 }
 
-.gradient-bar {
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#96c898+0,75ac96+29,6c84a7+70,b2b8c4+100 */
-    background: #96c898; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-linear-gradient(#96c898 0%, #75ac96 29%, #6c84a7 70%, #b2b8c4 100%);
-    background: -o-linear-gradient(#96c898 0%, #75ac96 29%, #6c84a7 70%, #b2b8c4 100%);
-    background: linear-gradient(#96c898 0%, #75ac96 29%, #6c84a7 70%, #b2b8c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96c898', endColorstr='#b2b8c4',GradientType=0 ); /* IE6-9 */
-    max-width: 10px;
-    padding: 0px;
-    margin-left: -10px;
-    height: 565px;
+.gradient-bar{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#96c898+0,75ac96+29,6c84a7+70,b2b8c4+100 */
+	background: #96c898; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+	background: -webkit-linear-gradient(#96c898 0%, #75ac96 29%, #6c84a7 70%, #b2b8c4 100%);
+	background: -o-linear-gradient(#96c898 0%, #75ac96 29%, #6c84a7 70%, #b2b8c4 100%);
+	background: linear-gradient(#96c898 0%, #75ac96 29%, #6c84a7 70%, #b2b8c4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#96c898', endColorstr='#b2b8c4',GradientType=0 ); /* IE6-9 */
+	max-width: 10px;
+	padding: 0px;
+	margin-left: -10px;
+	height: 565px;
 }
 
-.profile-img {
-    border-radius: 100px;
-    width: 80%;
-    margin: auto;
-    margin: 10px;
-    margin-left: 10px;
+.profile-img{
+	border-radius: 100px;
+	width: 80%;
+	margin: auto;
+	margin: 10px;
+	margin-left: 10px;
 }
 
-.bus-name-header {
-    font-size: 23px;
-    padding-top: 30px;
+.bus-name-header{
+	font-size: 23px;
+	padding-top: 30px;
 }
 
-.edit-text {
-    line-height: 0px;
-    font-size: 10px;
+.edit-text{
+	line-height: 0px;
+	font-size: 10px;
 }
 
-.profile-table {
-    margin-bottom: 20px;
+.profile-table{
+	margin-bottom: 20px;
 }
 
-.edit-icon {
-    height: 13px;
+.edit-icon{
+	height:13px;
 }
 
-.sign-out {
-    text-align: center;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    width: 80%;
+.sign-out{
+	text-align: center;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	width: 80%;
 }
 
-.profile-img-box {
-    width: 40%;
-    text-align: center;
+.profile-img-box{
+	width: 40%;
+	text-align: center;
 }
 
-.profile-bar {
-    height: 200px;
-    background-color: rgba(230,230,230,1.00);
+.profile-bar{
+	height: 200px;
+	background-color:rgba(230,230,230,1.00);
 }
 
 .nav-item-side {
-    background-color: $dkgrey;
-    height: 40px;
-    margin-bottom: 3px;
+	background-color: $dkgrey;
+	height: 40px;
+	margin-bottom: 3px;
 
-    a {
-        color: rgba(197,197,197,1.00);
-        border-bottom: solid thin black;
-    }
+	a {
+		color:rgba(197,197,197,1.00);
+		border-bottom: solid thin black;
+	}
 }
 
-.sidebar-links {
-    margin-top: 3px;
-    margin-bottom: 3px;
+.sidebar-links{
+	margin-top: 3px;
+	margin-bottom: 3px;
 }
-
 
 .white-icon {
-    color: white;
+	color: white;
 }
 
 .offwhite-icon {
-    color: #d6d7dd;
+	color: #d6d7dd;
 }
 
 .sidebartext-active {
-    color: #fff;
+	color: #fff;
 }
 
-.sidebar-active {
-    border-left: solid thick $maingreen;
-    background-color: rgba(255, 255, 255, 0.1);
-
-    .nav-link {
-        margin-left: -5px;
-    }
+.sidebar-active{
+  border-left: solid thick $maingreen;
+  background-color: rgba(255, 255, 255, 0.1);
+	.nav-link{
+		margin-left: -5px;
+	}
 }
 
-.edit-btn {
-    font-size: 7px;
-    padding-top: 15px;
-    background-color: transparent !important;
-    border: none;
+.edit-btn{
+	font-size: 7px;
+	padding-top: 15px;
+	background-color: transparent!important;
+	border: none;
 }
 
 
-.btn-sign-out {
-    height: 30px;
-    font-size: 12px;
-    font-weight: 300;
+.btn-sign-out{
+	height: 30px;
+	font-size: 12px;
+	font-weight: 300;
 }
 
 .btnhover:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 11px 30px 0 rgba(0,0,0,0.19);
-    color: white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 11px 30px 0 rgba(0,0,0,0.19);
+  color: white;
 }
 
-.sidebar-expanded {
+.sidebar-expanded{
+	
 }
 
 
-.collapsed-sidebar {
-    .sidebar-links {
-        text-align: center;
-    }
-
-    .bus-name {
-        display: none;
-    }
-
-    .edit-btn {
-        display: none;
-    }
+.collapsed-sidebar{
+	.sidebar-links{
+		text-align: center;
+	}
+	.bus-name{
+		display: none;
+	}
+	.edit-btn{
+		display: none;
+	}
 }
 
 /************************* Login Page ****************************/
 
-.login-screen {
-    height: 100%;
-    background-image: url($greengraphic);
-    background-size: 110% 120%;
+.login-screen{
+	height: 100%;
+	background-image: url($greengraphic);
+	background-size: 110% 120%;
 }
 
 .passwordhelp {
-    color: rgba(118,118,118,1.00);
-
-    &:hover {
-        color: darken($dkgrey, 30% );
-    }
+	color: rgba(118,118,118,1.00);
+	&:hover {
+		color: darken($dkgrey, 30% );
+	}
 }
 
-.inactive-btn {
-    border: 1px solid rgba(198,198,198,1.00);
-    margin-bottom: 15px;
-    width: 100px;
-
-    &:hover {
-        background-color: rgba(236,236,236,1.00);
-    }
+.inactive-btn{
+	border: 1px solid rgba(198,198,198,1.00);
+	margin-bottom: 15px;
+	width: 100px;
+	&:hover {
+		background-color: rgba(236,236,236,1.00);
+	}
 }
 
-.active-btn {
-    border: 1px solid rgba(198,198,198,1.00);
-    background-color: $maingreen;
-    margin-bottom: 15px;
-    color: white;
-    width: 100px;
+.active-btn{
+	border: 1px solid rgba(198,198,198,1.00);
+	background-color: $maingreen;
+	margin-bottom: 15px;
+	color: white;
+	width: 100px;
 }
 
 %cardimages {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 100%;
 }
 
-.login-img {
-    @extend %cardimages;
-    background-image: url($successgraphic);
+.login-img{
+	@extend %cardimages;
+	background-image: url($successgraphic);	
 }
 
-.register-img {
-    @extend %cardimages;
-    background-image: url($registergraphic);
+.register-img{
+	@extend %cardimages;
+	background-image: url($registergraphic);	
 }
 
-.welcome-card {
-    width: 950px;
-    height: 75%;
-    margin: auto;
+.welcome-card{
+	width: 950px;
+	height: 75%;
+	margin: auto;
 }
 
-.border-white {
-    border: 10px solid white;
+.border-white{
+	border: 10px solid white;
 }
 
-.login-card-body {
-    padding: 40px;
-    padding-top: 10px;
+.login-card-body{
+	padding: 40px;
+	padding-top: 10px;
 }
 
-.loginheader {
-    margin-bottom: 0px;
-    margin-top: 30px;
+.loginheader{
+	margin-bottom: 0px;
+	margin-top: 30px;
 }
 
-.desc-text {
-    font-size: 12px;
-    color: rgba(163,163,163,1.00);
-    margin-bottom: 20px;
+.desc-text{
+	font-size: 12px;
+	color:rgba(163,163,163,1.00);
+	margin-bottom: 20px;
 }
 
-.form-text {
-    font-size: 10px;
+.form-text{
+	font-size: 10px;
 }
 
-.min-imput {
-    border: none;
-    border-bottom: 1px solid $dkgrey;
-    border-radius: 0px;
-    background-color: rgba(255,255,255,0.00);
-
-    &:focus {
-        background-color: rgba(106,106,106,0.20);
-        box-shadow: none;
-    }
+.min-imput{
+	border: none;
+	border-bottom: 1px solid $dkgrey;
+	border-radius: 0px;
+	background-color: rgba(255,255,255,0.00);
+	&:focus{
+		background-color: rgba(106,106,106,0.20);
+		box-shadow: none;
+	}
 }
 
-.loginlabel {
-    color: grey;
-    font-weight: 300;
+.loginlabel{
+	color: grey;
+	font-weight: 300;
 }
 
 .submitbutton {
-    width: 100%;
-    border: none;
-    margin-top: 40px;
-
-    &:hover {
-        background-color: darken($maingreen, 10% ) !important;
-        color: white;
+	width: 100%;
+	border: none;
+	margin-top: 40px;
+	&:hover {
+        background-color: darken($maingreen, 10% )!important;
+		color: white;
     }
 }
 
 .registerbutton {
-    width: 100%;
-
-    &:hover {
-        background-color: $mainblue !important;
-        color: white;
+	width: 100%;
+	&:hover {
+        background-color: $mainblue!important;
+		color: white;
     }
 }
 
-.cued-attr {
-    display: inline;
-    color: white;
-    font-size: 14px;
-    padding-right: 7px;
+.cued-attr{
+	display: inline;
+	color: white;
+	font-size: 14px;
+	padding-right: 7px;
 }
 
-.cued-logo {
-    width: 40px;
-    padding-right: 15px;
+.cued-logo{
+	width: 40px;
+	padding-right: 15px;
 }
 
 
-.greenbg {
-    background-image: url($greengraphic);
-    background-size: 110% 120%;
-    height: 100%;
+.greenbg{
+	background-image: url($greengraphic);
+	background-size: 110% 120%;
+	height: 100%;
 }
 
 .loginfooter {
-    background-color: rgba(0,0,0,0.00) !important;
-    text-align: right;
-    float: right;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+	background-color: rgba(0,0,0,0.00)!important;
+	text-align: right;
+	float: right;
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
 
-.footerimgsm {
-    width: 30px;
+.footerimgsm{
+	width: 30px;
 }
 
-.poweredby {
-    font-size: 12px;
+.poweredby{
+	font-size: 12px;
 }
 
 
 /*************************** Password Reset *********************************/
 
-.forget-img {
-    background-image: url($forgetimg);
-    background-position: center;
-    background-size: cover;
-    min-height: 100%;
+.forget-img{
+	background-image: url($forgetimg);
+	background-position: center;
+	background-size: cover;
+	min-height: 100%;
 }
 
-.login-link {
-    color: $maingreen;
+.login-link{
+	color: $maingreen;
 }
 
 
 /*************************** Register *********************************/
 
-.gearsimg {
-    width: 80%;
-    margin-left: 15%;
+.gearsimg{
+	width: 80%;
+	margin-left: 15%;
 }
 
 .footerimgmd {
-    width: 50px;
+	width: 50px;
 }
 
-.mastfoot {
-    margin-top: 10% !important;
+.mastfoot{
+	margin-top: 10%!important;
 }
 
 .negmargin {
-    margin-top: -15px;
+	margin-top: -15px;
 }
 
 /*Footer */
-footer {
-    padding: 10px;
+footer{
+	padding: 10px;
 }
 
-.footerlogo {
-    text-align: right;
+.footerlogo{
+	text-align: right;
 }
 
 
 /****************************** Dashboard ******************************/
 
-.posting-block {
-    height: 100%;
-    max-height: 100%;
-    overflow-y: scroll;
+.posting-block{
+	height: 100%;
+	max-height: 100%;
+	overflow-y: scroll;
 }
 
 
 //////////////CUSTOM SCROLLBAR
 /* width */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1; 
 }
-
+ 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: $maingreen;
+  background: $maingreen; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: darken($maingreen, 10%);
+  background: darken($maingreen, 10%); 
 }
 /////////////
 
-
 .btn-edit-profile {
-    color: $dkgrey;
-
-    &:hover {
-        color: $greenblue;
-    }
+	color: $dkgrey;
+	&:hover {
+		color: $greenblue;	
+	}
 }
 
 .card-body {
     min-height: 300px;
 }
 
-.flex-nowrap {
-    overflow-x: scroll;
+.flex-nowrap{
+	overflow-x: scroll;
 }
 
-.referrals-badge {
-    width: 100%;
+.referrals-badge{
+	width: 100%;
 }
 
-.job-title {
-    font-size: 20px;
-    color: white;
+.job-title{
+	font-size: 20px;
+	color: white;
 }
 
-.header-collapse {
-    background-color: $dkgrey;
+.header-collapse{
+	background-color: $dkgrey;
 }
 
 .editpost {
-    color: rgba(164,164,164,1.00);
-    font-size: 9px;
+	color: rgba(164,164,164,1.00);
+	font-size: 9px;
 }
 
-.scrollcards {
-    background-color: $ltgrey;
-    padding-top: 20px;
-    padding-bottom: 20px;
+.scrollcards{
+	background-color: $ltgrey;
+	padding-top: 20px;
+	padding-bottom: 20px;
 }
 
-.bg-white {
-    background-color: white;
+.bg-white{
+	background-color: white;
 }
 
-.h-90 {
-    height: 90%;
+.h-90{
+	height: 90%;
 }
 
-.h-60 {
-    height: 60%
+.h-60{
+	height: 60%
 }
 
-.h-48 {
-    height: 48%;
+.h-48{
+	height: 48%;
 }
 
-.submitted-text {
-    margin-bottom: 0px;
-    font-size: 10px;
-    color: darken($ltgrey, 20%);
+.submitted-text{
+	margin-bottom: 0px;
+	font-size: 10px;
+	color: darken($ltgrey, 20%);
 }
 
 .applicant-name {
-    margin-bottom: 0px;
-    padding-bottom: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 
-.new-badge {
-    margin-top: -5px;
-    vertical-align: middle;
-    background-color: $greenblue;
-    box-shadow: 1px 1px grey;
+.new-badge{
+	margin-top: -5px;
+	vertical-align: middle;
+	background-color: $greenblue;
+	box-shadow: 1px 1px grey;
+	
 }
 
-.view-app-btn {
-    background-color: $maingreen;
-    border: none;
-
-    &:hover {
-        background-color: darken($maingreen, 20%);
-    }
+.view-app-btn{
+	background-color: $maingreen;
+	border: none;
+	&:hover{
+		background-color: darken($maingreen, 20%);
+	}
 }
 
-.collapse-icon {
-    color: #9bce5f;
-
-    &:hover {
-        color: $maingreen;
-    }
+.collapse-icon{
+	color: #9bce5f;
+	&:hover{
+		color: $maingreen;
+	}
 }
 
-.active-blue {
-    color: $medblue !important;
+.active-blue{
+	color: $medblue!important;
 }
-
-.bg-grey {
-    background-color: $dkgrey;
+.bg-grey{
+	background-color: $dkgrey;
 }
 
 .dash-wt-link {
-    color: white !important;
+	color: white!important;
 }
 
 .msg-card {
-    background-color: $maingreen;
-    color: white;
+	background-color: $maingreen;
+	color: white;
 }
 
-.msg-body {
-    min-height: 0;
+.msg-body{
+	min-height: 0;
 }
 
-.bluelink {
-    color: $medblue;
-
-    &:hover {
+.bluelink{
+	color: $medblue;
+	&:hover {
         color: lighten($medblue, 20%);
     }
 }
 
-.text-maingreen {
-    color: $maingreen;
+.text-maingreen{
+	color: $maingreen;
 }
 
 //Calendar
 
-.sm-cal {
-    max-height: 100%;
-    border: none;
+.sm-cal{
+	max-height: 100%;
+	border: none;
 }
 
-.cal-box {
-    padding: 0px;
+.cal-box{
+	padding: 0px;
 }
 
-.date {
-    background-color: $ltblue;
+.date{
+	background-color: $ltblue;
 }
 
-.month {
-    color: white;
-    font-weight: 800;
-    font-size: 25px;
+.month{
+	color: white;
+	font-weight:800;
+	font-size: 25px;
 }
 
-.day {
-    color: white;
-    font-size: 70px;
+.day{
+	color: white;
+	font-size: 70px;
 }
 
-.time {
-    color: $ltblue;
-    text-align: right;
+.time{
+	color: $ltblue;
+	text-align: right;
 }
 
 /* Add media queries for smaller screens */
 @media screen and (max-width:720px) {
-    .weekdays li, .days li {
-        width: 13.1%;
-    }
+  .weekdays li, .days li {width: 13.1%;}
 }
 
 @media screen and (max-width: 420px) {
-    .weekdays li, .days li {
-        width: 12.5%;
-    }
-
-    .days li .active {
-        padding: 2px;
-    }
+  .weekdays li, .days li {width: 12.5%;}
+  .days li .active {padding: 2px;}
 }
 
 @media screen and (max-width: 290px) {
-    .weekdays li, .days li {
-        width: 12.2%;
-    }
+  .weekdays li, .days li {width: 12.2%;}
 }
 
 /****************************** Analytics ********************************/
 
-.bg-lt-grey {
-    background-color: rgba(226,226,226,1.00);
-    padding: 30px;
+.bg-lt-grey{
+	background-color:rgba(226,226,226,1.00);
+	padding: 30px;
 }
 
-#exportBtn {
-    float: left;
+#exportBtn{
+	float: left;
 }
 
-.large-analytic-row {
-    margin-bottom: 20px;
-    height: 100%;
-    overflow: scroll;
+.large-analytic-row{
+	margin-bottom: 20px;
+	height: 100%;
+	overflow: scroll;
 }
 
-.sm-analytic-row {
-    height: 25%;
+.sm-analytic-row{
+	height: 25%;
 }
 
-.sm-data {
-    margin-right: 0%;
-    padding: 0px;
-    max-height: 100%;
+.sm-data{
+	margin-right: 0%;
+	padding: 0px;
+	max-height: 100%;
 }
 
-.card-body {
-    min-height: 0px;
+.card-body{
+	min-height: 0px;
 }
 
-.dark-list {
-    background-color: $dkgrey;
-    border-radius: 0px;
-
-    .list-group-item {
-        background-color: $dkgrey;
-        border-color: black;
-        border-right: none;
-        border-left: none;
-        border-radius: 0px;
-
-        &:hover {
-            background-color: lighten($dkgrey, 10%);
-        }
-    }
+.dark-list{
+	background-color: $dkgrey;
+	border-radius: 0px;
+	.list-group-item{
+		background-color: $dkgrey;
+		border-color: black;
+		border-right: none;
+		border-left: none;
+		border-radius: 0px;
+		&:hover{
+			background-color: lighten($dkgrey, 10%);
+		}
+	}
 }
 
 
-.settings-icon {
-    color: rgba(163,163,163,1.00);
-
-    &:hover {
-        color: rgba(100,100,100,1.00);
-    }
+.settings-icon{
+	color: rgba(163,163,163,1.00);
+	&:hover{
+		color: rgba(100,100,100,1.00);
+	}
 }
 
-.card-header.data {
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+.card-header.data{
+	padding-top: .5rem;
+	padding-bottom: .5rem;
 }
 
-#dataSettingMenu {
-    background-color: transparent;
-    border: none;
-
-    &:focus {
-        background-color: transparent;
-        box-shadow: none;
-    }
-
-    padding: 0px;
+#dataSettingMenu{
+	background-color: transparent;
+	border: none;
+	&:focus{
+		background-color: transparent;
+		box-shadow: none;
+	}
+	padding: 0px;
 }
 
-#mainbody {
-    padding-top: 20px;
+#mainbody{
+	padding-top: 20px;
 }
 
-.dropdown-toggle::after {
-    display: none;
+.dropdown-toggle::after{
+	display: none;
 }
 
 .btnanalytics {
-    margin-left: 500px;
-    padding: 10px 20px;
-    font-size: 12px;
+	margin-left: 500px;
+	padding: 10px 20px;
+	font-size: 12px;
 }
 
 .tenpx {
-    height: 10px;
+	height: 10px;
 }
 
 /*************************** Postings *********************************/
 
 
-.badge-ltblue {
-    background-color: $ltblue;
+.badge-ltblue{
+	background-color: $ltblue;
 }
 
-.badge-maingreen {
-    background-color: $maingreen;
+.badge-maingreen{
+	background-color: $maingreen;
 }
 
-.due-date {
-    background-color: lighten($ltgrey, 10%);
+.due-date{
+	background-color: lighten($ltgrey, 10%);
 }
 
-.unpublished {
-    background-color: $ltgrey !important;
-    border: none;
-    color: black;
+.unpublished{
+	background-color: $ltgrey!important;
+	border: none;
+	color: black;
+	.due-date, .card-header{
+		background-color: darken($ltgrey, 8%)!important;
+	}
+	.post-card-left{
+		background-color: rgba(189,189,189,1.00)!important;
+		color: $ltgrey!important;
+	}
+	.location-text{
+		color: black;
+	}
+}
 
-    .due-date, .card-header {
-        background-color: darken($ltgrey, 8%) !important;
-    }
+<<<<<<< HEAD
+.form-entry{
+	border-radius: 0px;
+	border: none;
+	border-bottom: solid 1px $maingreen;
+	&:focus{
+		box-shadow: none;
+	}
+}
 
-    .post-card-left {
-        background-color: rgba(189,189,189,1.00) !important;
-        color: $ltgrey !important;
-    }
+.form-selector{
+	background-color: none;
+	border: solid 2px $maingreen; 
+	color: $mainblue;
+}
 
-    .location-text {
-        color: black;
-    }
+.form-entry-all-borders{
+	border-radius: 0px;
+	border: solid 1px $maingreen;
+	&:focus{
+		box-shadow: none;
+	}
+}
+
+.border-left-plain{
+	&:hover{
+	border-left-width: 1px;
+	}
+	background-color: $ltgrey;
+}
+
+.border-left-plain.active{
+		background-color: #f1f1f1!important;
+	border-bottom: none;
+	}
+
+.nav-border-none{
+	&:hover{
+	border-left-width: 0px;
+	}
+}
+
+.nav-tabs {
+	border-bottom: 0px;
+}
+
+.add-form{
+	border: solid thin $ltgrey;
+	border-top: none;
+	background-color: #f1f1f1;
 }
 
 .post-card-left {
     background-color: lighten($ltgrey, 10%);
+=======
+.post-card-left{
+	background-color: lighten($ltgrey, 10%);
+>>>>>>> bb848e929a74181d7a42d8e64cdc86f23af6bd65
 }
 
-.post-card-left-learn {
-    background-color: lighten($ltblue, 25%);
+.post-card-left-learn{
+	background-color: lighten($ltblue, 25%);
 }
 
-.location-text {
-    font-weight: 300;
+.location-text{
+	font-weight: 300;
 }
 
-.deleteBtn {
-    background-color: transparent;
-    border: none;
-    box-shadow: none;
-    margin-top: -2px;
+.deleteBtn{
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+	margin-top:-2px;
 }
 
-.bg-mainblue {
-    background-color: $mainblue;
-    color: white;
-    font-weight: 700;
-    border-bottom-left-radius: 4px;
+.bg-mainblue{
+	background-color: $mainblue; 
+	color: white;
+	font-weight: 700;
+	border-bottom-left-radius: 4px;
 }
 
-.bg-teal {
-    background-color: $greenblue;
-    color: white;
-    font-weight: 700;
-    border-bottom-left-radius: 4px;
-    line-height: 20px;
+.bg-teal{
+	background-color: $greenblue; 
+	color: white;
+	font-weight: 700;
+	border-bottom-left-radius: 4px;
+	line-height: 20px;
 }
 
-.bg-medblue {
-    background-color: $medblue;
-    color: white;
-    font-weight: 700;
-    border-bottom-left-radius: 4px;
+.bg-medblue{
+	background-color: $medblue; 
+	color: white;
+	font-weight: 700;
+	border-bottom-left-radius: 4px;
 }
 
-.job-post-title {
-    color: $mainblue;
+.job-post-title{
+	color: $mainblue;
 }
 
-.d-none {
-    display: none;
+.d-none{
+	display: none;
 }
 
 
-.md-white {
-    background-color: #fff;
-    padding: 20px;
+.md-white{
+	background-color: #fff;
+	padding: 20px;
 }
 
-.cluster-list {
-    max-height: 200px;
-    overflow: scroll;
+.cluster-list{
+	max-height: 200px;
+	overflow: scroll;
 }
 
-.med-data-row {
-    margin-bottom: 20px;
-    height: 30%;
+.med-data-row{
+	margin-bottom: 20px;
+	height: 30%;
 }
 
-.post-form-check {
-    font-size: 12px;
+.post-form-check{
+	font-size: 12px;
 }
 
-.bg-white {
-    background-color: white;
+.bg-white{
+	background-color: white;
 }
 
 .editicon {
-    color: grey;
+	color: grey;
 }
 
 
 .xicon {
-    color: $dkgrey;
+	color: $dkgrey;
 }
 
-.sm-data-row {
-    margin-bottom: 20px;
-    height: 30%;
+.sm-data-row{
+	margin-bottom: 20px;
+	height: 30%;
 }
 
-#editPosting {
-    background-color: transparent;
-    border: none;
-
-    &:focus {
-        background-color: transparent;
-        box-shadow: none;
-    }
-
-    padding: 0px;
+#editPosting{
+	background-color: transparent;
+	border: none;
+	&:focus{
+		background-color: transparent;
+		box-shadow: none;
+	}
+	padding: 0px;
 }
 
-#editPosting2 {
-    background-color: transparent;
-    border: none;
-
-    &:focus {
-        background-color: transparent;
-        box-shadow: none;
-    }
-
-    padding: 0px;
+#editPosting2{
+	background-color: transparent;
+	border: none;
+	&:focus{
+		background-color: transparent;
+		box-shadow: none;
+	}
+	padding: 0px;
 }
 
-#editPosting3 {
-    background-color: transparent;
-    border: none;
-
-    &:focus {
-        background-color: transparent;
-        box-shadow: none;
-    }
-
-    padding: 0px;
+#editPosting3{
+	background-color: transparent;
+	border: none;
+	&:focus{
+		background-color: transparent;
+		box-shadow: none;
+	}
+	padding: 0px;
 }
 
 
-#postings {
-    float: right;
-    display: flex;
-    flex-flow: row wrap;
-    margin-left: 20%;
+  #postings{
+		  float: right;
+		  display:flex;
+		flex-flow: row wrap;
+		  margin-left: 20%;	
+	  }
+
+.posting-screen{
+	background-image: url($greengraphic);
+	background-attachment: scroll;
+	background-repeat: no-repeat;
 }
 
-.posting-screen {
-    background-image: url($greengraphic);
-    background-attachment: scroll;
-    background-repeat: no-repeat;
+.input-mysize { 
+	height: 50px;
 }
 
-.input-mysize {
-    height: 50px;
+.bg-blue{
+	background-color: $mainblue;
+	color: white;
 }
 
-.bg-blue {
-    background-color: $mainblue;
-    color: white;
-}
-
-.bg-green {
-    background-color: $maingreen;
-    color: white;
+.bg-green{
+	background-color: $maingreen;
+	color: white;
 }
 
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 55px;
-    height: 25px;
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 25px;
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
 .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $dkgrey;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $dkgrey;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 .slider:before {
-    position: absolute;
-    content: "";
-    height: 20px;
-    width: 20px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
 }
 
 input:checked + .slider {
-    background-color: #0c293d;
+  background-color: #0c293d;
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px #0c293d;
+  box-shadow: 0 0 1px #0c293d;
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
 }
 
 /* Rounded sliders */
 .slider.round {
-    border-radius: 25px;
+  border-radius: 25px;
 }
 
 .slider.round:before {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 
 .posting-row {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    height: 100%;
+	margin-top:20px;
+	margin-bottom: 20px;
+	height: 100%;
 }
 
 .filter-row {
-    max-height: 100%;
+	max-height: 100%;
 }
 
 /********************************** CALENDAR ********************************/
-#calendar {
-    background-color: white;
-    border: solid 20px white;
-    border-radius: 5px;
-    width: 100%;
-    margin: 0px;
+#calendar{
+	background-color: white;
+	border: solid 20px white;
+	border-radius: 5px;
+	width: 100%;
+	margin: 0px;
 }
 
-.h-85 {
-    height: 85%;
+.h-85{
+	height: 85%;
 }
 
-.event-box {
-    padding-top: 20px;
+.event-box{
+	padding-top: 20px;
 }
 
-.calheader {
-    background-color: $ltblue;
-    color: white;
+.calheader{
+	background-color: $ltblue;
+	color: white;
 }
 
-.bg-dk-grey {
-    background-color: $dkgrey;
-    color: white;
+.bg-dk-grey{
+	background-color: $dkgrey;
+	color: white;
 }
 
-.new-event-btn {
-    border: none;
-    background-color: $ltgrey;
+.new-event-btn{
+	border: none;
+	background-color: $ltgrey;
 }
 
 .daily-events {
 }
 
 .fc-event, .fc-event-dot {
-    background-color: $maingreen !important;
+    background-color: $maingreen!important;
 }
 
-.fc-event {
-    border: none !important;
+.fc-event{
+	border: none!important;
 }
 
 .fc-unthemed td.fc-today {
-    background: $ltgrey !important;
+    background: $ltgrey!important;
 }
 
 
 /******************************Career Clusters ********************************/
-.finance-cluster {
-    color: rgba(37,101,47,1.00);
+.finance-cluster{
+	color:rgba(37,101,47,1.00);
 }
 
-.marketing-cluster {
-    color: rgba(103,8,10,1.00);
+.marketing-cluster{
+	color:rgba(103,8,10,1.00);
 }
 
-.artcomm-cluster {
-    color: rgba(28,35,107,1.00);
+.artcomm-cluster{
+	color:rgba(28,35,107,1.00);
 }
 
 .info-cluster {
-    color: rgba(0,121,141,1.00);
+	color:rgba(0,121,141,1.00);
 }
 
 /***************************** Media Breakpoints *********************************/
 
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-    .welcome-card {
-        width: 550px;
-    }
+@media (min-width: 576px) { 
+	.welcome-card{
+		width: 550px;
+	}
 }
 
 
 // Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-    .action-btn {
-        margin-left: 30px;
-    }
-
-    .welcome-card {
-        width: 725px;
-    }
+@media (min-width: 768px) { 
+	.action-btn{
+		margin-left: 30px;
+	}
+	.welcome-card{
+		width: 725px;
+	}
 }
 
 // Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    .welcome-card {
-        width: 950px;
-    }
+@media (min-width: 992px) { 
+	.welcome-card {
+		width: 950px;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
