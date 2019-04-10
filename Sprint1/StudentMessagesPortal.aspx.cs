@@ -65,7 +65,17 @@ public partial class StudentMessagesPortal : System.Web.UI.Page
         cmd.ExecuteNonQuery();
         con.Close();
 
-        Response.Redirect("StudentMessagesPortal.aspx");
+        txtReplyAddress.Visible = true;
+        txtReplyAddress.Enabled = false;
+        dropSendTo.Visible = false;
+        txtReplyAddress.Text = row.Cells[2].Text;
+
+        txtareaOriginal.Visible = true;
+        lblOriginalBody.Visible = true;
+        txtareaOriginal.Text = row.Cells[4].Text;
+        txtareaOriginal.Enabled = false;
+
+        //Response.Redirect("StudentMessagesPortal.aspx");
     }
 
     protected void btnBusinessMessages_Click(object sender, EventArgs e)
@@ -88,5 +98,29 @@ public partial class StudentMessagesPortal : System.Web.UI.Page
         {
             e.Row.BackColor = System.Drawing.Color.Red;
         }
+    }
+
+    protected void btnSendMessage_Click(object sender, EventArgs e)
+    {
+        int LoginEntityID = (int)Session["EntityID"];
+
+        GridViewRow row = GridView1.SelectedRow;
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Insert into StudentMessage values(@StudentName, @StudentBody, @StudentDate, @BusinessEntityID, @BusinessRead);");
+        cmd.CommandType = System.Data.CommandType.Text;
+        cmd.Connection = con;
+        cmd.Parameters.AddWithValue("@StudentName", "addison wittkamp"); //change to the login session username when running for presentation
+        cmd.Parameters.AddWithValue("@StudentBody", txtBody.Text);
+        cmd.Parameters.AddWithValue("@StudentDate", DateTime.Now);
+        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+        cmd.Parameters.AddWithValue("@BusinessRead", 1);
+        cmd.ExecuteNonQuery();
+        con.Close();
+    }
+
+    protected void btnClear_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("StudentMessagesPortal.aspx");
     }
 }

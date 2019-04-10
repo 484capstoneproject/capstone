@@ -198,7 +198,7 @@
                <div>
                <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>&nbsp;&nbsp;&nbsp; 
                <asp:Button ID="btnClear" runat="server" Text="Clear" class="btn w-15" Height="44px" Width="98px" OnClick="btnClear_Click" BackColor="Red" ForeColor="White"/>
-                   </div>
+               </div>
                <br />
                <asp:Label ID="lblMessageSent" runat="server" Text="null" Visible="False"></asp:Label>
               <br />

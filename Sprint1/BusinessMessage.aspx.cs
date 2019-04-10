@@ -54,7 +54,7 @@ public partial class BusinessMessage : System.Web.UI.Page
         }
     }
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-    {
+    { //if a message is selected bring up the reply boxes
         GridViewRow row = GridView1.SelectedRow;
         var StudentMessageID = row.Cells[1].Text;
 
@@ -78,6 +78,8 @@ public partial class BusinessMessage : System.Web.UI.Page
         txtareaOriginal.Visible = true;
         txtareaOriginal.Enabled = false;
         txtareaOriginal.Text = row.Cells[3].Text;
+        checkFilterNames.Visible = false;
+        lblFilter.Visible = false;
 
         dropSendTo.Items.Add(txtReplyAddress.Text);
         dropSendTo.SelectedValue = row.Cells[2].Text;
@@ -178,9 +180,9 @@ public partial class BusinessMessage : System.Web.UI.Page
         Response.Redirect("BusinessMessage.aspx");
     }
 
-    protected void checkFilterNames_SelectedIndexChanged(object sender, EventArgs e)
+    protected void checkFilterNames_SelectedIndexChanged(object sender, EventArgs e) //if the user selects a filter option
     {
-        if (checkFilterNames.SelectedValue=="School")
+        if (checkFilterNames.SelectedValue=="School") //if they selected school, show the school names and populate from the database into a drop down
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("Select Name from School;", con);
@@ -202,7 +204,7 @@ public partial class BusinessMessage : System.Web.UI.Page
             DropSchoolFilter.Visible = true;     
         }
 
-        if(checkFilterNames.SelectedValue=="Grade")
+        if(checkFilterNames.SelectedValue=="Grade") //show and populate the grade dropdown if checked
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("Select Distinct Grade from Student order by Grade;", con);
@@ -227,7 +229,7 @@ public partial class BusinessMessage : System.Web.UI.Page
     }
 
     protected void DropSchoolFilter_SelectedIndexChanged(object sender, EventArgs e)
-    {  
+    {  //if a school is selected, query the name drop down to find those in that school
         con.Open();
         SqlCommand cmd = new SqlCommand("select Student.FirstName, Student.LastName from Student Inner Join School on Student.SchoolID=School.SchoolID where School.Name = @SchoolName;", con);
         cmd.Parameters.AddWithValue("@SchoolName", DropSchoolFilter.SelectedValue);
@@ -248,7 +250,7 @@ public partial class BusinessMessage : System.Web.UI.Page
     }
 
     protected void dropGradeFilter_SelectedIndexChanged(object sender, EventArgs e)
-    {
+    { //if a grade is selected, query the names of students in that grade and populate the drop down
         con.Open();
         SqlCommand cmd = new SqlCommand("select FirstName, LastName from Student where Grade = @Grade;", con);
         cmd.Parameters.AddWithValue("@Grade", dropGradeFilter.SelectedValue);

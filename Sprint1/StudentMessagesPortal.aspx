@@ -118,17 +118,24 @@
               <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Underline="True" Text="New Message: "></asp:Label>
 
               <br />
-              <asp:Label ID="Label2" runat="server" Text="To: "></asp:Label>
+              <asp:Label ID="lblToAddress" runat="server" Text="To: "></asp:Label>
               <asp:DropDownList ID="dropSendTo" runat="server" Height="33px" Width="278px">
                   <asp:ListItem Text="--Select Business Name--" Value =""></asp:ListItem>
               </asp:DropDownList>
+                <asp:TextBox ID="txtReplyAddress" runat="server" Height="27px" Visible="False" Width="221px"></asp:TextBox>
                <br />
               <br />
                <asp:Label ID="lblBody" runat="server" Font-Bold="False" Text="Body:"></asp:Label>
                <asp:TextBox ID="txtBody" runat="server" Height="83px" TextMode="MultiLine" Width="353px"></asp:TextBox>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Label ID="lblOriginalBody" runat="server" Text="--Original Message--" Visible="false"></asp:Label>
+               <asp:TextBox ID="txtareaOriginal" runat="server" Height="83px" TextMode="MultiLine" Width="353px" Visible="false"></asp:TextBox>
                <br />
                <br />
-               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px"/>
+                <div>
+               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>
+               <asp:Button ID="btnClear" runat="server" Text="Clear" class="btn w-15" Height="44px" Width="98px" OnClick="btnClear_Click" BackColor="Red" ForeColor="White"/>
+               </div>
                <asp:Label ID="lblMessageSent" runat="server" Text="null" Visible="False"></asp:Label>
               <br />
             </div>
@@ -148,7 +155,7 @@
                 runat="server"/>
             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
 			<br />
-            <%--Gridview start--%>
+              <%--Gridview start--%>
 				<asp:Gridview id="GridView1" 
                 autogeneratecolumns="False"
                 onselectedindexchanged="GridView1_SelectedIndexChanged"
