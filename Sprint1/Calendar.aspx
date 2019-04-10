@@ -20,6 +20,9 @@
 	  body{
 		  overflow: hidden;
 	  }
+    .color{
+        color:#83bf4a;
+    }
   </style>
 
     
@@ -130,9 +133,10 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="#">
+                <a class="nav-link nav-link-side" href="BusinessMessage.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
+                    <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
             </ul>

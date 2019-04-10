@@ -142,7 +142,7 @@
                   <i data-feather="inbox"></i>
 					<span class="nav-txt" runat="server">Messages</span>
                     <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
-                </a
+                </a>
               </li>
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>

@@ -128,6 +128,7 @@ public partial class BusinessMessage : System.Web.UI.Page
         lblMessageSent.Visible = true;
         lblMessageSent.Text = "Message Sent to " + dropSendTo.SelectedValue;
 
+        Response.Redirect("BusinessMessage.aspx");
     }
 
     protected void btnStudentMessages_Click(object sender, EventArgs e)
@@ -152,28 +153,6 @@ public partial class BusinessMessage : System.Web.UI.Page
             e.Row.BackColor = System.Drawing.Color.Red;
         }
     }
-
-    protected void dropStudentNames_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-        con.Open();
-        SqlCommand cmd = new SqlCommand("Select student.FirstName, student.LastName, student.grade FROM student INNER JOIN school on student.schoolid = school.schoolid", con);
-        cmd.CommandType = CommandType.Text;
-        cmd.ExecuteNonQuery();
-
-        SqlDataReader reader = cmd.ExecuteReader();
-
-        if (reader.HasRows)
-        {
-            while (reader.Read())
-            {
-                dropSendTo.Items.Add(reader["Name"].ToString());
-            }
-        }
-        con.Close();
-        reader.Close();
-    }
-
 
     protected void btnClear_Click(object sender, EventArgs e)
     {
