@@ -26,6 +26,9 @@ body, html {
   $ltgrey: #d6d7dd;
   $dkgrey: #434c55;
 
+
+
+
 /* Buttons */
 
 // Regular
@@ -55,12 +58,83 @@ body, html {
 }
 
 
+.signout-button {
+    display: inline-block;
+    border-radius: 5px;
+    padding: .4rem .4rem;
+    margin: 0;
+    text-decoration: none;
+    background: $greenblue;
+    color: #ffffff;
+    font-family: proxima-nova, sans-serif;
+	font-style: bold;
+    font-size: 11px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.signout-button:hover,
+.signout-button:focus {
+    background: #307477;
+}
+
+.signout-button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.signout-button:active {
+    transform: scale(0.99);
+}
+
+
+.viewapp-button {
+    display: inline-block;
+    border-radius: 5px;
+    padding: .4rem .9rem;
+    margin-top: 1;
+    text-decoration: none;
+    background: $maingreen;
+    color: #ffffff;
+    font-family: proxima-nova, sans-serif;
+	font-style: bold;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.viewapp-button:hover,
+.viewapp-button:focus {
+    background: #6a933f;
+}
+
+.viewapp-button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.viewapp-button:active {
+    transform: scale(0.99);
+}
+
 
 /**************************** FONTS **************************/
 
 h1, h2, h3, h4, h5, h6{
 	font-family: forma-djr-text, sans-serif;
 	font-weight: 700;
+}
+
+h2 {
+	color: $mainblue;
 }
 
 p {
@@ -98,7 +172,9 @@ nav{
 	color: $mainblue;
 	font-weight: 400;
 	&:hover {
-        color: $maingreen;
+        color: white;
+		background-color: white, 0.1; 
+		border-left: solid thick $maingreen;
     }
 }
 
@@ -111,9 +187,10 @@ nav{
     }
 }
 
+
 .profile-img-nav{
 	width: 30px;
-	border: thin solid $mainblue;
+	border: thin solid $greenblue;
 	border-radius: 20px;
 	margin-top: 5px;
 }
@@ -171,6 +248,7 @@ img.nextstepgo-logo-nav{
 	max-width: 10px;
 	padding: 0px;
 	margin-left: -10px;
+	height: 565px;
 }
 
 .profile-img{
@@ -228,29 +306,47 @@ img.nextstepgo-logo-nav{
 }
 
 .sidebar-links{
-	margin-top: 20px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+.white-icon {
+	color: white;
+}
+
+.offwhite-icon {
+	color: #d6d7dd;
+}
+
+.sidebartext-active {
+	color: #fff;
 }
 
 .sidebar-active{
-	border-left: solid thick $maingreen;
-	background-color: lighten($dkgrey, 10%);
+  border-left: solid thick $maingreen;
+  background-color: rgba(255, 255, 255, 0.1);
 	.nav-link{
 		margin-left: -5px;
 	}
 }
 
 .edit-btn{
-	font-size: 10px;
+	font-size: 7px;
 	padding-top: 15px;
 	background-color: transparent!important;
 	border: none;
 }
 
+
 .btn-sign-out{
 	height: 30px;
-	font-size: 13px;
+	font-size: 12px;
 	font-weight: 300;
-	
+}
+
+.btnhover:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 11px 30px 0 rgba(0,0,0,0.19);
+  color: white;
 }
 
 .sidebar-expanded{
@@ -495,6 +591,13 @@ footer{
 /////////////
 
 
+.btn-edit-profile {
+	color: $dkgrey;
+	&:hover {
+		color: $greenblue;	
+	}
+}
+
 .card-body {
     min-height: 300px;
 }
@@ -557,7 +660,9 @@ footer{
 .new-badge{
 	margin-top: -5px;
 	vertical-align: middle;
-	background-color: $ltblue;
+	background-color: $greenblue;
+	box-shadow: 1px 1px grey;
+	
 }
 
 .view-app-btn{
@@ -569,9 +674,9 @@ footer{
 }
 
 .collapse-icon{
-	color: $maingreen;
+	color: #9bce5f;
 	&:hover{
-		color: darken($maingreen, 20%);
+		color: $maingreen;
 	}
 }
 
@@ -751,21 +856,67 @@ footer{
 
 .due-date{
 	background-color: lighten($ltgrey, 10%);
-	
 }
 
 .unpublished{
 	background-color: $ltgrey!important;
+	border: none;
 	color: black;
 	.due-date, .card-header{
-		background-color: darken($ltgrey, 10%)!important;
+		background-color: darken($ltgrey, 8%)!important;
 	}
+	.post-card-left{
+		background-color: rgba(189,189,189,1.00)!important;
+		color: $ltgrey!important;
+	}
+	.location-text{
+		color: black;
+	}
+}
+
+.post-card-left{
+	background-color: lighten($ltgrey, 10%);
+}
+
+.post-card-left-learn{
+	background-color: lighten($ltblue, 25%);
+}
+
+.location-text{
+	font-weight: 300;
 }
 
 .deleteBtn{
 	background-color: transparent;
 	border: none;
 	box-shadow: none;
+	margin-top:-2px;
+}
+
+.bg-mainblue{
+	background-color: $mainblue; 
+	color: white;
+	font-weight: 700;
+	border-bottom-left-radius: 4px;
+}
+
+.bg-teal{
+	background-color: $greenblue; 
+	color: white;
+	font-weight: 700;
+	border-bottom-left-radius: 4px;
+	line-height: 20px;
+}
+
+.bg-medblue{
+	background-color: $medblue; 
+	color: white;
+	font-weight: 700;
+	border-bottom-left-radius: 4px;
+}
+
+.job-post-title{
+	color: $mainblue;
 }
 
 .d-none{
@@ -797,8 +948,9 @@ footer{
 }
 
 .editicon {
-	color: $greenblue;
+	color: grey;
 }
+
 
 .xicon {
 	color: $dkgrey;
@@ -840,8 +992,14 @@ footer{
 }
 
 
+  #postings{
+		  float: right;
+		  display:flex;
+		flex-flow: row wrap;
+		  margin-left: 20%;	
+	  }
+
 .posting-screen{
-	height: 100%; 
 	background-image: url($greengraphic);
 	background-attachment: scroll;
 	background-repeat: no-repeat;
@@ -882,7 +1040,7 @@ footer{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: $dkgrey;
   -webkit-transition: .4s;
   transition: .4s;
 }
