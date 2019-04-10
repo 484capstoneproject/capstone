@@ -22,7 +22,7 @@
           .color{
               color:#83bf4a;
           }
-      </style>
+    </style>
 
   </head>
 
@@ -165,14 +165,22 @@
 
               <asp:Label ID="lblNewMessage" runat="server" Font-Bold="True" Font-Underline="True" Text="New Message: "></asp:Label>
 
-              <br />
+               <br />
+               <div>
+               <asp:Label ID="lblFilter" runat="server" Text="Select option(s) to filter student names"></asp:Label>
+               <asp:CheckBoxList ID="checkFilterNames" runat="server" OnSelectedIndexChanged="checkFilterNames_SelectedIndexChanged" AutoPostBack="true">
+                   <asp:ListItem Text="School Name" Value="School"></asp:ListItem>
+                   <asp:ListItem Text="Grade" Value="Grade"></asp:ListItem>
+               </asp:CheckBoxList>
+                   <asp:DropDownList ID="DropSchoolFilter" runat="server" Visible="false" OnSelectedIndexChanged="DropSchoolFilter_SelectedIndexChanged" AutoPostBack="true">
+                       <asp:ListItem Text="--Select School To Filter--" Value=""></asp:ListItem>
+                   </asp:DropDownList>
+
+              </div>
               <asp:Label ID="lblTo" runat="server" Text="To: "></asp:Label>
-              <asp:DropDownList ID="dropSendTo" runat="server" Height="33px" Width="278px">
-                  <asp:ListItem Text="--Select School Name--" Value =""></asp:ListItem>
+              <asp:DropDownList ID="dropSendTo" runat="server" Height="33px" Width="278px" AutoPostBack="true">
+                  <asp:ListItem Text="--Select Student Name--" Value =""></asp:ListItem>
               </asp:DropDownList>
-               <asp:Label ID="lblStudentDrop" runat="server" Text="Student Name: " Visible="False"></asp:Label>
-               <asp:DropDownList ID="dropStudentNames" runat="server" OnSelectedIndexChanged="dropStudentNames_SelectedIndexChanged" Visible="False">
-               </asp:DropDownList>
               <asp:TextBox ID="txtReplyAddress" runat="server" Visible="false" Width="300px"></asp:TextBox>
                <br />
               <br />
@@ -183,7 +191,11 @@
                <asp:TextBox ID="txtareaOriginal" runat="server" Height="83px" TextMode="MultiLine" Width="353px" Visible="false"></asp:TextBox>
                <br />
                <br />
-               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>
+               <div>
+               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>&nbsp;&nbsp;&nbsp; 
+               <asp:Button ID="btnClear" runat="server" Text="Clear" class="btn w-15" Height="44px" Width="98px" OnClick="btnClear_Click" BackColor="Red" ForeColor="White"/>
+                   </div>
+               <br />
                <asp:Label ID="lblMessageSent" runat="server" Text="null" Visible="False"></asp:Label>
               <br />
           </div>
@@ -210,7 +222,7 @@
                 autogeneratecolumns="False"
                 onselectedindexchanged="GridView1_SelectedIndexChanged"
                 OnRowDataBound="GridView1_RowDataBound"
-                runat="server" DataKeyNames="StudentMessageID" CellPadding="4" ForeColor="#333333" GridLines="None">
+                runat="server" DataKeyNames="StudentMessageID" CellPadding="4" ForeColor="#333333" GridLines="Horizontal">
                 
                     <AlternatingRowStyle BackColor="White" />
                 
@@ -241,8 +253,8 @@
                         <asp:BoundField DataField="BusinessRead"
                             HeaderText="Read/Unread"
                             SortExpression="BusinessRead" />
-
                     </Columns> 
+
                     <EditRowStyle BackColor="#7C6F57" />
                     <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
                     <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -259,7 +271,16 @@
                 
                 </asp:Gridview>   
                 </div>            
-
+                 <div id="popupdiv" title="Basic modal dialog" style="display: none">
+                            Student Name:
+                            <label id="lblStudentName"></label>
+                            <br />
+                            Body:
+                            <label id="lblMessageBody"></label>
+                            <br />
+                            Date:
+                            <label id="lblDate"></label>
+                        </div>
 
  		  </div>
  	</div>
