@@ -1171,6 +1171,7 @@
 							</div>
   					  
   					  <!-- Modal -->
+                             <form id="formScolar" runat="server">
 						<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
@@ -1199,7 +1200,7 @@
 							 
 							 	   							       
 							   <!-- SCHOLARSHIP FORM CONTENT -->
-								  <form id="postingFormScholar" class="p-5 add-form">
+								
 									<h3 class="pt-2">Scholarship Details</h3>
 									  <div class="form-group">
 										<label for="scholtitle" class="font-weight-bold">Scholarship Name</label>
@@ -1309,7 +1310,7 @@
    										  <input type="text" class="form-control" placeholder="Ask a short question of applicants.">
 									  </div>
 									
-							       </form>
+						
 							 
 						</div>
 				    </div>
@@ -1318,11 +1319,13 @@
 						      </div>		
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green addPost" data-dismiss="modal">Add Post</button>
+						      <%--  <button type="button" class="btn bg-green addPost" data-dismiss="modal">Add Post</button>--%>
+                                   <asp:Button type="button" Text="Add Post" class="btn bg-green" OnClick="BtnAdd_Click" runat="server" ></asp:Button>
 						      </div>
 						    </div>
 						  </div>
 						</div>
+                            </form>
 							
 							
 							

@@ -112,7 +112,7 @@ public partial class PostingToLearning : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
         cmd.ExecuteNonQuery();
 
-        Response.Redirect("LearningOpportunities.aspx");
+        Response.Redirect("Postings.aspx");
     }
 
     //protected void BtnUpdate_Click(object sender, EventArgs e)

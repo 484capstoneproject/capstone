@@ -1171,6 +1171,7 @@
 							</div>
   					  
   					  <!-- Modal -->
+                            <form id="formLearning" runat="server">
 						<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
@@ -1204,13 +1205,13 @@
 									<h3 class="pt-2">Post Details</h3>
 									  <div class="form-group">
 										<label for="learntitle" class="font-weight-bold">Learning Opportunity Title</label>
-										<input type="learntitle" class="form-control form-entry" id="learntitle" aria-describedby="learntitle" placeholder="Enter">
+										<input type="learntitle" class="form-control form-entry" id="txtLearningTitle" runat="server" aria-describedby="learntitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseOppType" class="font-weight-bold">Opportunity Type</label>
-								  		 <select class="form-control w-75 mb-3 form-selector" id="chooseOppType">
+								  		 <select class="form-control w-75 mb-3 form-selector" id="dropOpportunityType" runat="server">
 											  <option>Shadowing</option>
 											  <option>Career Event</option>
 											  <option>Other</option>
@@ -1219,7 +1220,7 @@
 								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerClusterLearn" class="font-weight-bold">Career Cluster</label>
-											<select class="form-control w-75 form-selector" id="CareerClusterLearn">
+											<select class="form-control w-75 form-selector" id="dropCareerCluster" runat="server">
 											  <option>Select</option>
 											  <option>Agriculture, Food and Natural Resources</option>
 											  <option>Architecture and Construction</option>
@@ -1241,14 +1242,14 @@
 									</div>    									 
 									  	<div class="form-group">
  										   <label for="descLearn" class="font-weight-bold">Description</label>
- 										   <textarea class="form-control form-entry" id="descLearn1" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <textarea class="form-control form-entry" id="txtareaDescription" runat="server" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Application Deadline</h5>
 										      <div class="row w-75">
 										      	<div class="col">
 											      <label for="selectMonth" class="font-weight-bold">Month</label>
-													<select class="form-control form-selector" id="selectMonthLearn">
+													<select class="form-control form-selector" id="dropMonth" runat="server">
 													  <option>January</option>       
    													  <option>February</option>       
    													  <option>March</option>       
@@ -1265,7 +1266,7 @@
 										      	</div>
 										      	<div class="col">
 											      <label for="selectDay" class="font-weight-bold">Day</label>
-													<select class="form-control form-selector" id="selectDayLearn">
+													<select class="form-control form-selector" id="dropDay" runat="server">
 													    <option>1</option>       
    														<option>2</option>       
    														<option>3</option>       
@@ -1301,7 +1302,7 @@
 										      </div>
 										      <div class="col">
 											      <label for="selectYear" class="font-weight-bold">Year</label>
-													<select class="form-control form-selector" id="selectYearLearn">
+													<select class="form-control form-selector" id="dropYear" runat="server">
 													    <option>2019</option>       
    														<option>2020</option>       
    														<option>2021</option>       
@@ -1348,11 +1349,12 @@
 						      </div>		
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <asp:Button type="button" Text="Add Post" class="btn bg-green addPost" data-dismiss="modal" OnClick="BtnAdd_Click" runat="server" ></asp:Button>
+						        <asp:Button type="button" Text="Add Post" class="btn bg-green" OnClick="BtnAdd_Click" runat="server" ></asp:Button>
 						      </div>
 						    </div>
 						  </div>
 						</div>
+                            </form>
 							
 							
 							

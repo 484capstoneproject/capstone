@@ -106,7 +106,7 @@ public partial class PostingToScholarship : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
         cmd.ExecuteNonQuery();
 
-        Response.Redirect("Scholarships.aspx");
+        Response.Redirect("Postings.aspx");
     }
 
     //protected void BtnUpdate_Click(object sender, EventArgs e)
