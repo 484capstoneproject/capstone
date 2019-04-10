@@ -95,9 +95,9 @@ p {
 
 a {
   text-decoration: none;
-  color: white; }
+  color: #0c293d; }
   a:hover {
-    color: white;
+    color: #1d6292;
     text-decoration: none; }
 
 /************************* Navbar *****************************/
@@ -243,7 +243,6 @@ img.nextstepgo-logo-nav {
   color: #fff; }
 
 .sidebar-active {
-  color: white;
   border-left: solid thick #83bf4a;
   background-color: rgba(255, 255, 255, 0.1); }
   .sidebar-active .nav-link {
@@ -441,10 +440,6 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background: #6a9e38; }
 
-.accordian-dashboard {
-  border-style: solid;
-  border-color: #35858e; }
-
 .btn-edit-profile {
   color: #434c55; }
   .btn-edit-profile:hover {
@@ -557,7 +552,7 @@ footer {
   font-size: 70px; }
 
 .time {
-  color: #35858e;
+  color: #94c8d5;
   text-align: right; }
 
 /* Add media queries for smaller screens */
@@ -573,6 +568,40 @@ footer {
 @media screen and (max-width: 290px) {
   .weekdays li, .days li {
     width: 12.2%; } }
+/****************************** Applications ********************************/
+#applications {
+  margin-left: 18%;
+  display: flex;
+  flex-flow: row wrap; }
+
+.applications-bg {
+  background-color: #e2e2e2; }
+
+.timeline {
+  background-image: url("../images/timelinebg.png");
+  background-repeat: no-repeat;
+  background-size: 97%;
+  vertical-align: center;
+  background-position: center; }
+
+.br-8 {
+  border-radius: 8px; }
+
+.timeline-number {
+  color: white;
+  font-size: 70px;
+  margin-top: 10%;
+  line-height: 100px; }
+
+.app-name {
+  font-size: 20px; }
+
+.new-app {
+  border-color: #83bf4a; }
+
+.reviewed-app {
+  border-color: #d6d7dd; }
+
 /****************************** Analytics ********************************/
 .bg-lt-grey {
   background-color: #e2e2e2;
@@ -699,6 +728,9 @@ footer {
   border: solid thin #d6d7dd;
   border-top: none;
   background-color: #f1f1f1; }
+
+.post-card-left {
+  background-color: #f2f2f4; }
 
 .post-card-left {
   background-color: #f2f2f4; }

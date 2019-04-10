@@ -755,6 +755,54 @@ footer{
   .weekdays li, .days li {width: 12.2%;}
 }
 
+/****************************** Applications ********************************/
+
+
+	
+#applications {
+		margin-left: 18%;
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+
+.applications-bg{
+	background-color:rgba(226,226,226,1.00);
+}
+
+.timeline {
+	background-image:url("../images/timelinebg.png");
+	background-repeat: no-repeat;
+	background-size: 97%;
+	vertical-align: center;
+	background-position: center;
+}
+
+.br-8{
+	border-radius: 8px;
+}
+
+.timeline-number{
+	color: white;
+	font-size: 70px;
+	margin-top: 10%;
+	line-height: 100px;
+}
+
+.app-name{
+	font-size: 20px;
+}
+
+
+.new-app{
+	border-color: $maingreen;
+}
+
+.reviewed-app{
+	border-color: $ltgrey;
+}
+
+
 /****************************** Analytics ********************************/
 
 .bg-lt-grey{
@@ -873,7 +921,6 @@ footer{
 	}
 }
 
-<<<<<<< HEAD
 .form-entry{
 	border-radius: 0px;
 	border: none;
@@ -927,10 +974,9 @@ footer{
 
 .post-card-left {
     background-color: lighten($ltgrey, 10%);
-=======
+}
 .post-card-left{
 	background-color: lighten($ltgrey, 10%);
->>>>>>> bb848e929a74181d7a42d8e64cdc86f23af6bd65
 }
 
 .post-card-left-learn{
@@ -1237,15 +1283,3 @@ input:checked + .slider:before {
 		width: 950px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

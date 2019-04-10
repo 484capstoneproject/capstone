@@ -60,6 +60,9 @@ $("#unflip-btn").click(function(){
     	}, 800 );
 		$( "#signout-btn" ).css("textAlign", "center" ).css("paddingRight", "5px" );
 		$( ".btn-sign-out" ).css("marginLeft", "-10px" );
+		$("#applications").removeClass("col-10");
+		$("#applications").addClass("col-11");
+		$("#applications").css( "marginLeft", "10%" );
 	}
 	//EXPANDED VERSION
     else {
@@ -85,6 +88,9 @@ $("#unflip-btn").click(function(){
     	}, 800 );
 		$( ".sidebar-active" ).css( "borderLeft", "solid thick #83bf4a" );
 		$( ".sidebar-active" ).css( "backgroundColor", "#525d69" );
+		$("#applications").removeClass("col-11");
+		$("#applications").addClass("col-10");
+		$("#applications").css( "marginLeft", "18%" );
 	}   
 	});
 	
