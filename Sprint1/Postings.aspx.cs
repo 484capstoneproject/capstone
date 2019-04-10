@@ -98,8 +98,9 @@ public partial class Postings : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
         cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
         cmd.ExecuteNonQuery();
+        con.Close();
 
-        Response.Redirect("Postings.aspx");
+        //Response.Redirect("Postings.aspx");
     }
 
     public override void VerifyRenderingInServerForm(Control control)

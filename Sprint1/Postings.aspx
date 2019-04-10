@@ -1061,8 +1061,9 @@
 						</div>
 						
 							</div>
-  					  	  <form id="form1" runat="server">
+
   					  <!-- Modal -->
+                    <form id="formJob" runat="server">
 						<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
@@ -1090,7 +1091,7 @@
 							
 							  <!-- JOB FORM CONTENT -->
 							
-					
+					            
 									<h3 class="pt-2 pb-2">Post Details</h3>
 									  <div class="form-group">
 										<label for="Job Title" class="font-weight-bold">Job Titless</label>
@@ -1271,13 +1272,12 @@
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						        <%--<button type="button" class="btn bg-green addPost" data-dismiss="modal">Add Post</button>--%>
-                                   <asp:Button type="button" Text="Add Post" class="btn bg-green addPost" data-dismiss="modal" OnClick="BtnAdd_Click" runat="server" ></asp:Button>
+                                   <asp:Button type="button" Text="Add Post" class="btn bg-green" OnClick="BtnAdd_Click" runat="server" ></asp:Button>
 						      </div>
 						    </div>
 						  </div>
 						</div>
-                            </form>
-							
+				</form>	
 							
 							
 							
