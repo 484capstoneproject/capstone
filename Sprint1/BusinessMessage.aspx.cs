@@ -199,20 +199,13 @@ public partial class BusinessMessage : System.Web.UI.Page
             con.Close();
             reader.Close();
 
-            DropSchoolFilter.Visible = true;
-
-            
+            DropSchoolFilter.Visible = true;     
         }
-    }
 
-    protected void DropSchoolFilter_SelectedIndexChanged(object sender, EventArgs e)
-    {
-
-        if (checkFilterNames.SelectedValue == "School")
+        if(checkFilterNames.SelectedValue=="Grade")
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("select Student.FirstName, Student.LastName from Student Inner Join School on Student.SchoolID=School.SchoolID where School.Name = @SchoolName;", con);
-            cmd.Parameters.AddWithValue("@SchoolName", DropSchoolFilter.SelectedValue);
+            SqlCommand cmd = new SqlCommand("Select Distinct Grade from Student order by Grade;", con);
             cmd.CommandType = CommandType.Text;
             cmd.ExecuteNonQuery();
 
@@ -222,11 +215,56 @@ public partial class BusinessMessage : System.Web.UI.Page
             {
                 while (reader.Read())
                 {
-                    dropSendTo.Items.Add(reader["FirstName"].ToString() + " " + reader["LastName"].ToString());
+                    dropGradeFilter.Items.Add(reader["Grade"].ToString());
                 }
             }
             con.Close();
             reader.Close();
+
+            dropGradeFilter.Visible = true;
         }
+
+    }
+
+    protected void DropSchoolFilter_SelectedIndexChanged(object sender, EventArgs e)
+    {  
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select Student.FirstName, Student.LastName from Student Inner Join School on Student.SchoolID=School.SchoolID where School.Name = @SchoolName;", con);
+        cmd.Parameters.AddWithValue("@SchoolName", DropSchoolFilter.SelectedValue);
+        cmd.CommandType = CommandType.Text;
+        cmd.ExecuteNonQuery();
+
+        SqlDataReader reader = cmd.ExecuteReader();
+        dropSendTo.Items.Clear();
+        if (reader.HasRows)
+        {
+            while (reader.Read())
+            {
+                dropSendTo.Items.Add(reader["FirstName"].ToString() + " " + reader["LastName"].ToString());
+            }
+        }
+        con.Close();
+        reader.Close();
+    }
+
+    protected void dropGradeFilter_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        con.Open();
+        SqlCommand cmd = new SqlCommand("select FirstName, LastName from Student where Grade = @Grade;", con);
+        cmd.Parameters.AddWithValue("@Grade", dropGradeFilter.SelectedValue);
+        cmd.CommandType = CommandType.Text;
+        cmd.ExecuteNonQuery();
+
+        SqlDataReader reader = cmd.ExecuteReader();
+        dropSendTo.Items.Clear();
+        if (reader.HasRows)
+        {
+            while (reader.Read())
+            {
+                dropSendTo.Items.Add(reader["FirstName"].ToString() + " " + reader["LastName"].ToString());
+            }
+        }
+        con.Close();
+        reader.Close();
     }
 }

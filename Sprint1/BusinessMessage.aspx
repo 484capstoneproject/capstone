@@ -176,6 +176,10 @@
                        <asp:ListItem Text="--Select School To Filter--" Value=""></asp:ListItem>
                    </asp:DropDownList>
 
+                   <asp:DropDownList ID="dropGradeFilter" runat="server" Visible="false" OnSelectedIndexChanged="dropGradeFilter_SelectedIndexChanged" AutoPostBack="true">
+                       <asp:ListItem Text="--Grade--"></asp:ListItem>
+                   </asp:DropDownList>
+
               </div>
               <asp:Label ID="lblTo" runat="server" Text="To: "></asp:Label>
               <asp:DropDownList ID="dropSendTo" runat="server" Height="33px" Width="278px" AutoPostBack="true">
