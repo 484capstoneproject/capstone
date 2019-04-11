@@ -24,6 +24,10 @@
           }
     </style>
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>  
+
   </head>
 
 <!------------------- BODY ----------------------->
@@ -209,6 +213,9 @@
                 runat="server"/>
             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
 			<br />
+
+                  <asp:ListView ID="ListView1" runat="server" DataSourceID="SqlDataSource1"></asp:ListView>
+                  <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
                   <%--Gridview start--%>
 				<asp:Gridview id="GridView1" 
                 autogeneratecolumns="False"
@@ -261,7 +268,9 @@
                     <SortedDescendingCellStyle BackColor="#D4DFE1" />
                     <SortedDescendingHeaderStyle BackColor="#15524A" />
                 
-                </asp:Gridview>   
+                </asp:Gridview>  
+                  
+
                 </div>            
                  <div id="popupdiv" title="Basic modal dialog" style="display: none">
                             Student Name:
