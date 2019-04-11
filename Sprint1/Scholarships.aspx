@@ -123,13 +123,13 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Job Posts</span>
+					<span class="nav-txt">Postings</span>
                 </a>
               </li>
                 <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Posts</span>
+					<span class="nav-txt">Learning Opportunities Posts</span>
                 </a>
               </li>
                  <li class="nav-item-side">
@@ -172,7 +172,6 @@
 				  <!-- JOB FORM CONTENT -->
 					  <%--<form id="postingFormJob" runat="server">--%>
                     <div class="card card-body border-secondary">
-                        <h3 class="text-maingreen">Scholarship Posting</h3>
                          <h5 class="pt-4">Edit Scholarship Details</h5>
 									  <div class="form-group">
 										<label for="scholtitle">Scholarship Name</label>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#"AutoEventWireup="true" CodeFile="LearningOpportunities.aspx.cs" Inherits="LearningOpportunities" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="LearningOpportunities.aspx.cs" Inherits="LearningOpportunites" %>
 
 
 <!doctype html>
@@ -92,18 +92,12 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
-
   				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
-
   				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>
-
            <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
-
-
-   
 
            </div>
             <ul class="nav flex-column sidebar-links">
@@ -123,16 +117,16 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Job Posts</span>
+					<span class="nav-txt">Postings</span>
                 </a>
               </li>
-                <li class="nav-item-side">
+                 <li class="nav-item-side">
                 <a class="nav-link nav-link-side sidebar-active" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Posts</span>
+					<span class="nav-txt">Learning Opportunities Posts</span>
                 </a>
               </li>
-                   <li class="nav-item-side">
+              <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="Scholarships.aspx">
                   <i data-feather="clipboard"></i>
 					<span class="nav-txt">Scholarship Posts</span>
@@ -170,19 +164,19 @@
   		<div class="col-8 ml-3 mt-4 pb-4" id="postings">
 
 				  <!-- JOB FORM CONTENT -->
-					  <%--<form id="postingFormJob" runat="server">--%>
+					  
 						  <div class="card card-body border-secondary">
-							  <h3 class="text-maingreen">Learning Posting</h3>
+							  <h3 class="text-maingreen">Learning Opportunites</h3>
 									<h5 class="pt-4">Post Details</h5>
 									  <div class="form-group">
-										<label for="LearningTitle">Learning Title</label>
-										<input type="learningtitle" runat="server" class="form-control" id="txtLearningTitle" aria-describedby="LearningTitle" placeholder="Enter">
+										<label for="LearningTitle">Learning Opportunity Title</label>
+										<input type="LearningTitle" runat="server" class="form-control" id="txtLearningTitle" aria-describedby="LearningTitle" placeholder="Enter">
 									  </div>
 								  
 								  <div class="row pt-2 pb-3">
 								  	<div class="col">
-								 		 <label for="chooseJobType">Learning Type</label>
-								  		 <select class="form-control w-75 mb-3" id="dropLearningType" runat="server">
+								 		 <label for="chooseOpportunityType">Opportunity Type</label>
+								  		 <select class="form-control w-75 mb-3" id="dropOpportunityType" runat="server">
 											  <option>Shadowing</option>
 											  <option>Career Event</option>
 											  <option>Other</option>
@@ -310,12 +304,11 @@
 		
 							
 							 <br />
-
-		                    <asp:Label ID="LblSearch" runat="server" Text="Search Job Postings (By JobTitle): " Font-Bold="true" Font-Underline="true"></asp:Label>
+		                     <asp:Label ID="LblSearch" runat="server" Text="Search Learning Opportunity Posts (By LearningTitle): " Font-Bold="true" Font-Underline="true"></asp:Label>
 
                             <br />
 
-                            <asp:TextBox ID="TextSearch" runat="server" placeholder="Job Title"></asp:TextBox>
+                            <asp:TextBox ID="TextSearch" runat="server" placeholder="Learning Title"></asp:TextBox>
                             <br />
                             <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
                             <br />
@@ -324,35 +317,28 @@
                              forecolor="Red"
                              runat="server"/>
                             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
-							<br />
-                            <%--Gridview start--%>
+							<br />   
+							
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
+                               autogenerateselectbutton="false"
                                onselectedindexchanged="GridView1_SelectedIndexChanged"
-                               runat="server" DataKeyNames="LearningPostingID" CellPadding="4" ForeColor="#333333" GridLines="None">
-                
-                                 <AlternatingRowStyle BackColor="White" />
+                               runat="server" DataKeyNames="LearningPostingID">
                 
                                  <Columns>
-
-                                      <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
-
+                                     <asp:CommandField ShowSelectButton="True" SelectText="Update" ButtonType="Button" ControlStyle-Font-Bold="true"/>
                                      <asp:BoundField DataField="LearningPostingID" 
                                          HeaderText="LearningPostingID" 
                                          InsertVisible="False" ReadOnly="True" 
                                          SortExpression="LearningPostingID" />
-                                 
-                                   
                                      <asp:BoundField DataField="LearningTitle" 
-                                         HeaderText="Learning Title" 
-                                         SortExpression="LearningTitle" >
-                                     <ControlStyle BackColor="#000066" />
-                                     </asp:BoundField>
+                                         HeaderText="LearningTitle" 
+                                         SortExpression="LearningTitle" />
                                      <asp:BoundField DataField="LearningType" 
-                                         HeaderText="Learning Type" 
+                                         HeaderText="LearningType" 
                                          SortExpression="LearningType" />
                                      <asp:BoundField DataField="CareerCluster" 
-                                         HeaderText="Career Cluster" 
+                                         HeaderText="CareerCluster" 
                                          SortExpression="CareerCluster" />
                                      <asp:BoundField DataField="Description" 
                                          HeaderText="Description" 
@@ -372,23 +358,11 @@
                                          SortExpression="BusinessEntityID" 
                                          readOnly="true"/>
                                  </Columns> 
-                                    <EditRowStyle BackColor="#7C6F57" />
-                                 <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                                 <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                                 <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                                 <RowStyle BackColor="#E3EAEB" />
                                     <selectedrowstyle
-                                    forecolor="#333333"
-                                     font-bold="true" BackColor="#C5BBAF"/> 
+                                    forecolor="#0066ff"
+                                     font-bold="true"/> 
                 
-                                 <SortedAscendingCellStyle BackColor="#F8FAFA" />
-                                 <SortedAscendingHeaderStyle BackColor="#246B61" />
-                                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
-                                 <SortedDescendingHeaderStyle BackColor="#15524A" />
-                
-                             </asp:Gridview>   
-                            
-                            <%--GridView End--%>
+                             </asp:Gridview>              
                         
 							
 						</div>
@@ -437,3 +411,5 @@
 
 
       
+
+

@@ -31,9 +31,7 @@
       .number-label{
           font-size: 16px;
       }
-	 .color{
-         color: #83bf4a;
-	 }
+	 
   </style>
 
   </head>
@@ -118,13 +116,13 @@
               <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="JobPostings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Job Posts</span>
+					<span class="nav-txt">Postings</span>
                 </a>
               </li>
                 <li class="nav-item-side">
                 <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Posts</span>
+					<span class="nav-txt">Learning Opportunities</span>
                 </a>
               </li>
               <li class="nav-item-side">
@@ -146,10 +144,9 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="BusinessMessage.aspx">
+                <a class="nav-link nav-link-side" href="#">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
-                    <span class="nav-txt color" id="sidebarMessages" runat="server"></span>
                 </a>
               </li>
             </ul>
