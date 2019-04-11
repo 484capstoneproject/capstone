@@ -161,6 +161,8 @@ public partial class BusinessMessage : System.Web.UI.Page
 
     protected void checkFilterNames_SelectedIndexChanged(object sender, EventArgs e) //if the user selects a filter option
     {
+        DropSchoolFilter.Visible = false;
+        dropGradeFilter.Visible = false;
         if (checkFilterNames.SelectedValue == "School") //if they selected school, show the school names and populate from the database into a drop down
         {
             con.Open();
@@ -183,7 +185,7 @@ public partial class BusinessMessage : System.Web.UI.Page
             DropSchoolFilter.Visible = true;
         }
 
-        else if (checkFilterNames.SelectedValue == "Grade") //show and populate the grade dropdown if checked
+        if (checkFilterNames.SelectedValue == "Grade") //show and populate the grade dropdown if checked
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("Select Distinct Grade from Student order by Grade;", con);
@@ -204,8 +206,6 @@ public partial class BusinessMessage : System.Web.UI.Page
 
             dropGradeFilter.Visible = true;
         }
-        else
-            Response.Redirect("BusinessMessage.aspx");
     }
 
     protected void DropSchoolFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -227,7 +227,6 @@ public partial class BusinessMessage : System.Web.UI.Page
         }
         con.Close();
         reader.Close();
-
     }
 
     protected void dropGradeFilter_SelectedIndexChanged(object sender, EventArgs e)

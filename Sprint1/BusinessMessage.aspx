@@ -226,7 +226,7 @@
                 autogeneratecolumns="False"
                 onselectedindexchanged="GridView1_SelectedIndexChanged"
                 OnRowDataBound="GridView1_RowDataBound"
-                runat="server" DataKeyNames="StudentMessageID" CellPadding="4" ForeColor="#333333" GridLines="Horizontal">
+                runat="server" DataKeyNames="StudentMessageID" CellPadding="4" ForeColor="#333333" GridLines="Horizontal" Width="912px">
                 
                     <AlternatingRowStyle BackColor="White" />
                 
