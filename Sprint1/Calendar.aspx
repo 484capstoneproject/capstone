@@ -103,33 +103,9 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="JobPostings.aspx">
+                <a class="nav-link nav-link-side" href="Postings.aspx">
                   <i data-feather="clipboard"></i>
-					<span class="nav-txt">Job Posts</span>
-                </a>
-              </li>
-                <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
-                  <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Posts</span>
-                </a>
-              </li>
-              <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Scholarships.aspx">
-                  <i data-feather="clipboard"></i>
-					<span class="nav-txt">Scholarship Posts</span>
-                </a>
-              </li>
-              <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
-                  <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Opportunities Posts</span>
-                </a>
-              </li>
-              <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Scholarships.aspx">
-                  <i data-feather="clipboard"></i>
-					<span class="nav-txt">Scholarship Posts</span>
+					<span class="nav-txt">Postings</span>
                 </a>
               </li>
               <li class="nav-item-side">
