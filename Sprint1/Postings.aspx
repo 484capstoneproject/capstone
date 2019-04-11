@@ -40,9 +40,6 @@
 	width:30%;
 	margin: 0px;  
 	  }
-	  
-	
-	 
 
   </style>
 
