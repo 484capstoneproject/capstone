@@ -99,7 +99,7 @@ public partial class PostingToLearning : System.Web.UI.Page
         JobPostingsClass newPost = new JobPostingsClass(txtLearningTitle.Value, dropOpportunityType.Value, dropCareerCluster.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
 
         con.Open();
-        SqlCommand cmd = new SqlCommand("Insert into LearningPosting values(@LearningTitle, @LearningType, @CareerCluster, @Description, @Month, @Day, @Year, @BusinessEntityID);");
+        SqlCommand cmd = new SqlCommand("Insert into LearningPosting values(@LearningTitle, @LearningType, @Description, @Month, @Day, @Year, @BusinessEntityID, @CareerID);");
         cmd.CommandType = System.Data.CommandType.Text;
         cmd.Connection = con;
         cmd.Parameters.AddWithValue("@LearningTitle", newPost.GetJobTitle());
@@ -110,8 +110,14 @@ public partial class PostingToLearning : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
         cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
         cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
+        cmd.Parameters.AddWithValue("@CareerID", dropCareerCluster.SelectedIndex);
         cmd.ExecuteNonQuery();
 
+        Response.Redirect("Postings.aspx");
+    }
+
+    protected void BtnCancel_Click(object sender, EventArgs e)
+    {
         Response.Redirect("Postings.aspx");
     }
 

@@ -86,7 +86,7 @@ public partial class Postings : System.Web.UI.Page
         JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value, dropCareerCluster.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
 
         con.Open();
-        SqlCommand cmd = new SqlCommand("Insert into JobPosting values(@JobTitle, @JobType, @CareerCluster, @Description, @Month, @Day, @Year, @BusinessEntityID);");
+        SqlCommand cmd = new SqlCommand("Insert into JobPosting values(@JobTitle, @JobType, @Description, @Month, @Day, @Year, @BusinessEntityID, @CareerID);");
         cmd.CommandType = System.Data.CommandType.Text;
         cmd.Connection = con;
         cmd.Parameters.AddWithValue("@JobTitle", newPost.GetJobTitle());
@@ -97,11 +97,17 @@ public partial class Postings : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
         cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
         cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
+        cmd.Parameters.AddWithValue("@CareerID", dropCareerCluster.SelectedIndex);
         cmd.ExecuteNonQuery();
         con.Close();
 
         //Response.Redirect("Postings.aspx");
     }
+
+    //protected void BtnCancel_Click(object sender, EventArgs e)
+    //{
+    //    Response.Redirect("Postings.aspx");
+    //}
 
     public override void VerifyRenderingInServerForm(Control control)
     {
