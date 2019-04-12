@@ -164,10 +164,10 @@ public partial class BusinessMessage : System.Web.UI.Page
     {
         DropSchoolFilter.Visible = false;
         dropGradeFilter.Visible = false;
-        //Clear duplicated school records from school names and grades dropdowns
+        //Clear duplicate school records from school names and grades dropdowns
         DropSchoolFilter.Items.Clear();
         dropGradeFilter.Items.Clear();
-        //Add back two first records
+        //Add back first two records
         DropSchoolFilter.Items.Add("--Select School To Filter--");
         dropGradeFilter.Items.Add("--Grade--");
 
@@ -216,7 +216,7 @@ public partial class BusinessMessage : System.Web.UI.Page
         }
 
 
-        if (checkFilterNames.Items[0].Selected && checkFilterNames.Items[1].Selected) //show and populate the grade dropdown if checked
+        if (checkFilterNames.Items[0].Selected && checkFilterNames.Items[1].Selected) //show and populate the grade and school dropdown if checked
         {
             con.Open();
             SqlCommand cmd = new SqlCommand("Select Name from School;", con);
