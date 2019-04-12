@@ -19,6 +19,9 @@ $("#sidebar-btn").click(function(){
       connectWith: ".connectedSortable"
     }).disableSelection();
   });
+	
+	
+	
 
 
       });
