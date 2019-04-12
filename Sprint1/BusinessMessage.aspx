@@ -165,11 +165,11 @@
                    <asp:ListItem Text="Grade" Value="Grade"></asp:ListItem>
                </asp:CheckBoxList>
                    <asp:DropDownList ID="DropSchoolFilter" runat="server" Visible="false" OnSelectedIndexChanged="DropSchoolFilter_SelectedIndexChanged" AutoPostBack="true">
-                       <asp:ListItem Text="--Select School To Filter--" Value=""></asp:ListItem>
+                       <%--<asp:ListItem Text="--Select School To Filter--" Value=""></asp:ListItem>--%>
                    </asp:DropDownList>
 
                    <asp:DropDownList ID="dropGradeFilter" runat="server" Visible="false" OnSelectedIndexChanged="dropGradeFilter_SelectedIndexChanged" AutoPostBack="true">
-                       <asp:ListItem Text="--Grade--"></asp:ListItem>
+                       <%--<asp:ListItem Text="--Grade--"></asp:ListItem>--%>
                    </asp:DropDownList>
 
               </div>

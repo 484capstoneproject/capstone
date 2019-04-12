@@ -50,7 +50,7 @@ public partial class BusinessMessage : System.Web.UI.Page
             int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
             sidebarMessages.InnerText = "       " + inboxCount.ToString();
             con.Close();
-            
+
         }
     }
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
@@ -159,10 +159,18 @@ public partial class BusinessMessage : System.Web.UI.Page
         Response.Redirect("BusinessMessage.aspx");
     }
 
+
     protected void checkFilterNames_SelectedIndexChanged(object sender, EventArgs e) //if the user selects a filter option
     {
         DropSchoolFilter.Visible = false;
         dropGradeFilter.Visible = false;
+        //Clear duplicated school records from school names and grades dropdowns
+        DropSchoolFilter.Items.Clear();
+        dropGradeFilter.Items.Clear();
+        //Add back two first records
+        DropSchoolFilter.Items.Add("--Select School To Filter--");
+        dropGradeFilter.Items.Add("--Grade--");
+
         if (checkFilterNames.SelectedValue == "School") //if they selected school, show the school names and populate from the database into a drop down
         {
             con.Open();
@@ -206,11 +214,56 @@ public partial class BusinessMessage : System.Web.UI.Page
 
             dropGradeFilter.Visible = true;
         }
+
+
+        if (checkFilterNames.Items[0].Selected && checkFilterNames.Items[1].Selected) //show and populate the grade dropdown if checked
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("Select Name from School;", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+            dropSendTo.Items.Clear();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    DropSchoolFilter.Items.Add(reader["Name"].ToString());
+                }
+            }
+            con.Close();
+            reader.Close();
+
+            DropSchoolFilter.Visible = true;
+
+            con.Open();
+            cmd = new SqlCommand("Select Distinct Grade from Student order by Grade;", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+
+            reader = cmd.ExecuteReader();
+            dropSendTo.Items.Clear();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    dropGradeFilter.Items.Add(reader["Grade"].ToString());
+                }
+            }
+            con.Close();
+            reader.Close();
+
+            dropGradeFilter.Visible = true;
+        }
     }
+
+
 
     protected void DropSchoolFilter_SelectedIndexChanged(object sender, EventArgs e)
     {  //if a school is selected, query the name drop down to find those in that school
         con.Open();
+
         SqlCommand cmd = new SqlCommand("select Student.FirstName, Student.LastName from Student Inner Join School on Student.SchoolID=School.SchoolID where School.Name = @SchoolName;", con);
         cmd.Parameters.AddWithValue("@SchoolName", DropSchoolFilter.SelectedValue);
         cmd.CommandType = CommandType.Text;
@@ -225,6 +278,7 @@ public partial class BusinessMessage : System.Web.UI.Page
                 dropSendTo.Items.Add(reader["FirstName"].ToString() + " " + reader["LastName"].ToString());
             }
         }
+       
         con.Close();
         reader.Close();
     }
@@ -233,7 +287,15 @@ public partial class BusinessMessage : System.Web.UI.Page
     { //if a grade is selected, query the names of students in that grade and populate the drop down
         con.Open();
         SqlCommand cmd = new SqlCommand("select FirstName, LastName from Student where Grade = @Grade;", con);
-        cmd.Parameters.AddWithValue("@Grade", dropGradeFilter.SelectedValue);
+        if (dropGradeFilter.SelectedValue == "--Grade--")
+        {
+            cmd.Parameters.AddWithValue("@Grade", 1000);
+        }
+        else
+        {
+            cmd.Parameters.AddWithValue("@Grade", dropGradeFilter.SelectedValue);
+        }
+
         cmd.CommandType = CommandType.Text;
         cmd.ExecuteNonQuery();
 
@@ -246,10 +308,10 @@ public partial class BusinessMessage : System.Web.UI.Page
                 dropSendTo.Items.Add(reader["FirstName"].ToString() + " " + reader["LastName"].ToString());
             }
         }
+
         con.Close();
         reader.Close();
 
     }
-
 
 }
