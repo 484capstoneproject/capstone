@@ -11,7 +11,6 @@ using System.Web;
 using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
 public partial class Calendar : System.Web.UI.Page
 {
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon"].ConnectionString);
@@ -52,6 +51,14 @@ public partial class Calendar : System.Web.UI.Page
             }
             con.Close();
             reader.Close();
+
+            con.Open();
+            cmd = new SqlCommand("select count(BusinessRead) from StudentMessage where BusinessRead=@BusinessRead", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessRead", 1);
+            int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
+            sidebarMessages.InnerText = "       " + inboxCount.ToString();
+            con.Close();
 
         }
         if (!Page.IsPostBack)
@@ -172,7 +179,7 @@ public partial class Calendar : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Event_Type", 2);
         cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
         cmd.ExecuteNonQuery();
-        con.Close();
+        con.Close();    
 
         Response.Redirect("Calendar.aspx");
     }
@@ -183,5 +190,6 @@ public partial class Calendar : System.Web.UI.Page
         Session.Abandon();
         FormsAuthentication.SignOut();
         FormsAuthentication.RedirectToLoginPage();
-    }   
+    }
+
 }
