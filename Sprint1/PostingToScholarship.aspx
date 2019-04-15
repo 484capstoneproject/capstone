@@ -1216,6 +1216,17 @@
 	<script type="text/javascript" src="http://beneposto.pl/jqueryrotate/js/jQueryRotateCompressed.js"></script>
   
   	<!-- Muuri <script src="https://unpkg.com/muuri@0.7.1/dist/muuri.min.js"></script> -->
+	       <script>
+  $(document).ready(function(){
+	  $('#newPostModal').modal('show'); 
+		//show the modal
+		$('body').addClass('modal-open'); 
+		//modal-open class has to be added
+		$('.modal-backdrop').add();
+		//need to add div with modal-backdrop class
+  });
+	  
+  </script>
    
    <!-- custom JS -->
    <script src="../../../../Google Drive/Senior Year/Semester 2/SMAD Capstone/Sprint 2 SMAD/Bootstrap/js/custom.js"></script>
