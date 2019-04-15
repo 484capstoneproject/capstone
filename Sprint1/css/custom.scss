@@ -852,6 +852,25 @@ footer{
 	border: solid 1px white;
 }
 
+
+	// INDIVIDUAL APPLICATIONS
+.bg-ltblue{
+	background-color: $ltblue;
+}
+
+.app-img{
+	height: 200px;
+	width: auto;
+}
+
+.text-ltblue{
+	color: $ltblue;
+}
+
+.app-header{
+	max-height: 200px;
+}
+
 /****************************** Analytics ********************************/
 
 .bg-lt-grey{

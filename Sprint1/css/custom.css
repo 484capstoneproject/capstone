@@ -642,6 +642,19 @@ footer {
 .outline-white {
   border: solid 1px white; }
 
+.bg-ltblue {
+  background-color: #94c8d5; }
+
+.app-img {
+  height: 200px;
+  width: auto; }
+
+.text-ltblue {
+  color: #94c8d5; }
+
+.app-header {
+  max-height: 200px; }
+
 /****************************** Analytics ********************************/
 .bg-lt-grey {
   background-color: #e2e2e2;
