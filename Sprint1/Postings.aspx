@@ -595,18 +595,22 @@
 		
 			<div class="posting-row">
 				
-				
-		<!---- JOB POST TEMPLATE ---->
-		 	<div class="card bg-white p-0 mt-3 post-card jobCardTemplate" style="height: 40vh; display: none;">
+	
+
+ 		
+ 		<!---- JOB POST EXAMPLE ---->
+          <asp:ListView ID="ListViewJob" runat="server"  DataSourceID="SqlDataSource1">
+            <ItemTemplate>
+		 	<div class="card bg-white p-0 mt-3" style="height: 40vh;">
 			  <div class="row no-gutters h-100">
 			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
 			    
   			<div class="p-4 bd-highlight">
   			
-  				<h3 class="d-inline job-post-title">Part Time Marketing Assistant</h3><br>
+  				<asp:Label class="d-inline job-post-title" runat="server" Text='<%#Eval("JobTitle")%>' Font-Size="Larger"></asp:Label><br>
   				<div class="mt-3">
   				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
-  						 <h6 class="d-inline location-text">Harrisonburg, Virginia </h6>
+  						 <h6 class="d-inline location-text">Staunton, Virginia </h6>
   				</div>
   			</div>
   			
@@ -627,11 +631,11 @@
 			      <div class="card-body">
 		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
 		        			<div>
-		        				<span class="mr-1 badge badge-secondary">Part Time</span><span>|</span><span class=" badge badge-ltblue text-white ml-1 mr-1">Marketing</span><span>|</span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
+		        				<asp:Label class="mr-1 badge badge-secondary" runat="server" Text='<%#Eval("JobType")%>'></asp:Label><span>|</span><asp:Label runat="server" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Eval("CareerClusterType")%>'></asp:Label><span>|</span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
 							</div>	
 						  	<div>
 							  <!-- EDIT POST MODAL BTN -->
-								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editJobModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
  					  
   							    							  
   							  <!--DELETE POST MODAL BTN -->
@@ -640,18 +644,82 @@
  							</div>
 	        	</div>
 		        
-			        <p class="card-text">We're looking for a creative and motivated Marketing assistant to work in our Marketing and PR department. You will get to work with one of the best teams in the area and recieve great employee benefits.</p>
-			        <p class="card-text"><small class="text-muted">Application Due: May 20, 2019</small></p>
+			        <asp:Label runat="server" class="card-text" Text='<%#Eval("Description")%>' Font-Size="Large"></asp:Label><br /><br /><br />
+			        <p class="card-text"><small class="text-muted">Application Due: June 09, 2019</small></p>
 			      </div>
 			    </div>
 			  </div>
 			</div>
-
- 		<!---- JOB POST EXAMPLE ---->
-		 	
+                </ItemTemplate>
+     </asp:ListView>
+   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID;"></asp:SqlDataSource>
 			
 		<!---- LEARNING OPPORTUNITY POST EXAMPLE ---->
-		 	
+         <asp:ListView ID="ListViewLearning" runat="server"  DataSourceID="SqlDataSource2">
+            <ItemTemplate>
+		 	<div class="card bg-white p-0 mt-3" style="height: 40vh;">
+			  <div class="row no-gutters h-100">
+			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
+			    
+  			<div class="p-4 bd-highlight">
+  			
+  				<asp:Label runat="server" class="d-inline job-post-title" Text='<%#Eval("LearningTitle")%>' Font-Size="Larger"></asp:Label><br>
+  				<div class="mt-3">
+  				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
+  						 <h6 class="d-inline location-text">Dayton, Virginia </h6>
+  				</div>
+  			</div>
+  			
+  			<div class="p-2 bd-highlight"><div class="mt-0 ml-3">
+  						 <label class="switch align-top">
+								<input type="checkbox" class="d-block">
+						 		 <span class="slider round publish-toggle"></span>
+						 </label>
+								<p class="unpublished-text align-middle desc-text text-black-50" style="display:none;">Unpublished</p><p class="submitted-text align-middle published-text" style="display:block;">Published 3/4/19 1:30 p.m.</p>
+								</div></div>
+  			<div class="mt-auto w-100 bd-highlight bg-medblue pl-1">
+ 					<div class="card-footer">
+ 					<table>
+ 					<tbody>
+ 						<tr>
+ 							<td>
+ 								<i data-feather="book" class="mr-2"></i>
+ 							</td>
+ 							<td>Learning Opportunity</td>
+ 						</tr>
+ 					</tbody>
+ 				</table>
+ 						
+  					</div>
+  			</div>
+		  </div>
+			    <div class="col-md-8 post-card-right">
+			      <div class="card-body">
+		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
+		        			<div>
+		        				<asp:Label runat="server" class="mr-1 badge badge-secondary" Text='<%#Eval("LearningType")%>'></asp:Label><span>|</span><asp:Label runat="server" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Eval("CareerClusterType")%>'></asp:Label><span>|</span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
+							</div>	
+						  	<div>
+							  <!-- EDIT POST MODAL BTN -->
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+ 					  
+  							    							  
+  							  <!--DELETE POST MODAL BTN -->
+ 						      <button type="button" data-toggle="modal" class="deleteBtn pl-0 align-top" data-target="#deleteModal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
+ 						      
+ 							</div>
+	        	</div>
+		        
+			        <asp:Label runat="server" class="card-text" Text='<%#Eval("Description")%>'></asp:Label><br /><br />
+			        <p class="card-text"><small class="text-muted">Application Due: June 09, 2019</small></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+         </ItemTemplate>
+     </asp:ListView>
+   <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select learningposting.LearningTitle, LearningPosting.LearningType, LearningPosting.Description, CareerCluster.CareerClusterType from LearningPosting Inner Join CareerCluster ON LearningPosting.CareerID=CareerCluster.CareerID;;"></asp:SqlDataSource>
+			 	
 
 		<!---- SCHOLARSHIP POST EXAMPLE ---->
 		 	
@@ -1106,7 +1174,7 @@
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						        <%--<button type="button" class="btn bg-green addPost" data-dismiss="modal">Add Post</button>--%>
-                                   <asp:Button type="button" Text="Add Post" class="btn bg-green" OnClick="BtnAdd_Click" runat="server" ></asp:Button>
+                                   <asp:Button type="button" Text="Add Post" class="btn bg-green" OnClick="BtnAdd_Click" runat="server"></asp:Button>
 						      </div>
 						    </div>
 						  </div>

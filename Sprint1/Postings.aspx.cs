@@ -101,7 +101,7 @@ public partial class Postings : System.Web.UI.Page
         cmd.ExecuteNonQuery();
         con.Close();
 
-        //Response.Redirect("Postings.aspx");
+        Response.Redirect("Postings.aspx");
     }
 
     //protected void BtnCancel_Click(object sender, EventArgs e)
