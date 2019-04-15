@@ -1230,7 +1230,17 @@
    <!-- custom JS -->
    <script src="../../../../Google Drive/Senior Year/Semester 2/SMAD Capstone/Sprint 2 SMAD/Bootstrap/js/custom.js"></script>
     <script src="../../../../Google Drive/Senior Year/Semester 2/SMAD Capstone/Sprint 2 SMAD/Bootstrap/js/formtoggler.js"></script>
-
+ <script>
+  $(document).ready(function(){
+	  $('#newPostModal').modal('show'); 
+		//show the modal
+		$('body').addClass('modal-open'); 
+		//modal-open class has to be added
+		$('.modal-backdrop').add();
+		//need to add div with modal-backdrop class
+  });
+	  
+  </script>
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
