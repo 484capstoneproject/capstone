@@ -574,13 +574,21 @@ footer {
   display: flex;
   flex-flow: row wrap; }
 
+.custom-select {
+  background-color: #d6d7dd;
+  color: #434c55;
+  border: none; }
+  .custom-select:focus {
+    box-shadow: none; }
+
 .applications-bg {
   background-color: #e2e2e2; }
 
 .timeline {
   background-image: url("../images/timelinebg.png");
   background-repeat: no-repeat;
-  background-size: 97%;
+  background-size: 100% 110%;
+  height: 130px;
   vertical-align: center;
   background-position: center; }
 
@@ -590,17 +598,49 @@ footer {
 .timeline-number {
   color: white;
   font-size: 70px;
-  margin-top: 10%;
-  line-height: 100px; }
+  line-height: 70px; }
 
 .app-name {
-  font-size: 20px; }
+  font-size: 20px;
+  line-height: 8px; }
 
 .new-app {
   border-color: #83bf4a; }
 
 .reviewed-app {
   border-color: #d6d7dd; }
+
+.app-action-btn-green {
+  color: #83bf4a;
+  border: solid 1px #83bf4a;
+  background-color: white; }
+  .app-action-btn-green:hover {
+    color: #c4e0a8;
+    background-color: #9dcc70; }
+
+.app-action-btn-grey {
+  color: #434c55;
+  border: solid 1px #434c55;
+  background-color: white; }
+  .app-action-btn-grey:hover {
+    color: #7e8c99;
+    background-color: #596672; }
+
+.referred {
+  font-weight: 200;
+  font-size: 10px; }
+
+.app-info {
+  line-height: 10px;
+  padding-bottom: 5px; }
+
+.bg-grey-50 {
+  background-color: #aeaeae;
+  color: white;
+  margin-left: 10px; }
+
+.outline-white {
+  border: solid 1px white; }
 
 /****************************** Analytics ********************************/
 .bg-lt-grey {

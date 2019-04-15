@@ -26,19 +26,10 @@ $("#unflip-btn").click(function(){
     
 	//COLLAPSED VERSION
 	if($('#collapse-it').hasClass("sidebar-expanded")){
-        $( ".nav-item-side" ).animate({
-			borderLeft: "0px",
-			marginTop: "10px",
-			paddingBottom: "10px"
-		});
+
 		$( ".sidebar-active" ).css( "borderLeft", "0px" );
 		$( ".sidebar-active" ).css( "backgroundColor", "#434c55" );
 		$( ".sidebar-active" ).css( "color", "#83bf4a" );
-		$( ".nav-link-side" ).animate({
-			paddingTop: "8px",
-			marginLeft: "-5px",
-			paddingBottom: "15px"
-		});
 		$( ".nav-txt" ).fadeOut("100");
 		$("#collapse-it").addClass("collapsed-sidebar");
 		$("#collapse-it").removeClass("sidebar-expanded");

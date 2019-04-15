@@ -765,6 +765,14 @@ footer{
 		flex-flow: row wrap;
 	}
 
+.custom-select{
+	background-color: $ltgrey;
+	color: $dkgrey;
+	border: none;
+	&:focus{
+		box-shadow: none;
+	}
+}
 
 .applications-bg{
 	background-color:rgba(226,226,226,1.00);
@@ -773,7 +781,8 @@ footer{
 .timeline {
 	background-image:url("../images/timelinebg.png");
 	background-repeat: no-repeat;
-	background-size: 97%;
+	background-size: 100% 110%;
+	height: 130px;
 	vertical-align: center;
 	background-position: center;
 }
@@ -785,12 +794,12 @@ footer{
 .timeline-number{
 	color: white;
 	font-size: 70px;
-	margin-top: 10%;
-	line-height: 100px;
+	line-height: 70px;
 }
 
 .app-name{
 	font-size: 20px;
+	line-height: 8px;
 }
 
 
@@ -802,6 +811,46 @@ footer{
 	border-color: $ltgrey;
 }
 
+
+.app-action-btn-green{
+	color: $maingreen;
+		border: solid 1px $maingreen;
+		background-color: white;
+		&:hover{
+			color: lighten($maingreen, 25%);
+			background-color: lighten($maingreen, 10%);
+		}
+}
+
+.app-action-btn-grey{
+	color: $dkgrey;
+		border: solid 1px $dkgrey;
+		background-color: white;
+		&:hover{
+			color: lighten($dkgrey, 25%);
+			background-color: lighten($dkgrey, 10%);
+		}
+}
+
+.referred{
+	font-weight: 200;
+	font-size: 10px;
+}
+
+.app-info{
+	line-height: 10px;
+	padding-bottom: 5px;
+}
+
+.bg-grey-50{
+	background-color: rgba(174,174,174,1.00);
+	color: white;
+	margin-left: 10px;
+}
+
+.outline-white{
+	border: solid 1px white;
+}
 
 /****************************** Analytics ********************************/
 
