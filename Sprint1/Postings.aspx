@@ -722,8 +722,71 @@
 			 	
 
 		<!---- SCHOLARSHIP POST EXAMPLE ---->
-		 	
-
+        <asp:ListView ID="ListViewScholarship" runat="server"  DataSourceID="SqlDataSource3">
+          <ItemTemplate>
+            <div class="card bg-white p-0 mt-3" style="height: 40vh;">
+			  <div class="row no-gutters h-100">
+			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
+			    
+  			<div class="p-4 bd-highlight">
+  			
+  				<asp:Label runat="server" class="d-inline job-post-title" Text='<%#Eval("ScholarshipName")%>'></asp:Label><br>
+  				<div class="mt-3">
+  				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
+  						 <h6 class="d-inline location-text">Harrisonburg, Virginia </h6>
+  				</div>
+  			</div>
+  			
+  			<div class="p-2 bd-highlight"><div class="mt-0 ml-3">
+  						 <label class="switch align-top">
+								<input type="checkbox" class="d-block">
+						 		 <span class="slider round publish-toggle"></span>
+						 </label>
+								<p class="unpublished-text align-middle desc-text text-black-50" style="display:none;">Unpublished</p><p class="submitted-text align-middle published-text" style="display:block;">Published 3/4/19 1:30 p.m.</p>
+								</div></div>
+  			<div class="mt-auto w-100 bd-highlight bg-teal pl-1">
+ 					<div class="card-footer">
+ 					<table>
+ 					<tbody>
+ 						<tr>
+ 							<td>
+ 								<i data-feather="dollar-sign" class="mr-2"></i>
+ 							</td>
+ 							<td>Scholarship</td>
+ 						</tr>
+ 					</tbody>
+ 				</table>
+ 						
+  					</div>
+  			</div>
+		  </div>
+			    <div class="col-md-8 post-card-right">
+			      <div class="card-body">
+		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
+		        			<div>
+		        				<span class="mr-1 badge badge-secondary">One Time</span><span>|</span><asp:Label runat="server" class="ml-1 badge badge-maingreen text-white" Text='<%#Eval("Amount")%>'></asp:Label>						
+							</div>	
+						  	<div>
+							  <!-- EDIT POST MODAL BTN -->
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+ 					  
+  							    							  
+  							  <!--DELETE POST MODAL BTN -->
+ 						      <button type="button" data-toggle="modal" class="deleteBtn pl-0 align-top" data-target="#deleteModal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
+ 						      
+ 							</div>
+	        	</div>
+		        
+			        <asp:Label runat="server" class="card-text" Text='<%#Eval("Description")%>'></asp:Label><br /><br />
+			        <p class="card-text"><small class="text-muted">Application Due: May 26, 2019</small></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>		 	
+         </ItemTemplate>
+     </asp:ListView>
+   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select ScholarshipPosting.ScholarshipName, ScholarshipPosting.Amount, ScholarshipPosting.Description, CareerCluster.CareerClusterType from ScholarshipPosting Inner Join CareerCluster ON ScholarshipPosting.CareerID=CareerCluster.CareerID;;"></asp:SqlDataSource>
+			
 
  		
 		
