@@ -606,7 +606,7 @@
 			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
 			    
   			<div class="p-4 bd-highlight">
-  			
+  			  	<asp:TextBox class="d-inline job-post-title" ID="lblJobPostingID" runat="server" Text='<%#Eval("JobPostingID")%>' Visible="false"></asp:TextBox>
   				<asp:Label class="d-inline job-post-title" ID="lblJobTitle" runat="server" Text='<%#Eval("JobTitle")%>' Font-Size="Larger"></asp:Label><br>
   				<div class="mt-3">
   				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
@@ -637,8 +637,8 @@
 							</div>	
 						  	<div>
 							  <!-- EDIT POST MODAL BTN -->
-								<button type="button" runat="server" ID="btnEdit" OnClick="btnEdit_Click" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" 
-                                    data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+								<button type="button" runat="server" ID="btnEdit" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top"> 
+                                <span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
                                 <asp:LinkButton ID="EditButton" runat="server" Text="editButton" CommandName="Edit"></asp:LinkButton>
                                   
  					  
@@ -661,18 +661,14 @@
 
         <EditItemTemplate>
           <tr style="background-color: #ADD8E6">
-            <td>
-              <asp:LinkButton ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />&nbsp;
-              <asp:LinkButton ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-            </td>
          
             <div class="card bg-white p-0 mt-3" style="height: 40vh;">
 			  <div class="row no-gutters h-100">
 			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
 			    
   			<div class="p-4 bd-highlight">
-  			
-  				<asp:TextBox class="d-inline job-post-title" ID="lblJobTitle" runat="server" Text='<%#Eval("JobTitle")%>' Font-Size="Larger"></asp:TextBox><br>
+  			    <asp:TextBox class="d-inline job-post-title" ID="lblJobPostingID" runat="server" Text='<%#Bind("JobPostingID")%>' Visible="false"></asp:TextBox>
+  				<asp:TextBox class="d-inline job-post-title" ID="lblJobTitle" runat="server" Text='<%#Bind("JobTitle")%>' Font-Size="Larger"></asp:TextBox><br>
   				<div class="mt-3">
   				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
   						 <h6 class="d-inline location-text">Staunton, Virginia </h6>
@@ -696,35 +692,41 @@
 			      <div class="card-body">
 		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
 		        			<div>
-		        				<asp:TextBox class="mr-1 badge badge-secondary" runat="server" ID="lblJobType" Text='<%#Eval("JobType")%>'></asp:TextBox><span>|</span>
-                                <asp:Label runat="server" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Eval("CareerClusterType")%>'></asp:Label><span>|   
+		        				<asp:TextBox class="mr-1 badge badge-secondary" runat="server" ID="lblJobType" Text='<%#Bind("JobType")%>'></asp:TextBox><span>|</span>
+                                <asp:Label runat="server" ID="lblCareerCluster" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Bind("CareerClusterType")%>'></asp:Label><span>|   
                                 </span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
 							</div>	
 						  	<div>
-							  <!-- EDIT POST MODAL BTN -->
-								<button type="button" runat="server" ID="btnEdit" OnClick="btnEdit_Click" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" 
-                                    data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
-                                <asp:LinkButton ID="EditButton" runat="server" Text="editButton" CommandName="Edit"></asp:LinkButton>
-                                  
- 					  
-  							    							  
-  							  <!--DELETE POST MODAL BTN -->
- 						      <button type="button" runat="server" data-toggle="modal" class="deleteBtn pl-0 align-top" data-target="#deleteModal">
-                                   <span class="x-icon xicon"> <i data-feather="x"></i></span></button>
+				<!-- EDIT POST MODAL BTN -->
+                        <asp:LinkButton ID="LinkButtonEditPost" runat="server" CommandName="Update" Text="Update" CssClass="p-0  ml-4 mr-2 align-top" />&nbsp;                                  
+ 					  					    							  
+  	            <!--DELETE POST MODAL BTN -->
+                         <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Cancel" Text="Cancel"  CssClass="deleteBtn pl-0 align-top"/>
  						      
  							</div>
 	        	</div>
 		        
-			        <asp:Label runat="server" class="card-text" ID="lblDescription" Text='<%#Eval("Description")%>' Font-Size="Large"></asp:Label><br /><br /><br />
+			        <asp:TextBox runat="server" class="card-text" ID="lblDescription" Text='<%#Bind("Description")%>' Font-Size="Large"></asp:TextBox><br /><br /><br />
 			        <p class="card-text"><small class="text-muted">Application Due: June 09, 2019</small></p>
 			      </div>
 			    </div>
 			  </div>
 			</div>
+
         </EditItemTemplate>
 
      </asp:ListView>
-   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID;"></asp:SqlDataSource>
+
+   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" 
+       SelectCommand="select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID;" 
+       UpdateCommand="UPDATE JobPosting Set [JobTitle]=@JobTitle, [JobType]=@JobType, [Description]=@Description WHERE [JobPostingID]=@JobPostingID;">
+        <UpdateParameters>
+            <asp:Parameter Name="JobTitle" Type="String" />
+            <asp:Parameter Name="JobType" Type="String" />
+            <asp:Parameter Name="Description" Type="String" />
+            <asp:Parameter Name="JobPostingID" Type="Int32" />
+        </UpdateParameters>
+   </asp:SqlDataSource>
 			
 		<!---- LEARNING OPPORTUNITY POST EXAMPLE ---->
          <asp:ListView ID="ListViewLearning" runat="server"  DataSourceID="SqlDataSource2">
