@@ -157,7 +157,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="messages.aspx">
+                <a class="nav-link nav-link-side" href="archive.html">
                   <i data-feather="archive"></i>
 					<span class="nav-txt">Archive</span>
                 </a>
@@ -231,7 +231,7 @@
 			</div>
 		</div>
 
-		
+		<!-- NEW APPLICATIONS -->
 		<div class="row h-100 mt-4">
 			<div class="bg-white col br-8 p-3 mb-3 draggable" id="newapps" ondrop="drop(event)" ondragover="allowDrop(event)">
 			<h3>New Applications</h3>
@@ -262,7 +262,7 @@
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/9/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
-						  <button class="btn dropdown-toggle mt-1 app-action-btn-green" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <button class="btn dropdown-toggle mt-1 app-action-btn-green" type="button" onclick="window.location.href = 'applications/002.html';"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						   	  <i data-feather="eye"></i>
 						  </button>
 
@@ -279,7 +279,7 @@
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/9/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
-						  <button class="btn dropdown-toggle mt-1 app-action-btn-green" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <button class="btn dropdown-toggle mt-1 app-action-btn-green" type="button" onclick="window.location.href = 'applications/003.html';" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						   	  <i data-feather="eye"></i>
 						  </button>
 
@@ -290,7 +290,33 @@
 				 
 				  </ul>
 				
-			</div>		
+			</div>	
+			
+			<!-- REVIEWED APPLICATIONS -->
+			
+			<!-- Modal -->
+				<div class="modal fade" id="markModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Update Application Status</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body text-center">
+			             <button type="button" class="btn btn-maingreen btn-lg m-3">Schedule an Interview</button>
+				        <button type="button" class="btn btn-mainblue btn-lg m-3" data-dismiss="modal">Extend an Offer</button>
+				        <button type="button" class="btn btn-lightblue btn-lg m-3">Move to Archive</button>
+					  </div>
+			          <div class="modal-footer">
+				        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+			
+					
 			<div class="bg-white col br-8 p-3 mr-4 ml-3 mb-3 droppable" ondrop="drop(event)" id="reviewedapps" ondragover="allowDrop(event)">
 						<h3>Reviewed Applications</h3>
 						<ul id="sortable2" class="connectedSortable list-unstyled">
@@ -303,7 +329,7 @@
 									<p class="mb-0 font-weight-bold active-blue app-info">Part-Time Assistant <span class="text-black-50 font-weight-light">| Submitted: 4/10/19</span></p>
 									</div>
 									<div class="dropdown w-25 text-right action-drop">
-									  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="modal" data-target="#markModal" aria-haspopup="true" aria-expanded="false">
 									   	  <i data-feather="eye"></i>
 									  </button>
 			
@@ -319,7 +345,7 @@
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/10/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
-						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="modal" data-target="#markModal" aria-haspopup="true" aria-expanded="false">
 						   	  <i data-feather="eye"></i>
 						  </button>
 
@@ -336,7 +362,7 @@
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/11/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
-						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button" data-toggle="modal" data-target="#markModal" aria-haspopup="true" aria-expanded="false">
 						   	  <i data-feather="eye"></i>
 						  </button>
 
@@ -353,7 +379,7 @@
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/11/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
-						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="modal" data-target="#markModal" aria-haspopup="true" aria-expanded="false">
 						   	  <i data-feather="eye"></i>
 						  </button>
 
@@ -369,7 +395,7 @@
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/13/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
-						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button" data-toggle="modal" data-target="#markModal" aria-haspopup="true" aria-expanded="false">
 						   	  <i data-feather="eye"></i>
 						  </button>
 
@@ -385,7 +411,7 @@
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/14/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
-						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button" data-toggle="modal" data-target="#markModal" aria-haspopup="true" aria-expanded="false">
 						   	  <i data-feather="eye"></i>
 						  </button>
 
@@ -401,7 +427,7 @@
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/14/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
-						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						  <button class="btn dropdown-toggle mt-1 app-action-btn-grey" type="button"  data-toggle="modal" data-target="#markModal" aria-haspopup="true" aria-expanded="false">
 						   	  <i data-feather="eye"></i>
 						  </button>
 

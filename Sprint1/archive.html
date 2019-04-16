@@ -174,8 +174,8 @@
 		 <!---- Timeline ---->
 		<div class="col-10 mt-4" id="applications">
 		<div class="container br-8">
-		<div class="row mb-3 w-100 p-2 br-8 bg-white">
-			<span class="text-black d-inline align-center pt-2 ml-2 mr-3 font-weight-bold">Sort By:</span>
+		<div class="row mb-3 w-100 p-2 br-8 bg-white d-flex justify-content-start">
+			<span class="text-black d-inline align-center pt-2 ml-2 mr-3 font-weight-bold">Filter By:</span>
 			<select class="custom-select d-inline w-auto mr-3" id="inputGroupSelect01">
  			  <option selected>Posting Type</option>
  			  <option value="1">Job Opportunity</option>
@@ -183,39 +183,43 @@
  			  <option value="3">Scholarship</option>
  			</select>
  			<select class="custom-select d-inline w-25">
-				   <option>Career Cluster</option>
-				   <option>Agriculture, Food and Natural Resources</option>
-				   <option>Architecture and Construction</option>
-				   <option>Business Management and Administration</option>
-				   <option>Education and Training</option>
-				   <option>Finance</option>
-				   <option>Government and Public Administration</option>
-				   <option>Health Science</option>
-				   <option>Hospitality & Tourism</option>
-				   <option>Human Services</option>
-				   <option>Information Technology</option>
-				   <option>Law, Public Safety, Corrections and Security</option>
-				   <option>Manufacturing</option>
-				   <option>Marketing</option>
-				   <option>Science, Technology, Engineering and Mathematics</option>											 
-				   <option>Transportation, Distribution and Logistics</option>
+				   <option>Application Type</option>
+				   <option>Offer Accepted</option>
+				   <option>Offer Rejected</option>
+				   <option>Application Rejected</option>
 			 </select>
 			 <select class="custom-select d-inline w-auto ml-3" >
- 			  <option selected>Posting Name</option>
+ 			  <option selected>Posting Title</option>
  			  <option value="1">Summer Intern</option>
  			  <option value="2">Marketing Assistant</option>
  			  <option value="3">Part Time Assistant</option>
  			  <option value="4">Marketing Shadowing</option>
  			</select>
- 			<div class="form-group mb-0 ml-3 mr-3 text-right d-flex">
-  				  <span class="x-search xicon"> <i data-feather="search"></i></span><input type="search" class="form-control min-imput" id="archivesearch" aria-describedby="search" placeholder="Title or Keywords" >
-  			</div>
+ 			<span class="text-black d-inline align-center pt-2 ml-5 mr-3 font-weight-bold">Sort By:</span>
+			<div class="dropdown ml-1">
+			  <a class="btn dropdown-toggle btn-mainblue-outline" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <i data-feather="list"></i>
+			  </a>
+			
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+			    <a class="dropdown-item" href="#">A-Z</a>
+			    <a class="dropdown-item" href="#">Z-A</a>
+			    <a class="dropdown-item" href="#">Newest-Oldest</a>
+			    <a class="dropdown-item" href="#">Oldest-Newest</a>
+			  </div>
+			</div>
 		</div>
 
 		<div class="row h-100 mt-4">
 			
 			<div class="bg-white col br-8 p-3 mr-4 mb-3 droppable" ondrop="drop(event)" id="reviewedapps" ondragover="allowDrop(event)">
-						<h3>Archived Applications</h3>
+						<div class="d-flex justify-content-between">
+							<h3 class="text-maingreen">Archived Applications</h3>
+							<div class="d-flex">
+							<span class="x-search xicon"> <i data-feather="search" class="d-inline"></i></span><input type="search" class="form-control min-imput d-inline" id="archivesearch" aria-describedby="search" placeholder="Title or Keywords" >
+							</div>
+						</div>
+						
 						<ul id="sortable2" class="connectedSortable list-unstyled">
 						  		<li class="ui-state-default mt-1 card br-8 app-card">
 					
@@ -239,7 +243,7 @@
   					<div class="card-body br-8 p-2 pl-4 bg-light justify-content-between d-flex">
   						<div class="w-75 pt-2">
    						<p class="font-weight-bold mb-2 mt-2 app-name d-inline align-top">Mark Tesswater</p> 
-   						<span class="badge badge-secondary d-inline referred align-top bg-grey-50" data-toggle="tooltip" data-placement="bottom" title="Lakeside Middle School">Referred By: Mary Reilley </span>
+   						<span class="badge d-inline referred align-top bg-grey-50" data-toggle="tooltip" data-placement="bottom" title="Lakeside Middle School">Referred By: Mary Reilley </span>
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/9/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
@@ -256,7 +260,7 @@
   					<div class="card-body br-8 p-2 pl-4 bg-light justify-content-between d-flex">
   						<div class="w-75 pt-2">
    						<p class="font-weight-bold mb-2 mt-2 app-name d-inline align-top">Christy Greene</p> 
-   						<span class="badge badge-secondary d-inline referred align-top bg-grey-50" data-toggle="tooltip" data-placement="bottom" title="James Harris Middle School">Referred By: Justin Dunkirk </span>
+   						<span class="badge d-inline referred align-top bg-grey-50" data-toggle="tooltip" data-placement="bottom" title="James Harris Middle School">Referred By: Justin Dunkirk </span>
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/9/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
@@ -289,7 +293,7 @@
   					<div class="card-body br-8 p-2 pl-4 bg-light justify-content-between d-flex">
   						<div class="w-75 pt-2">
    						<p class="font-weight-bold mb-2 mt-2 app-name d-inline align-top">Angus Kassulke</p> 
-   						<span class="badge badge-secondary d-inline referred align-top bg-grey-50">Referred By: Mary Reilley </span>
+   						<span class="badge d-inline referred align-top bg-grey-50">Referred By: Mary Reilley </span>
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/10/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
@@ -306,7 +310,7 @@
   					<div class="card-body br-8 p-2 pl-4 bg-light justify-content-between d-flex">
   						<div class="w-75 pt-2">
    						<p class="font-weight-bold mb-2 mt-2 app-name d-inline align-top">Ashlynn Kessler</p> 
-   						<span class="badge badge-secondary d-inline referred align-top bg-grey-50">Referred By: Justin Dunkirk </span>
+   						<span class="badge d-inline referred align-top bg-grey-50">Referred By: Justin Dunkirk </span>
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/11/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
@@ -323,7 +327,7 @@
   					<div class="card-body br-8 p-2 pl-4 bg-light justify-content-between d-flex">
   						<div class="w-75 pt-2">
    						<p class="font-weight-bold mb-2 mt-2 app-name d-inline align-top">Katrine Larson</p> 
-   						<span class="badge badge-secondary d-inline referred align-top bg-grey-50">Referred By: Terrence Jenkins </span>
+   						<span class="badge d-inline referred align-top bg-grey-50">Referred By: Terrence Jenkins </span>
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/11/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
@@ -339,7 +343,7 @@
   					<div class="card-body br-8 p-2 pl-4 bg-light justify-content-between d-flex">
   						<div class="w-75 pt-2">
    						<p class="font-weight-bold mb-2 mt-2 app-name d-inline align-top">Anna May</p> 
-   						<span class="badge badge-secondary d-inline referred align-top bg-grey-50">Referred By: Justin Dunkirk </span>
+   						<span class="badge d-inline referred align-top bg-grey-50">Referred By: Justin Dunkirk </span>
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/13/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
@@ -355,7 +359,7 @@
   					<div class="card-body br-8 p-2 pl-4 bg-light justify-content-between d-flex">
   						<div class="w-75 pt-2">
    						<p class="font-weight-bold mb-2 mt-2 app-name d-inline align-top">Eileen Hauck</p> 
-   						<span class="badge badge-secondary d-inline referred align-top bg-grey-50">Referred By: Justin Dunkirk </span>
+   						<span class="badge d-inline referred align-top bg-grey-50">Referred By: Justin Dunkirk </span>
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/14/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
@@ -371,7 +375,7 @@
   					<div class="card-body br-8 p-2 pl-4 bg-light justify-content-between d-flex">
   						<div class="w-75 pt-2">
    						<p class="font-weight-bold mb-2 mt-2 app-name d-inline align-top">Chasity Harris</p> 
-   						<span class="badge badge-secondary d-inline referred align-top bg-grey-50">Referred By: Terrence Jenkins </span>
+   						<span class="badge d-inline referred align-top bg-grey-50">Referred By: Terrence Jenkins </span>
 						<p class="mb-0 font-weight-bold active-blue app-info">Summer Intern <span class="text-black-50 font-weight-light">| Submitted: 4/14/19</span></p>
 						</div>
 						<div class="dropdown w-25 text-right action-drop">
