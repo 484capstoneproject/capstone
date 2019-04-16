@@ -107,7 +107,7 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
-  				  <h2 class="bus-name-header mt-3">PB Mares</h2>
+  				  <h2 class="bus-name-header mt-3" runat="server" id="BusinessName">PB Mares</h2>
   				  
 					 <button id="editprofile" class="btn btn-link btn-edit-profile pl-0">
 					  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
@@ -193,14 +193,14 @@
 								  <form id="postingFormJobEdit" class="p-5 add-form">
 									<h3 class="pt-2 pb-2">Post Details</h3>
 									  <div class="form-group">
-										<label for="Job Title" class="font-weight-bold">Job Title</label>
-										<input type="jobtitle" class="form-control form-entry" aria-describedby="JobTitle" placeholder="Enter">
+										<label for="Job Title" class="font-weight-bold" runat="server">Job Title</label>
+										<input type="jobtitle" id="txtEditJobTitle" class="form-control form-entry" runat="server" aria-describedby="JobTitle" placeholder="Enter">
 									  </div>
 								  
 								    <div class="row pt-2 pb-3">
 								  	<div class="col">
 								 		 <label for="chooseJobType" class="font-weight-bold">Job Type</label>
-								  		 <select class="form-control w-75 mb-3 form-selector">
+								  		 <select class="form-control w-75 mb-3 form-selector" id="radioEditJobType" runat="server">
 											  <option class="font-sm">Part-Time</option>
 											  <option class="font-sm">Full Time</option>
 											  <option class="font-sm">Internship</option>
@@ -209,7 +209,7 @@
 								    <div class="col">
 									   <div class="form-group">
 											<label for="CareerCluster" class="font-weight-bold">Career Cluster</label>
-											<select class="form-control w-75 form-selector">
+											<select class="form-control w-75 form-selector" id="editCareerCluster" runat="server">
 											  <option>Select</option>
 											  <option>Agriculture, Food and Natural Resources</option>
 											  <option>Architecture and Construction</option>
@@ -248,7 +248,7 @@
 									   </div>  									 
 									  	<div class="form-group">
  										   <label for="exampleFormControlTextarea1">Description</label>
- 										   <textarea class="form-control form-entry-all-borders" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
+ 										   <textarea class="form-control form-entry-all-borders" id="txtEditDescription" runat="server" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
 									  </div> 
 									  <div class="form-group">
 											  <h5 class="pt-4">Edit Application Deadline</h5>
@@ -354,7 +354,7 @@
 						      </div>		
 						      <div class="modal-footer">
 						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green" data-dismiss="modal">Save changes</button>
+						        <asp:Button type="button" runat="server" class="btn bg-green" data-dismiss="modal" Text="Save Changes"></asp:Button>
 						      </div>
 						    </div>
 						  </div>
@@ -607,7 +607,7 @@
 			    
   			<div class="p-4 bd-highlight">
   			
-  				<asp:Label class="d-inline job-post-title" runat="server" Text='<%#Eval("JobTitle")%>' Font-Size="Larger"></asp:Label><br>
+  				<asp:Label class="d-inline job-post-title" ID="lblJobTitle" runat="server" Text='<%#Eval("JobTitle")%>' Font-Size="Larger"></asp:Label><br>
   				<div class="mt-3">
   				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
   						 <h6 class="d-inline location-text">Staunton, Virginia </h6>
@@ -625,32 +625,104 @@
  					<div class="card-footer">
  						<i data-feather="briefcase" class="mr-2"></i>Job Posting
   					</div>
-  			</div>
+  			</div>  
 		  </div>
 			    <div class="col-md-8 post-card-right">
 			      <div class="card-body">
 		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
 		        			<div>
-		        				<asp:Label class="mr-1 badge badge-secondary" runat="server" Text='<%#Eval("JobType")%>'></asp:Label><span>|</span><asp:Label runat="server" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Eval("CareerClusterType")%>'></asp:Label><span>|</span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
+		        				<asp:Label class="mr-1 badge badge-secondary" runat="server" ID="lblJobType" Text='<%#Eval("JobType")%>'></asp:Label><span>|</span>
+                                <asp:Label runat="server" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Eval("CareerClusterType")%>'></asp:Label><span>|   
+                                </span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
 							</div>	
 						  	<div>
 							  <!-- EDIT POST MODAL BTN -->
-								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+								<button type="button" runat="server" ID="btnEdit" OnClick="btnEdit_Click" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" 
+                                    data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+                                <asp:LinkButton ID="EditButton" runat="server" Text="editButton" CommandName="Edit"></asp:LinkButton>
+                                  
  					  
   							    							  
   							  <!--DELETE POST MODAL BTN -->
- 						      <button type="button" data-toggle="modal" class="deleteBtn pl-0 align-top" data-target="#deleteModal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
+ 						      <button type="button" runat="server" data-toggle="modal" class="deleteBtn pl-0 align-top" data-target="#deleteModal">
+                                   <span class="x-icon xicon"> <i data-feather="x"></i></span></button>
  						      
  							</div>
 	        	</div>
 		        
-			        <asp:Label runat="server" class="card-text" Text='<%#Eval("Description")%>' Font-Size="Large"></asp:Label><br /><br /><br />
+			        <asp:Label runat="server" class="card-text" ID="lblDescription" Text='<%#Eval("Description")%>' Font-Size="Large"></asp:Label><br /><br /><br />
 			        <p class="card-text"><small class="text-muted">Application Due: June 09, 2019</small></p>
 			      </div>
 			    </div>
 			  </div>
 			</div>
                 </ItemTemplate>
+
+
+        <EditItemTemplate>
+          <tr style="background-color: #ADD8E6">
+            <td>
+              <asp:LinkButton ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />&nbsp;
+              <asp:LinkButton ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+            </td>
+         
+            <div class="card bg-white p-0 mt-3" style="height: 40vh;">
+			  <div class="row no-gutters h-100">
+			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
+			    
+  			<div class="p-4 bd-highlight">
+  			
+  				<asp:TextBox class="d-inline job-post-title" ID="lblJobTitle" runat="server" Text='<%#Eval("JobTitle")%>' Font-Size="Larger"></asp:TextBox><br>
+  				<div class="mt-3">
+  				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
+  						 <h6 class="d-inline location-text">Staunton, Virginia </h6>
+  				</div>
+  			</div>
+  			
+  			<div class="p-2 bd-highlight"><div class="mt-0 ml-3">
+  						 <label class="switch align-top">
+								<input type="checkbox" class="d-block">
+						 		 <span class="slider round publish-toggle"></span>
+						 </label>
+								<p class="unpublished-text align-middle desc-text text-black-50" style="display:none;">Unpublished</p><p class="submitted-text align-middle published-text" style="display:block;">Published 3/4/19 1:30 p.m.</p>
+								</div></div>
+  			<div class="mt-auto w-100 bd-highlight bg-mainblue pl-1">
+ 					<div class="card-footer">
+ 						<i data-feather="briefcase" class="mr-2"></i>Job Posting
+  					</div>
+  			</div>  
+		  </div>
+			    <div class="col-md-8 post-card-right">
+			      <div class="card-body">
+		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
+		        			<div>
+		        				<asp:TextBox class="mr-1 badge badge-secondary" runat="server" ID="lblJobType" Text='<%#Eval("JobType")%>'></asp:TextBox><span>|</span>
+                                <asp:Label runat="server" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Eval("CareerClusterType")%>'></asp:Label><span>|   
+                                </span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
+							</div>	
+						  	<div>
+							  <!-- EDIT POST MODAL BTN -->
+								<button type="button" runat="server" ID="btnEdit" OnClick="btnEdit_Click" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" 
+                                    data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+                                <asp:LinkButton ID="EditButton" runat="server" Text="editButton" CommandName="Edit"></asp:LinkButton>
+                                  
+ 					  
+  							    							  
+  							  <!--DELETE POST MODAL BTN -->
+ 						      <button type="button" runat="server" data-toggle="modal" class="deleteBtn pl-0 align-top" data-target="#deleteModal">
+                                   <span class="x-icon xicon"> <i data-feather="x"></i></span></button>
+ 						      
+ 							</div>
+	        	</div>
+		        
+			        <asp:Label runat="server" class="card-text" ID="lblDescription" Text='<%#Eval("Description")%>' Font-Size="Large"></asp:Label><br /><br /><br />
+			        <p class="card-text"><small class="text-muted">Application Due: June 09, 2019</small></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+        </EditItemTemplate>
+
      </asp:ListView>
    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID;"></asp:SqlDataSource>
 			
@@ -701,8 +773,8 @@
 							</div>	
 						  	<div>
 							  <!-- EDIT POST MODAL BTN -->
-								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
- 					  
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editLearningModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+ 					            
   							    							  
   							  <!--DELETE POST MODAL BTN -->
  						      <button type="button" data-toggle="modal" class="deleteBtn pl-0 align-top" data-target="#deleteModal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
@@ -768,7 +840,7 @@
 							</div>	
 						  	<div>
 							  <!-- EDIT POST MODAL BTN -->
-								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editScholModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
  					  
   							    							  
   							  <!--DELETE POST MODAL BTN -->
@@ -1059,7 +1131,7 @@
 					            
 									<h3 class="pt-2 pb-2">Post Details</h3>
 									  <div class="form-group">
-										<label for="Job Title" class="font-weight-bold">Job Titless</label>
+										<label for="Job Title" class="font-weight-bold">Job Titles</label>
                                         <input type = "jobtitle" runat= "server" class="form-control form-entry" id="txtJobTitle" aria-describedby="JobTitle" placeholder="Enter" />
 									  </div>
 								  
@@ -1217,16 +1289,7 @@
 							       
 							  
 						   </div>
-						
-							 
-							 <!-- LEARNING FORM CONTENT -->
-								  
-							 
 					
-						 
-							 
-							 	   							       
-							   <!-- SCHOLARSHIP FORM CONTENT -->
 								  
 							 
 						
@@ -1244,11 +1307,7 @@
 						</div>
 				</form>	
 							
-							
-							
-							
-							
-							
+								
 							
   						    </div> <!---- Filter Row end div tag  ---->
 						</div> <!---- Filter Col end div tag  ---->
