@@ -25,7 +25,7 @@ $("#sidebar-btn").click(function(){
 	feather.replace();
 $( function() {
     $( "#sortable1, #sortable2" ).sortable({
-	  start: function( event, ui ) {
+	  update: function( event, ui ) {
 		  //Card Styling
 		  $("#sortable1 > li").addClass("new-app");
 		  $("#sortable1 > li").removeClass("reviewed-app");
