@@ -91,6 +91,40 @@ body, html {
     transform: scale(0.99);
 }
 
+.download-button {
+    display: inline-block;
+    border-radius: 7px;
+    padding: .4rem .4rem;
+    margin: 0;
+    text-decoration: none;
+    background: $greenblue;
+    color: #ffffff;
+    font-family: proxima-nova, sans-serif;
+	font-style: bold;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.download-button:hover,
+.download-button:focus {
+    background: #307477;
+}
+
+.download-button:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.download-button:active {
+    transform: scale(0.99);
+}
+
+
 
 .viewapp-button {
     display: inline-block;
@@ -590,7 +624,6 @@ footer{
 }
 /////////////
 
-
 .btn-edit-profile {
 	color: $dkgrey;
 	&:hover {
@@ -756,6 +789,150 @@ footer{
   .weekdays li, .days li {width: 12.2%;}
 }
 
+/****************************** Applications ********************************/
+
+
+	
+#applications {
+		margin-left: 18%;
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+.custom-select{
+	background-color: #eaeaea;
+	color: $dkgrey;
+	border: none;
+	&:focus{
+		box-shadow: none;
+	}
+}
+
+.applications-bg{
+	background-color:rgba(226,226,226,1.00);
+}
+
+.timeline {
+	background-image:url("../images/timelinebg.png");
+	background-repeat: no-repeat;
+	background-size: 100% 110%;
+	height: 130px;
+	vertical-align: center;
+	background-position: center;
+}
+
+.br-8{
+	border-radius: 8px;
+}
+
+.timeline-number{
+	color: white;
+	font-size: 70px;
+	line-height: 70px;
+}
+
+.app-name{
+	font-size: 20px;
+	line-height: 8px;
+}
+
+
+.new-app{
+	border-color: $maingreen;
+}
+
+.reviewed-app{
+	border-color: $ltgrey;
+}
+
+
+.app-action-btn-green{
+	color: $maingreen;
+		border: solid 1px $maingreen;
+		background-color: white;
+		&:hover{
+			color: white;
+			background-color: $maingreen;
+		}
+}
+
+.app-action-btn-grey{
+	color: $dkgrey;
+		border: solid 1px $dkgrey;
+		background-color: white;
+		&:hover{
+			color: white;
+			background-color: $dkgrey;
+		}
+}
+
+.referred{
+	font-weight: 200;
+	font-size: 10px;
+}
+
+.app-info{
+	line-height: 10px;
+	padding-bottom: 5px;
+}
+
+.bg-grey-50{
+	color: $greenblue;
+	margin-left: 10px;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+.outline-white{
+	border: solid 1px white;
+}
+.text-medblue {
+	color: $medblue;
+}
+
+
+	// INDIVIDUAL APPLICATIONS
+.bg-ltblue{
+	background-color: $ltblue;
+}
+
+.btn-lightblue{
+	background-color: $ltblue;
+	color: white;
+}
+
+.app-img{
+	height: 200px;
+	width: auto;
+}
+
+.text-ltblue{
+	color: $ltblue;
+}
+
+.app-header{
+	max-height: 200px;
+}
+
+.profile-background {
+	background-color: #fcfcfc;
+}
+
+.textcolor{
+	color: #35858e;
+}
+
+.line {
+	background-color: $dkgrey;
+	
+}
+
+.badge-color {
+	background-color: $medblue;
+	color: white;
+	margin-left: 5px;
+	padding: 6px;
+}
 /****************************** Analytics ********************************/
 
 .bg-lt-grey{
@@ -874,6 +1051,60 @@ footer{
 	}
 }
 
+.form-entry{
+	border-radius: 0px;
+	border: none;
+	border-bottom: solid 1px $maingreen;
+	&:focus{
+		box-shadow: none;
+	}
+}
+
+.form-selector{
+	background-color: none;
+	border: solid 2px $maingreen; 
+	color: $mainblue;
+}
+
+.form-entry-all-borders{
+	border-radius: 0px;
+	border: solid 1px $maingreen;
+	&:focus{
+		box-shadow: none;
+	}
+}
+
+.border-left-plain{
+	&:hover{
+	border-left-width: 1px;
+	}
+	background-color: $ltgrey;
+}
+
+.border-left-plain.active{
+		background-color: #f1f1f1!important;
+	border-bottom: none;
+	}
+
+.nav-border-none{
+	&:hover{
+	border-left-width: 0px;
+	}
+}
+
+.nav-tabs {
+	border-bottom: 0px;
+}
+
+.add-form{
+	border: solid thin $ltgrey;
+	border-top: none;
+	background-color: #f1f1f1;
+}
+
+.post-card-left {
+    background-color: lighten($ltgrey, 10%);
+}
 .post-card-left{
 	background-color: lighten($ltgrey, 10%);
 }
@@ -1182,15 +1413,3 @@ input:checked + .slider:before {
 		width: 950px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-

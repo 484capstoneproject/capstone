@@ -58,7 +58,7 @@
       <li class="nav-item">
         	<div class="dropdown">
   				<button class="dropdown-toggle nav-dropdown" type="button" id="navSettingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/avatar.png"></a>
+   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/PBMares.png"></a>
   				</button>
   				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navSettingMenu">
     				<button class="dropdown-item" type="button">Profile</button>
@@ -82,14 +82,15 @@
              <div class="profile-bar text-center">
              <table class="profile-table text-left">
   				<tr>
-  				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
+  				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
-  				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
-  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
+  				  <h2 class="bus-name-header" id="BusinessName" runat="server">PBMares</h2>
+  				  <a href="BusinessProfile.aspx" <p class="btn btn-link btn-edit-profile"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
+
   				  </td> 
 				 </tr>  				
 			</table>
-           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+           <asp:Button id="SignOut" type="submit" class="signout-button mr-2" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
            </div>
             <ul class="nav flex-column sidebar-links">
            
@@ -140,9 +141,9 @@
 		  <div class="col-10 bg-white">
 			  
 			  <div class=" ml-2 mt-2 row d-flex justify-content-between">
-				  <h3 class="text-maingreen">Analytics Opportunites</h3>
+				  <h3 class="text-mainblue">Analytics Opportunites</h3>
 				  <h1 class="invisible">Analytics</h1>
-				  <button type="button" class="mr-3 mt-1 mb-2 btn btn-secondary btn-md align-bottom" id="exportBtn"><a href="#" runat="server" onServerClick="ExportToExcel">Export Excel</a></button>
+				  <button type="button" class="mr-3 mt-1 mb-2 signout-button signout-button:hover" id="exportBtn"><a href="#" runat="server" onServerClick="ExportToExcel">Export Excel</a></button>
 			  </div>
 	
 			<div class='tableauPlaceholder' id='viz1554263138005' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_15541665870790&#47;Dashboard2&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='Dashboard_15541665870790&#47;Dashboard2' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Da&#47;Dashboard_15541665870790&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1554263138005');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='950px';vizElement.style.height='587px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>

@@ -26,22 +26,10 @@ $("#unflip-btn").click(function(){
     
 	//COLLAPSED VERSION
 	if($('#collapse-it').hasClass("sidebar-expanded")){
-        $( ".nav-item-side" ).animate({
-			borderLeft: "0px",
-			marginTop: "10px",
-			paddingBottom: "10px"
-		});
+
 		$( ".sidebar-active" ).css( "borderLeft", "0px" );
 		$( ".sidebar-active" ).css( "backgroundColor", "#434c55" );
 		$( ".sidebar-active" ).css( "color", "#83bf4a" );
-		$( ".nav-link-side" ).animate({
-			paddingTop: "8px",
-			marginLeft: "-5px",
-			paddingBottom: "15px"
-		});
-		$( "#postings" ).animate({
-			marginLeft: "10%",
-		});
 		$( ".nav-txt" ).fadeOut("100");
 		$("#collapse-it").addClass("collapsed-sidebar");
 		$("#collapse-it").removeClass("sidebar-expanded");
@@ -63,6 +51,9 @@ $("#unflip-btn").click(function(){
     	}, 800 );
 		$( "#signout-btn" ).css("textAlign", "center" ).css("paddingRight", "5px" );
 		$( ".btn-sign-out" ).css("marginLeft", "-10px" );
+		$("#applications").removeClass("col-10");
+		$("#applications").addClass("col-11");
+		$("#applications").css( "marginLeft", "10%" );
 	}
 	//EXPANDED VERSION
     else {
@@ -88,9 +79,9 @@ $("#unflip-btn").click(function(){
     	}, 800 );
 		$( ".sidebar-active" ).css( "borderLeft", "solid thick #83bf4a" );
 		$( ".sidebar-active" ).css( "backgroundColor", "#525d69" );
-		$( "#postings" ).animate({
-			marginLeft: "20%",
-		});
+		$("#applications").removeClass("col-11");
+		$("#applications").addClass("col-10");
+		$("#applications").css( "marginLeft", "18%" );
 	}   
 	});
 	
