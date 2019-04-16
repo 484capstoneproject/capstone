@@ -38,7 +38,7 @@ body, html {
   font-size: 11px;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
+  transition: background 250ms ease-in-out,  transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none; }
 
@@ -51,6 +51,34 @@ body, html {
   outline-offset: -4px; }
 
 .signout-button:active {
+  transform: scale(0.99); }
+
+.download-button {
+  display: inline-block;
+  border-radius: 7px;
+  padding: .4rem .4rem;
+  margin: 0;
+  text-decoration: none;
+  background: #35858e;
+  color: #ffffff;
+  font-family: proxima-nova, sans-serif;
+  font-style: bold;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out,  transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+.download-button:hover,
+.download-button:focus {
+  background: #307477; }
+
+.download-button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px; }
+
+.download-button:active {
   transform: scale(0.99); }
 
 .viewapp-button {
@@ -66,7 +94,7 @@ body, html {
   font-size: 14px;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out, transform 150ms ease;
+  transition: background 250ms ease-in-out,  transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none; }
 
@@ -575,7 +603,7 @@ footer {
   flex-flow: row wrap; }
 
 .custom-select {
-  background-color: #d6d7dd;
+  background-color: #eaeaea;
   color: #434c55;
   border: none; }
   .custom-select:focus {
@@ -615,16 +643,16 @@ footer {
   border: solid 1px #83bf4a;
   background-color: white; }
   .app-action-btn-green:hover {
-    color: #c4e0a8;
-    background-color: #9dcc70; }
+    color: white;
+    background-color: #83bf4a; }
 
 .app-action-btn-grey {
   color: #434c55;
   border: solid 1px #434c55;
   background-color: white; }
   .app-action-btn-grey:hover {
-    color: #7e8c99;
-    background-color: #596672; }
+    color: white;
+    background-color: #434c55; }
 
 .referred {
   font-weight: 200;
@@ -635,12 +663,16 @@ footer {
   padding-bottom: 5px; }
 
 .bg-grey-50 {
-  background-color: #aeaeae;
-  color: white;
-  margin-left: 10px; }
+  color: #35858e;
+  margin-left: 10px;
+  font-size: 10px;
+  font-weight: bold; }
 
 .outline-white {
   border: solid 1px white; }
+
+.text-medblue {
+  color: #4584b5; }
 
 .bg-ltblue {
   background-color: #94c8d5; }
@@ -654,6 +686,21 @@ footer {
 
 .app-header {
   max-height: 200px; }
+
+.profile-background {
+  background-color: #fcfcfc; }
+
+.textcolor {
+  color: #35858e; }
+
+.line {
+  background-color: #434c55; }
+
+.badge-color {
+  background-color: #4584b5;
+  color: white;
+  margin-left: 5px;
+  padding: 6px; }
 
 /****************************** Analytics ********************************/
 .bg-lt-grey {
