@@ -94,29 +94,6 @@ public partial class Postings : System.Web.UI.Page
     {
         /* Verifies that the control is rendered */
     }
-
-
-    protected void ListViewJob_ItemUpdating(object sender, ListViewUpdateEventArgs e)
-    {
-        TextBox editJobTitle = ListViewJob.Items[e.ItemIndex].FindControl("JobTitle") as TextBox;
-        TextBox editJobType = ListViewJob.Items[e.ItemIndex].FindControl("JobType") as TextBox;
-        TextBox editDescription = ListViewJob.Items[e.ItemIndex].FindControl("Description") as TextBox;
-        Label editJobPostingID = ListViewJob.Items[e.ItemIndex].FindControl("JobPostingID") as Label;
-
-        con.Open();
-        SqlCommand cmd = new SqlCommand("UPDATE JobPosting Set [JobTitle]=@JobTitle, [JobType]=@JobType, [Description]=@Description WHERE [JobPostingID]=@JobPostingID;");
-        cmd.CommandType = System.Data.CommandType.Text;
-        cmd.Connection = con;
-        cmd.Parameters.AddWithValue("@JobTitle", editJobTitle.Text);
-        cmd.Parameters.AddWithValue("@JobType", editJobType.Text);
-        cmd.Parameters.AddWithValue("@Description", editDescription.Text);
-        cmd.Parameters.AddWithValue("@JobPostingID", editJobPostingID.Text);
-        cmd.ExecuteNonQuery();
-        con.Close();
-
-
-        Response.Redirect("Postings.aspx");
-    }
 }
 
 

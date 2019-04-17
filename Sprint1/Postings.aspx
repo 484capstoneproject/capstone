@@ -198,7 +198,7 @@
 
  		
  		<!---- JOB POST EXAMPLE ---->
-          <asp:ListView ID="ListViewJob" runat="server"  DataSourceID="SqlDataSource1" OnItemUpdating="ListViewJob_ItemUpdating">
+          <asp:ListView ID="ListViewJob" runat="server"  DataSourceID="SqlDataSource1">
             <ItemTemplate>
 		 	<div class="card bg-white p-0 mt-3" style="height: 40vh;">
 			  <div class="row no-gutters h-100">
@@ -236,8 +236,8 @@
 							</div>	
 						  	<div>
 							  <!-- EDIT POST MODAL BTN -->
-								
-                                <asp:LinkButton ID="EditButton" runat="server" Text="editButton" CommandName="Edit"></asp:LinkButton>
+			                    <button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+<%--                                <asp:LinkButton ID="EditButton" runat="server" Text="editButton" CommandName="Edit"></asp:LinkButton>--%>
                                   
  					  
   							    							  
@@ -258,7 +258,6 @@
 
 
         <EditItemTemplate>
-          <tr style="background-color: #ADD8E6">
          
             <div class="card bg-white p-0 mt-3" style="height: 40vh;">
 			  <div class="row no-gutters h-100">
@@ -310,7 +309,6 @@
 			    </div>
 			  </div>
 			</div>
-
         </EditItemTemplate>
 
      </asp:ListView>
