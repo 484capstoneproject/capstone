@@ -187,22 +187,20 @@ public partial class Postings : System.Web.UI.Page
         string full = "";
         string intern = "";
 
-        if (fullTime.Checked)
+        if (FullTimeCheck.Checked)
         {
             full = "Full Time";
         }
-        if (partTime.Checked)
+        if (PartTimeCheck.Checked)
         {
             part = "Part-Time";
         }
-        if (internship.Checked)
+        if (InternCheck.Checked)
         {
             intern = "Internship";
         }
 
-
-      
-        if (fullTime.Checked)
+        if (FullTimeCheck.Checked)
         {
             ListViewJob.DataSourceID = null;
             ListViewLearning.DataSourceID = null;
@@ -210,7 +208,6 @@ public partial class Postings : System.Web.UI.Page
 
             con.Open();
             string jobType = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobType like @full OR JobType like @part OR JobType like @intern)";
-
 
             //job
             SqlDataAdapter dj = new SqlDataAdapter(jobType, con);
@@ -226,10 +223,9 @@ public partial class Postings : System.Web.UI.Page
             ListViewJob.DataSource = ds.Tables["JobPost"];
             ListViewJob.DataBind();
 
-
-
             con.Close();
         }
+
         else
         {
             ListViewJob.DataSourceID = "SqlDataSource1";

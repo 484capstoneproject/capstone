@@ -471,8 +471,8 @@
   	<!-- Muuri <script src="https://unpkg.com/muuri@0.7.1/dist/muuri.min.js"></script> -->
    
    <!-- custom JS -->
-   <script src="../Sprint1/js/custom.js"></script>   
-   <script src="../Sprint1/js/dragndrop.js"></script>
+   <script src="js/custom.js"></script>   
+   <script src="js/dragndrop.js"></script>
 
 
     <!-- Icons -->

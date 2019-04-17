@@ -431,9 +431,9 @@
 							</form>--%>
                              <input  runat= "server"  id="Text1"  placeholder="Keyword" />
                         <asp:Button type="button" Text="Search Post"  OnClick="BtnSearch_Click" runat="server"></asp:Button>
-                        <asp:CheckBox ID="fullTime" Text="Full-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true" />
+                        <%--<asp:CheckBox ID="fullTime" Text="Full-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true" />
                             <asp:CheckBox ID="partTime" Text="Part-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
-                            <asp:CheckBox ID="internship" Text="Internship" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
+                            <asp:CheckBox ID="internship" Text="Internship" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>--%>
                     <!---- Career Clusters---->
 						<div class="accordion mt-3" id="accordionExample">
 							<div class="card">
@@ -456,7 +456,7 @@
 							 		 <div class="col card-body cluster-list">
 										
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="">
+                                                          <asp:CheckBox ID="Agriculture" runat="server"/>
 														  <label class="form-check-label" for="CareerCheck1">
 															Agriculture, Food, and Natural Resources
 														  </label>
@@ -464,7 +464,7 @@
 
 
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" id="CareerCheck2">
+                                                          <asp:CheckBox ID="Architecture" runat="server" />
 														  <label class="form-check-label" for="CareerCheck2">
 															Architecture and Construction
 														  </label>
@@ -472,14 +472,16 @@
 
 
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" >
+                                                          <asp:CheckBox ID="Arts" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
 														  <label class="form-check-label" for="CareerCheck3">
 															Arts, Audio/Video Technology, and Communications
 														  </label>
 														</div>
 												  
 												  		<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" >
+                                                          <asp:CheckBox ID="Business" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
 														  <label class="form-check-label" for="CareerCheck1">
 															Business, Management, and Administration
 														  </label>
@@ -487,7 +489,8 @@
 
 
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" >
+                                                          <asp:CheckBox ID="Education" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
 														  <label class="form-check-label" for="CareerCheck2">
 															Education and Training
 														  </label>
@@ -495,21 +498,24 @@
 
 
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="">
+                                                          <asp:CheckBox ID="Finance" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="">--%>
 														  <label class="form-check-label" for="CareerCheck3">
 															Finance
 														  </label>
 														</div>
 												  
 												  		<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" >
+                                                          <asp:CheckBox ID="Government" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
 														  <label class="form-check-label" for="CareerCheck1">
 															Government and Public Administration
 														  </label>
 														</div>
 
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" >
+                                                          <asp:CheckBox ID="Health" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
 														  <label class="form-check-label" for="CareerCheck2">
 															Health Science
 														  </label>
@@ -518,56 +524,64 @@
 									
 														
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" >
+                                                          <asp:CheckBox ID="Hospital" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
 														  <label class="form-check-label" for="CareerCheck3">
 															Hospitality and Tourism
 														  </label>
 														</div>
 													 
 													 	<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="">
+                                                          <asp:CheckBox ID="Human" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="">--%>
 														  <label class="form-check-label" for="CareerCheck1">
 															Human Services
 														  </label>
 														</div>
 
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="">
+                                                          <asp:CheckBox ID="IT" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="">--%>
 														  <label class="form-check-label" for="CareerCheck2">
 															Information Technology
 														  </label>
 														</div>
 
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" >
+                                                          <asp:CheckBox ID="Law" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
 														  <label class="form-check-label" for="CareerCheck3">
 															Law, Public Safety, Corrections, and Security
 														  </label>
 														</div>
 													 
 													 <div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" >
+                                                         <asp:CheckBox ID="Manufacturing" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
 														  <label class="form-check-label" for="CareerCheck3">
 															Manufacturing
 														  </label>
 														</div>
 													 
 													 	<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="" >
+                                                          <asp:CheckBox ID="Marketing" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
 														  <label class="form-check-label" for="CareerCheck1">
 															Marketing, Sales, and Service
 														  </label>
 														</div>
 
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="">
+                                                          <asp:CheckBox ID="Science" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="">--%>
 														  <label class="form-check-label" for="CareerCheck2">
 															Science, Technology, Engineering, and Mathematics
 														  </label>
 														</div>
 
 														<div class="form-check">
-														  <input class="form-check-input" type="checkbox" value="">
+                                                          <asp:CheckBox ID="Transportation" runat="server" />
+<%--														  <input class="form-check-input" type="checkbox" value="">--%>
 														  <label class="form-check-label" for="CareerCheck3">
 															Transportation, Distribution, and Logistics
 														  </label>
@@ -611,35 +625,35 @@
   	  					
 								<!---- Now Type Check boxes---->
 								<div class="form-check mt-3">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck1">
+									  <asp:CheckBox ID="FullTimeCheck" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
 									  <label class="form-check-label" for="TypeCheck1">
 										Full Time
 									  </label>
 									</div>
 								
 									<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck2">
+									  <asp:CheckBox runat="server" ID="PartTimeCheck" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
 									  <label class="form-check-label" for="TypeCheck2">
 										Part Time
 									  </label>
 									</div>
 								
 								<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck3">
+									  <asp:CheckBox runat="server" ID="InternCheck" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
 									  <label class="form-check-label" for="TypeCheck3">
 										Internship
 									  </label>
 									</div>
 								
 								<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck4">
+									  <asp:CheckBox runat="server" ID="ShadowCheck" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
 									  <label class="form-check-label" for="TypeCheck4">
 										Shadowing Opportunity
 									  </label>
 									</div>
 								
 								<div class="form-check">
-									  <input class="form-check-input" type="checkbox" value="" id="TypeCheck5">
+									  <asp:CheckBox runat="server" ID="ScholarshipCheck" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
 									  <label class="form-check-label" for="TypeCheck5">
 										Scholarship
 									  </label>
