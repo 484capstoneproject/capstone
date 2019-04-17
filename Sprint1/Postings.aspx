@@ -120,31 +120,31 @@
             <ul class="nav flex-column sidebar-links">
            
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="dashboard.aspx">
+                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="applications.aspx">
+                <a class="nav-link nav-link-side" href="Applications.aspx">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="postings.aspx">
+                <a class="nav-link nav-link-side sidebar-active" href="Postings.aspx">
                  <span class="white-icon"><i data-feather="clipboard"></i></span> 
 					<span class="nav-txt sidebartext-active">Postings</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="analytics.aspx">
+                <a class="nav-link nav-link-side" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="calendar.aspx">
+                <a class="nav-link nav-link-side" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>
@@ -156,6 +156,12 @@
                     <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
+            <li class="nav-item-side">
+                 <a class="nav-link nav-link-side" href="Archive.html">
+                <i data-feather="archive"></i>
+			    <span class="nav-txt">Archive</span>
+                </a>
+            </li>
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
 			</div>
@@ -237,7 +243,7 @@
 						  	<div>
 							  <!-- EDIT POST MODAL BTN -->
 								
-                                <asp:LinkButton ID="EditButton" runat="server" Text="editButton" CommandName="Edit"></asp:LinkButton>
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
                                   
  					  
   							    							  
@@ -254,64 +260,7 @@
 			    </div>
 			  </div>
 			</div>
-                </ItemTemplate>
-
-
-        <EditItemTemplate>
-          <tr style="background-color: #ADD8E6">
-         
-            <div class="card bg-white p-0 mt-3" style="height: 40vh;">
-			  <div class="row no-gutters h-100">
-			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
-			    
-  			<div class="p-4 bd-highlight">
-  			    <asp:TextBox class="d-inline job-post-title" ID="lblJobPostingID" runat="server" Text='<%#Bind("JobPostingID")%>' Visible="false"></asp:TextBox>
-  				<asp:TextBox class="d-inline job-post-title" ID="lblJobTitle" runat="server" Text='<%#Bind("JobTitle")%>' Font-Size="Larger"></asp:TextBox><br>
-  				<div class="mt-3">
-  				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
-  						 <h6 class="d-inline location-text">Staunton, Virginia </h6>
-  				</div>
-  			</div>
-  			
-  			<div class="p-2 bd-highlight"><div class="mt-0 ml-3">
-  						 <label class="switch align-top">
-								<input type="checkbox" class="d-block">
-						 		 <span class="slider round publish-toggle"></span>
-						 </label>
-								<p class="unpublished-text align-middle desc-text text-black-50" style="display:none;">Unpublished</p><p class="submitted-text align-middle published-text" style="display:block;">Published 3/4/19 1:30 p.m.</p>
-								</div></div>
-  			<div class="mt-auto w-100 bd-highlight bg-mainblue pl-1">
- 					<div class="card-footer">
- 						<i data-feather="briefcase" class="mr-2"></i>Job Posting
-  					</div>
-  			</div>  
-		  </div>
-			    <div class="col-md-8 post-card-right">
-			      <div class="card-body">
-		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
-		        			<div>
-		        				<asp:TextBox class="mr-1 badge badge-secondary" runat="server" ID="lblJobType" Text='<%#Bind("JobType")%>'></asp:TextBox><span>|</span>
-                                <asp:Label runat="server" ID="lblCareerCluster" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Bind("CareerClusterType")%>'></asp:Label><span>|   
-                                </span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
-							</div>	
-						  	<div>
-				<!-- EDIT POST MODAL BTN -->
-                        <asp:LinkButton ID="LinkButtonEditPost" runat="server" CommandName="Update" Text="Update" CssClass="p-0  ml-4 mr-2 align-top"/>&nbsp;                                  
- 					  					    							  
-  	            <!--DELETE POST MODAL BTN -->
-                         <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Cancel" Text="Cancel"  CssClass="deleteBtn pl-0 align-top"/>
- 						      
- 							</div>
-	        	</div>
-		        
-			        <asp:TextBox runat="server" class="card-text" ID="lblDescription" Text='<%#Bind("Description")%>' Font-Size="Large"></asp:TextBox><br /><br /><br />
-			        <p class="card-text"><small class="text-muted">Application Due: June 09, 2019</small></p>
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
-        </EditItemTemplate>
+                </ItemTemplate>  
 
      </asp:ListView>
 

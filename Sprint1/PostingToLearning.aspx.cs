@@ -121,6 +121,8 @@ public partial class PostingToLearning : System.Web.UI.Page
         Response.Redirect("Postings.aspx");
     }
 
+
+
     //protected void BtnUpdate_Click(object sender, EventArgs e)
     //{
     //    int LoginEntityID = (int)Session["EntityID"];

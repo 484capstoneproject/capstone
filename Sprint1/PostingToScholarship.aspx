@@ -123,41 +123,47 @@
             <ul class="nav flex-column sidebar-links">
            
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="dashboard.aspx">
+                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="applications.aspx">
+                <a class="nav-link nav-link-side" href="Applications.aspx">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="postings.aspx">
+                <a class="nav-link nav-link-side sidebar-active" href="Postings.aspx">
                  <span class="white-icon"><i data-feather="clipboard"></i></span> 
 					<span class="nav-txt sidebartext-active">Postings</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="analytics.aspx">
+                <a class="nav-link nav-link-side" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="calendar.aspx">
+                <a class="nav-link nav-link-side" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="messages.aspx">
+                <a class="nav-link nav-link-side" href="BusinessMessage.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
                 </a>
               </li>
+                 <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Archive.html">
+                    <i data-feather="archive"></i>
+				    <span class="nav-txt">Archive</span>
+                </a>
+            </li>
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
 			</div>
@@ -170,518 +176,7 @@
 		 <!---- Postings ---->
 		
   		<div class="col-6 mt-4" id="postings">
-
-		    <!-- Edit JOB Modal -->
-					<div class="modal fade" id="editJobModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-						  <div class="modal-dialog modal-lg" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <h5 class="modal-title" id="editModalLabel">Edit Post</h5>
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						          <span aria-hidden="true">&times;</span>
-						        </button>
-						      </div>
-						       <div class="modal-body p-3">
-								<div class="p-3">			 
-								<ul class="nav nav-tabs" role="tablist">
-						   <li class="nav-item">
-						     <a class="nav-link active border-left-plain" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Job Opportunity</a>
-						   </li>
-						</ul>
-						 	<div class="tab-content border-left-plain" >
-						   <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="home-tab">
-							
-							  <!-- JOB FORM CONTENT -->
-								  <form id="postingFormJobEdit" class="p-5 add-form">
-									<h3 class="pt-2 pb-2">Post Details</h3>
-									  <div class="form-group">
-										<label for="Job Title" class="font-weight-bold">Job Title</label>
-										<input type="jobtitle" class="form-control form-entry" aria-describedby="JobTitle" placeholder="Enter">
-									  </div>
-								  
-								    <div class="row pt-2 pb-3">
-								  	<div class="col">
-								 		 <label for="chooseJobType" class="font-weight-bold">Job Type</label>
-								  		 <select class="form-control w-75 mb-3 form-selector">
-											  <option class="font-sm">Part-Time</option>
-											  <option class="font-sm">Full Time</option>
-											  <option class="font-sm">Internship</option>
-								  		 </select>
-								    </div>
-								    <div class="col">
-									   <div class="form-group">
-											<label for="CareerCluster" class="font-weight-bold">Career Cluster</label>
-											<select class="form-control w-75 form-selector">
-											  <option>Select</option>
-											  <option>Agriculture, Food and Natural Resources</option>
-											  <option>Architecture and Construction</option>
-											  <option>Business Management and Administration</option>
-											  <option>Education and Training</option>
-											  <option>Finance</option>
-											  <option>Government and Public Administration</option>
-											  <option>Health Science</option>
-											  <option>Hospitality & Tourism</option>
-											  <option>Human Services</option>
-											  <option>Information Technology</option>
-											  <option>Law, Public Safety, Corrections and Security</option>
-											  <option>Manufacturing</option>
-											  <option>Marketing</option>
-											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
-											</select>
-										  </div>
-									</div>
-									</div>  
-										<div class="form-group pt-1">
-											<label for="paymentType" class="font-weight-bold mr-3 mt-2">Payment Type: </label>
-									    	<div class="pt-2 d-inline">
-										    <div class="form-check form-check-inline" >
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option1">
-										      <label class="form-check-label" for="inlineRadio1">Salaried</label>
-										    </div>
-										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option2">
-										      <label class="form-check-label" for="inlineRadio2">Hourly</label>
-										    </div>
-										    <div class="form-check form-check-inline">
-										      <input class="form-check-input" type="radio" name="inlineRadioOptions" value="option3" >
-										      <label class="form-check-label" for="inlineRadio3">Unpaid</label>
-										    </div>
-											</div>
-									   </div>  									 
-									  	<div class="form-group">
- 										   <label for="exampleFormControlTextarea1">Description</label>
- 										   <textarea class="form-control form-entry-all-borders" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
-									  </div> 
-									  <div class="form-group">
-											  <h5 class="pt-4">Edit Application Deadline</h5>
-										      <div class="row w-75">
-										      	<div class="col">
-											      <label for="selectMonth">Month</label>
-													<select class="form-control form-selector">
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
-													</select>
-										      	</div>
-										      	<div class="col">
-											      <label for="selectDay">Day</label>
-													<select class="form-control form-selector" >
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
-													</select>
-										      </div>
-										      <div class="col">
-											      <label for="selectYear">Year</label>
-													<select class="form-control form-selector" >
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
-													</select>
-											</div>
-									  		</div>
-									  
-									  </div>
-									  <hr class="mt-4 mb-4">
-									  <div class="form-group">
-									  <h3 class="pt-2 pb-2">Application Requirements</h3>
-									  	<div class="form-check">
-										  <input class="form-check-input" type="checkbox" value="" >
-										  <label class="form-check-label" for="defaultCheck1">
-										    Require a Résumé.
-										  </label>
-										  </div>
-										  <div class="form-check">
-										  <input class="form-check-input" type="checkbox" value="" >
-										  <label class="form-check-label" for="defaultCheck2">
-										    Applicants must be 18 years or older.
-										  </label>
-										</div>
-									  <div class="form-check">
-										  <input class="form-check-input" type="checkbox" value="" >
-										  <label class="form-check-label" for="defaultCheck2">
-										    Require References
-										  </label>
-										</div>
-   										  <label for="formGroupExampleInput" class="mt-4">Question Prompt (optional)</label>
-   										  <input type="text" class="form-control" placeholder="Ask a short question of applicants.">
-									  </div> 
-									
-							       </form>
-							       
-							  
-						   </div>
-			 
-						</div>
-								  
-						      </div>
-						      </div>		
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green" data-dismiss="modal">Save changes</button>
-						      </div>
-						    </div>
-						  </div>
-						</div>
-			<!-- Edit LEARN Modal -->
-					<div class="modal fade" id="editLearnModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-						  <div class="modal-dialog modal-lg" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <h5 class="modal-title" >Edit Post</h5>
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						          <span aria-hidden="true">&times;</span>
-						        </button>
-						      </div>
-						       <div class="modal-body p-3">
-								<div class="p-3">			 
-								<ul class="nav nav-tabs" role="tablist">
-						   <li class="nav-item">
-						     <a class="nav-link active border-left-plain" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Learning Opportunity</a>
-						   </li>
-						</ul>
-						 	<div class="tab-content border-left-plain" >
-							
-							       <div class="tab-pane show active fade" role="tabpanel" aria-labelledby="profile-tab">
-							 
-							 <!-- LEARNING FORM CONTENT -->
-								  <form id="postingFormLearnEdit" class="p-5 add-form">
-									<h3 class="pt-2">Post Details</h3>
-									  <div class="form-group">
-										<label for="learntitle" class="font-weight-bold">Learning Opportunity Title</label>
-										<input type="learntitle" class="form-control form-entry"  aria-describedby="learntitle" placeholder="Enter">
-									  </div>
-								  
-								  <div class="row pt-2 pb-3">
-								  	<div class="col">
-								 		 <label for="chooseOppType" class="font-weight-bold">Opportunity Type</label>
-								  		 <select class="form-control w-75 mb-3 form-selector" >
-											  <option>Shadowing</option>
-											  <option>Career Event</option>
-											  <option>Other</option>
-								  		 </select>
-								    </div>
-								    <div class="col">
-									   <div class="form-group">
-											<label for="CareerClusterLearn" class="font-weight-bold">Career Cluster</label>
-											<select class="form-control w-75 form-selector" >
-											  <option>Select</option>
-											  <option>Agriculture, Food and Natural Resources</option>
-											  <option>Architecture and Construction</option>
-											  <option>Business Management and Administration</option>
-											  <option>Education and Training</option>
-											  <option>Finance</option>
-											  <option>Government and Public Administration</option>
-											  <option>Health Science</option>
-											  <option>Hospitality & Tourism</option>
-											  <option>Human Services</option>
-											  <option>Information Technology</option>
-											  <option>Law, Public Safety, Corrections and Security</option>
-											  <option>Manufacturing</option>
-											  <option>Marketing</option>
-											  <option>Science, Technology, Engineering and Mathematics</option>											 <option>Transportation, Distribution and Logistics</option>
-											</select>
-										  </div>
-									</div>
-									</div>    									 
-									  	<div class="form-group">
- 										   <label for="descLearn" class="font-weight-bold">Description</label>
- 										   <textarea class="form-control form-entry"  rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
-									  </div> 
-									  <div class="form-group">
-											  <h5 class="pt-4">Application Deadline</h5>
-										      <div class="row w-75">
-										      	<div class="col">
-											      <label for="selectMonth" class="font-weight-bold">Month</label>
-													<select class="form-control form-selector" >
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
-													</select>
-										      	</div>
-										      	<div class="col">
-											      <label for="selectDay" class="font-weight-bold">Day</label>
-													<select class="form-control form-selector">
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
-													</select>
-										      </div>
-										      <div class="col">
-											      <label for="selectYear" class="font-weight-bold">Year</label>
-													<select class="form-control form-selector">
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
-													</select>
-											</div>
-									  		</div>
-									  
-									  </div> 
-									 <hr class="mt-4 mb-4">
-									  <div class="form-group">
-									  <h3 class="pt-2 pb-2">Application Requirements</h3>
-									  	<div class="form-check">
-										  <input class="form-check-input" type="checkbox" value="" >
-										  <label class="form-check-label" for="defaultCheck1">
-										    Require a Résumé.
-										  </label>
-										  </div>
-										  <div class="form-check">
-										  <input class="form-check-input" type="checkbox" value="" >
-										  <label class="form-check-label" for="defaultCheck2">
-										    Applicants must be 18 years or older.
-										  </label>
-										</div>
-									  <div class="form-check">
-										  <input class="form-check-input" type="checkbox" value="" >
-										  <label class="form-check-label" for="defaultCheck2">
-										    Require References
-										  </label>
-										</div>
-   										  <label for="formGroupExampleInput" class="mt-4">Question Prompt (optional)</label>
-   										  <input type="text" class="form-control" placeholder="Ask a short question of applicants.">
-									  </div>
-									
-							       </form>
-							 
-						  </div>
-							  
-			 
-						</div>
-								  
-						      </div>
-						      </div>		
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green" data-dismiss="modal">Save changes</button>
-						      </div>
-						    </div>
-						  </div>
-						</div>
-			<!-- Edit SCHOLARSHIP Modal -->
-					<div class="modal fade" id="editScholModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-						  <div class="modal-dialog modal-lg" role="document">
-						    <div class="modal-content">
-						      <div class="modal-header">
-						        <h5 class="modal-title" >Edit Post</h5>
-						        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						          <span aria-hidden="true">&times;</span>
-						        </button>
-						      </div>
-						       <div class="modal-body p-3">
-								<div class="p-3">			 
-								<ul class="nav nav-tabs" role="tablist">
-						   <li class="nav-item">
-						     <a class="nav-link active border-left-plain" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Learning Opportunity</a>
-						   </li>
-						</ul>
-						 	<div class="tab-content border-left-plain" >
-							
-							       <div class="tab-pane show active fade" role="tabpanel" aria-labelledby="profile-tab">
-							  <!-- SCHOLARSHIP FORM CONTENT -->
-								  <form id="postingFormScholarEdit" class="p-5 add-form">
-									<h3 class="pt-2">Scholarship Details</h3>
-									  <div class="form-group">
-										<label for="scholtitle" class="font-weight-bold">Scholarship Name</label>
-										<input type="scholtitle" class="form-control form-entry" aria-describedby="scholtitle" >
-									  </div>
-									  <div class="form-group">
-										<label for="scholamount" class="font-weight-bold">Amount</label>
-										<input type="scholamount" class="form-control form-entry" aria-describedby="scholamount" >
-									  </div>
-								  
-														 
-									  	<div class="form-group">
- 										   <label for="descSchol" class="font-weight-bold">Description</label>
- 										   <textarea class="form-control form-entry" rows="3" placeholder="Tell potential candidates about your posting. Be as descriptive as you can."></textarea>
-									  </div> 
-									  <div class="form-group">
-											  <h5 class="pt-4">Edit Application Deadline</h5>
-										      <div class="row w-75">
-										      	<div class="col">
-											      <label for="selectMonth">Month</label>
-													<select class="form-control form-selector">
-													  <option>January</option>       
-   													  <option>February</option>       
-   													  <option>March</option>       
-   													  <option>April</option>       
-   													  <option>May</option>       
-   													  <option>June</option>       
-   													  <option>July</option>       
-   													  <option>August</option>       
-   													  <option>September</option>       
-   													  <option>October</option>       
-   													  <option>November</option>       
-   													  <option>December</option> 
-													</select>
-										      	</div>
-										      	<div class="col">
-											      <label for="selectDay">Day</label>
-													<select class="form-control form-selector">
-													    <option>1</option>       
-   														<option>2</option>       
-   														<option>3</option>       
-   														<option>4</option>       
-   														<option>5</option>       
-   														<option>6</option>       
-   														<option>7</option>       
-   														<option>8</option>       
-   														<option>9</option>       
-   														<option>10</option>       
-   														<option>11</option>       
-   														<option>12</option>       
-   														<option>13</option>       
-   														<option>14</option>       
-   														<option>15</option>       
-   														<option>16</option>       
-   														<option>17</option>       
-   														<option>18</option>       
-   														<option>19</option>       
-   														<option>20</option>       
-   														<option>21</option>       
-   														<option>22</option>       
-   														<option>23</option>       
-   														<option>24</option>       
-   														<option>25</option>       
-   														<option>26</option>       
-   														<option>27</option>       
-   														<option>28</option>       
-   														<option>29</option>       
-   														<option>30</option>       
-   														<option>31</option>
-													</select>
-										      </div>
-										      <div class="col">
-											      <label for="selectYear">Year</label>
-													<select class="form-control form-selector">
-													    <option>2019</option>       
-   														<option>2020</option>       
-   														<option>2021</option>       
-   														<option>2022</option>       
-													</select>
-											</div>
-									  		</div>
-									  
-									  </div> 
-								 <hr class="mt-4 mb-4">
-								  <div class="form-group">
-									  <h3 class="pt-2 pb-2">Application Requirements</h3>
-									  	<div class="form-check">
-										  <input class="form-check-input" type="checkbox" value="" >
-										  <label class="form-check-label" for="defaultCheck1">
-										    Require a Résumé.
-										  </label>
-										  </div>
-										  <div class="form-check">
-										  <input class="form-check-input" type="checkbox" value="" >
-										  <label class="form-check-label" for="defaultCheck2">
-										    Applicants must be 18 years or older.
-										  </label>
-										</div>
-									  <div class="form-check">
-										  <input class="form-check-input" type="checkbox" value="" >
-										  <label class="form-check-label" for="defaultCheck2">
-										    Require References
-										  </label>
-										</div>
-   										  <label for="formGroupExampleInput" class="mt-4">Question Prompt (optional)</label>
-   										  <input type="text" class="form-control" placeholder="Ask a short question of applicants.">
-									  </div>
-							       </form>
-							 
-							 
-						  </div>
-							  
-			 
-						</div>
-								  
-						      </div>
-						      </div>		
-						      <div class="modal-footer">
-						        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						        <button type="button" class="btn bg-green" data-dismiss="modal">Save changes</button>
-						      </div>
-						    </div>
-						  </div>
-						</div>
-					
+				
 			<!-- Delete Modal -->
 					<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 									  <div class="modal-dialog modal-dialog-centered" role="document">
@@ -706,17 +201,19 @@
 			<div class="posting-row">
 				
 				
-		<!---- JOB POST TEMPLATE ---->
-		 	<div class="card bg-white p-0 mt-3 post-card jobCardTemplate" style="height: 40vh; display: none;">
+		<!---- JOB POST EXAMPLE ---->
+          <asp:ListView ID="ListViewJob" runat="server"  DataSourceID="SqlDataSource1">
+            <ItemTemplate>
+		 	<div class="card bg-white p-0 mt-3" style="height: 40vh;">
 			  <div class="row no-gutters h-100">
 			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
 			    
   			<div class="p-4 bd-highlight">
-  			
-  				<h3 class="d-inline job-post-title">Part Time Marketing Assistant</h3><br>
+  			  	<asp:TextBox class="d-inline job-post-title" ID="lblJobPostingID" runat="server" Text='<%#Eval("JobPostingID")%>' Visible="false"></asp:TextBox>
+  				<asp:Label class="d-inline job-post-title" ID="lblJobTitle" runat="server" Text='<%#Eval("JobTitle")%>' Font-Size="Larger"></asp:Label><br>
   				<div class="mt-3">
   				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
-  						 <h6 class="d-inline location-text">Harrisonburg, Virginia </h6>
+  						 <h6 class="d-inline location-text">Staunton, Virginia </h6>
   				</div>
   			</div>
   			
@@ -731,17 +228,157 @@
  					<div class="card-footer">
  						<i data-feather="briefcase" class="mr-2"></i>Job Posting
   					</div>
+  			</div>  
+		  </div>
+			    <div class="col-md-8 post-card-right">
+			      <div class="card-body">
+		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
+		        			<div>
+		        				<asp:Label class="mr-1 badge badge-secondary" runat="server" ID="lblJobType" Text='<%#Eval("JobType")%>'></asp:Label><span>|</span>
+                                <asp:Label runat="server" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Eval("CareerClusterType")%>'></asp:Label><span>|   
+                                </span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
+							</div>	
+						  	<div>
+							  <!-- EDIT POST MODAL BTN -->
+							<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>                        
+ 					  
+  							    							  
+  							  <!--DELETE POST MODAL BTN -->
+ 						      <button type="button" runat="server" data-toggle="modal" class="deleteBtn pl-0 align-top" data-target="#deleteModal">
+                                   <span class="x-icon xicon"> <i data-feather="x"></i></span></button>
+ 						      
+ 							</div>
+	        	</div>
+		        
+			        <asp:Label runat="server" class="card-text" ID="lblDescription" Text='<%#Eval("Description")%>' Font-Size="Large"></asp:Label><br /><br /><br />
+			        <p class="card-text"><small class="text-muted">Application Due: June 09, 2019</small></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+                </ItemTemplate>
+
+     </asp:ListView>
+
+   <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" 
+       SelectCommand="select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID;" >
+   </asp:SqlDataSource>
+			
+		<!---- LEARNING OPPORTUNITY POST EXAMPLE ---->
+         <asp:ListView ID="ListViewLearning" runat="server"  DataSourceID="SqlDataSource2">
+            <ItemTemplate>
+		 	<div class="card bg-white p-0 mt-3" style="height: 40vh;">
+			  <div class="row no-gutters h-100">
+			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
+			    
+  			<div class="p-4 bd-highlight">
+  			
+  				<asp:Label runat="server" class="d-inline job-post-title" Text='<%#Eval("LearningTitle")%>' Font-Size="Larger"></asp:Label><br>
+  				<div class="mt-3">
+  				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
+  						 <h6 class="d-inline location-text">Dayton, Virginia </h6>
+  				</div>
+  			</div>
+  			
+  			<div class="p-2 bd-highlight"><div class="mt-0 ml-3">
+  						 <label class="switch align-top">
+								<input type="checkbox" class="d-block">
+						 		 <span class="slider round publish-toggle"></span>
+						 </label>
+								<p class="unpublished-text align-middle desc-text text-black-50" style="display:none;">Unpublished</p><p class="submitted-text align-middle published-text" style="display:block;">Published 3/4/19 1:30 p.m.</p>
+								</div></div>
+  			<div class="mt-auto w-100 bd-highlight bg-medblue pl-1">
+ 					<div class="card-footer">
+ 					<table>
+ 					<tbody>
+ 						<tr>
+ 							<td>
+ 								<i data-feather="book" class="mr-2"></i>
+ 							</td>
+ 							<td>Learning Opportunity</td>
+ 						</tr>
+ 					</tbody>
+ 				</table>
+ 						
+  					</div>
   			</div>
 		  </div>
 			    <div class="col-md-8 post-card-right">
 			      <div class="card-body">
 		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
 		        			<div>
-		        				<span class="mr-1 badge badge-secondary">Part Time</span><span>|</span><span class=" badge badge-ltblue text-white ml-1 mr-1">Marketing</span><span>|</span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
+		        				<asp:Label runat="server" class="mr-1 badge badge-secondary" Text='<%#Eval("LearningType")%>'></asp:Label><span>|</span><asp:Label runat="server" class=" badge badge-ltblue text-white ml-1 mr-1" Text='<%#Eval("CareerClusterType")%>'></asp:Label><span>|</span><span class="ml-1 badge badge-maingreen text-white">Hourly Pay</span>						
 							</div>	
 						  	<div>
 							  <!-- EDIT POST MODAL BTN -->
-								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editJobModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editLearningModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
+ 					            
+  							    							  
+  							  <!--DELETE POST MODAL BTN -->
+ 						      <button type="button" data-toggle="modal" class="deleteBtn pl-0 align-top" data-target="#deleteModal"><span class="x-icon xicon"> <i data-feather="x"></i></span></button>
+ 						      
+ 							</div>
+	        	</div>
+		        
+			        <asp:Label runat="server" class="card-text" Text='<%#Eval("Description")%>'></asp:Label><br /><br />
+			        <p class="card-text"><small class="text-muted">Application Due: June 09, 2019</small></p>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+         </ItemTemplate>
+     </asp:ListView>
+   <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select learningposting.LearningTitle, LearningPosting.LearningType, LearningPosting.Description, CareerCluster.CareerClusterType from LearningPosting Inner Join CareerCluster ON LearningPosting.CareerID=CareerCluster.CareerID;;"></asp:SqlDataSource>
+			 	
+
+		<!---- SCHOLARSHIP POST EXAMPLE ---->
+        <asp:ListView ID="ListViewScholarship" runat="server"  DataSourceID="SqlDataSource3">
+          <ItemTemplate>
+            <div class="card bg-white p-0 mt-3" style="height: 40vh;">
+			  <div class="row no-gutters h-100">
+			    <div class="col-md-4 d-flex align-items-start flex-column bd-highlight post-card-left post-card-left">
+			    
+  			<div class="p-4 bd-highlight">
+  			
+  				<asp:Label runat="server" class="d-inline job-post-title" Text='<%#Eval("ScholarshipName")%>'></asp:Label><br>
+  				<div class="mt-3">
+  				<span class="navigation-icon editicon"> <i data-feather="navigation"></i></span>
+  						 <h6 class="d-inline location-text">Harrisonburg, Virginia </h6>
+  				</div>
+  			</div>
+  			
+  			<div class="p-2 bd-highlight"><div class="mt-0 ml-3">
+  						 <label class="switch align-top">
+								<input type="checkbox" class="d-block">
+						 		 <span class="slider round publish-toggle"></span>
+						 </label>
+								<p class="unpublished-text align-middle desc-text text-black-50" style="display:none;">Unpublished</p><p class="submitted-text align-middle published-text" style="display:block;">Published 3/4/19 1:30 p.m.</p>
+								</div></div>
+  			<div class="mt-auto w-100 bd-highlight bg-teal pl-1">
+ 					<div class="card-footer">
+ 					<table>
+ 					<tbody>
+ 						<tr>
+ 							<td>
+ 								<i data-feather="dollar-sign" class="mr-2"></i>
+ 							</td>
+ 							<td>Scholarship</td>
+ 						</tr>
+ 					</tbody>
+ 				</table>
+ 						
+  					</div>
+  			</div>
+		  </div>
+			    <div class="col-md-8 post-card-right">
+			      <div class="card-body">
+		        <div class="pt-0 justify-content-between d-flex w-100 mb-3">		
+		        			<div>
+		        				<span class="mr-1 badge badge-secondary">One Time</span><span>|</span><asp:Label runat="server" class="ml-1 badge badge-maingreen text-white" Text='<%#Eval("Amount")%>'></asp:Label>						
+							</div>	
+						  	<div>
+							  <!-- EDIT POST MODAL BTN -->
+								<button type="button" data-toggle="modal" class="p-0 new-event-btn edit-btn ml-4 mr-2 align-top" data-target="#editScholModal"><span class="edit-icon editicon"> <i data-feather="edit"></i></span></button>
  					  
   							    							  
   							  <!--DELETE POST MODAL BTN -->
@@ -750,21 +387,16 @@
  							</div>
 	        	</div>
 		        
-			        <p class="card-text">We're looking for a creative and motivated Marketing assistant to work in our Marketing and PR department. You will get to work with one of the best teams in the area and recieve great employee benefits.</p>
-			        <p class="card-text"><small class="text-muted">Application Due: May 20, 2019</small></p>
+			        <asp:Label runat="server" class="card-text" Text='<%#Eval("Description")%>'></asp:Label><br /><br />
+			        <p class="card-text"><small class="text-muted">Application Due: May 26, 2019</small></p>
 			      </div>
 			    </div>
 			  </div>
-			</div>
-
- 		<!---- JOB POST EXAMPLE ---->
-		 	
+			</div>		 	
+         </ItemTemplate>
+     </asp:ListView>
+   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select ScholarshipPosting.ScholarshipName, ScholarshipPosting.Amount, ScholarshipPosting.Description, CareerCluster.CareerClusterType from ScholarshipPosting Inner Join CareerCluster ON ScholarshipPosting.CareerID=CareerCluster.CareerID;;"></asp:SqlDataSource>
 			
-		<!---- LEARNING OPPORTUNITY POST EXAMPLE ---->
-		 
-
-		<!---- SCHOLARSHIP POST EXAMPLE ---->
-		 	
 
 
  		

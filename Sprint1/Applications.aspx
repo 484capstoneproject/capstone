@@ -123,43 +123,43 @@
             <ul class="nav flex-column sidebar-links">
            
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="dashboard.aspx">
+                <a class="nav-link nav-link-side" href="BusinessPortal.aspx">
                   <i data-feather="home"></i>
                   <span class="nav-txt">Dashboard</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side sidebar-active" href="applications.aspx">
+                <a class="nav-link nav-link-side sidebar-active" href="Applications.aspx">
 					<span class="white-icon"><i data-feather="check-circle"></i></span>
 					<span class="nav-txt sidebartext-active">Applications</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="postings.aspx">
+                <a class="nav-link nav-link-side" href="Postings.aspx">
                  <i data-feather="clipboard"></i>
 					<span class="nav-txt">Postings</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="analytics.aspx">
+                <a class="nav-link nav-link-side" href="Analytics.aspx">
                   <i data-feather="pie-chart"></i>
 					<span class="nav-txt">Analytics</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="calendar.aspx">
+                <a class="nav-link nav-link-side" href="Aalendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="messages.aspx">
+                <a class="nav-link nav-link-side" href="BusinessMessage.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="archive.html">
+                <a class="nav-link nav-link-side" href="Archive.html">
                   <i data-feather="archive"></i>
 					<span class="nav-txt">Archive</span>
                 </a>

@@ -39,7 +39,7 @@
   </style>
 
   </head>
-
+      
 <!------------------- BODY ----------------------->
  
 <body>
@@ -113,7 +113,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Applications.aspx">
+                <a class="nav-link nav-link-side" href="file:///C:/Users/labpatron/Desktop/capstone-Abby-is-Confused/capstone-Abby-is-Confused/Sprint1/applications.html">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
@@ -143,6 +143,12 @@
                     <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Archive.html">
+                    <i data-feather="archive"></i>
+				    <span class="nav-txt">Archive</span>
+                </a>
+            </li>
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
         </nav>

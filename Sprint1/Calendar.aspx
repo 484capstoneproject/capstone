@@ -128,6 +128,12 @@
                     <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Archive.html">
+                    <i data-feather="archive"></i>
+			        <span class="nav-txt">Archive</span>
+                </a>
+              </li>
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
         </nav>
