@@ -66,7 +66,7 @@ public partial class Postings : System.Web.UI.Page
         JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value, dropCareerCluster.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
 
         con.Open();
-        SqlCommand cmd = new SqlCommand("Insert into JobPosting values(@JobTitle, @JobType, @Description, @Month, @Day, @Year, @BusinessEntityID, @CareerID);");
+        SqlCommand cmd = new SqlCommand("Insert into JobPosting values(@JobTitle, @JobType, @Description, @Month, @Day, @Year, @BusinessEntityID, @CareerID, @Published);");
         cmd.CommandType = System.Data.CommandType.Text;
         cmd.Connection = con;
         cmd.Parameters.AddWithValue("@JobTitle", newPost.GetJobTitle());
@@ -78,6 +78,7 @@ public partial class Postings : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
         cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
         cmd.Parameters.AddWithValue("@CareerID", dropCareerCluster.SelectedIndex);
+        cmd.Parameters.AddWithValue("@Published", "Y");
         cmd.ExecuteNonQuery();
         con.Close();
 
@@ -95,7 +96,27 @@ public partial class Postings : System.Web.UI.Page
     }
 
 
-  
+    protected void ListViewJob_ItemUpdating(object sender, ListViewUpdateEventArgs e)
+    {
+        TextBox editJobTitle = ListViewJob.Items[e.ItemIndex].FindControl("JobTitle") as TextBox;
+        TextBox editJobType = ListViewJob.Items[e.ItemIndex].FindControl("JobType") as TextBox;
+        TextBox editDescription = ListViewJob.Items[e.ItemIndex].FindControl("Description") as TextBox;
+        Label editJobPostingID = ListViewJob.Items[e.ItemIndex].FindControl("JobPostingID") as Label;
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("UPDATE JobPosting Set [JobTitle]=@JobTitle, [JobType]=@JobType, [Description]=@Description WHERE [JobPostingID]=@JobPostingID;");
+        cmd.CommandType = System.Data.CommandType.Text;
+        cmd.Connection = con;
+        cmd.Parameters.AddWithValue("@JobTitle", editJobTitle.Text);
+        cmd.Parameters.AddWithValue("@JobType", editJobType.Text);
+        cmd.Parameters.AddWithValue("@Description", editDescription.Text);
+        cmd.Parameters.AddWithValue("@JobPostingID", editJobPostingID.Text);
+        cmd.ExecuteNonQuery();
+        con.Close();
+
+
+        Response.Redirect("Postings.aspx");
+    }
 }
 
 
