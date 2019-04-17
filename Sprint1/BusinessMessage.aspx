@@ -16,12 +16,32 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <!-- Custom Styles -->
-	<link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/dashboard-testing.css">
+      	<link rel="stylesheet" href="css/custom.css">
   
       <style type="text/css">
           .color{
               color:#83bf4a;
           }
+          .dropdown-toggle::after{
+              display: none!important;
+          }
+          .gradient-bar{
+              width: 10px;
+              height: auto;
+              z-index: 110;
+          }
+          #collapse-it{
+              height: auto;
+              z-index: 20;
+          }
+          html{
+              overflow-x: hidden;
+          }
+          .viewapp-button, .signout-button{
+              border: none;
+          }
+
     </style>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">  
@@ -35,6 +55,7 @@
 <body>
  <form id="form1" runat="server">
  <!-- NAVIGAION --> 
+  <!-- NAVIGAION --> 
  <nav class="navbar navbar-expand-md navbar-light bg-light nav-dashboard">
 
 	<!-- NAV BRAND -->
@@ -58,15 +79,15 @@
         <a class="nav-link" href="#"><i data-feather="bell" class="mr-2"></i></a>
       </li>
       <li class="nav-item">
-        	<div class="dropdown">
+        	  <div class="dropdown">
   				<button class="dropdown-toggle nav-dropdown" type="button" id="navSettingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/avatar.png"></a>
+   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/PBMares.png"></a>
   				</button>
   				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navSettingMenu">
     				<button class="dropdown-item" type="button">Profile</button>
     				<button class="dropdown-item" type="button">Help</button>
     				<button class="dropdown-item" type="button">Account Settings</button>
-    				<asp:Button class="dropdown-item" type="button" runat="server" Text="Log Out"></asp:Button>
+    				<asp:Button class="dropdown-item" type="button" runat="server" Text="Log Out" OnClick="SignOut_Click"></asp:Button>
   				</div>
 			</div>
       </li>
@@ -139,82 +160,38 @@
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
         </nav>
-        <div class="gradient-bar col"></div>
+        <div class="gradient-bar"></div>
 
     <!-------------------- BODY STARTS --------------------->  
  			
 			
-		  <div class="col-10">
+		  <div class="col-10 bg-lt-grey">
 			  
 			  <div class=" ml-2 mt-2 row d-flex justify-content-between">
-				  <h2 BackColor="#434c55" ForeColor="White">
-                      Business Messages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <br />
-                      <br />
-                      <asp:Button ID="btnStudentMessages" runat="server" Height="43px" Text="View Student Inbox" Width="172px" class="signout-button" Font-Size="12pt" OnClick="btnStudentMessages_Click"/>
-                  </h2>
 				  <h1 class="invisible">Messages</h1>
 			  </div>
-           <div class="card card-body border-secondary">
-
-              <asp:Label ID="lblNewMessage" runat="server" ForeColor="White" BackColor="#0c293d" Font-Size="18pt" Font-Bold="True" Text="New Message "></asp:Label>
-
-               <br />
-               <div>
-               <asp:Label ID="lblFilter" runat="server" ForeColor="#0c293d" Text="Select option(s) to filter student names"></asp:Label>
-               <asp:CheckBoxList ID="checkFilterNames" runat="server" OnSelectedIndexChanged="checkFilterNames_SelectedIndexChanged" AutoPostBack="true">
-
-                   <asp:ListItem Text="School Name" ForeColor="#0c293d" Value="School"></asp:ListItem>
-                   <asp:ListItem Text="Grade" Value="Grade"></asp:ListItem>
-               </asp:CheckBoxList>
-                   <asp:DropDownList ID="DropSchoolFilter" runat="server" Visible="false" OnSelectedIndexChanged="DropSchoolFilter_SelectedIndexChanged" AutoPostBack="true">
-                       <%--<asp:ListItem Text="--Select School To Filter--" Value=""></asp:ListItem>--%>
-                   </asp:DropDownList>
-
-                   <asp:DropDownList ID="dropGradeFilter" runat="server" Visible="false" OnSelectedIndexChanged="dropGradeFilter_SelectedIndexChanged" AutoPostBack="true">
-                       <%--<asp:ListItem Text="--Grade--"></asp:ListItem>--%>
-                   </asp:DropDownList>
-
-              </div>
-              <asp:Label ID="lblTo" runat="server" Text="To"></asp:Label>
-              <asp:DropDownList ID="dropSendTo" runat="server" Height="33px" Width="278px" AutoPostBack="true">
-                  <asp:ListItem Text="--Select Student Name--" Value =""></asp:ListItem>
-              </asp:DropDownList>
-              <asp:TextBox ID="txtReplyAddress" runat="server" Visible="false" Width="300px"></asp:TextBox>
-               <br />
-              <br />
-               <asp:Label ID="lblBody" runat="server" Font-Bold="False" Text="Body"></asp:Label>
-               <asp:TextBox ID="txtBody" runat="server" Height="83px" TextMode="MultiLine" Width="353px"></asp:TextBox>
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <asp:Label ID="lblOriginalMessage" runat="server" Text="-- Original Message --" Visible="false"></asp:Label>
-               <asp:TextBox ID="txtareaOriginal" runat="server" Height="83px" TextMode="MultiLine" Width="353px" Visible="false"></asp:TextBox>
-               <br />
-               <br />
-               <div>
-               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="signout-button" Font-Size="13pt" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>&nbsp;&nbsp;&nbsp; 
-               <asp:Button ID="btnClear" runat="server" Text="Clear" class="viewapp-button" Font-Size="13pt" Height="44px" Width="98px" OnClick="btnClear_Click" BackColor="#434c55" ForeColor="White"/>
-               </div>
-               <br />
-               <asp:Label ID="lblMessageSent" runat="server" Text="null" Visible="False"></asp:Label>
-              <br />
-          </div>
-
-
-
-              <div class="mt-5 mb-5 card card-body border-secondary">
+            <div class="row">
+            <!-- MAIN MESSAGES DIV -->
+              <div class="col-8 bg-white ml-5 rounded-left pt-0 pl-4 vh-100">
 		
 							
 			 <br />
-              <asp:Label ID="LblSearch" runat="server" Text="Search Inbox" Font-Size="30px" ForeColor="#25408f" Font-Bold="true"></asp:Label>
+              <asp:Label ID="LblSearch" runat="server" Text="Inbox" Font-Size="40px" ForeColor="#83bf4a" Font-Bold="true"></asp:Label>
 
             <br />
+            <div class="ml-3 mt-3 d-flex justify-content-start">
+            <i data-feather="search" class="mr-2 mt-2"></i>
+            <asp:TextBox ID="TextSearch" runat="server" placeholder="Search By Job Title" Width="45%"></asp:TextBox>
 
-            <asp:TextBox ID="TextSearch" runat="server" placeholder="Job Title"></asp:TextBox>
+            
             <br />
-            <asp:Button ID="BtnSearch" class="viewapp-button w-25" Font-Size="13pt" BackColor="#25408f" runat="server" Text="Filter" />
+        <div class="row ml-3">
+            <asp:Button ID="BtnSearch" class="viewapp-button " Font-Size="13pt" BackColor="#0c293d" runat="server" Text="Filter" />
             <br />
-            <asp:Button ID="BtnReset" class="viewapp-button w-25" Font-Size="13pt" BackColor="#434c55" runat="server" Text="Reset" />
+            <asp:Button ID="BtnReset" class="viewapp-button " Font-Size="13pt" BackColor="#434c55" runat="server" Text="Reset" />
 
+        </div>
+        </div>
             <asp:label id="MessageLabel"
                 ForeColor="#efefef"
                 runat="server"/>
@@ -290,6 +267,58 @@
                             <label id="lblDate"></label>
                         </div>
 
+            <!-- NEW MESSAGE DIV -->
+           <div class="col-3 bg-dark-blue p-3 pt-5 rounded-right text-white">
+
+              <asp:Label ID="lblNewMessage" runat="server" ForeColor="White" BackColor="#0c293d" Font-Size="18pt" Font-Bold="True" Text="New Message "></asp:Label>
+               <div class="bg-white rounded p-2 text-dark-grey mt-2">
+               <div>
+               <asp:Label ID="lblFilter" runat="server" ForeColor="White" Text="Select option(s) to filter student names" CssClass="font-weight-bold"></asp:Label>
+               <asp:CheckBoxList ID="checkFilterNames" runat="server" OnSelectedIndexChanged="checkFilterNames_SelectedIndexChanged" AutoPostBack="true" CssClass="mt-2 ml-2">
+
+                   <asp:ListItem Text="School Name" ForeColor="#0c293d" Value="School"></asp:ListItem>
+                   <asp:ListItem Text="Grade" Value="Grade"></asp:ListItem>
+               </asp:CheckBoxList>
+                   <asp:DropDownList ID="DropSchoolFilter" runat="server" Visible="false" OnSelectedIndexChanged="DropSchoolFilter_SelectedIndexChanged" AutoPostBack="true" CssClass="mt-2 ml-2">
+                       <%--<asp:ListItem Text="--Select School To Filter--" Value=""></asp:ListItem>--%>
+                   </asp:DropDownList>
+
+                   <asp:DropDownList ID="dropGradeFilter" runat="server" Visible="false" OnSelectedIndexChanged="dropGradeFilter_SelectedIndexChanged" AutoPostBack="true" CssClass="mt-2 ml-2 mb-3">
+                       <%--<asp:ListItem Text="--Grade--"></asp:ListItem>--%>
+                   </asp:DropDownList>
+
+              </div>
+              <asp:Label ID="lblTo" runat="server" Text="To"></asp:Label>
+              <asp:DropDownList ID="dropSendTo" runat="server" Height="33px" Width="278px" AutoPostBack="true">
+                  <asp:ListItem Text="--Select Student Name--" Value =""></asp:ListItem>
+              </asp:DropDownList>
+              <asp:TextBox ID="txtReplyAddress" runat="server" Visible="false" Width="300px"></asp:TextBox>
+               <br />
+              <br />
+               <asp:Label ID="lblBody" runat="server" Font-Bold="False" Text="Your Message"></asp:Label>
+               <asp:TextBox ID="txtBody" runat="server" Height="83px" TextMode="MultiLine" Width="95%"></asp:TextBox>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <asp:Label ID="lblOriginalMessage" runat="server" Text="-- Original Message --" Visible="false"></asp:Label>
+               <asp:TextBox ID="txtareaOriginal" runat="server" Height="83px" TextMode="MultiLine" Width="353px" Visible="false"></asp:TextBox>
+               <br />
+               <br />
+               <div>
+               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="signout-button btn-maingreen" Font-Size="13pt" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>&nbsp;&nbsp;&nbsp; 
+               <asp:Button ID="btnClear" runat="server" Text="Clear" class="viewapp-button" Font-Size="13pt" Height="44px" Width="98px" OnClick="btnClear_Click" BackColor="#434c55" ForeColor="White"/>
+               </div>
+               <br />
+               <asp:Label ID="lblMessageSent" runat="server" Text="null" Visible="False"></asp:Label>
+            </div>
+              <br />
+               	   <h2 BackColor="#434c55" ForeColor="White" class="align-bottom">
+                      <!--Business Messages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <br />
+                      <br />-->
+                      <asp:Button ID="btnStudentMessages" runat="server" Height="43px" Text="View Student Inbox" Width="172px" class="signout-button" Font-Size="12pt" OnClick="btnStudentMessages_Click"/>
+                  </h2>
+          </div>
+
+                </div><!-- CLOSE MAIN ROW DIV -->
  		  </div>
  	</div>
  	

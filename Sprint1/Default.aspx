@@ -57,7 +57,7 @@
   				<div class="form-group">
   				  <label for="exampleInputEmail1" class="loginlabel" runat="server">Username</label>
   				  <asp:Textbox class="form-control min-imput" id="txtUsername" aria-describedby="emailHelp" placeholder="" runat="server"></asp:Textbox>
-  				  <small id="usernameHelp" class="form-text text-muted" runat="server">We'll never share your username with anyone else.</small>
+  				  <small id="usernameHelp" class="form-text text-muted" runat="server"></small>
              
   				</div>
   				<div class="form-group">
