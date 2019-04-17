@@ -332,7 +332,7 @@
 			</div>
          </ItemTemplate>
      </asp:ListView>
-   <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select learningposting.LearningTitle, LearningPosting.LearningType, LearningPosting.Description, CareerCluster.CareerClusterType from LearningPosting Inner Join CareerCluster ON LearningPosting.CareerID=CareerCluster.CareerID;"></asp:SqlDataSource>
+   <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select learningposting.LearningTitle, LearningPosting.LearningType, LearningPosting.Description, CareerCluster.CareerClusterType from LearningPosting Inner Join CareerCluster ON LearningPosting.CareerID=CareerCluster.CareerID;;"></asp:SqlDataSource>
 			 	
 
 		<!---- SCHOLARSHIP POST EXAMPLE ---->
@@ -399,7 +399,7 @@
 			</div>		 	
          </ItemTemplate>
      </asp:ListView>
-   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select ScholarshipPosting.ScholarshipName, ScholarshipPosting.Amount, ScholarshipPosting.Description, CareerCluster.CareerClusterType from ScholarshipPosting Inner Join CareerCluster ON ScholarshipPosting.CareerID=CareerCluster.CareerID;"></asp:SqlDataSource>
+   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select ScholarshipPosting.ScholarshipName, ScholarshipPosting.Amount, ScholarshipPosting.Description, CareerCluster.CareerClusterType from ScholarshipPosting Inner Join CareerCluster ON ScholarshipPosting.CareerID=CareerCluster.CareerID;;"></asp:SqlDataSource>
 			
 
  		
@@ -417,14 +417,21 @@
     max-height:  100%;">
 						<div class="filter-row">
   						 <button type="button" data-toggle="modal" class="p-0 new-event-btn mt-3 w-100" data-target="#newPostModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
-							<form class="search-form mb-3">
+							
+							
+					
+					
+
+  					  <!-- Modal -->
+                    <form id="formJob" runat="server">
+                       <form class="search-form mb-3">
   							<div class="form-group mt-3 ml-3 mr-3 justify-content-between d-flex">
   				 			 <span class="x-search xicon"> <i data-feather="search"></i></span><input type="search" class="form-control min-imput" id="examplesearch" aria-describedby="search" placeholder="Title or Keywords" >
   							</div>
 							</form>
-							
-					
-					<!---- Career Clusters---->
+                             <input  runat= "server"  id="Text1"  placeholder="Keyword" />
+                        <asp:Button type="button" Text="Search Post"  OnClick="BtnSearch_Click" runat="server"></asp:Button>
+                    <!---- Career Clusters---->
 						<div class="accordion mt-3" id="accordionExample">
 							<div class="card">
 
@@ -640,14 +647,8 @@
 						</div>
 						
 							</div>
+                   
 
-  					  <!-- Modal -->
-                    <form id="formJob" runat="server">
-                       
-                    
-                        <input  runat= "server"  id="Text1"  placeholder="Keyword" />
-                      
-                         <asp:Button type="button" Text="Search Post"  OnClick="BtnSearch_Click" runat="server"></asp:Button>
 						<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
@@ -829,17 +830,9 @@
    										  <input type = "text" class="form-control" placeholder="Ask a short question of applicants." />
                                           
 									  </div> 
-							 
-							    
-							       
-
-							       
-							  
+							 						  
 						   </div>
-					
-								  
-							 
-						
+											
 				    </div>
 								  
 						      </div>
