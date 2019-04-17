@@ -332,7 +332,7 @@
 			</div>
          </ItemTemplate>
      </asp:ListView>
-   <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select learningposting.LearningTitle, LearningPosting.LearningType, LearningPosting.Description, CareerCluster.CareerClusterType from LearningPosting Inner Join CareerCluster ON LearningPosting.CareerID=CareerCluster.CareerID;;"></asp:SqlDataSource>
+   <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select learningposting.LearningTitle, LearningPosting.LearningType, LearningPosting.Description, CareerCluster.CareerClusterType from LearningPosting Inner Join CareerCluster ON LearningPosting.CareerID=CareerCluster.CareerID;"></asp:SqlDataSource>
 			 	
 
 		<!---- SCHOLARSHIP POST EXAMPLE ---->
@@ -399,7 +399,7 @@
 			</div>		 	
          </ItemTemplate>
      </asp:ListView>
-   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select ScholarshipPosting.ScholarshipName, ScholarshipPosting.Amount, ScholarshipPosting.Description, CareerCluster.CareerClusterType from ScholarshipPosting Inner Join CareerCluster ON ScholarshipPosting.CareerID=CareerCluster.CareerID;;"></asp:SqlDataSource>
+   <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="Server=sprint2.ccqrzd4fcexk.us-east-1.rds.amazonaws.com;Database=Sprint2; User ID=root; Password=careycole;" providerName="System.Data.SqlClient" SelectCommand="select ScholarshipPosting.ScholarshipName, ScholarshipPosting.Amount, ScholarshipPosting.Description, CareerCluster.CareerClusterType from ScholarshipPosting Inner Join CareerCluster ON ScholarshipPosting.CareerID=CareerCluster.CareerID;"></asp:SqlDataSource>
 			
 
  		

@@ -129,23 +129,52 @@ public partial class Postings : System.Web.UI.Page
         if (Text1.Value == "")
         {
             ListViewJob.DataSourceID = "SqlDataSource1";
+            ListViewLearning.DataSourceID = "SqlDataSource2";
+            ListViewScholarship.DataSourceID = "SqlDataSource3";
+
             //sets the datasource to sqldatasource if the textbox is empty
         }
         else
         {
             ListViewJob.DataSourceID = null;
+            ListViewLearning.DataSourceID = null;
+            ListViewScholarship.DataSourceID = null;
 
             con.Open();
-            string cmd = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobTitle like '%' + @Job + '%')";
+            string job = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobTitle like '%' + @Job + '%')";
+            string learning = "select learningposting.LearningTitle, LearningPosting.LearningType, LearningPosting.Description, CareerCluster.CareerClusterType from LearningPosting Inner Join CareerCluster ON LearningPosting.CareerID=CareerCluster.CareerID where (LearningTitle like '%' + @Job + '%')";
+            string scholarship = "select ScholarshipPosting.ScholarshipName, ScholarshipPosting.Amount, ScholarshipPosting.Description, CareerCluster.CareerClusterType from ScholarshipPosting Inner Join CareerCluster ON ScholarshipPosting.CareerID=CareerCluster.CareerID where (ScholarshipName like '%' + @Job + '%')";
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd, con);
-            da.SelectCommand.Parameters.AddWithValue("@Job", Text1.Value);
-            // here yu can see the passed value in textbox   
+            //job
+            SqlDataAdapter dj = new SqlDataAdapter(job, con);
+            dj.SelectCommand.Parameters.AddWithValue("@Job", Text1.Value);
+            // here you can see the passed value in textbox   
             DataSet ds = new DataSet();
-            da.Fill(ds, "JobTitle");
+            dj.Fill(ds, "JobTitle");
 
             ListViewJob.DataSource = ds.Tables["JobTitle"];
             ListViewJob.DataBind();
+
+            //learning 
+            SqlDataAdapter dl = new SqlDataAdapter(learning, con);
+            dl.SelectCommand.Parameters.AddWithValue("@Job", Text1.Value);
+            // here you can see the passed value in textbox   
+            DataSet da = new DataSet();
+            dl.Fill(da, "JobTitle");
+
+            ListViewLearning.DataSource = da.Tables["JobTitle"];
+            ListViewLearning.DataBind();
+
+            //scholarship
+            SqlDataAdapter df = new SqlDataAdapter(scholarship, con);
+            df.SelectCommand.Parameters.AddWithValue("@Job", Text1.Value);
+            // here you can see the passed value in textbox   
+            DataSet dc = new DataSet();
+            df.Fill(dc, "JobTitle");
+
+            ListViewScholarship.DataSource = dc.Tables["JobTitle"];
+            ListViewScholarship.DataBind();
+
             con.Close();
 
         }

@@ -108,7 +108,7 @@ public partial class Calendar : System.Web.UI.Page
 
     protected void getDesc_Click(object sender, EventArgs e)
     {
-
+       
         ListBox1.Items.Clear();
         int LoginEntityID = (int)Session["EntityID"];
         DateTime Event_Date = Calendar1.SelectedDate;
