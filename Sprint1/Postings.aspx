@@ -431,6 +431,9 @@
 							</form>
                              <input  runat= "server"  id="Text1"  placeholder="Keyword" />
                         <asp:Button type="button" Text="Search Post"  OnClick="BtnSearch_Click" runat="server"></asp:Button>
+                        <asp:CheckBox ID="fullTime" Text="Full-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true" />
+                            <asp:CheckBox ID="partTime" Text="Part-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
+                            <asp:CheckBox ID="internship" Text="Internship" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
                     <!---- Career Clusters---->
 						<div class="accordion mt-3" id="accordionExample">
 							<div class="card">

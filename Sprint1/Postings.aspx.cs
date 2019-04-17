@@ -179,7 +179,41 @@ public partial class Postings : System.Web.UI.Page
 
         }
     }
-   
+    protected void typeCheckBoxChanged(object sender, EventArgs e)
+    {
+        int LoginEntityID = (int)Session["EntityID"];
+
+        string part = "";
+        string full = "";
+        string intern = "";
+
+        if (fullTime.Checked)
+        {
+            full = "Full Time";
+        }
+        if (partTime.Checked)
+        {
+            part = "Part-Time";
+        }
+        if (internship.Checked)
+        {
+            intern = "Internship";
+        }
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Select * from JobPosting where (JobType like @full OR JobType like @part OR JobType like @intern) AND BusinessEntityID=@BusinessEntityID", con);
+        cmd.Parameters.Add("@full", SqlDbType.NVarChar).Value = full;
+        cmd.Parameters.Add("@part", SqlDbType.NVarChar).Value = part;
+        cmd.Parameters.Add("@intern", SqlDbType.NVarChar).Value = intern;
+        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+        SqlDataReader rdr = cmd.ExecuteReader();
+
+
+        
+            con.Close();
+    }
+
+
 }
 
 
