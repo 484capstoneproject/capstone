@@ -694,6 +694,11 @@
 
   					  <!-- Modal -->
                     <form id="formJob" runat="server">
+                       
+                    
+                        <input  runat= "server"  id="Text1"  placeholder="Keyword" />
+                      
+                         <asp:Button type="button" Text="Search Post"  OnClick="BtnSearch_Click" runat="server"></asp:Button>
 						<div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel" aria-hidden="true">
 						  <div class="modal-dialog modal-lg" role="document">
 						    <div class="modal-content">
