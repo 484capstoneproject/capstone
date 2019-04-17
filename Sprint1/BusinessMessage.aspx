@@ -144,24 +144,27 @@
     <!-------------------- BODY STARTS --------------------->  
  			
 			
-		  <div class="col-10 bg-white">
+		  <div class="col-10">
 			  
 			  <div class=" ml-2 mt-2 row d-flex justify-content-between">
-				  <h3 class="text-maingreen">
+				  <h2 BackColor="#434c55" ForeColor="White">
                       Business Messages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      <asp:Button ID="btnStudentMessages" runat="server" Height="43px" Text="View Student Inbox" Width="172px" class="btn btn-maingreen" OnClick="btnStudentMessages_Click"/>
-                  </h3>
+                      <br />
+                      <br />
+                      <asp:Button ID="btnStudentMessages" runat="server" Height="43px" Text="View Student Inbox" Width="172px" class="signout-button" Font-Size="12pt" OnClick="btnStudentMessages_Click"/>
+                  </h2>
 				  <h1 class="invisible">Messages</h1>
 			  </div>
            <div class="card card-body border-secondary">
 
-              <asp:Label ID="lblNewMessage" runat="server" Font-Bold="True" Font-Underline="True" Text="New Message: "></asp:Label>
+              <asp:Label ID="lblNewMessage" runat="server" ForeColor="White" BackColor="#0c293d" Font-Size="18pt" Font-Bold="True" Text="New Message "></asp:Label>
 
                <br />
                <div>
-               <asp:Label ID="lblFilter" runat="server" Text="Select option(s) to filter student names"></asp:Label>
+               <asp:Label ID="lblFilter" runat="server" ForeColor="#0c293d" Text="Select option(s) to filter student names"></asp:Label>
                <asp:CheckBoxList ID="checkFilterNames" runat="server" OnSelectedIndexChanged="checkFilterNames_SelectedIndexChanged" AutoPostBack="true">
-                   <asp:ListItem Text="School Name" Value="School"></asp:ListItem>
+
+                   <asp:ListItem Text="School Name" ForeColor="#0c293d" Value="School"></asp:ListItem>
                    <asp:ListItem Text="Grade" Value="Grade"></asp:ListItem>
                </asp:CheckBoxList>
                    <asp:DropDownList ID="DropSchoolFilter" runat="server" Visible="false" OnSelectedIndexChanged="DropSchoolFilter_SelectedIndexChanged" AutoPostBack="true">
@@ -173,43 +176,47 @@
                    </asp:DropDownList>
 
               </div>
-              <asp:Label ID="lblTo" runat="server" Text="To: "></asp:Label>
+              <asp:Label ID="lblTo" runat="server" Text="To"></asp:Label>
               <asp:DropDownList ID="dropSendTo" runat="server" Height="33px" Width="278px" AutoPostBack="true">
                   <asp:ListItem Text="--Select Student Name--" Value =""></asp:ListItem>
               </asp:DropDownList>
               <asp:TextBox ID="txtReplyAddress" runat="server" Visible="false" Width="300px"></asp:TextBox>
                <br />
               <br />
-               <asp:Label ID="lblBody" runat="server" Font-Bold="False" Text="Body:"></asp:Label>
+               <asp:Label ID="lblBody" runat="server" Font-Bold="False" Text="Body"></asp:Label>
                <asp:TextBox ID="txtBody" runat="server" Height="83px" TextMode="MultiLine" Width="353px"></asp:TextBox>
                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-               <asp:Label ID="lblOriginalMessage" runat="server" Text="--Original Message--" Visible="false"></asp:Label>
+               <asp:Label ID="lblOriginalMessage" runat="server" Text="-- Original Message --" Visible="false"></asp:Label>
                <asp:TextBox ID="txtareaOriginal" runat="server" Height="83px" TextMode="MultiLine" Width="353px" Visible="false"></asp:TextBox>
                <br />
                <br />
                <div>
-               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="btn btn-maingreen w-15" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>&nbsp;&nbsp;&nbsp; 
-               <asp:Button ID="btnClear" runat="server" Text="Clear" class="btn w-15" Height="44px" Width="98px" OnClick="btnClear_Click" BackColor="Red" ForeColor="White"/>
+               <asp:Button ID="btnSendMessage" runat="server" Text="Send" class="signout-button" Font-Size="13pt" Height="44px" Width="98px" OnClick="btnSendMessage_Click"/>&nbsp;&nbsp;&nbsp; 
+               <asp:Button ID="btnClear" runat="server" Text="Clear" class="viewapp-button" Font-Size="13pt" Height="44px" Width="98px" OnClick="btnClear_Click" BackColor="#434c55" ForeColor="White"/>
                </div>
                <br />
                <asp:Label ID="lblMessageSent" runat="server" Text="null" Visible="False"></asp:Label>
               <br />
           </div>
+
+
+
               <div class="mt-5 mb-5 card card-body border-secondary">
 		
 							
 			 <br />
-              <asp:Label ID="LblSearch" runat="server" Text="Search Inbox (By Name): " Font-Bold="true" Font-Underline="true"></asp:Label>
+              <asp:Label ID="LblSearch" runat="server" Text="Search Inbox" Font-Size="30px" ForeColor="#25408f" Font-Bold="true"></asp:Label>
 
             <br />
 
             <asp:TextBox ID="TextSearch" runat="server" placeholder="Job Title"></asp:TextBox>
             <br />
-            <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" />
+            <asp:Button ID="BtnSearch" class="viewapp-button w-25" Font-Size="13pt" BackColor="#25408f" runat="server" Text="Filter" />
             <br />
-            <asp:Button ID="BtnReset" class="btn btn-maingreen w-25" runat="server" Text="Reset" />
+            <asp:Button ID="BtnReset" class="viewapp-button w-25" Font-Size="13pt" BackColor="#434c55" runat="server" Text="Reset" />
+
             <asp:label id="MessageLabel"
-                forecolor="Red"
+                ForeColor="#efefef"
                 runat="server"/>
             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
 			<br />
@@ -221,7 +228,7 @@
                 autogeneratecolumns="False"
                 onselectedindexchanged="GridView1_SelectedIndexChanged"
                 OnRowDataBound="GridView1_RowDataBound"
-                runat="server" DataKeyNames="StudentMessageID" CellPadding="4" ForeColor="#333333" GridLines="Horizontal" Width="912px">
+                runat="server" DataKeyNames="StudentMessageID" CellPadding="4" ForeColor="#434c55" GridLines="Horizontal" Width="912px">
                 
                     <AlternatingRowStyle BackColor="White" />
                 
@@ -254,14 +261,14 @@
                             SortExpression="BusinessRead" />
                     </Columns> 
 
-                    <EditRowStyle BackColor="#7C6F57" />
-                    <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
-                    <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
-                    <RowStyle BackColor="#E3EAEB" />
+                    <EditRowStyle BackColor="#25408f" />
+                    <FooterStyle BackColor="#0c293d" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#0c293d" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="#d6d7dd" ForeColor="White" HorizontalAlign="Center" />
+                    <RowStyle BackColor="White" />
                     <selectedrowstyle
-                    forecolor="#333333"
-                        font-bold="true" BackColor="#C5BBAF"/> 
+                    forecolor="#0c293d"
+                        font-bold="true" BackColor="#e9e9e9"/> 
                 
                     <SortedAscendingCellStyle BackColor="#F8FAFA" />
                     <SortedAscendingHeaderStyle BackColor="#246B61" />
@@ -273,13 +280,13 @@
 
                 </div>            
                  <div id="popupdiv" title="Basic modal dialog" style="display: none">
-                            Student Name:
+                            Student Name
                             <label id="lblStudentName"></label>
                             <br />
-                            Body:
+                            Body
                             <label id="lblMessageBody"></label>
                             <br />
-                            Date:
+                            Date
                             <label id="lblDate"></label>
                         </div>
 
