@@ -113,7 +113,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="file:///C:/Users/labpatron/Desktop/capstone-Abby-is-Confused/capstone-Abby-is-Confused/Sprint1/applications.html">
+                <a class="nav-link nav-link-side" href="Applications.aspx">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
