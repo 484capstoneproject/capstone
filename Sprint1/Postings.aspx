@@ -424,11 +424,11 @@
 
   					  <!-- Modal -->
                     <form id="formJob" runat="server">
-                       <form class="search-form mb-3">
+                      <%-- <form class="search-form mb-3">
   							<div class="form-group mt-3 ml-3 mr-3 justify-content-between d-flex">
   				 			 <span class="x-search xicon"> <i data-feather="search"></i></span><input type="search" class="form-control min-imput" id="examplesearch" aria-describedby="search" placeholder="Title or Keywords" >
   							</div>
-							</form>
+							</form>--%>
                              <input  runat= "server"  id="Text1"  placeholder="Keyword" />
                         <asp:Button type="button" Text="Search Post"  OnClick="BtnSearch_Click" runat="server"></asp:Button>
                         <asp:CheckBox ID="fullTime" Text="Full-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true" />

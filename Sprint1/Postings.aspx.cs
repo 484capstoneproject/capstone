@@ -13,12 +13,12 @@ public partial class Postings : System.Web.UI.Page
 {
     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["sqlCon"].ConnectionString);
 
-   
+
 
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        
+
 
         if (Session["EntityID"] == null)
         {
@@ -46,12 +46,12 @@ public partial class Postings : System.Web.UI.Page
             }
         }
 
-        
-       
+
+
 
     }
-    
- 
+
+
 
 
     protected void SignOut_Click(object sender, EventArgs e)
@@ -125,7 +125,7 @@ public partial class Postings : System.Web.UI.Page
 
     protected void BtnSearch_Click(object sender, EventArgs e)
     {
-        
+
         if (Text1.Value == "")
         {
             ListViewJob.DataSourceID = "SqlDataSource1";
@@ -200,20 +200,45 @@ public partial class Postings : System.Web.UI.Page
             intern = "Internship";
         }
 
-        con.Open();
-        SqlCommand cmd = new SqlCommand("Select * from JobPosting where (JobType like @full OR JobType like @part OR JobType like @intern) AND BusinessEntityID=@BusinessEntityID", con);
-        cmd.Parameters.Add("@full", SqlDbType.NVarChar).Value = full;
-        cmd.Parameters.Add("@part", SqlDbType.NVarChar).Value = part;
-        cmd.Parameters.Add("@intern", SqlDbType.NVarChar).Value = intern;
-        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
-        SqlDataReader rdr = cmd.ExecuteReader();
+
+      
+        if (fullTime.Checked)
+        {
+            ListViewJob.DataSourceID = null;
+            ListViewLearning.DataSourceID = null;
+            ListViewScholarship.DataSourceID = null;
+
+            con.Open();
+            string jobType = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobType like @full OR JobType like @part OR JobType like @intern)";
 
 
-        
+            //job
+            SqlDataAdapter dj = new SqlDataAdapter(jobType, con);
+            dj.SelectCommand.Parameters.AddWithValue("@full", full);
+            dj.SelectCommand.Parameters.AddWithValue("@part", part);
+            dj.SelectCommand.Parameters.AddWithValue("@intern", intern);
+            dj.SelectCommand.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+
+            // here you can see the passed value in textbox   
+            DataSet ds = new DataSet();
+            dj.Fill(ds, "JobPost");
+
+            ListViewJob.DataSource = ds.Tables["JobPost"];
+            ListViewJob.DataBind();
+
+
+
             con.Close();
+        }
+        else
+        {
+            ListViewJob.DataSourceID = "SqlDataSource1";
+
+            //sets the datasource to sqldatasource if the textbox is empty
+        }
+
+
     }
-
-
 }
 
 
