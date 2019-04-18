@@ -106,7 +106,7 @@ public partial class PostingToScholarship : System.Web.UI.Page
         //JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value,txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
 
         con.Open();
-        SqlCommand cmd = new SqlCommand("Insert into ScholarshipPosting values(@ScholarshipName, @Amount, @Description, @Month, @Day, @Year, @BusinessEntityID, @CareerID);");
+        SqlCommand cmd = new SqlCommand("Insert into ScholarshipPosting values(@ScholarshipName, @Amount, @Description, @Month, @Day, @Year, @BusinessEntityID, @CareerID, @Published);");
         cmd.CommandType = System.Data.CommandType.Text;
         cmd.Connection = con;
         cmd.Parameters.AddWithValue("@ScholarshipName", txtScholarshipName.Value);
@@ -117,6 +117,7 @@ public partial class PostingToScholarship : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Year", dropYear.Value);
         cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
         cmd.Parameters.AddWithValue("@CareerID", dropCareerCluster.SelectedIndex);
+        cmd.Parameters.AddWithValue("Published", "Y");
         cmd.ExecuteNonQuery();
 
         Response.Redirect("Postings.aspx");
