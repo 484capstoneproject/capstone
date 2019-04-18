@@ -14,6 +14,8 @@ public partial class Archive : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        int LoginEntityID = (int)Session["EntityID"];
+
         con.Open();
         SqlCommand cmd = new SqlCommand("select count(BusinessRead) from StudentMessage where BusinessRead=@BusinessRead", con);
         cmd.CommandType = CommandType.Text;
@@ -21,5 +23,24 @@ public partial class Archive : System.Web.UI.Page
         int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
         sidebarMessages.InnerText = "       " + inboxCount.ToString();
         con.Close();
+
+
+
+        con.Open();
+        cmd = new SqlCommand("select BusinessName from Business where BusinessEntityID=@BusinessEntityID", con);
+        cmd.CommandType = CommandType.Text;
+        cmd.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
+        cmd.ExecuteNonQuery();
+
+        SqlDataReader reader = cmd.ExecuteReader();
+
+        if (reader.HasRows)
+        {
+            while (reader.Read())
+            {
+                BusinessName.InnerText = reader["BusinessName"].ToString();
+            }
+        }
+        reader.Close();
     }
 }

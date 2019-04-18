@@ -38,7 +38,7 @@ body, html {
   font-size: 11px;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out,  transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none; }
 
@@ -51,6 +51,34 @@ body, html {
   outline-offset: -4px; }
 
 .signout-button:active {
+  transform: scale(0.99); }
+
+.download-button {
+  display: inline-block;
+  border-radius: 7px;
+  padding: .4rem .4rem;
+  margin: 0;
+  text-decoration: none;
+  background: #35858e;
+  color: #ffffff;
+  font-family: proxima-nova, sans-serif;
+  font-style: bold;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+.download-button:hover,
+.download-button:focus {
+  background: #307477; }
+
+.download-button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px; }
+
+.download-button:active {
   transform: scale(0.99); }
 
 .viewapp-button {
@@ -66,7 +94,7 @@ body, html {
   font-size: 14px;
   cursor: pointer;
   text-align: center;
-  transition: background 250ms ease-in-out,  transform 150ms ease;
+  transition: background 250ms ease-in-out, transform 150ms ease;
   -webkit-appearance: none;
   -moz-appearance: none; }
 
@@ -95,9 +123,9 @@ p {
 
 a {
   text-decoration: none;
-  color: #0c293d; }
+  color: white; }
   a:hover {
-    color: #1d6292;
+    color: white;
     text-decoration: none; }
 
 /************************* Navbar *****************************/
@@ -184,18 +212,7 @@ img.nextstepgo-logo-nav {
   max-width: 10px;
   padding: 0px;
   margin-left: -10px;
-   }
-
-.gradient-bar {
-    width: 10px;
-    height: auto;
-    z-index: 110;
-}
-
-#collapse-it {
-    height: auto;
-    z-index: 20;
-}
+  height: 565px; }
 
 .profile-img {
   border-radius: 100px;
@@ -254,6 +271,7 @@ img.nextstepgo-logo-nav {
   color: #fff; }
 
 .sidebar-active {
+  color: white;
   border-left: solid thick #83bf4a;
   background-color: rgba(255, 255, 255, 0.1); }
   .sidebar-active .nav-link {
@@ -451,6 +469,10 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background: #6a9e38; }
 
+.accordian-dashboard {
+  border-style: solid;
+  border-color: #35858e; }
+
 .btn-edit-profile {
   color: #434c55; }
   .btn-edit-profile:hover {
@@ -563,7 +585,7 @@ footer {
   font-size: 70px; }
 
 .time {
-  color: #94c8d5;
+  color: #35858e;
   text-align: right; }
 
 /* Add media queries for smaller screens */
@@ -579,6 +601,116 @@ footer {
 @media screen and (max-width: 290px) {
   .weekdays li, .days li {
     width: 12.2%; } }
+/****************************** Applications ********************************/
+#applications {
+  margin-left: 18%;
+  display: flex;
+  flex-flow: row wrap; }
+
+.custom-select {
+  background-color: #eaeaea;
+  color: #434c55;
+  border: none; }
+  .custom-select:focus {
+    box-shadow: none; }
+
+.applications-bg {
+  background-color: #e2e2e2; }
+
+.timeline {
+  background-image: url("../images/timelinebg.png");
+  background-repeat: no-repeat;
+  background-size: 100% 110%;
+  height: 130px;
+  vertical-align: center;
+  background-position: center; }
+
+.br-8 {
+  border-radius: 8px; }
+
+.timeline-number {
+  color: white;
+  font-size: 70px;
+  line-height: 70px; }
+
+.app-name {
+  font-size: 20px;
+  line-height: 8px; }
+
+.new-app {
+  border-color: #83bf4a; }
+
+.reviewed-app {
+  border-color: #d6d7dd; }
+
+.app-action-btn-green {
+  color: #83bf4a;
+  border: solid 1px #83bf4a;
+  background-color: white; }
+  .app-action-btn-green:hover {
+    color: white;
+    background-color: #83bf4a; }
+
+.app-action-btn-grey {
+  color: #434c55;
+  border: solid 1px #434c55;
+  background-color: white; }
+  .app-action-btn-grey:hover {
+    color: white;
+    background-color: #434c55; }
+
+.referred {
+  font-weight: 200;
+  font-size: 10px; }
+
+.app-info {
+  line-height: 10px;
+  padding-bottom: 5px; }
+
+.bg-grey-50 {
+  color: #35858e;
+  margin-left: 10px;
+  font-size: 10px;
+  font-weight: bold; }
+
+.outline-white {
+  border: solid 1px white; }
+
+.text-medblue {
+  color: #4584b5; }
+
+.bg-ltblue {
+  background-color: #94c8d5; }
+
+.btn-lightblue {
+  background-color: #94c8d5;
+  color: white; }
+
+.app-img {
+  height: 200px;
+  width: auto; }
+
+.text-ltblue {
+  color: #94c8d5; }
+
+.app-header {
+  max-height: 200px; }
+
+.profile-background {
+  background-color: #fcfcfc; }
+
+.textcolor {
+  color: #35858e; }
+
+.line {
+  background-color: #434c55; }
+
+.badge-color {
+  background-color: #4584b5;
+  color: white;
+  margin-left: 5px;
+  padding: 6px; }
+
 /****************************** Analytics ********************************/
 .bg-lt-grey {
   background-color: #e2e2e2;
@@ -667,6 +799,47 @@ footer {
     color: #d6d7dd !important; }
   .unpublished .location-text {
     color: black; }
+
+.form-entry {
+  border-radius: 0px;
+  border: none;
+  border-bottom: solid 1px #83bf4a; }
+  .form-entry:focus {
+    box-shadow: none; }
+
+.form-selector {
+  background-color: none;
+  border: solid 2px #83bf4a;
+  color: #0c293d; }
+
+.form-entry-all-borders {
+  border-radius: 0px;
+  border: solid 1px #83bf4a; }
+  .form-entry-all-borders:focus {
+    box-shadow: none; }
+
+.border-left-plain {
+  background-color: #d6d7dd; }
+  .border-left-plain:hover {
+    border-left-width: 1px; }
+
+.border-left-plain.active {
+  background-color: #f1f1f1 !important;
+  border-bottom: none; }
+
+.nav-border-none:hover {
+  border-left-width: 0px; }
+
+.nav-tabs {
+  border-bottom: 0px; }
+
+.add-form {
+  border: solid thin #d6d7dd;
+  border-top: none;
+  background-color: #f1f1f1; }
+
+.post-card-left {
+  background-color: #f2f2f4; }
 
 .post-card-left {
   background-color: #f2f2f4; }

@@ -401,8 +401,8 @@
  						<div class="card sm-cal h-100" style="max-width: 540px;">
   						<div class="row no-gutters h-100">
   						  <div class="col-md-4  date text-center pt-3 pb-0" >
-  						    <p class="month pt-4 mb-0">March</p>
-  						    <p class="day">29</p>
+  						    <p class="month pt-4 mb-0">April</p>
+  						    <p class="day">18</p>
   						  </div>
   						  <div class="col-md-8">
   						    <div class="card-body">

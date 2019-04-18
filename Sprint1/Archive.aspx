@@ -112,7 +112,7 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
-  				  <h2 class="bus-name-header mt-3">PB Mares</h2>
+  				  <h2 class="bus-name-header mt-3" id="BusinessName" runat="server">PB Mares</h2>
   				  
 					 <button id="editprofile" class="btn btn-link btn-edit-profile pl-0">
 					  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>

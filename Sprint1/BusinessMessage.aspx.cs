@@ -51,6 +51,24 @@ public partial class BusinessMessage : System.Web.UI.Page
             sidebarMessages.InnerText = "       " + inboxCount.ToString();
             con.Close();
 
+            con.Open();
+            cmd = new SqlCommand("select BusinessName from Business where BusinessEntityID=@BusinessEntityID", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
+            cmd.ExecuteNonQuery();
+
+            reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    BusinessName.InnerText = reader["BusinessName"].ToString();
+                }
+            }
+            con.Close();
+            reader.Close();
+
         }
     }
     protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)

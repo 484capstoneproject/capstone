@@ -127,7 +127,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="#">
+                <a class="nav-link nav-link-side" href="Applications.aspx">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
@@ -158,7 +158,7 @@
                 </a>
               </li>
                  <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Archive.html">
+                <a class="nav-link nav-link-side" href="Archive.aspx">
                     <i data-feather="archive"></i>
 				    <span class="nav-txt">Archive</span>
                 </a>
@@ -192,7 +192,7 @@
             
             <br />
         <div class="row ml-3">
-            <asp:Button ID="BtnSearch" class="viewapp-button " Font-Size="13pt" BackColor="#0c293d" runat="server" Text="Filter" />
+            <asp:Button ID="BtnSearch" class="viewapp-button mr-3" Font-Size="13pt" BackColor="#0c293d" runat="server" Text="Filter" />
             <br />
             <asp:Button ID="BtnReset" class="viewapp-button " Font-Size="13pt" BackColor="#434c55" runat="server" Text="Reset" />
 

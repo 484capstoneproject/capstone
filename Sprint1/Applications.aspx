@@ -39,17 +39,15 @@
 	width:30%;
 	margin: 0px;  
 	  }
-<<<<<<< HEAD
+
 
       #applications{
           margin-left: 0px!important;
       }
-	  
-=======
+
 	    .color {
           color: #83bf4a;
       } 
->>>>>>> c1f43ed7c0d778cb8e4df19472c06f472dca8c92
 
 </style>
 
@@ -168,7 +166,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Archive.html">
+                <a class="nav-link nav-link-side" href="Archive.aspx">
                   <i data-feather="archive"></i>
 					<span class="nav-txt">Archive</span>
                 </a>

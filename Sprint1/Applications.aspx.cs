@@ -14,12 +14,35 @@ public partial class Applications : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        con.Open();
-        SqlCommand cmd = new SqlCommand("select count(BusinessRead) from StudentMessage where BusinessRead=@BusinessRead", con);
-        cmd.CommandType = CommandType.Text;
-        cmd.Parameters.AddWithValue("BusinessRead", 1);
-        int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
-        sidebarMessages.InnerText = "       " + inboxCount.ToString();
-        con.Close();
+        int LoginEntityID = (int)Session["EntityID"];
+
+        if (!IsPostBack)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select count(BusinessRead) from StudentMessage where BusinessRead=@BusinessRead", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessRead", 1);
+            int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
+            sidebarMessages.InnerText = "       " + inboxCount.ToString();
+            con.Close();
+
+            con.Open();
+            cmd = new SqlCommand("select BusinessName from Business where BusinessEntityID=@BusinessEntityID", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
+            cmd.ExecuteNonQuery();
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    BusinessName.InnerText = reader["BusinessName"].ToString();
+                }
+            }
+            reader.Close();
+        }
+       
     }
 }
