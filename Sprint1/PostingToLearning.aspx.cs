@@ -21,6 +21,18 @@ public partial class PostingToLearning : System.Web.UI.Page
 
         //int LoginEntityID = (int)Session["EntityID"];
 
+        if (!IsPostBack)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select count(BusinessRead) from StudentMessage where BusinessRead=@BusinessRead", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessRead", 1);
+            int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
+            sidebarMessages.InnerText = "       " + inboxCount.ToString();
+            con.Close();
+        }
+
+
         //if (!IsPostBack)
         //{
         //    con.Open();

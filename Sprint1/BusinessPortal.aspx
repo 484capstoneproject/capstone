@@ -144,7 +144,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Archive.html">
+                <a class="nav-link nav-link-side" href="Archive.aspx">
                     <i data-feather="archive"></i>
 				    <span class="nav-txt">Archive</span>
                 </a>

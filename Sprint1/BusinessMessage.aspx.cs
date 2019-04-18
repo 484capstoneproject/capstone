@@ -150,7 +150,7 @@ public partial class BusinessMessage : System.Web.UI.Page
         //ONE MEANS THAT THE MESSAGE IS UNREAD. 0 MEANS SOMEONE READ IT
         if (Convert.ToInt16(DataBinder.Eval(e.Row.DataItem, "BusinessRead")) == 1)
         {
-            e.Row.BackColor = System.Drawing.Color.Red;
+            e.Row.BackColor = System.Drawing.Color.PowderBlue;
         }
     }
 

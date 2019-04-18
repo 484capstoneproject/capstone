@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Archive.aspx.cs" Inherits="Archive" %>
+
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -105,21 +107,21 @@
        
         <nav class="col-2 p-0 d-none d-md-block sidebar sidebar-expanded" id="collapse-it">
             <div class="sidebar-inner position-sticky">
-                <div class="profile-bar text-center">
-                    <table class="profile-table text-left">
-                        <tr>
-                            <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
-                            <td class="bus-name">
-                                <h2 class="bus-name-header mt-3">PB Mares</h2>
-
-                                <button id="editprofile" class="btn btn-link btn-edit-profile pl-0">
-                                    <p class="btn btn-link btn-edit-profile"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
-                    <span id="signout-btn" class="signout-button mr-2">Sign Out</span>
-                </div>
+             <div class="profile-bar text-center">
+              <table class="profile-table text-left">
+  				<tr>
+  				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
+  				  <td class="bus-name">
+  				  <h2 class="bus-name-header mt-3">PB Mares</h2>
+  				  
+					 <button id="editprofile" class="btn btn-link btn-edit-profile pl-0">
+					  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
+					  </button>
+  				  </td> 
+				 </tr>  				
+			</table>
+           <span id="signout-btn" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span>
+           </div>
             <ul class="nav flex-column sidebar-links">
            
               <li class="nav-item-side">
@@ -160,7 +162,7 @@
                 </a>
               </li>
               <li class="nav-item-side sidebar-active">
-                <a class="nav-link nav-link-side" href="Archive.html">
+                <a class="nav-link nav-link-side" href="Archive.aspx">
                   <i data-feather="archive"></i>
 					<span class="nav-txt sidebartext-active">Archive</span>
                 </a>

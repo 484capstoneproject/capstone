@@ -32,15 +32,24 @@
 		  position: -webkit-sticky;
 		  top: 0;
 		  left: 0;
-		  z-index: 100;
+		  z-index: 200;
 	  }
 	  #collapse-it{
-		 position:fixed; 
-	height: 100%;
+	height: auto;
 	width:30%;
 	margin: 0px;  
 	  }
+<<<<<<< HEAD
+
+      #applications{
+          margin-left: 0px!important;
+      }
 	  
+=======
+	    .color {
+          color: #83bf4a;
+      } 
+>>>>>>> c1f43ed7c0d778cb8e4df19472c06f472dca8c92
 
 </style>
 
@@ -146,7 +155,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Aalendar.aspx">
+                <a class="nav-link nav-link-side" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>
@@ -155,6 +164,7 @@
                 <a class="nav-link nav-link-side" href="BusinessMessage.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
+                    <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
               <li class="nav-item-side">
@@ -167,6 +177,7 @@
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
 			</div>
         </nav>
+      <div class="gradient-bar"></div>
 	<!-------------------- SIDEBAR ENDS -------------------->
 		  
 		  

@@ -24,7 +24,7 @@
   <style>
 	  
 	  body{
-		  overflow: visible;
+		  overflow: hidden;
 	  }
 	  
 	  .navbar{
@@ -36,10 +36,20 @@
 	  }
 	  #collapse-it{
 		 position:fixed; 
-	height: 100%;
-	width:30%;
-	margin: 0px;  
+	    height: 100%;
+	    width:30%;
+	    margin: 0px;  
 	  }
+      .color {
+          color: #83bf4a;
+      } 
+
+      #postings{
+          overflow: scroll;
+          max-height: 90%;
+          overflow-x: hidden
+      }
+
 
   </style>
 
@@ -157,7 +167,7 @@
                 </a>
               </li>
             <li class="nav-item-side">
-                 <a class="nav-link nav-link-side" href="Archive.html">
+                 <a class="nav-link nav-link-side" href="Archive.aspx">
                 <i data-feather="archive"></i>
 			    <span class="nav-txt">Archive</span>
                 </a>
@@ -166,6 +176,8 @@
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
 			</div>
         </nav>
+        <div class="gradient-bar"></div>
+
 	<!-------------------- SIDEBAR ENDS -------------------->
 		  
 		  
@@ -413,8 +425,7 @@
 	
 			   <!---- Filter Card---->
 				
-					<div class="col-3 card bg-white ml-3 mt-5" style="
-    max-height:  100%;">
+					<div class="col-3 card bg-white ml-3 mt-5" style="max-height:  100%;" id="filterCard">
 						<div class="filter-row">
   						 <button type="button" data-toggle="modal" class="p-0 new-event-btn mt-3 w-100" data-target="#newPostModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
 							<br />
@@ -439,159 +450,9 @@
 						<div class="accordion mt-3" id="accordionExample">
 							<div class="card">
 
-								<div class="card-header d-flex justify-content-between header-collapse" id="headingOne">
-										<div class= "d-inline">
-											<div class="d-inline">
-												<button class="btn btn-link collapsed collapse-icon" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-												 <i data-feather="chevron-down"></i>
-												 </button>
-											</div> 						  
-												<h6 class="text-right mb-0 job-title d-inline">Career Clusters</h6>
-										</div>
-								  </div>
+							
 								
-								<!---- Career Clusters check boxes---->
-  						 			 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-  						   
-							  
-							 		 <div class="col card-body cluster-list">
-										
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Agriculture" runat="server"/>
-														  <label class="form-check-label" for="CareerCheck1">
-															Agriculture, Food, and Natural Resources
-														  </label>
-														</div>
-
-
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Architecture" runat="server" />
-														  <label class="form-check-label" for="CareerCheck2">
-															Architecture and Construction
-														  </label>
-														</div>
-
-
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Arts" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
-														  <label class="form-check-label" for="CareerCheck3">
-															Arts, Audio/Video Technology, and Communications
-														  </label>
-														</div>
-												  
-												  		<div class="form-check">
-                                                          <asp:CheckBox ID="Business" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
-														  <label class="form-check-label" for="CareerCheck1">
-															Business, Management, and Administration
-														  </label>
-														</div>
-
-
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Education" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
-														  <label class="form-check-label" for="CareerCheck2">
-															Education and Training
-														  </label>
-														</div>
-
-
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Finance" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="">--%>
-														  <label class="form-check-label" for="CareerCheck3">
-															Finance
-														  </label>
-														</div>
-												  
-												  		<div class="form-check">
-                                                          <asp:CheckBox ID="Government" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
-														  <label class="form-check-label" for="CareerCheck1">
-															Government and Public Administration
-														  </label>
-														</div>
-
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Health" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
-														  <label class="form-check-label" for="CareerCheck2">
-															Health Science
-														  </label>
-														</div>
-												  
-									
-														
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Hospital" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
-														  <label class="form-check-label" for="CareerCheck3">
-															Hospitality and Tourism
-														  </label>
-														</div>
-													 
-													 	<div class="form-check">
-                                                          <asp:CheckBox ID="Human" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="">--%>
-														  <label class="form-check-label" for="CareerCheck1">
-															Human Services
-														  </label>
-														</div>
-
-														<div class="form-check">
-                                                          <asp:CheckBox ID="IT" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="">--%>
-														  <label class="form-check-label" for="CareerCheck2">
-															Information Technology
-														  </label>
-														</div>
-
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Law" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
-														  <label class="form-check-label" for="CareerCheck3">
-															Law, Public Safety, Corrections, and Security
-														  </label>
-														</div>
-													 
-													 <div class="form-check">
-                                                         <asp:CheckBox ID="Manufacturing" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
-														  <label class="form-check-label" for="CareerCheck3">
-															Manufacturing
-														  </label>
-														</div>
-													 
-													 	<div class="form-check">
-                                                          <asp:CheckBox ID="Marketing" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="" >--%>
-														  <label class="form-check-label" for="CareerCheck1">
-															Marketing, Sales, and Service
-														  </label>
-														</div>
-
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Science" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="">--%>
-														  <label class="form-check-label" for="CareerCheck2">
-															Science, Technology, Engineering, and Mathematics
-														  </label>
-														</div>
-
-														<div class="form-check">
-                                                          <asp:CheckBox ID="Transportation" runat="server" />
-<%--														  <input class="form-check-input" type="checkbox" value="">--%>
-														  <label class="form-check-label" for="CareerCheck3">
-															Transportation, Distribution, and Logistics
-														  </label>
-														</div>
-													 
-		 
-					
-											 </div>
-											</div> 
+  						
 										 </div>
 										 
 										 

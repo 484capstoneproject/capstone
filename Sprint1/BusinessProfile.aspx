@@ -63,56 +63,52 @@
        <img class="img-thumbnail profile-img mt-3" src="images/avatar.png">
        <p class="text-muted mt-2"><a href="BusinessProfile.aspx">Edit your profile <span class="editpost d-inline ml-2" data-feather="edit"></span></a></p>
        </div>
-        <ul class="nav flex-column bg-grey mt-4 pt-2 pb-2">
-          <li class="nav-item">
-            <a class="nav-link active-blue dash-wt-link" href="BusinessPortal.aspx">
-              <span data-feather="home"></span>
-              Dashboard 
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="#">
-              <span data-feather="check-circle"></span>
-              Applications
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="JobPostings.aspx">
-              <span data-feather="clipboard"></span>
-              Postings
-            </a>
-          </li>
-             <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="LearningOpportunities.aspx">
-                  <i data-feather="clipboard"></i>
-					<span class="nav-txt">Learning Opportunities Posts</span>
+          <ul class="nav flex-column sidebar-links">
+           
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side sidebar-active" href="BusinessPortal.aspx">
+                  <span class="white-icon"></span><i data-feather="home"></i></span>
+                  <span class="nav-txt sidetext-active">Dashboard</span>
                 </a>
               </li>
-                <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Scholarships.aspx">
-                  <i data-feather="clipboard"></i>
-					<span class="nav-txt">Scholarship Posts</span>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Applications.aspx">
+                  <i data-feather="check-circle"></i>
+					<span class="nav-txt">Applications</span>
                 </a>
               </li>
-            <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="Analytics.aspx">
-              <span data-feather="bar-chart-2"></span>
-              Analytics
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="Calendar.aspx">
-              <span data-feather="calendar"></span>
-              Calendar
-            </a>
-          </li>          
-           <li class="nav-item">
-            <a class="nav-link dash-wt-link" href="#">
-              <span data-feather="inbox"></span>
-              Messages
-            </a>
-          </li>
-        </ul>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Postings.aspx">
+                  <i data-feather="clipboard"></i>
+					<span class="nav-txt">Postings</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Analytics.aspx">
+                  <i data-feather="pie-chart"></i>
+					<span class="nav-txt">Analytics</span>
+                  </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Calendar.aspx">
+                  <i data-feather="calendar"></i>
+					<span class="nav-txt">Calendar</span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="BusinessMessage.aspx">
+                  <i data-feather="inbox"></i>
+					<span class="nav-txt">Messages</span>
+                    <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
+                </a>
+              </li>
+              <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Archive.aspx">
+                    <i data-feather="archive"></i>
+				    <span class="nav-txt">Archive</span>
+                </a>
+            </li>
+            </ul>
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">

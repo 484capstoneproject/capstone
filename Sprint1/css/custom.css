@@ -184,7 +184,18 @@ img.nextstepgo-logo-nav {
   max-width: 10px;
   padding: 0px;
   margin-left: -10px;
-  height: 565px; }
+   }
+
+.gradient-bar {
+    width: 10px;
+    height: auto;
+    z-index: 110;
+}
+
+#collapse-it {
+    height: auto;
+    z-index: 20;
+}
 
 .profile-img {
   border-radius: 100px;
