@@ -183,9 +183,13 @@ public partial class Postings : System.Web.UI.Page
     {
         int LoginEntityID = (int)Session["EntityID"];
 
+        //Type
         string part = "";
         string full = "";
         string intern = "";
+
+        // Career Clusters
+       
 
         if (FullTimeCheck.Checked)
         {
@@ -200,11 +204,63 @@ public partial class Postings : System.Web.UI.Page
             intern = "Internship";
         }
 
-        if (FullTimeCheck.Checked)
+        if (FullTimeCheck.Checked && PartTimeCheck.Checked || InternCheck.Checked)
         {
             ListViewJob.DataSourceID = null;
-            ListViewLearning.DataSourceID = null;
-            ListViewScholarship.DataSourceID = null;
+
+
+            con.Open();
+            string jobType = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobType like @full OR JobType like @part OR JobType like @intern)";
+
+            //job
+            SqlDataAdapter dj = new SqlDataAdapter(jobType, con);
+            dj.SelectCommand.Parameters.AddWithValue("@full", full);
+            dj.SelectCommand.Parameters.AddWithValue("@part", part);
+            dj.SelectCommand.Parameters.AddWithValue("@intern", intern);
+            dj.SelectCommand.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+
+            // here you can see the passed value in textbox   
+            DataSet ds = new DataSet();
+            dj.Fill(ds, "JobPost");
+
+            ListViewJob.DataSource = ds.Tables["JobPost"];
+            ListViewJob.DataBind();
+
+            con.Close();
+        }
+
+
+
+        else if (FullTimeCheck.Checked || PartTimeCheck.Checked && InternCheck.Checked)
+        {
+            ListViewJob.DataSourceID = null;
+        
+
+            con.Open();
+            string jobType = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobType like @full OR JobType like @part OR JobType like @intern)";
+
+            //job
+            SqlDataAdapter dj = new SqlDataAdapter(jobType, con);
+            dj.SelectCommand.Parameters.AddWithValue("@full", full);
+            dj.SelectCommand.Parameters.AddWithValue("@part", part);
+            dj.SelectCommand.Parameters.AddWithValue("@intern", intern);
+            dj.SelectCommand.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+
+            // here you can see the passed value in textbox   
+            DataSet ds = new DataSet();
+            dj.Fill(ds, "JobPost");
+
+            ListViewJob.DataSource = ds.Tables["JobPost"];
+            ListViewJob.DataBind();
+
+            con.Close();
+        }
+
+     
+        else if (FullTimeCheck.Checked && PartTimeCheck.Checked && InternCheck.Checked)
+        {
+            ListViewJob.DataSourceID = null;
+           
 
             con.Open();
             string jobType = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobType like @full OR JobType like @part OR JobType like @intern)";
@@ -229,6 +285,8 @@ public partial class Postings : System.Web.UI.Page
         else
         {
             ListViewJob.DataSourceID = "SqlDataSource1";
+            ListViewLearning.DataSourceID = "SqlDataSource2";
+            ListViewScholarship.DataSourceID = "SqlDataSource3";
 
             //sets the datasource to sqldatasource if the textbox is empty
         }

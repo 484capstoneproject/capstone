@@ -624,7 +624,7 @@
 						<!---- Select a Type---->
   	  					
 								<!---- Now Type Check boxes---->
-								<div class="form-check mt-3">
+								<div class="form-check">
 									  <asp:CheckBox ID="FullTimeCheck" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
 									  <label class="form-check-label" for="TypeCheck1">
 										Full Time
@@ -645,19 +645,7 @@
 									  </label>
 									</div>
 								
-								<div class="form-check">
-									  <asp:CheckBox runat="server" ID="ShadowCheck" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
-									  <label class="form-check-label" for="TypeCheck4">
-										Shadowing Opportunity
-									  </label>
-									</div>
 								
-								<div class="form-check">
-									  <asp:CheckBox runat="server" ID="ScholarshipCheck" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
-									  <label class="form-check-label" for="TypeCheck5">
-										Scholarship
-									  </label>
-									</div>
 									
   						    </div>
   						  </div>
