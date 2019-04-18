@@ -16,6 +16,9 @@
     
     <!-- Custom Styles -->
 	<link rel="stylesheet" href="css/custom.css">
+
+     <link rel="stylesheet" href="css/dashboard-testing.css">
+
   <style>
 	  body{
 		  overflow: hidden;
@@ -55,7 +58,7 @@
       <li class="nav-item">
         	<div class="dropdown">
   				<button class="dropdown-toggle nav-dropdown" type="button" id="navSettingMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/PBMares.png"></a>
+   				<a class="nav-link pt-0" href="#"><img class="profile-img-nav" src="images/avatar.png"></a>
   				</button>
   				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navSettingMenu">
     				<button class="dropdown-item" type="button">Profile</button>
@@ -75,19 +78,18 @@
       <div class="row vh-100">
        
       <!---------------- SIDEBAR BEGINS --------------->
-              <nav class="col-2 p-0 d-none d-md-block sidebar sidebar-expanded" id="collapse-it">
+        <nav class="col-2 p-0 d-none d-md-block sidebar sidebar-expanded" id="collapse-it">
              <div class="profile-bar text-center">
              <table class="profile-table text-left">
   				<tr>
-  				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
+  				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
   				  <td class="bus-name">
-  				  <h2 class="bus-name-header" id="BusinessName" runat="server">PBMares</h2>
-  				  <a href="BusinessProfile.aspx" <p class="btn btn-link btn-edit-profile"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
-
+  				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
+  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>
-           <asp:Button id="SignOut" type="submit" class="signout-button mr-2" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
            </div>
             <ul class="nav flex-column sidebar-links">
            
@@ -98,7 +100,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Applications.aspx">
+                <a class="nav-link nav-link-side" href="#">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
@@ -128,40 +130,46 @@
                     <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
-              <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Archive.html">
-                    <i data-feather="archive"></i>
-			        <span class="nav-txt">Archive</span>
-                </a>
-              </li>
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
         </nav>
         <div class="gradient-bar col"></div>
 	<!-------------------- SIDEBAR ENDS -------------------->
     <!-------------------- BODY STARTS --------------------->  
- 		<div>
-			<div style="height: 487px; width: 913px">
-        <strong><font face="verdana">Event Calendar</font></strong>:<br />
-        <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="White" Font-Names="Verdana" Font-Size="9pt" ForeColor="Black" Height="400px"
-            NextPrevFormat="FullMonth" Width="857px" OnDayRender="Calendar1_DayRender" BorderWidth="1px" OnSelectionChanged="getDesc_Click">
-            <SelectedDayStyle BackColor="#333399" ForeColor="White" />
-            <TodayDayStyle BackColor="#CCCCCC" />
-            <OtherMonthDayStyle ForeColor="#999999" />
-            <NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333" VerticalAlign="Bottom" />
-            <DayHeaderStyle Font-Bold="True" Font-Size="8pt" />
-            <TitleStyle CssClass="border" BackColor="White" Font-Bold="True"
-                Font-Size="12pt" ForeColor="#333399" />
+ 		<div class="col-9 d-inline mt-4 mr-3 bg-white">
+         
+              <div class="row">
+        
+<center>
+			<div style="height: 487px; width: 913px"> <!-------------------- Cal div--------------------->  
+
+        <strong><h2>Event Calendar</h2></strong><br />
+
+        <asp:Calendar ID="Calendar1" runat="server" BackColor="#f9f9f9" BorderColor="#0c293d" Font-Names="Verdana" Font-Size="12pt" ForeColor="#25408f" Height="500px"
+            NextPrevFormat="FullMonth" Width="857px" OnDayRender="Calendar1_DayRender" BorderWidth="1px" >
+            <SelectedDayStyle BackColor="#0c293d" ForeColor="White" />
+            <TodayDayStyle BackColor="#0c293d" ForeColor="White" />
+            <OtherMonthDayStyle ForeColor="White" />
+            <NextPrevStyle Font-Bold="True" Font-Size="10pt" ForeColor="White" VerticalAlign="Bottom" />
+            <DayHeaderStyle Font-Bold="True" BackColor="White" Font-Size="10pt" />
+            <TitleStyle CssClass="border" BackColor="#0c293d" Font-Bold="True"
+                Font-Size="14pt" ForeColor="White" />
+
         </asp:Calendar>
-        <br /><br />
-        <div>
-            <h2>Add Event:</h2>
-            <asp:Label ID="lblAddEventName" Text="Event Name: " runat="server"></asp:Label><asp:TextBox ID="txtAddEventName" runat="server" placeholder="Event Name" required="true"></asp:TextBox>
-            <asp:Label ID="lblEventDescription" Text="Event Description: " runat="server"></asp:Label><asp:TextBox ID="txtEventDescription" required="true" runat="server" placeholder="Event Description" TextMode="MultiLine"></asp:TextBox>
-        </div>
+        &nbsp;&nbsp;        
+</div>
+    </center>
+
+        <div class="bg-dark-blue" style="height: 570px; width: 175px">
+            <h3 class=" ml-2 mt-4 text-white">Add Event</h3>
+            <asp:Label ID="lblAddEventName" Class="text-white ml-2" Text="Event Name " runat="server"></asp:Label><asp:TextBox ID="txtAddEventName" runat="server" placeholder="Event Name" required="true"></asp:TextBox>
+            <br />
+             <br />
+            <asp:Label ID="lblEventDescription" Class="text-white ml-2" Text="Event Description " runat="server"></asp:Label><asp:TextBox ID="txtEventDescription" required="true" runat="server" placeholder="Event Description" TextMode="MultiLine"></asp:TextBox>
+      <br />
         <br />
         <div>
-            <asp:Label ID="lblDateDay" Text="Day: " runat="server"></asp:Label><asp:DropDownList ID="dropDay" runat="server" Height="20px" Width="126px">
+            <asp:Label ID="lblDateDay" class="text-white ml-2" Text="Day " runat="server"></asp:Label><asp:DropDownList ID="dropDay" runat="server" Height="20px" Width="126px">
                 <asp:ListItem>1</asp:ListItem>
                 <asp:ListItem>2</asp:ListItem>
                 <asp:ListItem>3</asp:ListItem>
@@ -194,8 +202,11 @@
                 <asp:ListItem>30</asp:ListItem>
                 <asp:ListItem>31</asp:ListItem>
             </asp:DropDownList>
-            &nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblDay" Text="Month: " runat="server"></asp:Label><asp:DropDownList ID="DropMonth" runat="server">
+         
+            <br />
+            <br />
+
+            <asp:Label ID="lblDay" class="text-white ml-2" Text="Month" runat="server"></asp:Label><asp:DropDownList ID="DropMonth" runat="server">
                 <asp:ListItem>January</asp:ListItem>
                 <asp:ListItem>February</asp:ListItem>
                 <asp:ListItem>March</asp:ListItem>
@@ -209,8 +220,11 @@
                 <asp:ListItem>November</asp:ListItem>
                 <asp:ListItem>December</asp:ListItem>
             </asp:DropDownList>
-            &nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblYear" Text="Year: " runat="server"></asp:Label><asp:DropDownList ID="DropYear" runat="server" Height="23px" Width="88px">
+            
+            <br />
+            <br />
+
+            <asp:Label ID="lblYear" Class="text-white ml-2" Text="Year " runat="server"></asp:Label><asp:DropDownList ID="DropYear" runat="server" Height="23px" Width="88px">
                 <asp:ListItem>2019</asp:ListItem>
                 <asp:ListItem>2020</asp:ListItem>
                 <asp:ListItem>2021</asp:ListItem>
@@ -218,11 +232,18 @@
             </asp:DropDownList>
             <br />
             <br />
-            <asp:Button ID="btnAddEvent" runat="server" Text="Add Event" OnClick="btnAddEvent_Click"/>
-            <asp:ListBox ID="ListBox1" Width="200px" runat="server"></asp:ListBox>
+            <center><asp:Button ID="btnAddEvent" Type="button" Class="btn btn-outline-light" runat="server" Text="Add Event" OnClick="btnAddEvent_Click"/></center>
         </div>		
  					
  	    </div>
+
+
+
+        </div>
+
+
+
+                 </div>
  		</div>
     </div>
 	</div>

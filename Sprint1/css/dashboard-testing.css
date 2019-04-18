@@ -196,3 +196,41 @@ sidebar: active {
 .date {
     background-color: #307477;
 }
+
+
+
+
+
+<!-----Cal---- >
+
+    .bg-blue-green {
+        background-color: #307477;
+    }
+
+    .form-boxes {
+        background-color: #efefef;
+    }
+
+    .text-dark-grey {
+        color: #434c55;
+    }
+
+
+    .bg-dark-blue {
+        background-color: #0c293d;
+    }
+
+
+    .text-white {
+        color: white;
+    }
+
+    .cal-color {
+        background-color: #d6d7dd;
+    }
+    
+    .cal-text {
+        color: #25408f;
+    }
+
+  

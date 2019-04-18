@@ -25,8 +25,6 @@ public partial class Calendar : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-
-        ListBox1.Visible = false;
         if (Session["EntityID"] == null)
         {
             Response.Redirect("Default.aspx");
@@ -102,43 +100,6 @@ public partial class Calendar : System.Web.UI.Page
         }
         return MyColllection;
        
-    }
-
-
-
-    protected void getDesc_Click(object sender, EventArgs e)
-    {
-       
-        ListBox1.Items.Clear();
-        int LoginEntityID = (int)Session["EntityID"];
-        DateTime Event_Date = Calendar1.SelectedDate;
-        ListBox1.Visible = true;
-
-
-        con.Open();
-        SqlCommand cmd = new SqlCommand("SELECT Event_Description FROM calendar where Event_Date = @Event_Date AND BusinessEntityID = @BusinessEntityID", con);
-        cmd.CommandType = CommandType.Text;
-        cmd.Parameters.AddWithValue("@Event_Date", Event_Date);
-        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
-        cmd.ExecuteNonQuery();
-
-        SqlDataReader reader = cmd.ExecuteReader();
-
-        if (reader.HasRows)
-        {
-            while (reader.Read())
-            {
-
-                ListBox1.Items.Add(reader["Event_Description"].ToString());
-
-                           
-            }
-        }
-        reader.Close();
-        con.Close();
-
-
-
     }
 
     public void Calendar1_DayRender(object o, DayRenderEventArgs e)
