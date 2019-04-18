@@ -44,8 +44,6 @@ public partial class Postings : System.Web.UI.Page
                     BusinessName.InnerText = reader["BusinessName"].ToString();
                 }
             }
-
-
         }
 
 
@@ -209,7 +207,8 @@ public partial class Postings : System.Web.UI.Page
         if (FullTimeCheck.Checked && PartTimeCheck.Checked || InternCheck.Checked)
         {
             ListViewJob.DataSourceID = null;
-
+            ListViewLearning.DataSourceID = null;
+            ListViewScholarship.DataSourceID = null;
 
             con.Open();
             string jobType = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobType like @full OR JobType like @part OR JobType like @intern)";
@@ -236,7 +235,8 @@ public partial class Postings : System.Web.UI.Page
         else if (FullTimeCheck.Checked || PartTimeCheck.Checked && InternCheck.Checked)
         {
             ListViewJob.DataSourceID = null;
-        
+            ListViewLearning.DataSourceID = null;
+            ListViewScholarship.DataSourceID = null;
 
             con.Open();
             string jobType = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobType like @full OR JobType like @part OR JobType like @intern)";
@@ -262,7 +262,8 @@ public partial class Postings : System.Web.UI.Page
         else if (FullTimeCheck.Checked && PartTimeCheck.Checked && InternCheck.Checked)
         {
             ListViewJob.DataSourceID = null;
-           
+            ListViewLearning.DataSourceID = null;
+            ListViewScholarship.DataSourceID = null;
 
             con.Open();
             string jobType = "select jobposting.JobPostingID, jobposting.JobTitle, jobposting.description, jobposting.JobType, CareerCluster.CareerClusterType from JobPosting Inner Join CareerCluster ON JobPosting.CareerID=CareerCluster.CareerID where (JobType like @full OR JobType like @part OR JobType like @intern)";
