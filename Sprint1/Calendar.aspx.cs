@@ -70,6 +70,10 @@ public partial class Calendar : System.Web.UI.Page
     }
     public ArrayList Get_Event()
     {
+        if (Session["EntityID"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
         int LoginEntityID = (int)Session["EntityID"];
 
         SqlCommand cmd = new SqlCommand("SELECT * FROM calendar where BusinessEntityID = @BusinessEntityID", con);
@@ -143,6 +147,10 @@ public partial class Calendar : System.Web.UI.Page
 
     public void Calendar1_DayRender(object o, DayRenderEventArgs e)
     {
+        if (Session["EntityID"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
         int LoginEntityID = (int)Session["EntityID"];
 
         string FontColor;
@@ -206,6 +214,10 @@ public partial class Calendar : System.Web.UI.Page
 
     protected void btnAddEvent_Click(object sender, EventArgs e)
     {
+        if (Session["EntityID"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
         int LoginEntityID = (int)Session["EntityID"];
 
         con.Open();

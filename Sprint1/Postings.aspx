@@ -125,7 +125,7 @@
   				  </td> 
 				 </tr>  				
 			</table>
-           <span id="signout-btn" class="signout-button mr-2">Sign Out</span>
+
            </div>
             <ul class="nav flex-column sidebar-links">
            

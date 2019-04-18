@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,6 +15,11 @@ public partial class BusinessMessage : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (Session["EntityID"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
         int LoginEntityID = (int)Session["EntityID"];
 
         if (!IsPostBack)
@@ -156,7 +162,10 @@ public partial class BusinessMessage : System.Web.UI.Page
 
     protected void SignOut_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Default.aspx");
+        Session.Clear();
+        Session.Abandon();
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
     }
 
     protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)

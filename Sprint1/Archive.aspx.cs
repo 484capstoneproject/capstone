@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -14,6 +15,12 @@ public partial class Archive : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+
+        if (Session["EntityID"] == null)
+        {
+            Response.Redirect("Default.aspx");
+        }
+
         int LoginEntityID = (int)Session["EntityID"];
 
         con.Open();
@@ -42,5 +49,12 @@ public partial class Archive : System.Web.UI.Page
             }
         }
         reader.Close();
+    }
+    protected void SignOut_Click(object sender, EventArgs e)
+    {
+        Session.Clear();
+        Session.Abandon();
+        FormsAuthentication.SignOut();
+        FormsAuthentication.RedirectToLoginPage();
     }
 }

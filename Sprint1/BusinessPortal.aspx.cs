@@ -25,6 +25,7 @@ public partial class BusinessPortal : System.Web.UI.Page
         }
 
         int LoginEntityID = (int)Session["EntityID"];
+
         int total = 0;
         if (!IsPostBack)
         {
