@@ -20,6 +20,18 @@ public partial class PostingToScholarship : System.Web.UI.Page
             Response.Redirect("Default.aspx");
         }
 
+        if (!IsPostBack)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select count(BusinessRead) from StudentMessage where BusinessRead=@BusinessRead", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessRead", 1);
+            int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
+            sidebarMessages.InnerText = "       " + inboxCount.ToString();
+            con.Close();
+        }
+
+
         //int LoginEntityID = (int)Session["EntityID"];
 
         //if (!IsPostBack)

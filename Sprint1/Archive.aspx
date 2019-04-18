@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Archive.aspx.cs" Inherits="Archive" %>
+
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -160,7 +162,7 @@
                 </a>
               </li>
               <li class="nav-item-side sidebar-active">
-                <a class="nav-link nav-link-side" href="Archive.html">
+                <a class="nav-link nav-link-side" href="Archive.aspx">
                   <i data-feather="archive"></i>
 					<span class="nav-txt sidebartext-active">Archive</span>
                 </a>

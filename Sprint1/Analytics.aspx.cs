@@ -43,6 +43,16 @@ public partial class Analytics : System.Web.UI.Page
                     BusinessName.InnerText = reader["BusinessName"].ToString();
                 }
             }
+            con.Close();
+            reader.Close();
+
+            con.Open();
+            cmd = new SqlCommand("select count(BusinessRead) from StudentMessage where BusinessRead=@BusinessRead", con);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("BusinessRead", 1);
+            int inboxCount = Convert.ToInt32(cmd.ExecuteScalar());
+            sidebarMessages.InnerText = "       " + inboxCount.ToString();
+            con.Close();
         }
     }
     protected void SignOut_Click(object sender, EventArgs e)
