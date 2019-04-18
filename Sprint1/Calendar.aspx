@@ -146,7 +146,7 @@
         <strong><h2>Event Calendar</h2></strong><br />
 
         <asp:Calendar ID="Calendar1" runat="server" BackColor="#f9f9f9" BorderColor="#0c293d" Font-Names="Verdana" Font-Size="12pt" ForeColor="#25408f" Height="500px"
-            NextPrevFormat="FullMonth" Width="857px" OnDayRender="Calendar1_DayRender" BorderWidth="1px" >
+            NextPrevFormat="FullMonth" Width="857px" OnDayRender="Calendar1_DayRender" BorderWidth="1px" OnSelectionChanged="getDesc_Click" >
             <SelectedDayStyle BackColor="#0c293d" ForeColor="White" />
             <TodayDayStyle BackColor="#0c293d" ForeColor="White" />
             <OtherMonthDayStyle ForeColor="White" />
@@ -156,6 +156,7 @@
                 Font-Size="14pt" ForeColor="White" />
 
         </asp:Calendar>
+               
         &nbsp;&nbsp;        
 </div>
     </center>
@@ -233,6 +234,7 @@
             <br />
             <br />
             <center><asp:Button ID="btnAddEvent" Type="button" Class="btn btn-outline-light" runat="server" Text="Add Event" OnClick="btnAddEvent_Click"/></center>
+            <center><asp:ListBox ID="ListBox1" Width="200px" runat="server"></asp:ListBox></center>
         </div>		
  					
  	    </div>
