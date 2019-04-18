@@ -105,17 +105,17 @@
              <div class="profile-bar text-center">
              <table class="profile-table text-left">
   				<tr>
-  				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
+  				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
 
-  				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
+  				  <h2 class="bus-name-header mt-3" id="BusinessName" runat="server">PB Mares</h2>
 
-  				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
+  				  <a href="BusinessProfile.aspx"<p class="btn btn-link btn-edit-profile"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
 				 </tr>  				
 			</table>
 
-           <asp:Button id="SignOut" type="submit" class="btn btn-maingreen sign-out btn-sign-out" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
+           <asp:Button id="SignOut" type="submit" class="signout-button mr-2" runat="server" Text="Sign Out" OnClick="SignOut_Click"></asp:Button>
 
            </div>
             <ul class="nav flex-column sidebar-links">

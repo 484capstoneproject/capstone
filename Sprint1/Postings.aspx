@@ -110,12 +110,12 @@
   				  <h2 class="bus-name-header mt-3" runat="server" id="BusinessName">PB Mares</h2>
   				  
 					 <button id="editprofile" class="btn btn-link btn-edit-profile pl-0">
-					  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
+					 <p class="btn btn-link btn-edit-profile"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
 					  </button>
   				  </td> 
 				 </tr>  				
 			</table>
-           <span id="signout-btn" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span>
+           <span id="signout-btn" class="signout-button mr-2">Sign Out</span>
            </div>
             <ul class="nav flex-column sidebar-links">
            
@@ -417,7 +417,8 @@
     max-height:  100%;">
 						<div class="filter-row">
   						 <button type="button" data-toggle="modal" class="p-0 new-event-btn mt-3 w-100" data-target="#newPostModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
-							
+							<br />
+                            <br />
 							
 					
 					
@@ -429,8 +430,8 @@
   				 			 <span class="x-search xicon"> <i data-feather="search"></i></span><input type="search" class="form-control min-imput" id="examplesearch" aria-describedby="search" placeholder="Title or Keywords" >
   							</div>
 							</form>--%>
-                             <input  runat= "server"  id="Text1"  placeholder="Keyword" />
-                        <asp:Button type="button" Text="Search Post"  OnClick="BtnSearch_Click" runat="server"></asp:Button>
+                             <input  runat= "server"  id="Text1" placeholder="Keyword" />
+                        <asp:Button type="button" Class="signout-button" Text="Search Post"  OnClick="BtnSearch_Click" runat="server"></asp:Button>
                         <%--<asp:CheckBox ID="fullTime" Text="Full-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true" />
                             <asp:CheckBox ID="partTime" Text="Part-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
                             <asp:CheckBox ID="internship" Text="Internship" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>--%>

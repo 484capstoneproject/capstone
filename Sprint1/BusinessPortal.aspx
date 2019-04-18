@@ -156,7 +156,7 @@
 	<!-------------------- SIDEBAR ENDS -------------------->
     <!-------------------- BODY STARTS --------------------->  
  		<div class="col-10 bg-lt-grey" id="mainbody">
-			<div class="row h-90">
+			<div class="row h-85">
  				<div class="col-8 bg-white posting-block">
  				<h2 class= "mt-4">Postings</h2>
  					<div class="accordion" id="accordionExample">
@@ -363,7 +363,7 @@
  						</div>
 				</div>
  				</div>
- 				<div class="col-4 h-90">
+ 				<div class="col-4 h-300">
  					<div class="col-12 bg-white h-60">
                          <div class="justify-content-between pt-3 mb-3">
  						<h2 class= "pt-4 mr-4 d-inline">Analytics</h2>
@@ -397,7 +397,7 @@
                      
 
 
- 					<div class="col-12 mt-3 bg-white cal-box h-48">
+ 					<div class="col-12 mt-3 bg-white cal-box h-30">
  						<div class="card sm-cal h-100" style="max-width: 540px;">
   						<div class="row no-gutters h-100">
   						  <div class="col-md-4  date text-center pt-3 pb-0" >

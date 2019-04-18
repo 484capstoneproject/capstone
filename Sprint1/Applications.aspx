@@ -110,15 +110,14 @@
   				<tr>
   				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
-  				  <h2 class="bus-name-header mt-3">PB Mares</h2>
+  				  <h2 class="bus-name-header mt-3" runat="server" id="BusinessName">PB Mares</h2>
   				  
-					 <button id="editprofile" class="btn btn-link btn-edit-profile pl-0">
-					  <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p>
-					  </button>
+					  <a href="BusinessProfile.aspx" <p class="btn btn-link btn-edit-profile"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
+					
   				  </td> 
 				 </tr>  				
 			</table>
-           <span id="signout-btn" class="btn btn-maingreen sign-out btn-sign-out">Sign Out</span>
+           <span id="signout-btn" class="signout-button mr-2">Sign Out</span>
            </div>
             <ul class="nav flex-column sidebar-links">
            
