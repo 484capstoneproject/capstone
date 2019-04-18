@@ -105,10 +105,10 @@
              <div class="profile-bar text-center">
              <table class="profile-table text-left">
   				<tr>
-  				  <td class="profile-img-box"><img class="profile-img" src="images/avatar.png"></td>
+  				  <td class="profile-img-box"><img class="profile-img" src="images/PBMares.png"></td>
   				  <td class="bus-name">
 
-  				  <h2 class="bus-name-header" id="BusinessName" runat="server">Martin's Electronics</h2>
+  				  <h2 class="bus-name-header font-weight-bold" id="BusinessName" runat="server">PB Mares</h2>
 
   				  <a href="BusinessProfile.aspx" <p class="edit-text"><i data-feather="edit" class="edit-icon"></i>Edit Profile</p></a>
   				  </td> 
@@ -192,7 +192,7 @@
             
             <br />
         <div class="row ml-3">
-            <asp:Button ID="BtnSearch" class="viewapp-button " Font-Size="13pt" BackColor="#0c293d" runat="server" Text="Filter" />
+            <asp:Button ID="BtnSearch" class="viewapp-button mr-2" Font-Size="13pt" BackColor="#0c293d" runat="server" Text="Filter" />
             <br />
             <asp:Button ID="BtnReset" class="viewapp-button " Font-Size="13pt" BackColor="#434c55" runat="server" Text="Reset" />
 

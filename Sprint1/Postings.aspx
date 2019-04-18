@@ -24,7 +24,7 @@
   <style>
 	  
 	  body{
-		  overflow: visible;
+		  overflow: hidden;
 	  }
 	  
 	  .navbar{
@@ -36,10 +36,17 @@
 	  }
 	  #collapse-it{
 		 position:fixed; 
-	height: 100%;
-	width:30%;
-	margin: 0px;  
+	    height: 100%;
+	    width:30%;
+	    margin: 0px;  
 	  }
+
+      #postings{
+          overflow: scroll;
+          max-height: 90%;
+          overflow-x: hidden
+      }
+
 
   </style>
 
@@ -166,6 +173,8 @@
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
 			</div>
         </nav>
+        <div class="gradient-bar"></div>
+
 	<!-------------------- SIDEBAR ENDS -------------------->
 		  
 		  
@@ -413,8 +422,7 @@
 	
 			   <!---- Filter Card---->
 				
-					<div class="col-3 card bg-white ml-3 mt-5" style="
-    max-height:  100%;">
+					<div class="col-3 card bg-white ml-3 mt-5" style="max-height:  100%;" id="filterCard">
 						<div class="filter-row">
   						 <button type="button" data-toggle="modal" class="p-0 new-event-btn mt-3 w-100" data-target="#newPostModal"><li class="list-group-item bg-green"><i data-feather="plus-circle" class="mr-3"> </i>Add Post</li></button>
 							

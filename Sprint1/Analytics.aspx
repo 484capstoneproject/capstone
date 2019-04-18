@@ -139,7 +139,7 @@
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
         </nav>
-        <div class="gradient-bar col"></div>
+        <div class="gradient-bar"></div>
 
     <!-------------------- BODY STARTS --------------------->  
  			

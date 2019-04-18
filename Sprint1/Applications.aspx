@@ -32,14 +32,17 @@
 		  position: -webkit-sticky;
 		  top: 0;
 		  left: 0;
-		  z-index: 100;
+		  z-index: 200;
 	  }
 	  #collapse-it{
-		 position:fixed; 
-	height: 100%;
+	height: auto;
 	width:30%;
 	margin: 0px;  
 	  }
+
+      #applications{
+          margin-left: 0px!important;
+      }
 	  
 
 </style>
@@ -168,6 +171,7 @@
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
 			</div>
         </nav>
+      <div class="gradient-bar"></div>
 	<!-------------------- SIDEBAR ENDS -------------------->
 		  
 		  
