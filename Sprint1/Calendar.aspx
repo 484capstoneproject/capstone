@@ -101,7 +101,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="#">
+                <a class="nav-link nav-link-side" href="Applications.aspx">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
@@ -131,6 +131,12 @@
                     <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
+                 <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Archive.aspx">
+                    <i data-feather="archive"></i>
+				    <span class="nav-txt">Archive</span>
+                </a>
+            </li>
             </ul>
          <div id="sidebar-btn"><i data-feather="arrow-left-circle"></i></div>
         </nav>

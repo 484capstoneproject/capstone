@@ -39,11 +39,17 @@
 	width:30%;
 	margin: 0px;  
 	  }
+<<<<<<< HEAD
 
       #applications{
           margin-left: 0px!important;
       }
 	  
+=======
+	    .color {
+          color: #83bf4a;
+      } 
+>>>>>>> c1f43ed7c0d778cb8e4df19472c06f472dca8c92
 
 </style>
 
@@ -150,7 +156,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="Aalendar.aspx">
+                <a class="nav-link nav-link-side" href="Calendar.aspx">
                   <i data-feather="calendar"></i>
 					<span class="nav-txt">Calendar</span>
                 </a>
@@ -159,6 +165,7 @@
                 <a class="nav-link nav-link-side" href="BusinessMessage.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
+                    <span class="nav-txt color" runat="server" id="sidebarMessages"></span>
                 </a>
               </li>
               <li class="nav-item-side">
