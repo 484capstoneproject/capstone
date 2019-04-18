@@ -289,7 +289,7 @@
 								<input type="checkbox" class="d-block">
 						 		 <span class="slider round publish-toggle"></span>
 						 </label>
-								<p class="unpublished-text align-middle desc-text text-black-50" style="display:none;">Unpublished</p><p class="submitted-text align-middle published-text" style="display:block;">Published 3/4/19 1:30 p.m.</p>
+								<p class="unpublished-text align-middle desc-text text-black-50" style="display:none;">Unpublished</p><p ID="PublishedTime" class="submitted-text align-middle published-text" style="display:block;">Published 3/4/19 1:30 p.m.</p>
 								</div></div>
   			<div class="mt-auto w-100 bd-highlight bg-medblue pl-1">
  					<div class="card-footer">

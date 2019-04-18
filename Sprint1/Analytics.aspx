@@ -101,7 +101,7 @@
                 </a>
               </li>
               <li class="nav-item-side">
-                <a class="nav-link nav-link-side" href="#">
+                <a class="nav-link nav-link-side" href="Applications.aspx">
                   <i data-feather="check-circle"></i>
 					<span class="nav-txt">Applications</span>
                 </a>
@@ -128,6 +128,12 @@
                 <a class="nav-link nav-link-side" href="BusinessMessage.aspx">
                   <i data-feather="inbox"></i>
 					<span class="nav-txt">Messages</span>
+                </a>
+              </li>
+                      <li class="nav-item-side">
+                <a class="nav-link nav-link-side" href="Archive.html">
+                  <i data-feather="archive"></i>
+					<span class="nav-txt">Archive</span>
                 </a>
               </li>
             </ul>

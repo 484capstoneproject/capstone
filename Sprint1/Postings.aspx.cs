@@ -44,6 +44,8 @@ public partial class Postings : System.Web.UI.Page
                     BusinessName.InnerText = reader["BusinessName"].ToString();
                 }
             }
+
+
         }
 
 
