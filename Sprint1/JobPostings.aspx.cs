@@ -45,41 +45,43 @@ public partial class JobPostings : System.Web.UI.Page
         int LoginEntityID = (int)Session["EntityID"];
 
 
-    //    if (!IsPostBack)
-    //    {
-    //        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlCon"].ConnectionString);
-    //        con.Open();
-    //        SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where BusinessEntityID=@BusinessEntityID order by JobPostingID", con);
-    //        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
-    //        SqlDataReader reader = cmd.ExecuteReader();
-    //        GridView1.DataSource = reader;
-    //        GridView1.DataBind();
-    //        con.Close();
+        if (!IsPostBack)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SqlCon"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where BusinessEntityID=@BusinessEntityID order by JobPostingID", con);
+            cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+            SqlDataReader reader = cmd.ExecuteReader();
+            GridView1.DataSource = reader;
+            GridView1.DataBind();
+            con.Close();
 
-    //        btnUpdatePost.Enabled = false;
-    //    }
+            btnUpdatePost.Enabled = false;
+            btnDeletePost.Enabled = false;
+        }
 
-    //    GridView1.Columns[1].Visible = false;
-    //    GridView1.Columns[9].Visible = false;
+        GridView1.Columns[1].Visible = false;
+        GridView1.Columns[8].Visible = false;
     }
 
 
-    //protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-    //{
-    //    GridViewRow row = GridView1.SelectedRow;
-    //    //MessageLabel.Text = "You Selected " + row.Cells[1].Text;
-    //    txtJobTitle.Value = row.Cells[2].Text;
-    //    dropJobType.Value = row.Cells[3].Text;
-    //    dropCareerCluster.Value = row.Cells[4].Text;
-    //    txtareaDescription.Value = row.Cells[5].Text;
-    //    dropMonth.Value = row.Cells[6].Text;
-    //    dropDay.Value = row.Cells[7].Text;
-    //    dropYear.Value = row.Cells[8].Text;
-
-    //    btnAddPost.Enabled = false;
-    //    btnUpdatePost.Enabled = true;
+    protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        GridViewRow row = GridView1.SelectedRow;
+        //MessageLabel.Text = "You Selected " + row.Cells[1].Text;
+        txtJobTitle.Value = row.Cells[2].Text;
+        dropJobType.Value = row.Cells[3].Text;
    
-    //}
+        txtareaDescription.Value = row.Cells[4].Text;
+        dropMonth.Value = row.Cells[6].Text;
+        dropDay.Value = row.Cells[7].Text;
+        dropYear.Value = row.Cells[8].Text;
+
+        btnAddPost.Enabled = false;
+        btnUpdatePost.Enabled = true;
+        btnDeletePost.Enabled = true;
+
+    }
 
     protected void SignOut_Click(object sender, EventArgs e)
     {
@@ -93,50 +95,64 @@ public partial class JobPostings : System.Web.UI.Page
     {
         int LoginEntityID = (int)Session["EntityID"];
 
-        JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value, dropCareerCluster.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
 
         con.Open();
-        SqlCommand cmd = new SqlCommand("Insert into JobPosting values(@JobTitle, @JobType, @CareerCluster, @Description, @Month, @Day, @Year, @BusinessEntityID);");
+        SqlCommand learning = new SqlCommand("select FirstName + ' ' + LastName from Business where BusinessEntityID=@BusinessEntityID", con);
+        learning.CommandType = CommandType.Text;
+        learning.Parameters.AddWithValue("BusinessEntityID", LoginEntityID);
+        string ModifiedBy = "";
+        ModifiedBy = learning.ExecuteScalar().ToString();
+        DateTime ModifiedDate = DateTime.Now;
+        con.Close();
+
+        JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
+
+        con.Open();
+        SqlCommand cmd = new SqlCommand("Insert into JobPosting values(@JobTitle, @JobType, @Description, @Published, @Month, @Day, @Year, @BusinessEntityID, @CareerID, @ModifiedBy, @ModifiedDate);");
         cmd.CommandType = System.Data.CommandType.Text;
         cmd.Connection = con;
         cmd.Parameters.AddWithValue("@JobTitle", newPost.GetJobTitle());
         cmd.Parameters.AddWithValue("@JobType", newPost.GetJobType());
-        cmd.Parameters.AddWithValue("@CareerCluster", newPost.GetCareerCluster());
         cmd.Parameters.AddWithValue("@Description", newPost.GetDescription());
+        cmd.Parameters.AddWithValue("@Published", "Y");
         cmd.Parameters.AddWithValue("@Month", newPost.GetMonth());
         cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
         cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
         cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
+        cmd.Parameters.AddWithValue("@CareerID", dropCareerCluster.SelectedIndex);
+        cmd.Parameters.AddWithValue("@ModifiedBy", ModifiedBy);
+        cmd.Parameters.AddWithValue("@ModifiedDate", ModifiedDate);
         cmd.ExecuteNonQuery();
 
         Response.Redirect("JobPostings.aspx");
     }
 
-    //protected void BtnUpdate_Click(object sender, EventArgs e)
-    //{
-    //    int LoginEntityID = (int)Session["EntityID"];
-    //    var JobPostingID = GridView1.SelectedRow.Cells[1].Text;
-        
-    //    con.Open();
+    protected void BtnUpdate_Click(object sender, EventArgs e)
+    {
+        int LoginEntityID = (int)Session["EntityID"];
+        var JobPostingID = GridView1.SelectedRow.Cells[1].Text;
 
-    //    SqlCommand cmd = new SqlCommand("UPDATE JobPosting SET JobTitle=@JobTitle, JobType=@JobType, CareerCluster=@CareerCluster, Description=@Description, Month=@Month, Day=@Day, Year=@Year where JobPostingID=@JobPostingID", con);
-    //    cmd.CommandType = System.Data.CommandType.Text;
-    //    cmd.Connection = con;
+        con.Open();
 
-    //    cmd.Parameters.AddWithValue("@JobTitle", txtJobTitle.Value);
-    //    cmd.Parameters.AddWithValue("@JobType", dropJobType.Value);
-    //    cmd.Parameters.AddWithValue("@CareerCluster", dropCareerCluster.Value);
-    //    cmd.Parameters.AddWithValue("@Description", txtareaDescription.Value);
-    //    cmd.Parameters.AddWithValue("@Month", dropMonth.Value);
-    //    cmd.Parameters.AddWithValue("@Day", dropDay.Value);
-    //    cmd.Parameters.AddWithValue("@Year", dropYear.Value);
-    //    cmd.Parameters.AddWithValue("@JobPostingID", JobPostingID);
-    //    cmd.ExecuteNonQuery();
+        SqlCommand cmd = new SqlCommand("UPDATE JobPosting SET JobTitle=@JobTitle, JobType=@JobType, Description=@Description, Month=@Month, Day=@Day, Year=@Year, CareerID=@CareerID where JobPostingID=@JobPostingID", con);
+        cmd.CommandType = System.Data.CommandType.Text;
+        cmd.Connection = con;
 
-    //    con.Close();
+        cmd.Parameters.AddWithValue("@JobTitle", txtJobTitle.Value);
+        cmd.Parameters.AddWithValue("@JobType", dropJobType.Value);
+        cmd.Parameters.AddWithValue("@Description", txtareaDescription.Value);
+        cmd.Parameters.AddWithValue("@Month", dropMonth.Value);
+        cmd.Parameters.AddWithValue("@Day", dropDay.Value);
+        cmd.Parameters.AddWithValue("@Year", dropYear.Value);
+        cmd.Parameters.AddWithValue("@CareerID", dropCareerCluster.SelectedIndex);
 
-    //    Response.Redirect("JobPostings.aspx");
-    //}
+        cmd.Parameters.AddWithValue("@JobPostingID", JobPostingID);
+        cmd.ExecuteNonQuery();
+
+        con.Close();
+
+        Response.Redirect("JobPostings.aspx");
+    }
 
 
     protected void btnClear_Click(object sender, EventArgs e)
@@ -144,112 +160,123 @@ public partial class JobPostings : System.Web.UI.Page
         Response.Redirect("JobPostings.aspx");
     }
 
-    protected void BtnSearch_Click(object sender, EventArgs e)
-    {
+    //protected void BtnSearch_Click(object sender, EventArgs e)
+    //{
 
-        int LoginEntityID = (int)Session["EntityID"];
+    //    int LoginEntityID = (int)Session["EntityID"];
 
-        con.Open();
-        SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where(JobTitle like '%' + @Job + '%') AND BusinessEntityID=@BusinessEntityID", con);
-        cmd.Parameters.Add("@Job", SqlDbType.NVarChar).Value = TextSearch.Text;
-        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
-        SqlDataReader rdr = cmd.ExecuteReader();
-
-
+    //    con.Open();
+    //    SqlCommand cmd = new SqlCommand("SELECT * from JobPosting where(JobTitle like '%' + @Job + '%') AND BusinessEntityID=@BusinessEntityID", con);
+    //    cmd.Parameters.Add("@Job", SqlDbType.NVarChar).Value = TextSearch.Text;
+    //    cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+    //    SqlDataReader rdr = cmd.ExecuteReader();
 
 
-        // Fill the list box with the values retrieved
-        ListBox1.Items.Clear();
-        while (rdr.Read())
-        {
-            ListBox1.Items.Add(rdr["JobTitle"].ToString());
 
 
-        }
-
-        // Close data reader object and database connection
-        if (rdr != null)
-            rdr.Close();
-
-        if (con.State == ConnectionState.Open)
-            con.Close();
-    }
+    //    Fill the list box with the values retrieved
+    //    ListBox1.Items.Clear();
+    //    while (rdr.Read())
+    //    {
+    //        ListBox1.Items.Add(rdr["JobTitle"].ToString());
 
 
-    protected void typeCheckBoxChanged(object sender, EventArgs e)
-    {
-        int LoginEntityID = (int)Session["EntityID"];
+    //    }
 
-        string part = "";
-        string full = "";
-        string intern = "";
+    //    Close data reader object and database connection
+    //    if (rdr != null)
+    //        rdr.Close();
 
-        if (fullTime.Checked)
-        {
-            full = "Full Time";
-        }
-        if (partTime.Checked)
-        {
-            part = "Part-Time";
-        }
-        if (internship.Checked)
-        {
-            intern = "Internship";
-        }
-
-        con.Open();
-        SqlCommand cmd = new SqlCommand("Select * from JobPosting where (JobType like @full OR JobType like @part OR JobType like @intern) AND BusinessEntityID=@BusinessEntityID", con);
-        cmd.Parameters.Add("@full", SqlDbType.NVarChar).Value = full;
-        cmd.Parameters.Add("@part", SqlDbType.NVarChar).Value = part;
-        cmd.Parameters.Add("@intern", SqlDbType.NVarChar).Value = intern;
-        cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
-        SqlDataReader rdr = cmd.ExecuteReader();
+    //    if (con.State == ConnectionState.Open)
+    //        con.Close();
+    //}
 
 
-        ListBox1.Items.Clear();
-        while (rdr.Read())
-        {
-            ListBox1.Items.Add(rdr["JobTitle"].ToString());
+    //protected void typeCheckBoxChanged(object sender, EventArgs e)
+    //{
+    //    int LoginEntityID = (int)Session["EntityID"];
+
+    //    string part = "";
+    //    string full = "";
+    //    string intern = "";
+
+    //    if (fullTime.Checked)
+    //    {
+    //        full = "Full Time";
+    //    }
+    //    if (partTime.Checked)
+    //    {
+    //        part = "Part-Time";
+    //    }
+    //    if (internship.Checked)
+    //    {
+    //        intern = "Internship";
+    //    }
+
+    //    con.Open();
+    //    SqlCommand cmd = new SqlCommand("Select * from JobPosting where (JobType like @full OR JobType like @part OR JobType like @intern) AND BusinessEntityID=@BusinessEntityID", con);
+    //    cmd.Parameters.Add("@full", SqlDbType.NVarChar).Value = full;
+    //    cmd.Parameters.Add("@part", SqlDbType.NVarChar).Value = part;
+    //    cmd.Parameters.Add("@intern", SqlDbType.NVarChar).Value = intern;
+    //    cmd.Parameters.AddWithValue("@BusinessEntityID", LoginEntityID);
+    //    SqlDataReader rdr = cmd.ExecuteReader();
+
+
+    //    ListBox1.Items.Clear();
+    //    while (rdr.Read())
+    //    {
+    //        ListBox1.Items.Add(rdr["JobTitle"].ToString());
            
 
-        }
+    //    }
 
 
 
 
-        string[] yourHTMLstring = { "<table style=" + "width:100%, " + "> <tr> <th>" + full + "</th> <th>Lastname</th> <th>Age</th> </tr> <tr> <td>Jill</td> <td>Smith</td> <td>50</td> </tr> <tr> <td>Eve</td> <td>Jackson</td> <td>94</td> </tr> </table>" };
-        pnlUserdata.Controls.Add(new LiteralControl(yourHTMLstring[0]));
-        var target = "table";
+    //    string[] yourHTMLstring = { "<table style=" + "width:100%, " + "> <tr> <th>" + full + "</th> <th>Lastname</th> <th>Age</th> </tr> <tr> <td>Jill</td> <td>Smith</td> <td>50</td> </tr> <tr> <td>Eve</td> <td>Jackson</td> <td>94</td> </tr> </table>" };
+    //    pnlUserdata.Controls.Add(new LiteralControl(yourHTMLstring[0]));
+    //    var target = "table";
 
-        //string results = Array.Find(myArr,
-        //               element => element.StartsWith("S",
-        //               StringComparison.Ordinal));
-
-
+    //    //string results = Array.Find(myArr,
+    //    //               element => element.StartsWith("S",
+    //    //               StringComparison.Ordinal));
 
 
-        //Div1.InnerText = results;
 
-        // Close data reader object and database connection
-        if (rdr != null)
-            rdr.Close();
 
-        if (con.State == ConnectionState.Open)
-            con.Close();
-    }
+    //    //Div1.InnerText = results;
+
+    //    // Close data reader object and database connection
+    //    if (rdr != null)
+    //        rdr.Close();
+
+    //    if (con.State == ConnectionState.Open)
+    //        con.Close();
+    //}
 
 
 
 
     protected void BtnDelete_Click(object sender, EventArgs e)
     {
+        int LoginEntityID = (int)Session["EntityID"];
+        var JobPostingID = GridView1.SelectedRow.Cells[1].Text;
 
         con.Open();
-        SqlCommand cmd = new SqlCommand("Delete from [dbo].[JobPosting] Where JobPostingID=1", con);
+
+        SqlCommand cmd = new SqlCommand("Delete from [dbo].[JobPosting] Where JobPostingID=@JobPostingID", con);
+        cmd.CommandType = System.Data.CommandType.Text;
+        cmd.Connection = con;
+      
+        cmd.Parameters.AddWithValue("@JobPostingID", JobPostingID);
+       
 
         cmd.ExecuteNonQuery();
 
         con.Close();
+
+        Response.Redirect("JobPostings.aspx");
+
 
     }
 

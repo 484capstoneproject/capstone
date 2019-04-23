@@ -18,8 +18,7 @@
   </head>
   <body>
 
-       <%-- <asp:Label ID="LblSuccessfulRegister" runat="server" Text="- Business successfully registered!" Visible="False" ForeColor="Blue"></asp:Label>--%>
-      
+       <%-- <asp:Label ID="LblSuccessfulRegister" runat="server" Text="- Business successfully registered!" Visible="False" ForeColor="Blue"></asp:Label>--%>      
 
 <%--            <asp:Label ID="LblCheckList" runat="server" Text="Type of students you would like to recruit" Font-Bold="True" Font-Underline="True"></asp:Label>
             <br />
@@ -193,15 +192,14 @@
 
                         <label for="email" ID="LblPhoneNumber">Phone Number <span class="text-muted"></span></label>
                         <asp:TextBox ID="TxtPhoneNumber" runat="server" class="form-control" placeholder="000-000-0000"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidatorPhoneNumber"  runat="server"
-                            ErrorMessage="(Required)"
+                        <asp:RequiredFieldValidator ID="phoneValidator"  runat="server"
                             ControlToValidate="TxtPhoneNumber"
                             ValidationGroup="RequiredValidation"
-                            ForeColor="Red">
-                        </asp:RequiredFieldValidator>
+                            ForeColor="Red" Visible="False"></asp:RequiredFieldValidator>
+                        <asp:Label ID="phoneLabel" runat="server" ForeColor="Red" Visible="False"></asp:Label>
                     </div>
-                  <%-- <asp:Label ID="LblSuccessfulRegister" runat="server" Text="- Business successfully registered!" Visible="False" ForeColor="Blue"></asp:Label>--%>
-                       <asp:Button ID="BtnRegister" runat="server" Text="Register" class="btn btn-maingreen submitbutton" OnClick="BtnRegister_Click" />
+                    <%-- <asp:Label ID="LblSuccessfulRegister" runat="server" Text="- Business successfully registered!" Visible="False" ForeColor="Blue"></asp:Label>--%>
+                       <asp:Button ID="BtnRegister" runat="server" Text="Register" class="btn btn-maingreen submitbutton" OnClick="BtnRegister_Click" ValidationGroup="RequiredValidation" />
                     <asp:Button ID="BtnBack" runat="server" Text="Back" class="btn btn-maingreen submitbutton" OnClick="BtnBack_Click" />
                 </form>
             </div>

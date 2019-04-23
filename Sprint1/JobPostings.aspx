@@ -308,8 +308,8 @@
 									  <div class="form-group">
 											<asp:Button class="btn btn-maingreen w-25" id="btnAddPost" runat="server" Text="Add Post" OnClick="BtnAdd_Click"></asp:Button>   
                                             <asp:Button CssClass="btn btn-maingreen w-25" ID="btnClear" runat="server" Text="Clear" OnClick="btnClear_Click"></asp:Button>
-						       				<%--<asp:Button class="btn btn-primary w-25" id="btnUpdatePost" runat="server" Text="Update Changes" OnClick="BtnUpdate_Click"></asp:Button>--%> 
-											<asp:Button class="btn btn-maingreen w-25" id="btnAddPost0" runat="server" Text="Delete Post" OnClick="BtnDelete_Click"></asp:Button> 
+						       				<asp:Button class="btn btn-primary w-25" id="btnUpdatePost" runat="server" Text="Update Changes" OnClick="BtnUpdate_Click"></asp:Button> 
+											<asp:Button class="btn btn-maingreen w-25" id="btnDeletePost" runat="server" Text="Delete Post" OnClick="BtnDelete_Click"></asp:Button> 
                                           
 						       		 </div>  
 							       </div><!-- ENDS ADD JOB CARD -->
@@ -327,21 +327,19 @@
 
                             <asp:TextBox ID="TextSearch" runat="server" placeholder="Job Title"></asp:TextBox>
 
-                             <asp:CheckBox ID="fullTime" Text="Full-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true" />
+<%--                             <asp:CheckBox ID="fullTime" Text="Full-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true" />
                             <asp:CheckBox ID="partTime" Text="Part-Time" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
                             <asp:CheckBox ID="internship" Text="Internship" runat="server" OnCheckedChanged="typeCheckBoxChanged" AutoPostBack="true"/>
-                            <br />
-                            <asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />
+                            <br />--%>
+                            <%--<asp:Button ID="BtnSearch" class="btn btn-maingreen w-25" runat="server" Text="Filter" OnClick="BtnSearch_Click" />--%>
                             <br />
                             <asp:Button ID="BtnReset" class="btn btn-maingreen w-25" runat="server" Text="Reset" OnClick="BtnReset_Click" />
                             <asp:label id="MessageLabel"
                              forecolor="Red"
                              runat="server"/>
                             <asp:Label ID="LblNoDbOptions" runat="server" Text="No results found in the search" Visible="false"></asp:Label>    
-							 <br />
-                             <asp:ListBox ID="ListBox1" runat="server"></asp:ListBox>
-							<br />
-                            <%--Gridview start
+							
+                     
 							 <asp:Gridview id="GridView1" 
                                autogeneratecolumns="False"
                                onselectedindexchanged="GridView1_SelectedIndexChanged"
@@ -367,9 +365,6 @@
                                      <asp:BoundField DataField="JobType" 
                                          HeaderText="JobType" 
                                          SortExpression="JobType" />
-                                     <asp:BoundField DataField="CareerCluster" 
-                                         HeaderText="CareerCluster" 
-                                         SortExpression="CareerCluster" />
                                      <asp:BoundField DataField="Description" 
                                          HeaderText="Description" 
                                          SortExpression="Description" />
@@ -403,8 +398,7 @@
                                  <SortedDescendingHeaderStyle BackColor="#15524A" />
                 
                              </asp:Gridview>   
-                            --%>
-                            <%--GridView End--%>
+                 
                         
 							
 						</div>

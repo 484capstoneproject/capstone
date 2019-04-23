@@ -24,36 +24,49 @@ public partial class Register : System.Web.UI.Page
         Page.Validate("ValidationSame");
         Page.Validate("RequiredValidation");
 
+
         if (Page.IsValid)
         {
-            RegisterClass commitRegister = new RegisterClass(TxtOrgName.Text, TxtFirstName.Text, TxtLastName.Text, TxtEmailAddress.Text, TxtUserName.Text, TxtPhoneNumber.Text, TxtJobTitle.Text);
+            if (TxtPhoneNumber.Text.Length != 10)
+            {
+                phoneLabel.Text = "Phone number must be 10 digits, try again.";
+                phoneLabel.Visible = true;
+            }
+            else
+            {
+                string ModifiedBy = "";
+                DateTime ModifiedDate = DateTime.Now;
+                RegisterClass commitRegister = new RegisterClass(TxtOrgName.Text, TxtFirstName.Text, TxtLastName.Text, TxtEmailAddress.Text, TxtUserName.Text, TxtPhoneNumber.Text, TxtJobTitle.Text, ModifiedBy, ModifiedDate);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Insert into Business values(@orgname, @firstname, @lastname, @emailaddress, @username, @phonenumber, @jobtitle, null, null, null, null, null, @modifiedBy, @modifiedDate);");
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.Connection = con;
+                cmd.Parameters.AddWithValue("@orgname", commitRegister.GetBusinessName());
+                cmd.Parameters.AddWithValue("@firstname", commitRegister.GetFirstName());
+                cmd.Parameters.AddWithValue("@lastname", commitRegister.GetLastName());
+                cmd.Parameters.AddWithValue("@emailaddress", commitRegister.GetEmailAddress());
+                cmd.Parameters.AddWithValue("@username", commitRegister.GetUsername());
+                cmd.Parameters.AddWithValue("@phonenumber", commitRegister.GetPhoneNumber());
+                cmd.Parameters.AddWithValue("@jobtitle", commitRegister.GetJobTitle());
+                cmd.Parameters.AddWithValue("@modifiedBy", commitRegister.getModifiedBy());
+                cmd.Parameters.AddWithValue("@modifiedDate", commitRegister.getModifiedDate());
+                cmd.ExecuteNonQuery();
 
-            con.Open();
-            SqlCommand cmd = new SqlCommand("Insert into Business values(@orgname, @firstname, @lastname, @emailaddress, @username, @phonenumber, @jobtitle, null, null, null, null, null);");
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.Connection = con;
-            cmd.Parameters.AddWithValue("@orgname", commitRegister.GetBusinessName());
-            cmd.Parameters.AddWithValue("@firstname", commitRegister.GetFirstName());
-            cmd.Parameters.AddWithValue("@lastname", commitRegister.GetLastName());
-            cmd.Parameters.AddWithValue("@emailaddress", commitRegister.GetEmailAddress());
-            cmd.Parameters.AddWithValue("@username", commitRegister.GetUsername());
-            cmd.Parameters.AddWithValue("@phonenumber", commitRegister.GetPhoneNumber());
-            cmd.Parameters.AddWithValue("@jobtitle", commitRegister.GetJobTitle());
-            cmd.ExecuteNonQuery();
 
-            PasswordRegister commitPassword = new PasswordRegister(TxtUserName.Text, TxtFirstName.Text, TxtPassword.Text, TxtEmailAddress.Text);
+                PasswordRegister commitPassword = new PasswordRegister(TxtUserName.Text, TxtFirstName.Text, TxtPassword.Text, TxtEmailAddress.Text);
 
-            SqlCommand pass = new SqlCommand("insert into Password values((select max(BusinessEntityID) from Business), @username, @firstname, @password, @email);");
-            pass.CommandType = System.Data.CommandType.Text;
-            pass.Connection = con;
-            pass.Parameters.Add(new SqlParameter("@username", commitPassword.GetUsername()));
-            pass.Parameters.AddWithValue("@firstname", commitPassword.GetFirstName());
-            pass.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(commitPassword.GetPassword())));
-            pass.Parameters.AddWithValue("@email", commitPassword.GetEmail());
-            pass.ExecuteNonQuery();
-            con.Close();
-            Response.Redirect("Default.aspx");
-            //LblSuccessfulRegister.Visible = true;
+                SqlCommand pass = new SqlCommand("insert into Password values((select max(BusinessEntityID) from Business), @username, @firstname, @password, @email);");
+                pass.CommandType = System.Data.CommandType.Text;
+                pass.Connection = con;
+                pass.Parameters.Add(new SqlParameter("@username", commitPassword.GetUsername()));
+                pass.Parameters.AddWithValue("@firstname", commitPassword.GetFirstName());
+                pass.Parameters.Add(new SqlParameter("@password", PasswordHash.HashPassword(commitPassword.GetPassword())));
+                pass.Parameters.AddWithValue("@email", commitPassword.GetEmail());
+                pass.ExecuteNonQuery();
+                con.Close();
+                Response.Redirect("Default.aspx");
+                //LblSuccessfulRegister.Visible = true;
+            }
         }
     }
 

@@ -83,7 +83,7 @@ public partial class Postings : System.Web.UI.Page
     {
         int LoginEntityID = (int)Session["EntityID"];
 
-        JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value, dropCareerCluster.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
+        JobPostingsClass newPost = new JobPostingsClass(txtJobTitle.Value, dropJobType.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
 
         con.Open();
         SqlCommand cmd = new SqlCommand("Insert into JobPosting values(@JobTitle, @JobType, @Description, @Month, @Day, @Year, @BusinessEntityID, @CareerID);");
@@ -91,8 +91,7 @@ public partial class Postings : System.Web.UI.Page
         cmd.Connection = con;
         cmd.Parameters.AddWithValue("@JobTitle", newPost.GetJobTitle());
         cmd.Parameters.AddWithValue("@JobType", newPost.GetJobType());
-        cmd.Parameters.AddWithValue("@CareerCluster", newPost.GetCareerCluster());
-        cmd.Parameters.AddWithValue("@Description", newPost.GetDescription());
+               cmd.Parameters.AddWithValue("@Description", newPost.GetDescription());
         cmd.Parameters.AddWithValue("@Month", newPost.GetMonth());
         cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
         cmd.Parameters.AddWithValue("@Year", newPost.GetYear());

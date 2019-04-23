@@ -15,6 +15,8 @@ public class RegisterClass
     private string Username;
     private string PhoneNumber;
     private string JobTitle;
+    private string ModifiedBy;
+    private DateTime ModifiedDate;
 
     public string GetBusinessName()
     {
@@ -36,6 +38,16 @@ public class RegisterClass
     public string GetLastName()
     {
         return this.LastName;
+    }
+
+    public string getModifiedBy()
+    {
+        return this.FirstName + " " + this.LastName;
+    }
+
+    public DateTime getModifiedDate()
+    {
+        return this.ModifiedDate;
     }
 
     public void SetLastName(string lastName)
@@ -79,7 +91,17 @@ public class RegisterClass
     {
         this.JobTitle = job;
     }
-    public RegisterClass(string BusinessName, string FirstName, string LastName, string Email, string Username, string PhoneNumber, string JobTitle)
+
+    public void setModifiedBy(string by)
+    {
+        this.ModifiedBy = by;
+    }
+
+    public void setModifiedDate(DateTime date)
+    {
+        this.ModifiedDate = date;
+    }
+    public RegisterClass(string BusinessName, string FirstName, string LastName, string Email, string Username, string PhoneNumber, string JobTitle, string ModifiedBy, DateTime ModifiedDate)
     {
         SetBusinessName(BusinessName);
         SetFirstName(FirstName);
@@ -88,5 +110,8 @@ public class RegisterClass
         SetUsername(Username);
         SetPhoneNumber(PhoneNumber);
         SetJobTitle(JobTitle);
+        setModifiedBy(ModifiedBy);
+        setModifiedDate(ModifiedDate);
+
     }
 }

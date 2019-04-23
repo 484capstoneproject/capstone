@@ -10,7 +10,7 @@ public class JobPostingsClass
 {
     private string JobTitle;
     private string JobType;
-    private string CareerCluster;
+
     private string PaymentType;
     private string Description;
     private string month;
@@ -34,15 +34,6 @@ public class JobPostingsClass
     public void SetJobType(string JobType)
     {
         this.JobType = JobType;
-    }
-
-    public string GetCareerCluster()
-    {
-        return this.CareerCluster;
-    }
-    public void SetCareerCluster(string CareerCluster)
-    {
-        this.CareerCluster = CareerCluster;
     }
 
     public string GetPaymentType()
@@ -99,11 +90,11 @@ public class JobPostingsClass
         this.BusinessEntityID = ID;
     }
 
-    public JobPostingsClass(string JobTitle, string JobType, string CareerCluster, string Description, string month, string day, string year, int ID)
+    public JobPostingsClass(string JobTitle, string JobType, string Description, string month, string day, string year, int ID)
     {
         SetJobTitle(JobTitle);
         SetJobType(JobType);
-        SetCareerCluster(CareerCluster);
+
         //SetPaymentType(Payment);
         SetDescription(Description);
         SetMonth(month);
