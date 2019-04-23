@@ -119,6 +119,7 @@ public partial class JobPostings : System.Web.UI.Page
         cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
         cmd.Parameters.AddWithValue("@Year", newPost.GetYear());
         cmd.Parameters.AddWithValue("@BusinessEntityID", newPost.GetBusinessID());
+        int index = dropCareerCluster.SelectedIndex + 1;
         cmd.Parameters.AddWithValue("@CareerID", dropCareerCluster.SelectedIndex);
         cmd.Parameters.AddWithValue("@ModifiedBy", ModifiedBy);
         cmd.Parameters.AddWithValue("@ModifiedDate", ModifiedDate);

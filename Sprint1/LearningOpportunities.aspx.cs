@@ -97,7 +97,7 @@ public partial class LearningOpportunites : System.Web.UI.Page
     {
         int LoginEntityID = (int)Session["EntityID"];
 
-        JobPostingsClass newPost = new JobPostingsClass(txtLearningTitle.Value, dropOpportunityType.Value, dropCareerCluster.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
+        JobPostingsClass newPost = new JobPostingsClass(txtLearningTitle.Value, dropOpportunityType.Value, txtareaDescription.Value, dropMonth.Value, dropDay.Value, dropYear.Value, LoginEntityID);
 
         con.Open();
         SqlCommand cmd = new SqlCommand("Insert into LearningPosting values(@LearningTitle, @LearningType, @CareerCluster, @Description, @Month, @Day, @Year, @BusinessEntityID);");
@@ -105,7 +105,6 @@ public partial class LearningOpportunites : System.Web.UI.Page
         cmd.Connection = con;
         cmd.Parameters.AddWithValue("@LearningTitle", newPost.GetJobTitle());
         cmd.Parameters.AddWithValue("@LearningType", newPost.GetJobType());
-        cmd.Parameters.AddWithValue("@CareerCluster", newPost.GetCareerCluster());
         cmd.Parameters.AddWithValue("@Description", newPost.GetDescription());
         cmd.Parameters.AddWithValue("@Month", newPost.GetMonth());
         cmd.Parameters.AddWithValue("@Day", newPost.GetDay());
